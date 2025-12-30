@@ -19,6 +19,8 @@ export const Header = () => {
     { path: "/about", label: "About" },
   ];
 
+  const AI_ASSISTANT_URL = "https://ai.autodun.com/ai-assistant";
+
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
       <div className="container-main flex h-16 items-center justify-between">
@@ -46,6 +48,7 @@ export const Header = () => {
               {link.label}
             </Link>
           ))}
+
           <Link
             to="/contact"
             className={cn(
@@ -55,6 +58,16 @@ export const Header = () => {
           >
             Contact
           </Link>
+
+          {/* ✅ AI Assistant CTA (external link) */}
+          <a
+            href={AI_ASSISTANT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-xl bg-foreground px-4 py-2 text-sm font-semibold text-background hover:opacity-90 transition-opacity"
+          >
+            Ask Autodun AI
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -90,6 +103,7 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
+
               <Link
                 to="/contact"
                 onClick={() => setMobileMenuOpen(false)}
@@ -102,6 +116,17 @@ export const Header = () => {
               >
                 Contact
               </Link>
+
+              {/* ✅ AI Assistant CTA (mobile) */}
+              <a
+                href={AI_ASSISTANT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="mt-2 inline-flex items-center justify-center rounded-xl bg-foreground px-4 py-2 text-sm font-semibold text-background hover:opacity-90 transition-opacity"
+              >
+                Ask Autodun AI
+              </a>
             </div>
           </div>
         </div>
