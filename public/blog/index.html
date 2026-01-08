@@ -3,19 +3,58 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Autodun Blog</title>
-</head>
-<body style="font-family:system-ui;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.6;">
-  <h1>Autodun Blog</h1>
-  <p>Research-grade writing on EV infrastructure and MOT intelligence in the UK.</p>
 
-  <h2>Latest posts</h2>
-  <ul>
-    <li>
-      <a href="/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">
-        Why UK Councils Are Flying Blind on EV Charging Infrastructure
-      </a>
-    </li>
-  </ul>
+  <title>Autodun Blog — EV Infrastructure & MOT Intelligence (UK)</title>
+  <meta name="description" content="Research-grade writing from Autodun on UK EV charging infrastructure, real-world data gaps, and MOT intelligence—built from hands-on product and user feedback." />
+  <link rel="canonical" href="https://autodun.com/blog/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Autodun Blog — EV Infrastructure & MOT Intelligence (UK)" />
+  <meta property="og:description" content="Research-grade writing from Autodun on UK EV charging infrastructure, real-world data gaps, and MOT intelligence—built from hands-on product and user feedback." />
+  <meta property="og:url" content="https://autodun.com/blog/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Autodun Blog — EV Infrastructure & MOT Intelligence (UK)" />
+  <meta name="twitter:description" content="Research-grade writing from Autodun on UK EV charging infrastructure, real-world data gaps, and MOT intelligence—built from hands-on product and user feedback." />
+</head>
+
+<body style="font-family:system-ui;-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.7;color:#111;">
+  <header style="margin-bottom:24px;">
+    <h1 style="margin:0 0 8px 0;">Autodun Blog</h1>
+    <p style="margin:0;">
+      Research-grade writing on EV infrastructure and MOT intelligence in the UK—based on what we see when real datasets meet real journeys.
+    </p>
+    <p style="margin:10px 0 0 0;">
+      <a href="https://ev.autodun.com" style="text-decoration:none;">Explore Autodun EV Finder →</a>
+    </p>
+  </header>
+
+  <main>
+    <h2 style="margin:0 0 12px 0;">Latest posts</h2>
+    <ul style="padding-left:18px;margin:0;">
+      <li style="margin:0 0 10px 0;">
+        <a href="/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">
+          Why UK Councils Are Flying Blind on EV Charging Infrastructure
+        </a>
+        <div style="font-size:14px;color:#444;margin-top:4px;">
+          What happens when “coverage” on paper does not match what drivers experience on the road.
+        </div>
+      </li>
+    </ul>
+  </main>
+
+  <hr style="margin:28px 0;border:none;border-top:1px solid #e5e5e5;" />
+
+  <footer style="font-size:14px;color:#444;">
+    <p style="margin:0;">
+      © <span id="y"></span> Autodun. <a href="https://autodun.com" style="text-decoration:none;">autodun.com</a>
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
