@@ -11,7 +11,6 @@ export const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  // ✅ Removed "Blog" from nav links (only keep Blog button on right)
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/ev-charger-finder", label: "EV Charger Finder" },
@@ -19,32 +18,35 @@ export const Header = () => {
     { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
+    { path: "/blog", label: "Blog" }, // normal nav item
   ];
 
   const AI_ASSISTANT_URL = "https://ai.autodun.com/ai-assistant";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
-      <div className="container-main flex h-16 items-center gap-4">
-        {/* LEFT: Logo */}
+      <div className="container-main flex h-16 items-center">
+        {/* LOGO (slightly pushed left) */}
         <Link
           to="/"
-          className="flex items-center shrink-0"
           onClick={() => setMobileMenuOpen(false)}
           aria-label="Autodun Home"
+          className="-ml-2 flex items-center shrink-0"
         >
           <LogoMark size="header" className="h-8 md:h-9 lg:h-10 w-auto" />
         </Link>
 
-        {/* CENTER: Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 flex-1 justify-center">
+        {/* DESKTOP NAV (centered) */}
+        <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-foreground whitespace-nowrap",
-                isActive(link.path) ? "text-foreground" : "text-muted-foreground"
+                isActive(link.path)
+                  ? "text-foreground"
+                  : "text-muted-foreground"
               )}
             >
               {link.label}
@@ -52,14 +54,8 @@ export const Header = () => {
           ))}
         </nav>
 
-        {/* RIGHT: Desktop Actions */}
-        <div className="hidden md:flex items-center gap-3 ml-auto shrink-0">
-          {/* ✅ Only Blog button */}
-          <Button asChild variant="outline" className="rounded-xl">
-            <Link to="/blog">Blog</Link>
-          </Button>
-
-          {/* AI Assistant external CTA */}
+        {/* RIGHT CTA */}
+        <div className="hidden md:flex items-center ml-auto">
           <a
             href={AI_ASSISTANT_URL}
             target="_blank"
@@ -70,7 +66,7 @@ export const Header = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* MOBILE MENU BUTTON */}
         <div className="flex items-center md:hidden ml-auto">
           <Button
             variant="ghost"
@@ -83,7 +79,7 @@ export const Header = () => {
         </div>
       </div>
 
-      {/* Mobile Nav */}
+      {/* MOBILE NAV */}
       {mobileMenuOpen && (
         <div className="border-t md:hidden">
           <div className="container-main py-3">
@@ -104,16 +100,7 @@ export const Header = () => {
                 </Link>
               ))}
 
-              {/* ✅ Blog button (mobile) */}
-              <Link
-                to="/blog"
-                onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 inline-flex items-center justify-center rounded-xl border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
-              >
-                Blog
-              </Link>
-
-              {/* AI Assistant CTA (mobile) */}
+              {/* Mobile AI CTA */}
               <a
                 href={AI_ASSISTANT_URL}
                 target="_blank"
