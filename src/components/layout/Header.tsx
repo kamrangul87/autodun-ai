@@ -18,7 +18,6 @@ export const Header = () => {
     { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
-    { path: "/blog", label: "Blog" }, // normal nav item
   ];
 
   const AI_ASSISTANT_URL = "https://ai.autodun.com/ai-assistant";
@@ -26,7 +25,7 @@ export const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
       <div className="container-main flex h-16 items-center">
-        {/* LOGO (slightly pushed left) */}
+        {/* LOGO */}
         <Link
           to="/"
           onClick={() => setMobileMenuOpen(false)}
@@ -36,7 +35,7 @@ export const Header = () => {
           <LogoMark size="header" className="h-8 md:h-9 lg:h-10 w-auto" />
         </Link>
 
-        {/* DESKTOP NAV (centered) */}
+        {/* DESKTOP NAV */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
           {navLinks.map((link) => (
             <Link
@@ -52,6 +51,19 @@ export const Header = () => {
               {link.label}
             </Link>
           ))}
+
+          {/* ✅ BLOG (STATIC HTML, NOT REACT ROUTE) */}
+          <a
+            href="/blog/index.html"
+            className={cn(
+              "text-sm font-medium transition-colors hover:text-foreground whitespace-nowrap",
+              location.pathname.startsWith("/blog")
+                ? "text-foreground"
+                : "text-muted-foreground"
+            )}
+          >
+            Blog
+          </a>
         </nav>
 
         {/* RIGHT CTA */}
@@ -100,7 +112,16 @@ export const Header = () => {
                 </Link>
               ))}
 
-              {/* Mobile AI CTA */}
+              {/* MOBILE BLOG */}
+              <a
+                href="/blog/index.html"
+                onClick={() => setMobileMenuOpen(false)}
+                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+              >
+                Blog
+              </a>
+
+              {/* MOBILE AI CTA */}
               <a
                 href={AI_ASSISTANT_URL}
                 target="_blank"
