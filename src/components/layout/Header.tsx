@@ -17,78 +17,66 @@ export const Header = () => {
     { path: "/mot-predictor", label: "MOT Predictor" },
     { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
-    { path: "/blog", label: "Blog" }, // ✅ added
+    { path: "/blog", label: "Blog" },
+    { path: "/contact", label: "Contact" },
   ];
 
   const AI_ASSISTANT_URL = "https://ai.autodun.com/ai-assistant";
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
-      <div className="container-main flex h-16 items-center justify-between">
-        {/* LOGO ONLY (removed AUTODUN text) */}
+      <div className="container-main flex h-16 items-center gap-4">
+        {/* LEFT: Logo */}
         <Link
           to="/"
-          className="flex items-center"
+          className="flex items-center shrink-0"
           onClick={() => setMobileMenuOpen(false)}
           aria-label="Autodun Home"
         >
           <LogoMark size="header" className="h-8 md:h-9 lg:h-10 w-auto" />
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden items-center gap-6 md:flex">
+        {/* CENTER: Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-6 flex-1 justify-center">
           {navLinks.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-foreground",
+                "text-sm font-medium transition-colors hover:text-foreground whitespace-nowrap",
                 isActive(link.path) ? "text-foreground" : "text-muted-foreground"
               )}
             >
               {link.label}
             </Link>
           ))}
+        </nav>
 
-          <Link
-            to="/contact"
-            className={cn(
-              "text-sm font-medium transition-colors hover:text-foreground",
-              isActive("/contact") ? "text-foreground" : "text-muted-foreground"
-            )}
-          >
-            Contact
-          </Link>
-
-          {/* ✅ Blog CTA button (internal) */}
+        {/* RIGHT: Desktop Actions (pushed to far right) */}
+        <div className="hidden md:flex items-center gap-3 ml-auto shrink-0">
           <Button asChild variant="outline" className="rounded-xl">
             <Link to="/blog">Read Blog</Link>
           </Button>
 
-          {/* ✅ AI Assistant CTA (external link) */}
           <a
             href={AI_ASSISTANT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-xl bg-foreground px-4 py-2 text-sm font-semibold text-background hover:opacity-90 transition-opacity"
+            className="inline-flex items-center justify-center rounded-xl bg-foreground px-4 py-2 text-sm font-semibold text-background hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             Ask Autodun AI
           </a>
-        </nav>
+        </div>
 
         {/* Mobile Menu Button */}
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center md:hidden ml-auto">
           <Button
             variant="ghost"
             size="icon"
             aria-label="Toggle menu"
             onClick={() => setMobileMenuOpen((v) => !v)}
           >
-            {mobileMenuOpen ? (
-              <X className="h-5 w-5" />
-            ) : (
-              <Menu className="h-5 w-5" />
-            )}
+            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
       </div>
@@ -114,31 +102,15 @@ export const Header = () => {
                 </Link>
               ))}
 
-              <Link
-                to="/contact"
-                onClick={() => setMobileMenuOpen(false)}
-                className={cn(
-                  "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted",
-                  isActive("/contact")
-                    ? "bg-muted text-foreground"
-                    : "text-muted-foreground"
-                )}
-              >
-                Contact
-              </Link>
-
-              {/* ✅ Blog CTA (mobile) */}
+              {/* Mobile CTAs */}
               <Link
                 to="/blog"
                 onClick={() => setMobileMenuOpen(false)}
-                className={cn(
-                  "mt-2 inline-flex items-center justify-center rounded-xl border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
-                )}
+                className="mt-2 inline-flex items-center justify-center rounded-xl border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
               >
                 Read Blog
               </Link>
 
-              {/* ✅ AI Assistant CTA (mobile) */}
               <a
                 href={AI_ASSISTANT_URL}
                 target="_blank"
