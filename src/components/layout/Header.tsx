@@ -17,6 +17,7 @@ export const Header = () => {
     { path: "/mot-predictor", label: "MOT Predictor" },
     { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
+    { path: "/blog", label: "Blog" }, // ✅ added
   ];
 
   const AI_ASSISTANT_URL = "https://ai.autodun.com/ai-assistant";
@@ -59,6 +60,11 @@ export const Header = () => {
             Contact
           </Link>
 
+          {/* ✅ Blog CTA button (internal) */}
+          <Button asChild variant="outline" className="rounded-xl">
+            <Link to="/blog">Read Blog</Link>
+          </Button>
+
           {/* ✅ AI Assistant CTA (external link) */}
           <a
             href={AI_ASSISTANT_URL}
@@ -78,7 +84,11 @@ export const Header = () => {
             aria-label="Toggle menu"
             onClick={() => setMobileMenuOpen((v) => !v)}
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </Button>
         </div>
       </div>
@@ -115,6 +125,17 @@ export const Header = () => {
                 )}
               >
                 Contact
+              </Link>
+
+              {/* ✅ Blog CTA (mobile) */}
+              <Link
+                to="/blog"
+                onClick={() => setMobileMenuOpen(false)}
+                className={cn(
+                  "mt-2 inline-flex items-center justify-center rounded-xl border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
+                )}
+              >
+                Read Blog
               </Link>
 
               {/* ✅ AI Assistant CTA (mobile) */}
