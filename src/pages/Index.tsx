@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { LogoMark } from "@/components/LogoMark";
 import { EVChargerDemo } from "@/components/demos/EVChargerDemo";
 import { ArrowRight, Zap, MapPin, BarChart3, Shield } from "lucide-react";
-import { Link } from "react-router-dom";
+
 
 const tools = [
   {
@@ -91,18 +91,7 @@ export default function Index() {
                   </a>
                 </Button>
 
-                {/* ✅ BLOG BUTTON */}
-                <Button
-                  asChild
-                  variant="secondary"
-                  size="lg"
-                  className="gap-2 font-medium w-full sm:w-auto"
-                >
-                  <Link to="/blog">
-                    Read Blog
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </Button>
+               
               </div>
 
               {/* Trust line */}
