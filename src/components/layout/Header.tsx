@@ -11,13 +11,13 @@ export const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
+  // ✅ Removed "Blog" from nav links (only keep Blog button on right)
   const navLinks = [
     { path: "/", label: "Home" },
     { path: "/ev-charger-finder", label: "EV Charger Finder" },
     { path: "/mot-predictor", label: "MOT Predictor" },
     { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
-    { path: "/blog", label: "Blog" },
     { path: "/contact", label: "Contact" },
   ];
 
@@ -52,12 +52,14 @@ export const Header = () => {
           ))}
         </nav>
 
-        {/* RIGHT: Desktop Actions (pushed to far right) */}
+        {/* RIGHT: Desktop Actions */}
         <div className="hidden md:flex items-center gap-3 ml-auto shrink-0">
+          {/* ✅ Only Blog button */}
           <Button asChild variant="outline" className="rounded-xl">
-            <Link to="/blog">Read Blog</Link>
+            <Link to="/blog">Blog</Link>
           </Button>
 
+          {/* AI Assistant external CTA */}
           <a
             href={AI_ASSISTANT_URL}
             target="_blank"
@@ -102,15 +104,16 @@ export const Header = () => {
                 </Link>
               ))}
 
-              {/* Mobile CTAs */}
+              {/* ✅ Blog button (mobile) */}
               <Link
                 to="/blog"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-2 inline-flex items-center justify-center rounded-xl border border-border bg-background px-4 py-2 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
               >
-                Read Blog
+                Blog
               </Link>
 
+              {/* AI Assistant CTA (mobile) */}
               <a
                 href={AI_ASSISTANT_URL}
                 target="_blank"
