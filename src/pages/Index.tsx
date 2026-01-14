@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { LogoMark } from "@/components/LogoMark";
 import { EVChargerDemo } from "@/components/demos/EVChargerDemo";
 import { ArrowRight, Zap, MapPin, BarChart3, Shield } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const tools = [
   {
@@ -34,15 +35,17 @@ const tools = [
 export default function Index() {
   return (
     <Layout>
-      {/* Hero Section - Two Column */}
+      {/* Hero Section */}
       <section className="hero-gradient border-b border-border section-hero">
         <div className="container-main">
-          {/* ✅ removed min-h-[70vh] lg:min-h-[75vh] to reduce empty background */}
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
             {/* Left content */}
             <div className="text-center lg:text-left">
               <div className="flex items-center gap-3 justify-center lg:justify-start mb-6">
-                <LogoMark size="md" className="opacity-[0.12] max-w-[280px] md:max-w-[320px]" />
+                <LogoMark
+                  size="md"
+                  className="opacity-[0.12] max-w-[280px] md:max-w-[320px]"
+                />
               </div>
 
               <h1 className="text-balance mb-5 text-3xl sm:text-4xl lg:text-5xl">
@@ -71,6 +74,7 @@ export default function Index() {
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </Button>
+
                 <Button
                   asChild
                   variant="outline"
@@ -85,6 +89,19 @@ export default function Index() {
                     Open MOT Predictor
                     <ArrowRight className="h-4 w-4" />
                   </a>
+                </Button>
+
+                {/* ✅ BLOG BUTTON */}
+                <Button
+                  asChild
+                  variant="secondary"
+                  size="lg"
+                  className="gap-2 font-medium w-full sm:w-auto"
+                >
+                  <Link to="/blog">
+                    Read Blog
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
                 </Button>
               </div>
 
@@ -101,7 +118,7 @@ export default function Index() {
               </div>
             </div>
 
-            {/* Right - Animated Demo */}
+            {/* Right demo */}
             <div className="w-full aspect-[16/10]">
               <EVChargerDemo />
             </div>
@@ -109,7 +126,7 @@ export default function Index() {
         </div>
       </section>
 
-      {/* Core Tools Section */}
+      {/* Core Tools */}
       <section className="section-major">
         <div className="container-main">
           <div className="text-center mb-8">
@@ -134,113 +151,32 @@ export default function Index() {
                   </div>
                   <span
                     className={
-                      tool.badge === "Beta"
-                        ? "badge-beta"
-                        : tool.badge === "New"
+                      tool.badge === "New"
                         ? "badge-status bg-green-500/10 text-green-600"
                         : "badge-active"
                     }
                   >
-                    {tool.badge === "Active" && (
-                      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-                    )}
                     {tool.badge}
                   </span>
                 </div>
+
                 <h3 className="text-lg font-semibold mb-2">{tool.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed mb-5 flex-grow">
+                <p className="text-sm text-muted-foreground mb-5 flex-grow">
                   {tool.description}
                 </p>
+
                 <Button asChild className="gap-2 w-full">
-                  <a href={tool.href} target="_blank" rel="noopener noreferrer">
+                  <a
+                    href={tool.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Open Tool
                     <ArrowRight className="h-4 w-4" />
                   </a>
                 </Button>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works Section */}
-      <section className="section-major bg-secondary/30 border-y border-border">
-        <div className="container-main">
-          <div className="text-center mb-8">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
-              How It Works
-            </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">
-              Simple, transparent process
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Get insights in three straightforward steps.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-            <div className="text-center">
-              <div className="step-number mx-auto mb-5">1</div>
-              <h3 className="text-lg font-semibold mb-2">Enter your inputs</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
-                Provide location for EV charging or vehicle details for MOT risk
-                analysis.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="step-number mx-auto mb-5">2</div>
-              <h3 className="text-lg font-semibold mb-2">Get AI insights</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
-                Our models process the data and generate coverage maps or risk
-                estimates.
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="step-number mx-auto mb-5">3</div>
-              <h3 className="text-lg font-semibold mb-2">Take action</h3>
-              <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
-                Find nearby chargers or prepare for your MOT with informed
-                guidance.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="section-major">
-        <div className="container-main text-center">
-          <h2 className="mb-4 text-2xl sm:text-3xl">Ready to explore?</h2>
-          <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-            Access our research tools for EV infrastructure insights and MOT risk
-            analysis.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button asChild size="lg" className="gap-2 w-full sm:w-auto">
-              <a
-                href="https://ev.autodun.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                EV Charger Finder
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="gap-2 w-full sm:w-auto"
-            >
-              <a
-                href="https://mot.autodun.com"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                MOT Predictor
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
           </div>
         </div>
       </section>
