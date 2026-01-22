@@ -2,29 +2,191 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-
-  <!-- UPDATED TITLE -->
-  <title>
-    MOT History Check UK & MOT Check App – How to Check MOT History Online (DVSA Records)
-  </title>
-
-  <!-- UPDATED META DESCRIPTION -->
-  <meta name="description"
-    content="Check MOT history online in the UK using a trusted MOT check app. Learn what MOT UK history shows (advisories, failures, mileage) and how to use Autodun tools safely." />
-
+  <title>MOT History Check UK – MOT Check, MOT Status & MOT Check App Guide (DVSA Records)</title>
+  <meta name="description" content="Check MOT history online in the UK. Learn what MOT UK history shows (advisories, failures, mileage), red flags to watch for, and how to use a MOT check app like Autodun safely." />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="canonical" href="https://www.autodun.com/blog/mot-history-check-uk.html" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="MOT History Check UK & MOT Check App" />
-  <meta property="og:description"
-    content="A clear UK guide to MOT history checks using an MOT check app. Understand advisories, failures, mileage patterns and DVSA records." />
+  <meta property="og:title" content="MOT History Check UK – How to Check MOT History Online" />
+  <meta property="og:description" content="A clear UK guide to MOT history online checks: advisories, failures, mileage patterns, and what to look for before you buy." />
   <meta property="og:url" content="https://www.autodun.com/blog/mot-history-check-uk.html" />
-  <meta property="og:image"
-    content="https://www.autodun.com/images/mot-history-uk/dashboard-warning-lights.jpg" />
+  <meta property="og:image" content="https://www.autodun.com/images/mot-history-uk/dashboard-warning-lights.jpg" />
 
-  <!-- (STYLE + FAQ SCHEMA UNCHANGED – KEEP AS YOU HAVE IT) -->
+  <style>
+    :root {
+      --max: 900px;
+      --text: #111;
+      --muted: #444;
+      --line: #e5e5e5;
+      --soft: #f7f7f7;
+      --link: #0b57d0;
+    }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.7;
+      background: #fff;
+    }
+    article {
+      max-width: var(--max);
+      margin: 40px auto;
+      padding: 0 16px;
+    }
+    h1 { line-height: 1.2; margin: 0 0 10px 0; }
+    h2 { margin-top: 34px; }
+    p { margin: 12px 0; }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    figure { margin: 26px 0; }
+    /* ✅ FIX: make blog screenshots readable (not massive) */
+    figure img {
+      width: 100%;
+      max-width: 760px;       /* keeps screenshots smaller than article width */
+      height: auto;
+      max-height: 420px;      /* prevents super-tall images */
+      object-fit: contain;    /* keeps entire screenshot visible */
+      display: block;
+      margin: 0 auto;         /* centers images */
+      border-radius: 8px;
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    /* ✅ FIX: hero image should look like a blog hero, not a banner */
+    figure.hero img {
+      max-width: 900px;
+      max-height: 380px;
+    }
+
+    figcaption {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 8px;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .meta {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0 0 18px 0;
+    }
+
+    .callout {
+      margin: 22px 0;
+      padding: 16px 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--soft);
+    }
+    .callout strong { display: block; margin-bottom: 6px; }
+
+    ul, ol { padding-left: 20px; }
+    hr {
+      margin: 34px 0;
+      border: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq h3 { margin: 18px 0 6px 0; }
+    .small { font-size: 14px; color: var(--muted); }
+
+    .authorbox {
+      margin-top: 34px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fff;
+    }
+    .authorbox h3 { margin: 0 0 8px 0; }
+    .authorbox ul { margin: 10px 0 0 0; }
+  </style>
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is MOT history free in the UK?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. MOT history is publicly accessible in the UK using the vehicle registration number. Tools may present the information differently, but the underlying record is based on UK testing data."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I check MOT history online without a V5C logbook?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A V5C logbook is not required to check MOT history online. A registration number is usually sufficient."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What does MOT history show?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MOT history typically includes pass/fail outcomes, advisory notes, test dates, recorded mileage at the time of test, and expiry information."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does MOT history prove the car is in good condition today?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. MOT history is a useful signal, but it does not guarantee current condition. Always combine MOT history with a physical inspection and service records."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How long does MOT history stay on record?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MOT history is generally available across the life of the vehicle, although the depth of older records can vary. Recent years are typically visible when checking MOT history online."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can MOT history be changed or deleted?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "MOT history is recorded at the time of testing. If there is a genuine error, it may be corrected through official channels, but results are not removed simply because repairs were completed later."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why does mileage look wrong on MOT history?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mileage differences can happen due to data entry errors, instrument replacement, or unusual usage patterns. Large or repeated inconsistencies should be investigated before buying a vehicle."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does MOT history show accidents or insurance claims?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. MOT history does not include accident or insurance data. It reflects the vehicle’s condition at the time of each MOT test only."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do advisories mean the car will fail the next MOT?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. Advisories highlight items to monitor. Repeated advisories for the same issue can increase the risk of a future failure if not addressed."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 
 <body>
@@ -33,111 +195,172 @@
   <h1>MOT History Check UK – How to Check MOT History Online</h1>
   <p class="meta"><strong>By Autodun Research Team</strong> · Updated 2026</p>
 
-  <figure>
-    <img src="/images/mot-history-uk/dashboard-warning-lights.jpg"
-         alt="MOT dashboard warning lights UK" />
-    <figcaption>
-      Dashboard warning indicators often relate to issues that later appear as MOT advisories or failures.
-    </figcaption>
+  <!-- ✅ Hero image now controlled (not too tall) -->
+  <figure class="hero">
+    <img src="/images/mot-history-uk/dashboard-warning-lights.jpg" alt="MOT dashboard warning lights UK" />
+    <figcaption>Dashboard warning indicators often relate to issues that later appear as MOT advisories or failures.</figcaption>
   </figure>
 
   <p>
     Checking <strong>MOT history</strong> is one of the safest ways to understand a vehicle’s condition in the UK.
-    An <strong>MOT history online</strong> check — often done through an <strong>MOT check app</strong> —
-    can reveal previous failures, recurring advisories, mileage patterns and expiry dates.
+    An <strong>MOT history online</strong> check — often done through an <strong>MOT check app</strong> — can reveal previous failures,
+    recurring advisories, mileage patterns, and expiry dates. This is useful for owners preparing for an upcoming test and buyers
+    assessing a used car.
   </p>
 
   <div class="callout">
-    <strong>Quick MOT check</strong>
+    <strong>Quick MOT check (recommended)</strong>
     Use the Autodun MOT check app to fetch MOT history by registration and review key signals:
     <a href="https://mot.autodun.com">Check MOT history online →</a>
   </div>
 
   <h2>What is MOT history in the UK?</h2>
   <p>
-    <strong>MOT UK history</strong> is the recorded timeline of a vehicle’s MOT tests.
-    A proper <strong>MOT check</strong> shows pass/fail outcomes, advisory notes,
-    test dates and recorded mileage at each test.
+    <strong>MOT UK history</strong> is the recorded timeline of a vehicle’s MOT tests. It typically includes pass/fail outcomes,
+    advisory notes (items to monitor or repair soon), test dates, and the mileage recorded at each test.
+    The most useful part of MOT history is not a single line — it is the pattern over time.
   </p>
 
   <figure>
-    <img src="/images/mot-history-uk/mot-tool-empty.png"
-         alt="Autodun MOT history check app interface" />
-    <figcaption>
-      Enter a registration number in the MOT check app to retrieve history and expiry details.
-    </figcaption>
+    <img src="/images/mot-history-uk/mot-tool-empty.png" alt="Autodun MOT history tool UK" />
+    <figcaption>Enter a registration number to fetch MOT history and review expiry, mileage and prior failures.</figcaption>
   </figure>
 
   <h2>How to check MOT history online</h2>
   <ol>
-    <li>Enter the vehicle registration number.</li>
+    <li>Enter the vehicle registration (number plate).</li>
     <li>Select <strong>Fetch MOT history</strong>.</li>
-    <li>Review expiry, mileage and prior failures.</li>
-    <li>Compare advisory patterns across years.</li>
+    <li>Review expiry date, mileage record, and previous failure count.</li>
+    <li>Open the advisory/failure pattern and look for repeats year-to-year.</li>
   </ol>
 
   <figure>
-    <img src="/images/mot-history-uk/mot-dvsa-data.png"
-         alt="DVSA MOT history data example" />
-    <figcaption>
-      MOT check results typically include make/model, expiry date, mileage and previous fails.
-    </figcaption>
+    <img src="/images/mot-history-uk/mot-dvsa-data.png" alt="DVSA MOT history data example" />
+    <figcaption>Example of MOT history fields after retrieval: make/model, expiry date, last mileage, and previous fails.</figcaption>
   </figure>
 
   <h2>What MOT history shows (and what it doesn’t)</h2>
+  <p>A typical <strong>MOT check history</strong> record can show:</p>
   <ul>
-    <li>MOT pass/fail results</li>
-    <li>Advisory notes</li>
-    <li>Mileage recorded at test time</li>
-    <li>MOT expiry timeline</li>
+    <li>MOT test results (pass/fail)</li>
+    <li>Advisories (items that may need attention)</li>
+    <li>Mileage recorded at the time of each test</li>
+    <li>Expiry date / timeline indicators</li>
   </ul>
 
-  <p>
-    An MOT check app does not show accident history, finance, or ownership changes.
-    Those require separate checks.
-  </p>
+  <p>It does not usually confirm:</p>
+  <ul>
+    <li>Whether repairs were completed (verify with receipts/service history)</li>
+    <li>Accident history, finance, or ownership history (separate checks)</li>
+    <li>Current condition between tests (issues can appear any time)</li>
+  </ul>
 
-  <h2>Using MOT history to assess risk</h2>
+  <h2>How to read advisories and failures properly</h2>
   <p>
-    When MOT history is combined with mileage and age,
-    it can help drivers plan maintenance — but it does not replace inspections.
+    Advisories are not automatic failures, but they matter. A single advisory may be normal wear.
+    Repeated advisories for the same area can indicate unresolved maintenance.
+  </p>
+  <ul>
+    <li><strong>Look for repeats:</strong> tyres, brakes, suspension, emissions, lights.</li>
+    <li><strong>Check escalation:</strong> a recurring advisory that becomes a failure later.</li>
+    <li><strong>Compare mileage:</strong> consistent year-to-year progression matters.</li>
+  </ul>
+
+  <h2>Red flags to watch for when buying used</h2>
+  <p>When checking <strong>mot history online</strong> before purchase, be cautious if you see:</p>
+  <ul>
+    <li>Multiple failures for the same component area (e.g., brakes/emissions)</li>
+    <li>Large mileage jumps or long gaps with no records</li>
+    <li>Repeated advisories with no improvement year-on-year</li>
+    <li>A sudden “clean” result after years of repeats without evidence of work</li>
+  </ul>
+
+  <figure>
+    <img src="/images/mot-history-uk/mot-second-example.png" alt="Second MOT history example UK" />
+    <figcaption>Different vehicle example: compare expiry, mileage and previous fails across records.</figcaption>
+  </figure>
+
+  <h2>Using MOT history to assess risk (carefully)</h2>
+  <p>
+    MOT history becomes more useful when combined with vehicle age, mileage, and prior failures.
+    Autodun includes an early-stage estimate that helps drivers plan maintenance — but it is not official guidance.
   </p>
 
   <figure>
-    <img src="/images/mot-history-uk/mot-risk-gauge.png"
-         alt="MOT history risk estimate from Autodun MOT check app" />
-    <figcaption>
-      Example risk indication based on age, mileage and prior failures (not DVSA advice).
-    </figcaption>
+    <img src="/images/mot-history-uk/mot-risk-gauge.png" alt="MOT history risk estimate UK" />
+    <figcaption>Autodun can provide an early indication of likely failure risk based on age, mileage and prior fails (not DVSA advice).</figcaption>
+  </figure>
+
+  <h2>Download a PDF report (example)</h2>
+  <p>
+    If you want to keep a record, Autodun can generate a simple PDF summary of your MOT risk check.
+    This is useful for your own notes — it is not an official DVSA document.
+  </p>
+
+  <figure>
+    <img src="/images/mot-history-uk/mot-pdf-report.png" alt="Example PDF download report from Autodun MOT check" />
+    <figcaption>Example PDF report output from an Autodun MOT check (for record-keeping).</figcaption>
   </figure>
 
   <h2>MOT history vs MOT status</h2>
   <p>
-    MOT status confirms if a vehicle is currently legal to drive.
-    MOT history shows how it has performed over time.
-    For a quick status-only check, see the
-    <a href="https://mot.autodun.com">Autodun MOT check app</a>.
+    MOT status tells you whether the vehicle is currently legal to drive (and when the MOT expires).
+    MOT history shows how the vehicle has performed over time — advisories, failures, and patterns.
   </p>
 
   <hr />
 
   <h2>Frequently asked questions</h2>
-  <!-- FAQ CONTENT UNCHANGED -->
+  <div class="faq">
+
+    <h3>Is MOT history free in the UK?</h3>
+    <p>Yes. MOT history is publicly accessible in the UK using the vehicle registration number. Tools may present the information differently, but the underlying record is based on UK testing data.</p>
+
+    <h3>Can I check MOT history online without a V5C logbook?</h3>
+    <p>Yes. A V5C logbook is not required to check MOT history online. A registration number is usually sufficient.</p>
+
+    <h3>What does MOT history show?</h3>
+    <p>MOT history typically includes pass/fail outcomes, advisory notes, test dates, recorded mileage at the time of test, and expiry information.</p>
+
+    <h3>Does MOT history prove the car is in good condition today?</h3>
+    <p>No. MOT history is a useful signal, but it does not guarantee current condition. Always combine MOT history with a physical inspection and service records.</p>
+
+    <h3>How long does MOT history stay on record?</h3>
+    <p>MOT history is generally available across the life of the vehicle, although the depth of older records can vary. Recent years are typically visible when checking MOT history online.</p>
+
+    <h3>Can MOT history be changed or deleted?</h3>
+    <p>MOT history is recorded at the time of testing. If there is a genuine error, it may be corrected through official channels, but results are not removed simply because repairs were completed later.</p>
+
+    <h3>Why does mileage look wrong on MOT history?</h3>
+    <p>Mileage differences can happen due to data entry errors, instrument replacement, or unusual usage patterns. Large or repeated inconsistencies should be investigated before buying a vehicle.</p>
+
+    <h3>Does MOT history show accidents or insurance claims?</h3>
+    <p>No. MOT history does not include accident or insurance data. It reflects the vehicle’s condition at the time of each MOT test only.</p>
+
+    <h3>Do advisories mean the car will fail the next MOT?</h3>
+    <p>Not always. Advisories highlight items to monitor. Repeated advisories for the same issue can increase the risk of a future failure if not addressed.</p>
+
+  </div>
 
   <div class="authorbox">
     <h3>About the author</h3>
     <p><strong>Autodun Research Team</strong></p>
     <p class="small">
-      Autodun builds independent UK MOT tools and an MOT check app focused on clarity,
-      public records and practical guidance. Autodun is not a government service.
+      Autodun publishes independent UK vehicle tools and guides covering MOT checks, history signals and practical maintenance planning.
+      Autodun is not a government service and does not replace DVSA advice or certified inspections.
     </p>
+    <p class="small"><strong>Editorial standards</strong></p>
+    <ul class="small">
+      <li>We use UK terminology and publicly available records.</li>
+      <li>We avoid exaggerated claims and focus on steps users can verify.</li>
+      <li>Non-official analysis (if shown) is clearly labelled as guidance.</li>
+    </ul>
   </div>
 
   <p class="small" style="margin-top:24px;">
-    Related:
-    <a href="/blog/electric-car-charger-map-uk.html">Electric Car Charger Map UK</a>
-    ·
-    <a href="https://mot.autodun.com">Autodun MOT Check App</a>
+    Related: <a href="/blog/electric-car-charger-map-uk.html">Electric Car Charger Map UK</a>
+    <span style="color:#888;"> · </span>
+    Tool (MOT check app): <a href="https://mot.autodun.com">Autodun MOT Predictor</a>
   </p>
 
 </article>
