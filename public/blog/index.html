@@ -31,22 +31,22 @@
       {
         "@type": "ListItem",
         "position": 1,
-        "url": "https://autodun.com/blog/electric-car-charger-map-uk.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "url": "https://autodun.com/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html"
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
         "url": "https://autodun.com/blog/mot-advisories-explained-uk.html"
       },
       {
         "@type": "ListItem",
-        "position": 4,
+        "position": 2,
         "url": "https://autodun.com/blog/mot-history-check-uk.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "url": "https://autodun.com/blog/electric-car-charger-map-uk.html"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "url": "https://autodun.com/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html"
       }
     ]
   }
@@ -65,9 +65,21 @@
 <body style="font-family:system-ui;-apple-system,Segoe UI,Roboto,Arial,sans-serif;max-width:900px;margin:40px auto;padding:0 16px;line-height:1.7;color:#111;">
   <header style="margin-bottom:24px;">
     <h1 style="margin:0 0 8px 0;">Autodun Blog</h1>
+
     <p style="margin:0;">
       Research-grade writing on EV infrastructure and MOT intelligence in the UK—based on what we see when real datasets meet real journeys.
     </p>
+
+    <!-- NEW: a tiny bit more context + internal links -->
+    <p style="margin:10px 0 0 0;color:#444;font-size:14px;">
+      Start here:
+      <a href="/blog/mot-history-check-uk.html" style="text-decoration:none;">MOT history guide</a>
+      <span style="color:#888;"> · </span>
+      <a href="/blog/mot-advisories-explained-uk.html" style="text-decoration:none;">MOT advisories explained</a>
+      <span style="color:#888;"> · </span>
+      <a href="/blog/electric-car-charger-map-uk.html" style="text-decoration:none;">EV charger map guide</a>
+    </p>
+
     <p style="margin:10px 0 0 0;">
       <a href="https://ev.autodun.com" style="text-decoration:none;">Explore Autodun EV Finder →</a>
       <span style="color:#888;"> · </span>
@@ -77,9 +89,23 @@
 
   <main>
     <h2 style="margin:0 0 12px 0;">Latest posts</h2>
-    <ul style="padding-left:18px;margin:0;">
 
-      <!-- NEW POST (MOT Advisories) -->
+    <!-- NEW: Cluster navigation (helps Google + users) -->
+    <div style="border:1px solid #e5e5e5;border-radius:12px;padding:14px 16px;background:#fafafa;margin:14px 0 22px 0;">
+      <strong style="display:block;margin-bottom:8px;">Browse by topic</strong>
+      <ul style="padding-left:18px;margin:0;">
+        <li style="margin:6px 0;"><a href="#mot-guides" style="text-decoration:none;">MOT guides</a></li>
+        <li style="margin:6px 0;"><a href="#ev-guides" style="text-decoration:none;">EV infrastructure</a></li>
+      </ul>
+    </div>
+
+    <!-- MOT CLUSTER -->
+    <h3 id="mot-guides" style="margin:0 0 10px 0;">MOT guides</h3>
+    <p style="margin:0 0 12px 0;color:#444;font-size:14px;">
+      Practical UK MOT writing: how to read history, understand advisories, and make better buy/maintenance decisions.
+    </p>
+
+    <ul style="padding-left:18px;margin:0 0 22px 0;">
       <li style="margin:0 0 10px 0;">
         <a href="/blog/mot-advisories-explained-uk.html">
           MOT Advisories Explained UK — What They Mean & What To Do Next
@@ -97,7 +123,15 @@
           How to check MOT history online in the UK: advisories, failures, mileage patterns, and what to look for before you buy.
         </div>
       </li>
+    </ul>
 
+    <!-- EV CLUSTER -->
+    <h3 id="ev-guides" style="margin:0 0 10px 0;">EV infrastructure</h3>
+    <p style="margin:0 0 12px 0;color:#444;font-size:14px;">
+      EV charging availability is a real-world problem. We focus on practical maps, gaps, and what drivers experience on the road.
+    </p>
+
+    <ul style="padding-left:18px;margin:0;">
       <li style="margin:0 0 10px 0;">
         <a href="/blog/electric-car-charger-map-uk.html">
           Electric Car Charger Map UK — Find Charging Points Near You
@@ -115,7 +149,6 @@
           What happens when “coverage” on paper does not match what drivers experience on the road.
         </div>
       </li>
-
     </ul>
   </main>
 
