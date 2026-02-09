@@ -31,4 +31,10 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- NEW: ULEZ blog -->
+  <url>
+    <loc>https://www.autodun.com/blog/ulez-checker-uk.html</loc>
+    <priority>0.9</priority>
+  </url>
+
 </urlset>
