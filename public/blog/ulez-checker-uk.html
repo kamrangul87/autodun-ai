@@ -1,209 +1,322 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>ULEZ Checker: Is Your Car ULEZ Compliant? (London & UK Guide)</title>
-  <meta name="description" content="Use a ULEZ checker to see if your vehicle meets London’s emissions rules. Learn compliance standards, charges, penalties, and how ULEZ compares to UK Clean Air Zones." />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>ULEZ Checker UK — Is Your Car ULEZ Compliant? (London Guide)</title>
+  <meta name="description" content="ULEZ checker UK guide: learn how to check if your car is ULEZ compliant in London, which vehicles must pay, and how ULEZ differs from UK Clean Air Zones." />
   <link rel="canonical" href="https://www.autodun.com/blog/ulez-checker-uk.html" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="ULEZ Checker UK — Is Your Car ULEZ Compliant? (London Guide)" />
+  <meta property="og:description" content="Check ULEZ compliance using your number plate, understand Euro standards, charges, penalties, and UK Clean Air Zones." />
+  <meta property="og:url" content="https://www.autodun.com/blog/ulez-checker-uk.html" />
+  <meta property="og:image" content="https://www.autodun.com/images/ulez-uk/london-street-traffic.jpg" />
+
+  <style>
+    :root{
+      --max: 900px;
+      --text: #111;
+      --muted: #444;
+      --border: #e5e5e5;
+      --bg-soft:#fafafa;
+      --link:#111;
+    }
+    body{
+      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      max-width: var(--max);
+      margin: 40px auto;
+      padding: 0 16px;
+      line-height: 1.7;
+      color: var(--text);
+      background:#fff;
+    }
+    a{ color: var(--link); }
+    a:hover{ opacity:.85; }
+    header{ margin-bottom: 22px; }
+    .meta{
+      margin:10px 0 0 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .meta a{ text-decoration:none; }
+    .toc{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:14px 16px;
+      background:var(--bg-soft);
+      margin:16px 0 22px 0;
+    }
+    .toc strong{ display:block; margin-bottom:8px; }
+    .toc ul{ margin:0; padding-left:18px; }
+    .toc li{ margin:6px 0; }
+    h1{ margin:0 0 8px 0; line-height:1.25; }
+    h2{ margin:24px 0 10px 0; }
+    h3{ margin:18px 0 8px 0; }
+    p{ margin: 10px 0; }
+    .note{
+      border-left: 3px solid #111;
+      padding: 10px 12px;
+      background:#fff;
+      margin: 14px 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* ✅ Fix image sizing */
+    figure{ margin: 16px 0; }
+    img.blog-img{
+      width: 100%;
+      height: auto;
+      max-height: 520px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      display:block;
+    }
+    figcaption{
+      font-size: 12px;
+      color:#666;
+      margin-top:6px;
+    }
+
+    .box{
+      border:1px solid var(--border);
+      border-radius:12px;
+      padding:14px 16px;
+      background:var(--bg-soft);
+      margin: 16px 0;
+    }
+    .box ul{ margin:0; padding-left:18px; }
+    .box li{ margin:6px 0; }
+    hr{
+      margin:28px 0;
+      border:none;
+      border-top:1px solid var(--border);
+    }
+    footer{ font-size:14px; color: var(--muted); }
+  </style>
+
+  <!-- Google tag (gtag.js) - keep consistent with your blog hub -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPK0SR60XR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag("js", new Date());
+    gtag("config", "G-ZPK0SR60XR");
+  </script>
 </head>
 
 <body>
-
-<article>
-
   <header>
-    <h1>ULEZ Checker: Is Your Car ULEZ Compliant? (London & UK Guide)</h1>
+    <p class="meta" style="margin:0 0 8px 0;">
+      <a href="/blog/" style="text-decoration:none;">← Back to Autodun Blog</a>
+    </p>
 
-    <p><em>Last updated: 2026-02-09</em></p>
+    <h1>ULEZ Checker UK — Is Your Car ULEZ Compliant? (London Guide)</h1>
 
-    <!-- Hero image -->
-    <img src="../images/ulez-uk/london-street-traffic.jpg"
-         alt="London traffic and city streets affected by ULEZ rules"
-         width="1400" height="933" loading="lazy">
+    <p style="margin:0;color:#444;">
+      A practical, UK-first guide to checking ULEZ compliance, understanding emissions standards, and avoiding charges when driving in London.
+    </p>
+
+    <p class="meta">
+      Related reading:
+      <a href="/blog/electric-car-charger-map-uk.html">EV charger map</a>
+      <span style="color:#888;"> · </span>
+      <a href="/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">Councils & EV infrastructure</a>
+    </p>
   </header>
 
-  <nav class="toc" aria-label="Table of contents">
-    <strong>Table of Contents</strong>
-    <ul>
-      <li><a href="#what-is-ulez">What is ULEZ?</a></li>
-      <li><a href="#ulez-checker">How the ULEZ checker works</a></li>
-      <li><a href="#ulez-compliance">Which vehicles are ULEZ compliant?</a></li>
-      <li><a href="#non-compliant">What happens if your car is not compliant?</a></li>
-      <li><a href="#ulez-vs-caz">ULEZ vs Clean Air Zones in the UK</a></li>
-      <li><a href="#how-to-avoid-charges">How to avoid ULEZ charges</a></li>
-      <li><a href="#faqs">FAQs</a></li>
-      <li><a href="#sources">Sources & editorial standards</a></li>
-    </ul>
-  </nav>
+  <main>
+    <figure>
+      <img class="blog-img" src="../images/ulez-uk/london-street-traffic.jpg"
+           alt="London street traffic where ULEZ rules may apply" loading="lazy">
+      <figcaption>London driving rules now include ULEZ compliance checks across all boroughs.</figcaption>
+    </figure>
 
-  <p>If you drive in London, knowing whether your car is <strong>ULEZ compliant</strong> is no longer optional. The Ultra Low Emission Zone now covers <strong>all London boroughs</strong>, and the rules apply every day. If your vehicle does not meet the emissions standard, you may need to pay a daily charge — and if you don’t pay, penalties can follow.</p>
+    <nav class="toc" aria-label="Table of contents">
+      <strong>Table of Contents</strong>
+      <ul>
+        <li><a href="#what-is-ulez" style="text-decoration:none;">What is ULEZ?</a></li>
+        <li><a href="#how-checker-works" style="text-decoration:none;">How the ULEZ checker works</a></li>
+        <li><a href="#who-is-compliant" style="text-decoration:none;">Which vehicles are ULEZ compliant?</a></li>
+        <li><a href="#charges-fines" style="text-decoration:none;">Charges, penalties, and what happens if you don’t pay</a></li>
+        <li><a href="#ulez-vs-caz" style="text-decoration:none;">ULEZ vs Clean Air Zones (CAZ) in the UK</a></li>
+        <li><a href="#tips" style="text-decoration:none;">Practical tips before you drive into London</a></li>
+        <li><a href="#faqs" style="text-decoration:none;">FAQs</a></li>
+        <li><a href="#sources" style="text-decoration:none;">Editorial standards & sources</a></li>
+      </ul>
+    </nav>
 
-  <p>This guide explains what ULEZ is, how a ULEZ checker works, what “compliant” means for petrol and diesel cars, and how ULEZ compares to other UK clean-air schemes — in clear, practical terms.</p>
+    <p>
+      If you drive in London, it’s worth checking your vehicle before you travel. ULEZ cameras are automated,
+      and charges can apply even for short journeys. A quick compliance check helps you avoid surprises.
+    </p>
 
-  <h2 id="what-is-ulez">What is ULEZ?</h2>
-  <p><strong>ULEZ</strong> stands for <strong>Ultra Low Emission Zone</strong>. It is a clean-air policy designed to reduce harmful vehicle emissions, especially nitrogen dioxide (NO<sub>2</sub>) from older petrol and diesel vehicles.</p>
+    <h2 id="what-is-ulez">What is ULEZ?</h2>
+    <p>
+      ULEZ stands for <strong>Ultra Low Emission Zone</strong>. It is designed to reduce air pollution by discouraging
+      higher-emission vehicles. ULEZ operates <strong>24/7</strong> (including weekends and public holidays) and is enforced by
+      <a href="https://tfl.gov.uk/" target="_blank" rel="nofollow noopener">Transport for London (TfL)</a>.
+    </p>
 
-  <p>ULEZ is enforced by Transport for London (TfL) and operates <strong>24/7</strong>, including weekends and public holidays.</p>
+    <div class="note">
+      ULEZ currently applies across all London boroughs. Always confirm your vehicle status using the official checker before travelling.
+    </div>
 
-  <p><strong>Official reference:</strong> <a href="https://tfl.gov.uk/modes/driving/ultra-low-emission-zone" target="_blank" rel="nofollow noopener">TfL — Ultra Low Emission Zone (ULEZ)</a></p>
+    <h2 id="how-checker-works">How the ULEZ checker works</h2>
+    <p>
+      The simplest way to check is with your number plate. TfL’s checker uses DVLA vehicle data (fuel type and emissions standard)
+      to determine whether a daily ULEZ charge applies.
+    </p>
 
-  <h2 id="ulez-checker">How the ULEZ checker works</h2>
+    <div class="box">
+      <strong>Official ULEZ checker</strong>
+      <ul>
+        <li>
+          TfL “Check your vehicle”:
+          <a href="https://tfl.gov.uk/modes/driving/check-your-vehicle/" target="_blank" rel="nofollow noopener">
+            https://tfl.gov.uk/modes/driving/check-your-vehicle/
+          </a>
+        </li>
+      </ul>
+    </div>
 
-  <p>A ULEZ checker uses your vehicle registration number (number plate) to look up DVLA-based vehicle information and confirm whether your vehicle meets the ULEZ emissions standard.</p>
+    <figure>
+      <img class="blog-img" src="../images/ulez-uk/london-cyclists-bus.jpg"
+           alt="Cyclists and a London bus in a modern city street" loading="lazy">
+      <figcaption>Clean-air policies affect not only drivers, but how cities plan transport more broadly.</figcaption>
+    </figure>
 
-  <p><strong>What you need:</strong></p>
-  <ul>
-    <li>Your vehicle registration number</li>
-    <li>That’s it — no VIN or paperwork required</li>
-  </ul>
+    <h2 id="who-is-compliant">Which vehicles are ULEZ compliant?</h2>
+    <p>
+      ULEZ compliance is based on emissions standards (Euro standards). As a rule of thumb:
+    </p>
 
-  <p><strong>Check your vehicle here (official):</strong>
-    <a href="https://tfl.gov.uk/modes/driving/check-your-vehicle/" target="_blank" rel="nofollow noopener">TfL vehicle checker</a>
-  </p>
+    <div class="box">
+      <ul>
+        <li><strong>Petrol:</strong> Euro 4 or newer (often ~2005+ registrations, but always check)</li>
+        <li><strong>Diesel:</strong> Euro 6 or newer (often ~2015+ registrations, but always check)</li>
+        <li><strong>Motorcycles:</strong> Euro 3 or newer</li>
+        <li><strong>EVs:</strong> Fully electric vehicles are typically ULEZ compliant</li>
+      </ul>
+    </div>
 
-  <img src="../images/ulez-uk/london-cyclists-bus.jpg"
-       alt="Cyclists and buses in London under clean air regulations"
-       width="1400" height="2100" loading="lazy">
+    <h2 id="charges-fines">Charges, penalties, and what happens if you don’t pay</h2>
+    <p>
+      If your vehicle is not compliant and you drive within the ULEZ, a daily charge applies. If you don’t pay,
+      you risk receiving a penalty charge notice (PCN). The exact amounts and rules can change, so use TfL’s official pages:
+      <a href="https://tfl.gov.uk/modes/driving/ultra-low-emission-zone" target="_blank" rel="nofollow noopener">ULEZ information</a>.
+    </p>
 
-  <h2 id="ulez-compliance">Which vehicles are ULEZ compliant?</h2>
+    <h2 id="ulez-vs-caz">ULEZ vs Clean Air Zones (CAZ) in the UK</h2>
+    <p>
+      ULEZ is specific to London, but other UK cities operate Clean Air Zones. Rules vary by city and vehicle type.
+      The UK Government maintains a central overview:
+      <a href="https://www.gov.uk/clean-air-zones" target="_blank" rel="nofollow noopener">Clean Air Zones (GOV.UK)</a>.
+    </p>
 
-  <p>ULEZ compliance is based on emissions standards (Euro standards). In simple terms:</p>
+    <figure>
+      <img class="blog-img" src="../images/ulez-uk/london-buses-city.jpg"
+           alt="London buses and cars moving through a busy city area" loading="lazy">
+      <figcaption>Different cities can apply different rules—always check before travelling.</figcaption>
+    </figure>
 
-  <ul>
-    <li><strong>Petrol:</strong> usually needs to meet <strong>Euro 4</strong> (commonly petrol cars registered after ~2005, but always check)</li>
-    <li><strong>Diesel:</strong> usually needs to meet <strong>Euro 6</strong> (commonly diesel cars registered after ~September 2015, but always check)</li>
-    <li><strong>Fully electric:</strong> compliant</li>
-    <li><strong>Motorcycles:</strong> typically need <strong>Euro 3</strong></li>
-  </ul>
+    <h2 id="tips">Practical tips before you drive into London</h2>
+    <div class="box">
+      <ul>
+        <li><strong>Check your vehicle</strong> using the TfL checker before your trip.</li>
+        <li><strong>Confirm the zone</strong> if you are driving near London borders.</li>
+        <li><strong>If you’re considering an EV</strong>, start with a practical map of charging availability:
+          <a href="./electric-car-charger-map-uk.html">EV charging availability in the UK</a>.
+        </li>
+        <li><strong>For policy context</strong> and data gaps affecting drivers, read:
+          <a href="./why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">UK councils & EV infrastructure</a>.
+        </li>
+      </ul>
+    </div>
 
-  <p>Because there are exceptions, the safest approach is always to use the official ULEZ checker with your plate.</p>
+    <h2 id="faqs">FAQs</h2>
 
-  <h2 id="non-compliant">What happens if your car is not compliant?</h2>
+    <h3>Is my car automatically ULEZ compliant if it’s new?</h3>
+    <p>Many newer vehicles are compliant, but not all. Always confirm using the official TfL checker.</p>
 
-  <p>If your vehicle is not compliant and you drive inside the ULEZ, a daily ULEZ charge may apply. If you don’t pay, TfL can issue a penalty charge notice (PCN).</p>
+    <h3>Does ULEZ apply outside London?</h3>
+    <p>ULEZ is London-only, but other cities run Clean Air Zones with their own rules.</p>
 
-  <p><strong>Penalty information:</strong> Charges and PCN rules are published by TfL, and can change. Always confirm on official pages before relying on a third-party summary.</p>
+    <h3>Can visitors from outside London be fined?</h3>
+    <p>Yes. ULEZ rules apply to all vehicles driving in the zone, regardless of where the car is registered.</p>
 
-  <p><strong>Official reference:</strong> <a href="https://tfl.gov.uk/modes/driving/ultra-low-emission-zone/ulez-charges" target="_blank" rel="nofollow noopener">TfL — ULEZ charges</a></p>
+    <h2 id="sources">Editorial standards & sources</h2>
+    <p style="color:#444;font-size:14px;">
+      This guide is written and maintained by the <strong>Autodun Editorial Team</strong>. We reference official sources and update guidance when public rules change.
+      Primary sources used:
+      <a href="https://tfl.gov.uk/modes/driving/check-your-vehicle/" target="_blank" rel="nofollow noopener">TfL vehicle checker</a>,
+      <a href="https://tfl.gov.uk/modes/driving/ultra-low-emission-zone" target="_blank" rel="nofollow noopener">TfL ULEZ</a>,
+      and <a href="https://www.gov.uk/clean-air-zones" target="_blank" rel="nofollow noopener">GOV.UK Clean Air Zones</a>.
+    </p>
 
-  <h2 id="ulez-vs-caz">ULEZ vs Clean Air Zones in the UK</h2>
+    <figure>
+      <img class="blog-img" src="../images/ulez-uk/london-urban-traffic.jpg"
+           alt="Urban traffic in London during busy hours" loading="lazy">
+      <figcaption>Compliance checks are now part of everyday driving in major UK cities.</figcaption>
+    </figure>
+  </main>
 
-  <p>ULEZ is London’s scheme, but other UK cities operate <strong>Clean Air Zones (CAZ)</strong> with different rules. A vehicle that is compliant in London may still face charges in a CAZ depending on the city and vehicle type.</p>
+  <hr />
 
-  <p><strong>Official reference:</strong> <a href="https://www.gov.uk/clean-air-zones" target="_blank" rel="nofollow noopener">UK Government — Clean Air Zones</a></p>
+  <footer>
+    <p style="margin:0;">
+      © <span id="y"></span> Autodun. <a href="https://autodun.com" style="text-decoration:none;">autodun.com</a>
+    </p>
+  </footer>
 
-  <img src="../images/ulez-uk/london-buses-city.jpg"
-       alt="London buses and cars operating within a clean air zone"
-       width="1400" height="933" loading="lazy">
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 
-  <h2 id="how-to-avoid-charges">How to avoid ULEZ charges</h2>
-
-  <p>If your vehicle is not compliant, your options typically include:</p>
-
-  <ul>
-    <li><strong>Use a compliant vehicle</strong> (newer petrol/diesel, or electric)</li>
-    <li><strong>Switch to public transport</strong> for ULEZ journeys</li>
-    <li><strong>Consider a retrofit</strong> (more common for some vans/specialist vehicles)</li>
-    <li><strong>Pay the daily charge</strong> when driving in the zone</li>
-  </ul>
-
-  <p>If you’re considering electric, you may find this useful:
-    <a href="./electric-car-charger-map-uk.html">EV charging availability in the UK</a>.
-  </p>
-
-  <p>For the policy side, see:
-    <a href="./why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">UK councils managing clean air zones</a>.
-  </p>
-
-  <h2 id="faqs">FAQs</h2>
-
-  <h3>Is my car automatically ULEZ compliant if it’s new?</h3>
-  <p>Most newer cars are compliant, but “new” isn’t a guarantee. Use the official checker with your registration number to confirm.</p>
-
-  <h3>Does ULEZ apply outside London?</h3>
-  <p>ULEZ is London-only, but other UK cities operate Clean Air Zones with different rules and charging classes.</p>
-
-  <h3>Do electric vehicles pay ULEZ charges?</h3>
-  <p>No. Fully electric vehicles are ULEZ compliant.</p>
-
-  <h3>Can visitors from outside London be fined?</h3>
-  <p>Yes. ULEZ applies to all vehicles driving within the zone, regardless of where they’re registered.</p>
-
-  <h2 id="sources">Sources & editorial standards</h2>
-  <p><strong>Primary sources:</strong> TfL ULEZ pages and UK Government Clean Air Zones guidance. We aim to keep this guide accurate, but always confirm charges and rules on the official pages linked above before making decisions.</p>
-
-  <p><strong>About Autodun:</strong> Autodun publishes practical UK driver guides and data tools. Our editorial policy prioritises official sources, clear explanations, and updates when rules change.</p>
-
-</article>
-
-<!-- Article schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "Article",
-  "headline": "ULEZ Checker: Is Your Car ULEZ Compliant? (London & UK Guide)",
-  "description": "Use a ULEZ checker to see if your vehicle meets London’s emissions rules. Learn compliance standards, charges, penalties, and how ULEZ compares to UK Clean Air Zones.",
-  "author": {
-    "@type": "Organization",
-    "name": "Autodun Editorial Team"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Autodun",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.autodun.com/assets/logo.png"
-    }
-  },
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.autodun.com/blog/ulez-checker-uk.html"
+  <!-- Article + FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "ULEZ Checker UK — Is Your Car ULEZ Compliant? (London Guide)",
+    "description": "ULEZ checker UK guide: learn how to check if your car is ULEZ compliant in London, which vehicles must pay, and how ULEZ differs from UK Clean Air Zones.",
+    "author": { "@type": "Organization", "name": "Autodun Editorial Team" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Autodun",
+      "logo": { "@type": "ImageObject", "url": "https://www.autodun.com/assets/logo.png" }
+    },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.autodun.com/blog/ulez-checker-uk.html" }
   }
-}
-</script>
+  </script>
 
-<!-- FAQ schema -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "Is my car automatically ULEZ compliant if it’s new?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Most newer cars are compliant, but it’s best to confirm with the official TfL checker using your registration number."
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is my car automatically ULEZ compliant if it’s new?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Many newer vehicles are compliant, but not all. Always confirm using the official TfL checker." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does ULEZ apply outside London?",
+        "acceptedAnswer": { "@type": "Answer", "text": "ULEZ is London-only, but other cities run Clean Air Zones with their own rules." }
+      },
+      {
+        "@type": "Question",
+        "name": "Can visitors from outside London be fined?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. ULEZ rules apply to all vehicles driving in the zone, regardless of where the car is registered." }
       }
-    },
-    {
-      "@type": "Question",
-      "name": "Does ULEZ apply outside London?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "ULEZ is London-only. Other UK cities run Clean Air Zones with their own rules and charging categories."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Do electric vehicles pay ULEZ charges?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "No. Fully electric vehicles are ULEZ compliant."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Can visitors from outside London be fined under ULEZ?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "Yes. ULEZ applies to all vehicles driving within the zone, regardless of where they are registered."
-      }
-    }
-  ]
-}
-</script>
+    ]
+  }
+  </script>
 
 </body>
 </html>
