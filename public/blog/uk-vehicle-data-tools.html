@@ -5,27 +5,110 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <title>UK Vehicle Data Tools – MOT History, Advisories & EV Charging Maps</title>
-  <meta name="description" content="Independent UK vehicle data tools covering MOT history, advisories, MOT status checks and EV charging infrastructure maps.">
+  <meta name="description" content="Independent UK vehicle data tools covering MOT history, advisories, MOT status checks and EV charging infrastructure maps. Start here for Autodun’s UK MOT + EV tools and guides.">
   <link rel="canonical" href="https://www.autodun.com/blog/uk-vehicle-data-tools.html">
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="UK Vehicle Data Tools – MOT History, Advisories & EV Charging Maps" />
+  <meta property="og:description" content="Independent UK vehicle data tools covering MOT history, advisories, MOT status checks and EV charging infrastructure maps. Start here for Autodun’s UK MOT + EV tools and guides." />
+  <meta property="og:url" content="https://www.autodun.com/blog/uk-vehicle-data-tools.html" />
+  <meta property="og:image" content="https://www.autodun.com/images/electric-car-charger-map-uk/electric-car-charger-map-uk-overview.png" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="UK Vehicle Data Tools – MOT History, Advisories & EV Charging Maps" />
+  <meta name="twitter:description" content="Start here for Autodun’s UK MOT + EV tools and guides: MOT history, advisories, MOT status, and EV charging maps." />
+  <meta name="twitter:image" content="https://www.autodun.com/images/electric-car-charger-map-uk/electric-car-charger-map-uk-overview.png" />
+
+  <!-- Schema: Breadcrumb -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"BreadcrumbList",
+    "itemListElement":[
+      { "@type":"ListItem","position":1,"name":"Home","item":"https://www.autodun.com/" },
+      { "@type":"ListItem","position":2,"name":"Blog","item":"https://www.autodun.com/blog/" },
+      { "@type":"ListItem","position":3,"name":"UK Vehicle Data Tools","item":"https://www.autodun.com/blog/uk-vehicle-data-tools.html" }
+    ]
+  }
+  </script>
+
+  <!-- Schema: Article -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Article",
+    "headline":"UK Vehicle Data Tools – MOT History, Advisories & EV Charging Maps",
+    "description":"Independent UK vehicle data tools covering MOT history, advisories, MOT status checks and EV charging infrastructure maps. Start here for Autodun’s UK MOT + EV tools and guides.",
+    "image":["https://www.autodun.com/images/electric-car-charger-map-uk/electric-car-charger-map-uk-overview.png"],
+    "author":{"@type":"Organization","name":"Autodun Research Team","url":"https://www.autodun.com/"},
+    "publisher":{"@type":"Organization","name":"Autodun","url":"https://www.autodun.com/"},
+    "mainEntityOfPage":{"@type":"WebPage","@id":"https://www.autodun.com/blog/uk-vehicle-data-tools.html"},
+    "inLanguage":"en-GB"
+  }
+  </script>
+
+  <!-- Schema: ItemList (key pages this hub links to) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ItemList",
+    "name":"Autodun UK Vehicle Tools & Guides",
+    "itemListElement":[
+      { "@type":"ListItem","position":1,"url":"https://www.autodun.com/blog/mot-history-check-uk.html" },
+      { "@type":"ListItem","position":2,"url":"https://www.autodun.com/blog/mot-advisories-explained-uk.html" },
+      { "@type":"ListItem","position":3,"url":"https://mot.autodun.com" },
+      { "@type":"ListItem","position":4,"url":"https://www.autodun.com/blog/electric-car-charger-map-uk.html" },
+      { "@type":"ListItem","position":5,"url":"https://www.autodun.com/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html" },
+      { "@type":"ListItem","position":6,"url":"https://www.autodun.com/blog/ev-charging-on-uk-motorways.html" },
+      { "@type":"ListItem","position":7,"url":"https://www.autodun.com/blog/ev-charging-reliability-uk.html" }
+    ]
+  }
+  </script>
+
   <style>
+    :root{
+      --max: 760px;
+      --text:#111;
+      --muted:#444;
+      --line:#e5e5e5;
+      --soft:#fafafa;
+      --link:#0b57d0;
+    }
     body{
       font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      max-width:760px;
+      max-width:var(--max);
       margin:40px auto;
       padding:0 16px;
       line-height:1.7;
-      color:#111;
+      color:var(--text);
+      background:#fff;
     }
     h1,h2{line-height:1.25;}
-    a{color:#0b57d0;text-decoration:none;}
+    a{color:var(--link);text-decoration:none;}
     a:hover{text-decoration:underline;}
+
+    .meta{font-size:14px;color:var(--muted);margin:8px 0 18px 0;}
+    .card{
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:14px 16px;
+      background:var(--soft);
+      margin:16px 0 22px 0;
+    }
+    .card strong{display:block;margin-bottom:8px;}
+    .small{font-size:14px;color:var(--muted);}
+    ul{padding-left:18px;}
+    li{margin:6px 0;}
+    hr{border:none;border-top:1px solid var(--line);margin:24px 0;}
   </style>
 </head>
 
 <body>
 
 <h1>UK Vehicle Data Tools</h1>
+<p class="meta"><strong>Autodun</strong> · UK MOT + EV guides & tools hub</p>
 
 <p>
 Autodun provides independent UK vehicle data tools designed to help drivers,
@@ -33,44 +116,89 @@ buyers, and fleet managers understand MOT history, advisories, and electric
 vehicle infrastructure.
 </p>
 
-<h2>MOT History & Records</h2>
+<!-- Start here / hub navigation -->
+<div class="card">
+  <strong>Start here (most useful links)</strong>
+  <ul>
+    <li><a href="/blog/mot-history-check-uk.html">MOT History Check UK</a> (how to read failures, mileage patterns, expiry)</li>
+    <li><a href="/blog/mot-advisories-explained-uk.html">MOT Advisories Explained UK</a> (what advisories mean + what to do)</li>
+    <li><a href="/blog/electric-car-charger-map-uk.html">Electric Car Charger Map UK</a> (find charging points and plan trips)</li>
+  </ul>
+  <p class="small" style="margin:10px 0 0 0;">
+    Tools: <a href="https://mot.autodun.com">MOT Predictor</a> · <a href="https://ev.autodun.com">EV Finder</a> · <a href="/blog/">Autodun Blog</a>
+  </p>
+</div>
+
+<h2 id="mot-history">MOT History & Records</h2>
 <p>
 Checking MOT history helps identify recurring issues, mileage patterns,
 and previous failures across a vehicle’s lifetime.
 </p>
 <p>
-<a href="/blog/mot-history-check-uk.html">MOT History Check UK</a>
+<a href="/blog/mot-history-check-uk.html">Read: MOT History Check UK →</a>
+</p>
+<p class="small">
+Related: <a href="/blog/mot-advisories-explained-uk.html">MOT advisories explained</a> (how to interpret notes that often become future failures).
 </p>
 
-<h2>MOT Advisories Explained</h2>
+<h2 id="mot-advisories">MOT Advisories Explained</h2>
 <p>
 MOT advisories highlight minor issues identified during an MOT test that may
-require attention in the future.
+require attention in the future. Patterns and repetition matter more than a single result.
 </p>
 <p>
-<a href="/blog/mot-advisories-explained-uk.html">MOT Advisories Explained UK</a>
+<a href="/blog/mot-advisories-explained-uk.html">Read: MOT Advisories Explained UK →</a>
+</p>
+<p class="small">
+Also useful: <a href="/blog/mot-history-check-uk.html">MOT history guide</a> (see advisories year-by-year with mileage context).
 </p>
 
-<h2>MOT Status & Prediction Tools</h2>
+<h2 id="mot-tools">MOT Status & Prediction Tools</h2>
 <p>
 MOT status tools confirm whether a vehicle is currently road legal and show
-expiry dates.
+expiry dates. For planning and maintenance, a simple risk summary can help you prioritise checks.
 </p>
 <p>
-<a href="https://mot.autodun.com">Autodun MOT Predictor</a>
+<a href="https://mot.autodun.com">Use: Autodun MOT Predictor →</a>
+</p>
+<p class="small">
+Tip: run the tool, then read the guide: <a href="/blog/mot-history-check-uk.html">MOT history check</a>.
 </p>
 
-<h2>Electric Vehicle Charging Infrastructure</h2>
+<h2 id="ev-charging">Electric Vehicle Charging Infrastructure</h2>
 <p>
-Electric vehicle drivers rely on accurate charging location data.
+Electric vehicle drivers rely on accurate charging location data. Maps are useful — but real-world reliability and coverage gaps matter.
 </p>
 <p>
-<a href="/blog/electric-car-charger-map-uk.html">Electric Car Charger Map UK</a>
+<a href="/blog/electric-car-charger-map-uk.html">Read: Electric Car Charger Map UK →</a>
 </p>
+
+<ul>
+  <li><a href="/blog/ev-charging-on-uk-motorways.html">EV Charging on UK Motorways</a> (service areas, queues, planning)</li>
+  <li><a href="/blog/ev-charging-reliability-uk.html">EV Charging Reliability UK</a> (why “charger found” doesn’t mean “charge completed”)</li>
+  <li><a href="/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">Why UK councils are flying blind</a> (coverage vs reality)</li>
+</ul>
 
 <p>
 Together, these UK vehicle data tools provide a clearer picture of vehicle
 condition, compliance, and infrastructure availability.
+</p>
+
+<hr>
+
+<p class="small">
+Internal links:
+<a href="/blog/">Autodun Blog</a>
+<span style="color:#888;"> · </span>
+<a href="/blog/mot-history-check-uk.html">MOT History Check UK</a>
+<span style="color:#888;"> · </span>
+<a href="/blog/mot-advisories-explained-uk.html">MOT Advisories Explained UK</a>
+<span style="color:#888;"> · </span>
+<a href="/blog/electric-car-charger-map-uk.html">Electric Car Charger Map UK</a>
+<span style="color:#888;"> · </span>
+<a href="https://mot.autodun.com">Autodun MOT Predictor</a>
+<span style="color:#888;"> · </span>
+<a href="https://ev.autodun.com">Autodun EV Finder</a>
 </p>
 
 </body>
