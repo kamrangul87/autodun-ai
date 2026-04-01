@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Zap, BarChart3, Bot, ArrowRight } from "lucide-react";
+import { setSEO } from "@/lib/seo";
 
 const tools = [
   {
@@ -33,6 +35,19 @@ const stats = [
 ];
 
 export default function Index() {
+  useEffect(() => {
+    setSEO({
+      title:
+        "Autodun | Free AI Vehicle Tools for UK Drivers — EV Charging Map & MOT Risk Predictor",
+      description:
+        "Autodun provides free AI-powered vehicle tools for UK drivers. Find EV charging stations near you, predict MOT failure risk, and get instant vehicle guidance. No account needed.",
+      keywords:
+        "EV charging UK, EV charging stations, MOT predictor, MOT risk checker, UK EV map, electric vehicle charging, MOT history, AI car assistant, free MOT check, UK charging points",
+      canonical: "https://autodun.com",
+      ogUrl: "https://autodun.com",
+    });
+  }, []);
+
   return (
     <Layout>
       {/* Hero Section */}

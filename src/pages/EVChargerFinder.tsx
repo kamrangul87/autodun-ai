@@ -1,6 +1,8 @@
+import { useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { EVChargerDemo } from "@/components/demos/EVChargerDemo";
+import { setSEO } from "@/lib/seo";
 import { ArrowRight, AlertTriangle, Zap, MapPin, BarChart3, Database, Search, Navigation, Star, MessageSquare, Brain, TrendingUp, Users, ExternalLink } from "lucide-react";
 
 const capabilities = [
@@ -43,6 +45,19 @@ const aiScoringSteps = [
 ];
 
 export default function EVChargerFinder() {
+  useEffect(() => {
+    setSEO({
+      title:
+        "EV Charging Station Finder UK | Autodun — Find Charge Points Near You",
+      description:
+        "Find EV charging stations across the UK. Browse 30,000+ charge points by location with AI suitability scoring. Free EV charging map with live data.",
+      keywords:
+        "EV charging stations UK, EV charger finder, electric vehicle charging map, charge points near me, UK EV map, public charging UK, fast chargers UK, CCS charging UK",
+      canonical: "https://autodun.com/ev-charger-finder",
+      ogUrl: "https://autodun.com/ev-charger-finder",
+    });
+  }, []);
+
   return (
     <Layout>
       {/* Hero */}
@@ -303,7 +318,7 @@ export default function EVChargerFinder() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#00e5a0", color: "#0a1628" }}
+              style={{ backgroundColor: "#00d48a", color: "#070f1a" }}
             >
               <ExternalLink className="h-4 w-4" />
               Open EV Charger Finder
@@ -311,7 +326,7 @@ export default function EVChargerFinder() {
           </div>
           <div
             className="rounded-xl overflow-hidden w-full"
-            style={{ border: "1px solid rgba(255,255,255,0.08)", height: "600px" }}
+            style={{ border: "1px solid rgba(255,255,255,0.07)", height: "80vh", minHeight: "560px" }}
           >
             <iframe
               src="https://ev.autodun.com"

@@ -23,7 +23,13 @@ export const Header = () => {
   const AI_ASSISTANT_URL = "https://ai.autodun.com/ai-assistant";
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/80 backdrop-blur">
+    <header
+      className="sticky top-0 z-50 w-full backdrop-blur"
+      style={{
+        backgroundColor: "rgba(7, 15, 26, 0.92)",
+        borderBottom: "1px solid rgba(255,255,255,0.06)",
+      }}
+    >
       <div className="container-main flex h-16 items-center">
         {/* LOGO */}
         <Link
@@ -32,7 +38,7 @@ export const Header = () => {
           aria-label="Autodun Home"
           className="-ml-2 flex items-center shrink-0"
         >
-          <LogoMark size="header" className="h-8 md:h-9 lg:h-10 w-auto" />
+          <LogoMark size="header" />
         </Link>
 
         {/* DESKTOP NAV */}
@@ -44,23 +50,24 @@ export const Header = () => {
               className={cn(
                 "text-sm font-medium transition-colors whitespace-nowrap",
                 isActive(link.path)
-                  ? "text-[#00e5a0]"
-                  : "text-[#cbd5e1] hover:text-white"
+                  ? "text-[#00d48a]"
+                  : "hover:text-[#f0f6ff]"
               )}
+              style={{
+                color: isActive(link.path) ? "#00d48a" : "#8899aa",
+              }}
             >
               {link.label}
             </Link>
           ))}
 
-          {/* ✅ BLOG (STATIC HTML, NOT REACT ROUTE) */}
+          {/* BLOG (static HTML) */}
           <a
             href="/blog/index.html"
-            className={cn(
-              "text-sm font-medium transition-colors whitespace-nowrap",
-              location.pathname.startsWith("/blog")
-                ? "text-[#00e5a0]"
-                : "text-[#cbd5e1] hover:text-white"
-            )}
+            className="text-sm font-medium transition-colors whitespace-nowrap hover:text-[#f0f6ff]"
+            style={{
+              color: location.pathname.startsWith("/blog") ? "#00d48a" : "#8899aa",
+            }}
           >
             Blog
           </a>
@@ -72,7 +79,12 @@ export const Header = () => {
             href={AI_ASSISTANT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-xl bg-[#00e5a0] px-4 py-2 text-sm font-semibold text-[#0a1628] hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-lg text-sm font-bold transition-opacity hover:opacity-90 whitespace-nowrap"
+            style={{
+              backgroundColor: "#00d48a",
+              color: "#070f1a",
+              padding: "10px 20px",
+            }}
           >
             Ask Autodun AI
           </a>
@@ -85,6 +97,7 @@ export const Header = () => {
             size="icon"
             aria-label="Toggle menu"
             onClick={() => setMobileMenuOpen((v) => !v)}
+            style={{ color: "#f0f6ff" }}
           >
             {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
@@ -93,41 +106,44 @@ export const Header = () => {
 
       {/* MOBILE NAV */}
       {mobileMenuOpen && (
-        <div className="border-t md:hidden">
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="md:hidden">
           <div className="container-main py-3">
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted",
-                    isActive(link.path)
-                      ? "bg-muted text-[#00e5a0]"
-                      : "text-[#cbd5e1]"
-                  )}
+                  className="rounded-md px-3 py-2 text-sm font-medium transition-colors"
+                  style={{
+                    color: isActive(link.path) ? "#00d48a" : "#8899aa",
+                    backgroundColor: isActive(link.path) ? "rgba(0,212,138,0.08)" : "transparent",
+                  }}
                 >
                   {link.label}
                 </Link>
               ))}
 
-              {/* MOBILE BLOG */}
               <a
                 href="/blog/index.html"
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-[#cbd5e1] hover:bg-muted hover:text-white"
+                className="rounded-md px-3 py-2 text-sm font-medium transition-colors"
+                style={{ color: "#8899aa" }}
               >
                 Blog
               </a>
 
-              {/* MOBILE AI CTA */}
               <a
                 href={AI_ASSISTANT_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 inline-flex items-center justify-center rounded-xl bg-foreground px-4 py-2 text-sm font-semibold text-background hover:opacity-90 transition-opacity"
+                className="mt-2 inline-flex items-center justify-center rounded-lg text-sm font-bold transition-opacity hover:opacity-90"
+                style={{
+                  backgroundColor: "#00d48a",
+                  color: "#070f1a",
+                  padding: "10px 20px",
+                }}
               >
                 Ask Autodun AI
               </a>

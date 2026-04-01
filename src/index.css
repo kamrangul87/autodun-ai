@@ -6,48 +6,48 @@
 
 @layer base {
   :root {
-    /* Dark navy theme — matches ev.autodun.com */
-    --background: 216 61% 10%;        /* #0a1628 */
-    --foreground: 213 27% 84%;        /* #cbd5e1 body text */
+    /* ── Core palette ───────────────────────────── */
+    --background: 215 57% 7%;          /* #070f1a page bg */
+    --foreground: 216 100% 97%;        /* #f0f6ff soft white body text */
 
-    --card: 216 56% 13%;              /* #0f1e35 */
-    --card-foreground: 213 27% 84%;
+    --card: 215 50% 13%;               /* #111f33 card bg */
+    --card-foreground: 216 100% 97%;
 
-    --popover: 216 56% 13%;
-    --popover-foreground: 213 27% 84%;
+    --popover: 215 50% 13%;
+    --popover-foreground: 216 100% 97%;
 
-    --primary: 162 100% 45%;          /* #00e5a0 green */
-    --primary-foreground: 216 61% 8%; /* dark text on green */
+    --primary: 159 100% 42%;           /* #00d48a green */
+    --primary-foreground: 215 57% 7%;  /* dark text on green */
 
-    --secondary: 216 50% 17%;
-    --secondary-foreground: 213 27% 84%;
+    --secondary: 211 53% 11%;          /* #0d1b2a secondary bg */
+    --secondary-foreground: 216 100% 97%;
 
-    --muted: 216 45% 18%;
-    --muted-foreground: 215 20% 65%;  /* #94a3b8 */
+    --muted: 211 53% 11%;              /* #0d1b2a */
+    --muted-foreground: 210 17% 60%;   /* #8899aa secondary text */
 
-    --accent: 217 91% 60%;            /* #3b82f6 blue */
+    --accent: 218 100% 58%;            /* #2979ff blue */
     --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 70% 57%;          /* #ef4444 red */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 216 31% 17%;            /* ≈ rgba(255,255,255,0.08) on navy */
-    --input: 216 31% 17%;
-    --ring: 162 100% 45%;
+    --border: 215 27% 12%;             /* ≈ rgba(255,255,255,0.07) on #070f1a */
+    --input: 215 27% 12%;
+    --ring: 159 100% 42%;
 
     --radius: 0.5rem;
 
-    --navy: 216 61% 10%;
-    --charcoal: 216 40% 18%;
+    --navy: 215 57% 7%;
+    --charcoal: 215 27% 12%;
 
-    --sidebar-background: 216 56% 13%;
-    --sidebar-foreground: 213 27% 84%;
-    --sidebar-primary: 162 100% 45%;
-    --sidebar-primary-foreground: 216 61% 8%;
-    --sidebar-accent: 216 50% 17%;
-    --sidebar-accent-foreground: 213 27% 84%;
-    --sidebar-border: 216 31% 17%;
-    --sidebar-ring: 162 100% 45%;
+    --sidebar-background: 215 50% 13%;
+    --sidebar-foreground: 216 100% 97%;
+    --sidebar-primary: 159 100% 42%;
+    --sidebar-primary-foreground: 215 57% 7%;
+    --sidebar-accent: 211 53% 11%;
+    --sidebar-accent-foreground: 216 100% 97%;
+    --sidebar-border: 215 27% 12%;
+    --sidebar-ring: 159 100% 42%;
   }
 
   .dark {
@@ -207,8 +207,8 @@
   
   .hero-gradient {
     background:
-      radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0, 102, 255, 0.18) 0%, transparent 65%),
-      hsl(216 61% 10%);
+      radial-gradient(ellipse 80% 50% at 50% -5%, rgba(41, 121, 255, 0.22) 0%, transparent 65%),
+      #070f1a;
   }
 
   .hero-pattern {
