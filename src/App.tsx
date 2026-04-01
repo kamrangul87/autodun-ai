@@ -15,6 +15,7 @@ import Contact from "./pages/Contact";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
+import AIAssistant from "./pages/AIAssistant";
 import NotFound from "./pages/NotFound";
 
 import { initGA, trackPageView } from "@/lib/ga";
@@ -51,6 +52,7 @@ const App = () => {
             <Route path="/" element={<Index />} />
             <Route path="/ev-charger-finder" element={<EVChargerFinder />} />
             <Route path="/mot-predictor" element={<MOTPredictor />} />
+            <Route path="/ai-assistant" element={<AIAssistant />} />
             <Route path="/data-usage" element={<DataUsage />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />

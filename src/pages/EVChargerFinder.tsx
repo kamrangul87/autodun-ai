@@ -58,6 +58,10 @@ const stats = [
 
 export default function EVChargerFinder() {
   useEffect(() => {
+    window.location.href = "https://ev.autodun.com";
+  }, []);
+
+  useEffect(() => {
     setSEO({
       title: "EV Charging Station Finder UK | Autodun — Find Charge Points Near You",
       description:
