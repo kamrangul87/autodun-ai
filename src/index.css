@@ -147,14 +147,14 @@
     @apply pt-12 pb-[72px] md:pt-16 md:pb-[100px];
   }
   
-  /* Major content sections: 72px top separation */
+  /* Major content sections */
   .section-major {
-    @apply py-[72px] md:py-[72px];
+    @apply py-[80px];
   }
-  
+
   /* Standard sections */
   .section-padding {
-    @apply py-12 md:py-16;
+    @apply py-[80px];
   }
   
   /* Compact sections: banners/callouts */

@@ -51,15 +51,24 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="hero-gradient hero-pattern border-b border-border section-hero">
+      <section
+        className="hero-gradient hero-pattern border-b border-border"
+        style={{ paddingTop: "100px", paddingBottom: "80px" }}
+      >
         <div className="container-main relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
+          <div
+            className="text-center mx-auto"
+            style={{ maxWidth: "800px" }}
+          >
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary bg-primary/10 rounded-full px-3 py-1.5 mb-6 tracking-wide uppercase">
               <Zap className="h-3.5 w-3.5" />
               AI Vehicle Intelligence
             </div>
 
-            <h1 className="text-balance mb-5 text-3xl sm:text-4xl lg:text-5xl">
+            <h1
+              className="text-balance mb-5 font-bold"
+              style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: "1.15" }}
+            >
               AI-Powered Vehicle Intelligence for UK Drivers
             </h1>
 
@@ -67,7 +76,7 @@ export default function Index() {
               Free tools to understand MOT risk, find EV charging, and make smarter car decisions
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <div className="flex flex-row gap-3 justify-center flex-wrap">
               <Button asChild size="lg" className="gap-2 font-medium">
                 <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
                   <Zap className="h-4 w-4" />
@@ -137,12 +146,15 @@ export default function Index() {
       </section>
 
       {/* SEO Text Section */}
-      <section className="section-padding border-t border-border">
-        <div className="container-narrow">
+      <section
+        className="border-t border-border"
+        style={{ padding: "60px 24px" }}
+      >
+        <div style={{ maxWidth: "760px", margin: "0 auto" }}>
           <h2 className="text-xl font-semibold mb-5">
             AI Automotive Intelligence for UK Drivers
           </h2>
-          <div className="prose-body space-y-4">
+          <div className="space-y-4 text-left">
             <p className="text-muted-foreground leading-relaxed">
               Autodun is an AI automotive intelligence platform built for UK drivers. We combine
               real UK vehicle data with artificial intelligence to help you make smarter decisions
@@ -150,19 +162,22 @@ export default function Index() {
               MOT, or simply looking for reliable vehicle guidance.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              Our <strong className="text-foreground">EV charging UK</strong> tool maps over 30,000
-              charge points across the country, with AI suitability scoring on every station so you
-              find the right charger for your vehicle and journey. The{" "}
-              <strong className="text-foreground">MOT predictor</strong> analyses historical DVSA
+              Our{" "}
+              <strong style={{ color: "#00d48a" }}>EV charging UK</strong>{" "}
+              tool maps over 30,000 charge points across the country, with AI suitability scoring
+              on every station so you find the right charger for your vehicle and journey. The{" "}
+              <strong style={{ color: "#00d48a" }}>MOT predictor</strong> analyses historical DVSA
               data to estimate your vehicle's failure risk before your test, giving you time to
-              address issues early. Our <strong className="text-foreground">AI car assistant</strong>{" "}
+              address issues early. Our{" "}
+              <strong style={{ color: "#00d48a" }}>AI car assistant</strong>{" "}
               delivers structured automotive guidance powered by real UK data — covering everything
               from recalls to running costs.
             </p>
             <p className="text-muted-foreground leading-relaxed">
-              All <strong className="text-foreground">UK charging stations</strong> data and MOT
-              risk analytics are available completely free, with no account required. Autodun is
-              the smarter way for UK drivers to stay informed and prepared.
+              All{" "}
+              <strong style={{ color: "#00d48a" }}>UK charging stations</strong>{" "}
+              data and MOT risk analytics are available completely free, with no account required.
+              Autodun is the smarter way for UK drivers to stay informed and prepared.
             </p>
           </div>
         </div>
