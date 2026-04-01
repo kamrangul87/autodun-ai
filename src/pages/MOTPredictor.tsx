@@ -48,10 +48,6 @@ const inputs = [
 
 export default function MOTPredictor() {
   useEffect(() => {
-    window.location.href = "https://mot.autodun.com";
-  }, []);
-
-  useEffect(() => {
     setSEO({
       title: "Free MOT Risk Predictor | Autodun — Estimate MOT Failure Risk Before Your Test",
       description:
@@ -325,6 +321,15 @@ export default function MOTPredictor() {
             </div>
           </div>
         </div>
+      </section>
+
+      {/* ── Live Tool Embed ─────────────────────────── */}
+      <section style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <iframe
+          src="https://mot.autodun.com"
+          title="Autodun MOT Predictor"
+          style={{ border: "none", display: "block", width: "100%", height: "85vh" }}
+        />
       </section>
     </Layout>
   );
