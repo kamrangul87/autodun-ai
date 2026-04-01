@@ -1,54 +1,65 @@
 import { useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
-import { EVChargerDemo } from "@/components/demos/EVChargerDemo";
 import { setSEO } from "@/lib/seo";
-import { ArrowRight, AlertTriangle, Zap, MapPin, BarChart3, Database, Search, Navigation, Star, MessageSquare, Brain, TrendingUp, Users, ExternalLink } from "lucide-react";
+import { EVChargerDemo } from "@/components/demos/EVChargerDemo";
+import {
+  ArrowRight,
+  AlertTriangle,
+  Zap,
+  MapPin,
+  SlidersHorizontal,
+  Map,
+  LocateFixed,
+  MessageSquare,
+  Users,
+  Brain,
+  TrendingUp,
+} from "lucide-react";
 
-const capabilities = [
-  { icon: MapPin, label: "Charging Location Discovery", description: "Find and explore EV charging points across regions" },
-  { icon: BarChart3, label: "Infrastructure Analytics", description: "Analyse coverage, availability, and network distribution" },
-  { icon: Database, label: "Public Dataset Analysis", description: "Research-grade tools using publicly available charging data" },
-  { icon: Zap, label: "EV Adoption Research", description: "Support infrastructure planning and adoption trend analysis" },
+const features = [
+  {
+    icon: Zap,
+    title: "AI suitability score on every station",
+    description:
+      "Every charge point is scored by our AI model using real user feedback and reliability data.",
+  },
+  {
+    icon: SlidersHorizontal,
+    title: "Filter by connector type and power",
+    description:
+      "Narrow results by CCS, CHAdeMO, Type 2, rapid, fast, or slow — find exactly what your car needs.",
+  },
+  {
+    icon: Map,
+    title: "Heatmap and marker views",
+    description:
+      "Switch between a density heatmap for coverage gaps and individual markers for station details.",
+  },
+  {
+    icon: LocateFixed,
+    title: "Locate me — find chargers near you",
+    description:
+      "One tap to find all charge points within your chosen radius of your current location.",
+  },
 ];
 
-const videoSteps = [
-  { icon: Search, label: "Search Location", description: "User enters a location or postcode" },
-  { icon: MapPin, label: "View Chargers", description: "Map displays nearby charging stations" },
-  { icon: Navigation, label: "Select Station", description: "User selects a charging point" },
-  { icon: Zap, label: "View Details", description: "Connector types and availability shown" },
-  { icon: MessageSquare, label: "Submit Feedback", description: "User rates charging experience" },
-  { icon: Star, label: "AI Updates Score", description: "Station score reflects reliability" },
+const aiSteps = [
+  { icon: MessageSquare, title: "Feedback Collection", description: "Users rate stations after charging sessions" },
+  { icon: Users, title: "Aggregation", description: "Ratings pooled across all users over time" },
+  { icon: Brain, title: "Pattern Analysis", description: "AI identifies reliability trends per station" },
+  { icon: TrendingUp, title: "Score Update", description: "Stations receive live updated suitability scores" },
 ];
 
-const aiScoringSteps = [
-  { 
-    icon: MessageSquare, 
-    title: "Feedback Collection", 
-    description: "Users submit ratings and comments after charging sessions" 
-  },
-  { 
-    icon: Users, 
-    title: "Aggregation", 
-    description: "Feedback is aggregated across multiple users over time" 
-  },
-  { 
-    icon: Brain, 
-    title: "Pattern Analysis", 
-    description: "AI model analyses reliability patterns and identifies trends" 
-  },
-  { 
-    icon: TrendingUp, 
-    title: "Score Update", 
-    description: "Stations receive updated scores to support better decisions" 
-  },
+const stats = [
+  { value: "30,000+", label: "UK charge points mapped" },
+  { value: "Live", label: "Data updated daily" },
+  { value: "AI scored", label: "Every station rated" },
 ];
 
 export default function EVChargerFinder() {
   useEffect(() => {
     setSEO({
-      title:
-        "EV Charging Station Finder UK | Autodun — Find Charge Points Near You",
+      title: "EV Charging Station Finder UK | Autodun — Find Charge Points Near You",
       description:
         "Find EV charging stations across the UK. Browse 30,000+ charge points by location with AI suitability scoring. Free EV charging map with live data.",
       keywords:
@@ -60,281 +71,270 @@ export default function EVChargerFinder() {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-hero border-b border-border hero-gradient">
-        <div className="container-narrow text-center">
-          <div className="animate-fade-in-up">
-            <span className="badge-active mb-5 inline-flex">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              Active Tool
-            </span>
-            
-            <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
-              EV Charger Finder & Infrastructure Analytics
-            </h1>
-            
-            <p className="text-lg prose-body mb-8 mx-auto">
-              Explore EV charging locations and infrastructure coverage using public datasets 
-              and analytics. This tool supports research into charger availability, infrastructure 
-              planning, and EV adoption trends.
-            </p>
-          </div>
+      {/* ── Hero ───────────────────────────────────── */}
+      <section
+        className="hero-gradient hero-pattern border-b border-border"
+        style={{ paddingTop: "100px", paddingBottom: "80px" }}
+      >
+        <div className="container-main relative z-10">
+          <div className="text-center mx-auto" style={{ maxWidth: "800px" }}>
+            <div
+              className="inline-flex items-center gap-2 text-xs font-semibold rounded-full px-3 py-1.5 mb-6 tracking-wide uppercase"
+              style={{ color: "#00d48a", background: "rgba(0,212,138,0.1)" }}
+            >
+              <Zap className="h-3.5 w-3.5" />
+              EV Charging Map
+            </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center animate-fade-in-up" style={{ animationDelay: "100ms" }}>
-            <Button asChild size="lg" className="gap-2 font-medium w-full sm:w-auto">
-              <a href="https://ev.autodun.com" target="_blank" rel="noopener noreferrer">
-                Open EV Charger Finder
-                <ArrowRight className="h-4 w-4" />
-              </a>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="gap-2 font-medium w-full sm:w-auto">
-              <a href="https://ev.autodun.com/ev-charging-council-dashboard" target="_blank" rel="noopener noreferrer">
-                Council Analytics Dashboard
-                <ExternalLink className="h-4 w-4" />
-              </a>
-            </Button>
+            <h1
+              className="text-balance mb-5 font-bold"
+              style={{ fontSize: "clamp(32px, 5vw, 52px)", lineHeight: "1.15", color: "#ffffff" }}
+            >
+              Find EV Charging Stations Across the UK
+            </h1>
+
+            <p
+              className="text-lg mb-8 leading-relaxed max-w-xl mx-auto"
+              style={{ color: "#8899aa" }}
+            >
+              Browse 30,000+ charge points with AI suitability scoring. Live data updated daily.
+            </p>
+
+            <a
+              href="https://ev.autodun.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl text-base font-bold transition-opacity hover:opacity-90"
+              style={{
+                backgroundColor: "#00d48a",
+                color: "#070f1a",
+                padding: "14px 32px",
+              }}
+            >
+              Open EV Charger Finder
+              <ArrowRight className="h-5 w-5" />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Animated Explainer Video Section */}
-      <section className="section-major">
+      {/* ── Stats Bar ──────────────────────────────── */}
+      <section
+        className="border-b"
+        style={{ borderColor: "rgba(255,255,255,0.07)", padding: "20px 0" }}
+      >
         <div className="container-main">
-          <div className="text-center mb-8">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
-              Platform Demo
-            </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">
-              How the EV Charger Finder Works
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              See how users discover charging stations and contribute to AI-powered reliability scoring.
-            </p>
-          </div>
-          
-          {/* Animated Demo */}
-          <div className="max-w-4xl mx-auto mb-8 aspect-[16/10]">
-            <EVChargerDemo />
-          </div>
-
-          {/* Step-by-step flow */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-3">
-            {videoSteps.map((step, index) => (
-              <div 
-                key={step.label}
-                className="text-center p-3 rounded-xl bg-secondary/30 border border-border/50"
-              >
-                <div className="w-9 h-9 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-2">
-                  <step.icon className="h-4 w-4 text-primary" />
-                </div>
-                <p className="text-xs font-medium text-foreground mb-1">{step.label}</p>
-                <p className="text-xs text-muted-foreground">{step.description}</p>
+          <div
+            className="grid grid-cols-3 divide-x"
+            style={{ borderColor: "rgba(255,255,255,0.07)" }}
+          >
+            {stats.map((s) => (
+              <div key={s.label} className="flex flex-col items-center gap-1 py-3 px-4">
+                <span className="text-2xl font-bold" style={{ color: "#00d48a" }}>
+                  {s.value}
+                </span>
+                <span className="text-xs text-center" style={{ color: "#8899aa" }}>
+                  {s.label}
+                </span>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* AI-Powered Station Scoring */}
-      <section className="section-major bg-secondary/30 border-y border-border">
+      {/* ── Features ───────────────────────────────── */}
+      <section style={{ padding: "80px 0" }}>
         <div className="container-main">
-          <div className="text-center mb-8">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
-              AI Features
+          <div className="text-center mb-12">
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-3"
+              style={{ color: "#00d48a" }}
+            >
+              What You Get
             </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">
-              AI-Powered Station Scoring
+            <h2
+              className="font-bold mb-4"
+              style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#ffffff" }}
+            >
+              Everything You Need to Find Your Next Charge
             </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              User feedback drives continuous improvement in charging station reliability scores.
+            <p style={{ color: "#8899aa", maxWidth: "520px", margin: "0 auto" }}>
+              Purpose-built for UK EV drivers — free to use, no account required.
             </p>
           </div>
-          
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {aiScoringSteps.map((step, index) => (
-              <div 
-                key={step.title}
-                className="text-center"
+
+          <div className="grid sm:grid-cols-2 gap-5" style={{ maxWidth: "900px", margin: "0 auto" }}>
+            {features.map((f) => (
+              <div
+                key={f.title}
+                className="flex gap-4 p-5 rounded-xl"
+                style={{
+                  backgroundColor: "#111f33",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                }}
               >
-                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 border border-primary/20">
-                  <step.icon className="h-6 w-6 text-primary" />
+                <div
+                  className="h-11 w-11 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ background: "rgba(0,212,138,0.1)" }}
+                >
+                  <f.icon className="h-5 w-5" style={{ color: "#00d48a" }} />
                 </div>
-                <div className="step-number mx-auto mb-3 text-xs">{index + 1}</div>
-                <h3 className="text-base font-semibold mb-2">{step.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">
+                <div>
+                  <h3
+                    className="font-semibold mb-1 text-base"
+                    style={{ color: "#ffffff" }}
+                  >
+                    {f.title}
+                  </h3>
+                  <p className="text-sm leading-relaxed" style={{ color: "#8899aa" }}>
+                    {f.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center mt-10">
+            <a
+              href="https://ev.autodun.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl text-sm font-bold transition-opacity hover:opacity-90"
+              style={{
+                backgroundColor: "#00d48a",
+                color: "#070f1a",
+                padding: "12px 28px",
+              }}
+            >
+              Open EV Charger Finder
+              <ArrowRight className="h-4 w-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Animated Demo ──────────────────────────── */}
+      <section
+        style={{
+          padding: "80px 0",
+          borderTop: "1px solid rgba(255,255,255,0.07)",
+          backgroundColor: "#0d1b2a",
+        }}
+      >
+        <div className="container-main">
+          <div className="text-center mb-10">
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-3"
+              style={{ color: "#00d48a" }}
+            >
+              See It In Action
+            </p>
+            <h2
+              className="font-bold mb-4"
+              style={{ fontSize: "clamp(22px, 3vw, 32px)", color: "#ffffff" }}
+            >
+              How the EV Charger Finder Works
+            </h2>
+            <p style={{ color: "#8899aa" }}>
+              From postcode search to AI-scored station — in seconds.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto aspect-[16/10]">
+            <EVChargerDemo />
+          </div>
+        </div>
+      </section>
+
+      {/* ── AI Scoring ─────────────────────────────── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="container-main">
+          <div className="text-center mb-10">
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-3"
+              style={{ color: "#00d48a" }}
+            >
+              AI Features
+            </p>
+            <h2
+              className="font-bold mb-4"
+              style={{ fontSize: "clamp(22px, 3vw, 32px)", color: "#ffffff" }}
+            >
+              AI-Powered Station Scoring
+            </h2>
+            <p style={{ color: "#8899aa", maxWidth: "480px", margin: "0 auto" }}>
+              Real user feedback feeds our AI to keep suitability scores accurate and up to date.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6" style={{ maxWidth: "960px", margin: "0 auto" }}>
+            {aiSteps.map((step, i) => (
+              <div key={step.title} className="text-center">
+                <div
+                  className="w-12 h-12 rounded-2xl flex items-center justify-center mx-auto mb-4"
+                  style={{
+                    background: "rgba(0,212,138,0.1)",
+                    border: "1px solid rgba(0,212,138,0.2)",
+                  }}
+                >
+                  <step.icon className="h-6 w-6" style={{ color: "#00d48a" }} />
+                </div>
+                <div
+                  className="w-7 h-7 rounded-full flex items-center justify-center mx-auto mb-3 text-xs font-bold"
+                  style={{ backgroundColor: "#00d48a", color: "#070f1a" }}
+                >
+                  {i + 1}
+                </div>
+                <h3 className="font-semibold mb-2 text-sm" style={{ color: "#ffffff" }}>
+                  {step.title}
+                </h3>
+                <p className="text-sm leading-relaxed" style={{ color: "#8899aa" }}>
                   {step.description}
                 </p>
               </div>
             ))}
           </div>
-
-          <div className="mt-10 text-center">
-            <div className="inline-flex items-center gap-3 px-5 py-3 rounded-full bg-card border border-border">
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-green-500" />
-                <span className="text-xs font-medium">Good</span>
-              </div>
-              <div className="w-px h-4 bg-border" />
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-amber-500" />
-                <span className="text-xs font-medium">Average</span>
-              </div>
-              <div className="w-px h-4 bg-border" />
-              <div className="flex items-center gap-1.5">
-                <span className="w-3 h-3 rounded-full bg-destructive" />
-                <span className="text-xs font-medium">Poor</span>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
-      {/* Capabilities */}
-      <section className="section-major">
-        <div className="container-narrow">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
-              Features
-            </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">Tool Capabilities</h2>
-            <p className="prose-body mx-auto">
-              Core features for EV infrastructure research and analysis.
-            </p>
-          </div>
-          
-          <div className="grid sm:grid-cols-2 gap-5">
-            {capabilities.map((item, index) => (
-              <div 
-                key={item.label}
-                className="flex gap-4 p-5 card-elevated animate-fade-in-up text-left"
-                style={{ animationDelay: `${index * 75}ms` }}
-              >
-                <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <item.icon className="h-5 w-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold mb-1">{item.label}</h3>
-                  <p className="text-sm prose-body">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases */}
-      <section className="section-major bg-secondary/30 border-y border-border">
-        <div className="container-narrow text-center">
-          <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
-            Applications
-          </p>
-          <h2 className="mb-5 text-2xl sm:text-3xl">Research & Decision-Support Use</h2>
-          <p className="prose-body mx-auto mb-6">
-            The EV Charger Finder is designed for researchers, analysts, and planners who require 
-            data-driven insights into EV charging infrastructure. Applications include:
-          </p>
-          <ul className="space-y-3 text-sm prose-body text-left max-w-lg mx-auto">
-            <li className="flex gap-3 items-start">
-              <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </span>
-              Infrastructure coverage analysis and gap identification
-            </li>
-            <li className="flex gap-3 items-start">
-              <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </span>
-              Public charging network distribution research
-            </li>
-            <li className="flex gap-3 items-start">
-              <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </span>
-              EV adoption trend analysis and forecasting support
-            </li>
-            <li className="flex gap-3 items-start">
-              <span className="w-5 h-5 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-              </span>
-              Regional infrastructure planning and assessment
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      {/* Disclaimer */}
-      <section className="section-padding">
+      {/* ── Disclaimer ─────────────────────────────── */}
+      <section
+        style={{
+          padding: "60px 0",
+          borderTop: "1px solid rgba(255,255,255,0.07)",
+        }}
+      >
         <div className="container-narrow">
           <div
-            className="flex gap-4 items-start p-5 lg:p-6 rounded-xl"
+            className="flex gap-4 items-start p-6 rounded-xl"
             style={{
-              background: "rgba(255, 193, 7, 0.08)",
-              border: "1px solid rgba(255, 193, 7, 0.35)",
+              background: "rgba(245, 158, 11, 0.08)",
+              border: "1px solid rgba(245, 158, 11, 0.3)",
             }}
           >
             <div
               className="h-10 w-10 rounded-xl flex items-center justify-center shrink-0"
-              style={{ background: "rgba(255, 193, 7, 0.12)" }}
+              style={{ background: "rgba(245, 158, 11, 0.12)" }}
             >
-              <AlertTriangle className="h-5 w-5" style={{ color: "#fbbf24" }} />
+              <AlertTriangle className="h-5 w-5" style={{ color: "#f59e0b" }} />
             </div>
             <div>
-              <h3 className="font-semibold mb-3" style={{ color: "#ffffff" }}>
+              <h3 className="font-semibold mb-3" style={{ color: "#f0f6ff" }}>
                 Important Information
               </h3>
-              <ul className="space-y-2 text-sm" style={{ color: "#ffffff" }}>
-                <li className="flex gap-2">
-                  <span style={{ color: "#fbbf24" }} className="font-medium">•</span>
-                  This is a research and decision-support tool, not an official government service
-                </li>
-                <li className="flex gap-2">
-                  <span style={{ color: "#fbbf24" }} className="font-medium">•</span>
-                  Data is sourced from public datasets and may not reflect real-time availability
-                </li>
-                <li className="flex gap-2">
-                  <span style={{ color: "#fbbf24" }} className="font-medium">•</span>
-                  Always verify charging point status before travel planning
-                </li>
-                <li className="flex gap-2">
-                  <span style={{ color: "#fbbf24" }} className="font-medium">•</span>
-                  Autodun is not affiliated with any charging network operator
-                </li>
+              <ul className="space-y-2 text-sm" style={{ color: "#f0f6ff" }}>
+                {[
+                  "This is a research and decision-support tool, not an official government service",
+                  "Data is sourced from public datasets and may not reflect real-time availability",
+                  "Always verify charging point status before travel planning",
+                  "Autodun is not affiliated with any charging network operator",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span style={{ color: "#f59e0b" }} className="font-medium shrink-0">•</span>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Live Tool Embed */}
-      <section className="section-padding border-t border-border">
-        <div className="container-main">
-          <div className="text-center mb-6">
-            <h2 className="text-2xl font-semibold mb-3">Launch the Live Tool</h2>
-            <p className="text-muted-foreground mb-5">
-              The full EV Charger Finder runs at ev.autodun.com — open it directly for the best experience.
-            </p>
-            <a
-              href="https://ev.autodun.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#00d48a", color: "#070f1a" }}
-            >
-              <ExternalLink className="h-4 w-4" />
-              Open EV Charger Finder
-            </a>
-          </div>
-          <div
-            className="rounded-xl overflow-hidden w-full"
-            style={{ border: "1px solid rgba(255,255,255,0.07)", height: "80vh", minHeight: "560px" }}
-          >
-            <iframe
-              src="https://ev.autodun.com"
-              title="EV Charger Finder"
-              className="w-full h-full"
-              style={{ border: "none" }}
-              loading="lazy"
-            />
           </div>
         </div>
       </section>

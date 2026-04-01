@@ -1,42 +1,55 @@
 import { useEffect } from "react";
 import { Layout } from "@/components/layout/Layout";
-import { Button } from "@/components/ui/button";
-import { MOTDemo } from "@/components/demos/MOTDemo";
 import { setSEO } from "@/lib/seo";
+import { MOTDemo } from "@/components/demos/MOTDemo";
 import {
   ArrowRight,
   AlertTriangle,
   Gauge,
-  Calendar,
-  Fuel,
-  History,
-  Car,
-  Brain,
   BarChart3,
-  FileText,
+  Wrench,
+  CircleDollarSign,
   Shield,
-  ExternalLink,
 } from "lucide-react";
 
-const inputs = [
-  { icon: Calendar, label: "Vehicle Age", description: "Years since first registration" },
-  { icon: Gauge, label: "Mileage", description: "Current odometer reading" },
-  { icon: Fuel, label: "Fuel Type", description: "Petrol, diesel, electric, or hybrid" },
-  { icon: History, label: "Previous MOT Failures", description: "Historical test failure count" },
+const features = [
+  {
+    icon: Gauge,
+    title: "Instant risk score based on age and mileage",
+    description:
+      "Input your vehicle's age and mileage to get an immediate Low / Medium / High failure risk estimate.",
+  },
+  {
+    icon: BarChart3,
+    title: "Historical MOT data analysis",
+    description:
+      "Powered by live DVSA MOT History records — the same data used by official testers.",
+  },
+  {
+    icon: Wrench,
+    title: "Fix now vs monitor guidance",
+    description:
+      "Receive clear guidance on which issues are worth addressing before your test to reduce failure risk.",
+  },
+  {
+    icon: CircleDollarSign,
+    title: "No account needed — completely free",
+    description:
+      "Run as many predictions as you like. No sign-up, no subscription, no hidden costs.",
+  },
 ];
 
-const videoSteps = [
-  { icon: Car, label: "Enter Vehicle Details", description: "Input age, mileage, and fuel type" },
-  { icon: Brain, label: "AI Processing", description: "Model analyses historical MOT data" },
-  { icon: BarChart3, label: "Risk Calculation", description: "Failure probability computed" },
-  { icon: FileText, label: "View Results", description: "Risk score and guidance displayed" },
+const inputs = [
+  { label: "Vehicle Age", detail: "Years since first registration" },
+  { label: "Mileage", detail: "Current odometer reading" },
+  { label: "Fuel Type", detail: "Petrol, diesel, electric, or hybrid" },
+  { label: "Previous Failures", detail: "Historical MOT failure count" },
 ];
 
 export default function MOTPredictor() {
   useEffect(() => {
     setSEO({
-      title:
-        "Free MOT Risk Predictor | Autodun — Estimate MOT Failure Risk Before Your Test",
+      title: "Free MOT Risk Predictor | Autodun — Estimate MOT Failure Risk Before Your Test",
       description:
         "Estimate your MOT failure risk for free. Enter your vehicle age, mileage and history to get an instant AI risk score. Powered by DVSA data. No account needed.",
       keywords:
@@ -48,245 +61,243 @@ export default function MOTPredictor() {
 
   return (
     <Layout>
-      {/* Hero */}
-      <section className="section-hero border-b border-border hero-gradient">
-        <div className="container-narrow text-center">
-          <div className="animate-fade-in-up">
-            <span className="badge-active mb-5 inline-flex">
-              <span className="h-1.5 w-1.5 rounded-full bg-primary" />
-              Live Data
-            </span>
+      {/* ── Hero ───────────────────────────────────── */}
+      <section
+        className="hero-gradient hero-pattern border-b border-border"
+        style={{ paddingTop: "100px", paddingBottom: "80px" }}
+      >
+        <div className="container-main relative z-10">
+          <div className="text-center mx-auto" style={{ maxWidth: "800px" }}>
+            <div
+              className="inline-flex items-center gap-2 text-xs font-semibold rounded-full px-3 py-1.5 mb-6 tracking-wide uppercase"
+              style={{ color: "#00d48a", background: "rgba(0,212,138,0.1)" }}
+            >
+              <Shield className="h-3.5 w-3.5" />
+              DVSA Data — Free Tool
+            </div>
 
-            <h1 className="mb-5 text-3xl sm:text-4xl lg:text-5xl">
-              MOT Failure Risk Predictor
+            <h1
+              className="text-balance mb-5 font-bold"
+              style={{ fontSize: "clamp(32px, 5vw, 52px)", lineHeight: "1.15", color: "#ffffff" }}
+            >
+              Predict Your MOT Failure Risk — Free
             </h1>
 
-            <p className="text-lg mb-8 mx-auto leading-relaxed" style={{ color: "#8899aa" }}>
-              Powered by live DVSA MOT History data with independent risk analytics. Input your
-              vehicle details to receive a risk assessment based on real MOT records.
+            <p
+              className="text-lg mb-8 leading-relaxed max-w-xl mx-auto"
+              style={{ color: "#8899aa" }}
+            >
+              Enter your vehicle details and get an instant AI risk score powered by DVSA data.
             </p>
-          </div>
 
-          <Button
-            asChild
-            size="lg"
-            className="gap-2 font-medium animate-fade-in-up w-full sm:w-auto"
-            style={{ animationDelay: "100ms" }}
-          >
-            <a href="https://mot.autodun.com" target="_blank" rel="noopener noreferrer">
-              Launch MOT Predictor Tool
-              <ArrowRight className="h-4 w-4" />
-            </a>
-          </Button>
-        </div>
-      </section>
-
-      {/* Live Tool Embed */}
-      <section className="section-major">
-        <div className="container-main">
-          <div className="text-center mb-6">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
-              Live Tool
-            </p>
-            <h2 className="mb-3 text-2xl sm:text-3xl">Check Your MOT Risk Now</h2>
-            <p className="mb-5" style={{ color: "#8899aa" }}>
-              Enter your vehicle details below — powered by real DVSA data.
-            </p>
             <a
               href="https://mot.autodun.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg text-sm font-bold transition-opacity hover:opacity-90 mb-6"
+              className="inline-flex items-center gap-2 rounded-xl text-base font-bold transition-opacity hover:opacity-90"
               style={{
                 backgroundColor: "#00d48a",
                 color: "#070f1a",
-                padding: "10px 20px",
+                padding: "14px 32px",
               }}
             >
-              <ExternalLink className="h-4 w-4" />
-              Open Full MOT Predictor
+              Open MOT Predictor
+              <ArrowRight className="h-5 w-5" />
             </a>
           </div>
-
-          <div
-            className="rounded-xl overflow-hidden w-full"
-            style={{ border: "1px solid rgba(255,255,255,0.07)", height: "600px" }}
-          >
-            <iframe
-              src="https://mot.autodun.com"
-              title="MOT Failure Risk Predictor"
-              className="w-full h-full"
-              style={{ border: "none" }}
-              loading="lazy"
-            />
-          </div>
         </div>
       </section>
 
-      {/* Animated Demo */}
-      <section className="section-major border-t border-border">
+      {/* ── Features ───────────────────────────────── */}
+      <section style={{ padding: "80px 0" }}>
         <div className="container-main">
-          <div className="text-center mb-8">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
-              Platform Demo
+          <div className="text-center mb-12">
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-3"
+              style={{ color: "#00d48a" }}
+            >
+              What You Get
             </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">How MOT Failure Risk Is Predicted</h2>
-            <p className="max-w-2xl mx-auto" style={{ color: "#8899aa" }}>
-              Understand how our AI model processes vehicle data to estimate MOT failure probability.
+            <h2
+              className="font-bold mb-4"
+              style={{ fontSize: "clamp(24px, 3vw, 36px)", color: "#ffffff" }}
+            >
+              Know Your Risk Before the Test
+            </h2>
+            <p style={{ color: "#8899aa", maxWidth: "520px", margin: "0 auto" }}>
+              Use real DVSA data to understand where your vehicle stands — and act before it's too late.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto mb-8 aspect-[16/10]">
-            <MOTDemo />
-          </div>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {videoSteps.map((step, index) => (
+          <div className="grid sm:grid-cols-2 gap-5" style={{ maxWidth: "900px", margin: "0 auto" }}>
+            {features.map((f) => (
               <div
-                key={step.label}
-                className="text-center p-4 rounded-xl border"
-                style={{
-                  backgroundColor: "#0d1b2a",
-                  borderColor: "rgba(255,255,255,0.07)",
-                }}
-              >
-                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <step.icon className="h-5 w-5 text-primary" />
-                </div>
-                <div className="step-number mx-auto mb-2 text-xs">{index + 1}</div>
-                <p className="text-sm font-medium mb-1" style={{ color: "#f0f6ff" }}>
-                  {step.label}
-                </p>
-                <p className="text-xs" style={{ color: "#8899aa" }}>
-                  {step.description}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Data Source Banner */}
-      <section
-        className="section-compact border-y"
-        style={{
-          backgroundColor: "rgba(0,212,138,0.05)",
-          borderColor: "rgba(0,212,138,0.12)",
-        }}
-      >
-        <div className="container-main">
-          <div className="flex items-center justify-center gap-4 text-center">
-            <Shield className="h-5 w-5 text-primary shrink-0" />
-            <p className="text-sm" style={{ color: "#8899aa" }}>
-              <span className="font-medium" style={{ color: "#f0f6ff" }}>
-                Live DVSA Integration
-              </span>{" "}
-              — MOT history sourced from live DVSA records. Risk predictions are independent
-              analytics.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Model Inputs */}
-      <section className="section-major">
-        <div className="container-narrow">
-          <div className="mb-8 text-center">
-            <p className="text-sm font-medium text-primary mb-2 tracking-wide uppercase">
-              Input Parameters
-            </p>
-            <h2 className="mb-4 text-2xl sm:text-3xl">What the Model Uses</h2>
-            <p style={{ color: "#8899aa" }}>
-              The prediction model uses these vehicle characteristics.
-            </p>
-          </div>
-
-          <div className="grid sm:grid-cols-2 gap-5">
-            {inputs.map((input, index) => (
-              <div
-                key={input.label}
-                className="flex gap-4 p-5 rounded-xl border animate-fade-in-up"
+                key={f.title}
+                className="flex gap-4 p-5 rounded-xl"
                 style={{
                   backgroundColor: "#111f33",
-                  borderColor: "rgba(255,255,255,0.07)",
-                  animationDelay: `${index * 75}ms`,
+                  border: "1px solid rgba(255,255,255,0.07)",
                 }}
               >
-                <div className="h-11 w-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <input.icon className="h-5 w-5 text-primary" />
+                <div
+                  className="h-11 w-11 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ background: "rgba(0,212,138,0.1)" }}
+                >
+                  <f.icon className="h-5 w-5" style={{ color: "#00d48a" }} />
                 </div>
                 <div>
-                  <h3 className="font-semibold mb-1 text-base" style={{ color: "#ffffff" }}>
-                    {input.label}
+                  <h3
+                    className="font-semibold mb-1 text-base"
+                    style={{ color: "#ffffff" }}
+                  >
+                    {f.title}
                   </h3>
-                  <p className="text-sm" style={{ color: "#8899aa" }}>
-                    {input.description}
+                  <p className="text-sm leading-relaxed" style={{ color: "#8899aa" }}>
+                    {f.description}
                   </p>
                 </div>
               </div>
             ))}
           </div>
-        </div>
-      </section>
 
-      {/* How the Model Works */}
-      <section
-        className="section-major border-y"
-        style={{ backgroundColor: "#0d1b2a", borderColor: "rgba(255,255,255,0.07)" }}
-      >
-        <div className="container-narrow text-center">
-          <p className="text-sm font-medium text-primary mb-3 tracking-wide uppercase">
-            Methodology
-          </p>
-          <h2 className="mb-5 text-2xl sm:text-3xl">How the Model Works</h2>
-          <div className="space-y-5 mx-auto max-w-2xl text-left">
-            <p style={{ color: "#8899aa" }}>
-              The MOT Failure Risk Predictor uses machine learning models trained on live DVSA MOT
-              History data. The model identifies statistical patterns that correlate with test
-              outcomes using real vehicle records.
-            </p>
-            <div className="grid sm:grid-cols-2 gap-4">
-              <div
-                className="p-4 rounded-xl border"
-                style={{ backgroundColor: "#111f33", borderColor: "rgba(255,255,255,0.07)" }}
-              >
-                <h4 className="font-medium mb-2 text-sm" style={{ color: "#f0f6ff" }}>
-                  Data Source
-                </h4>
-                <p className="text-sm" style={{ color: "#8899aa" }}>
-                  Live DVSA MOT History records for accurate analysis
-                </p>
-              </div>
-              <div
-                className="p-4 rounded-xl border"
-                style={{ backgroundColor: "#111f33", borderColor: "rgba(255,255,255,0.07)" }}
-              >
-                <h4 className="font-medium mb-2 text-sm" style={{ color: "#f0f6ff" }}>
-                  Output
-                </h4>
-                <p className="text-sm" style={{ color: "#8899aa" }}>
-                  Probability estimate of MOT failure risk (Low / Medium / High)
-                </p>
-              </div>
-            </div>
+          <div className="text-center mt-10">
+            <a
+              href="https://mot.autodun.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl text-sm font-bold transition-opacity hover:opacity-90"
+              style={{
+                backgroundColor: "#00d48a",
+                color: "#070f1a",
+                padding: "12px 28px",
+              }}
+            >
+              Open MOT Predictor
+              <ArrowRight className="h-4 w-4" />
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Disclaimer */}
-      <section className="section-padding">
+      {/* ── What the Model Uses ────────────────────── */}
+      <section
+        style={{
+          padding: "80px 0",
+          borderTop: "1px solid rgba(255,255,255,0.07)",
+          backgroundColor: "#0d1b2a",
+        }}
+      >
+        <div className="container-main">
+          <div className="text-center mb-10">
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-3"
+              style={{ color: "#00d48a" }}
+            >
+              Inputs
+            </p>
+            <h2
+              className="font-bold mb-4"
+              style={{ fontSize: "clamp(22px, 3vw, 32px)", color: "#ffffff" }}
+            >
+              What the Model Uses
+            </h2>
+            <p style={{ color: "#8899aa" }}>
+              Four data points — that's all it takes for an accurate risk estimate.
+            </p>
+          </div>
+
+          <div
+            className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
+            style={{ maxWidth: "900px", margin: "0 auto" }}
+          >
+            {inputs.map((inp, i) => (
+              <div
+                key={inp.label}
+                className="text-center p-5 rounded-xl"
+                style={{
+                  backgroundColor: "#111f33",
+                  border: "1px solid rgba(255,255,255,0.07)",
+                }}
+              >
+                <div
+                  className="w-9 h-9 rounded-full flex items-center justify-center mx-auto mb-3 text-sm font-bold"
+                  style={{ backgroundColor: "#00d48a", color: "#070f1a" }}
+                >
+                  {i + 1}
+                </div>
+                <p className="font-semibold text-sm mb-1" style={{ color: "#ffffff" }}>
+                  {inp.label}
+                </p>
+                <p className="text-xs" style={{ color: "#8899aa" }}>
+                  {inp.detail}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Animated Demo ──────────────────────────── */}
+      <section style={{ padding: "80px 0", borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <div className="container-main">
+          <div className="text-center mb-10">
+            <p
+              className="text-xs font-semibold uppercase tracking-widest mb-3"
+              style={{ color: "#00d48a" }}
+            >
+              See It In Action
+            </p>
+            <h2
+              className="font-bold mb-4"
+              style={{ fontSize: "clamp(22px, 3vw, 32px)", color: "#ffffff" }}
+            >
+              From Details to Risk Score in Seconds
+            </h2>
+            <p style={{ color: "#8899aa" }}>
+              The tool analyses your vehicle against thousands of historical MOT records.
+            </p>
+          </div>
+          <div className="max-w-3xl mx-auto aspect-[16/10]">
+            <MOTDemo />
+          </div>
+        </div>
+      </section>
+
+      {/* ── DVSA Banner ────────────────────────────── */}
+      <section
+        style={{
+          padding: "24px 0",
+          borderTop: "1px solid rgba(255,255,255,0.07)",
+          borderBottom: "1px solid rgba(255,255,255,0.07)",
+          backgroundColor: "rgba(0,212,138,0.05)",
+        }}
+      >
+        <div className="container-main">
+          <div className="flex items-center justify-center gap-3 text-center flex-wrap">
+            <Shield className="h-5 w-5 shrink-0" style={{ color: "#00d48a" }} />
+            <p className="text-sm" style={{ color: "#8899aa" }}>
+              <span className="font-semibold" style={{ color: "#f0f6ff" }}>
+                Live DVSA Integration
+              </span>{" "}
+              — MOT history sourced directly from DVSA records. Risk predictions are independent analytics.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Disclaimer ─────────────────────────────── */}
+      <section style={{ padding: "60px 0" }}>
         <div className="container-narrow">
           <div
-            className="flex gap-4 items-start p-5 lg:p-6 rounded-xl"
+            className="flex gap-4 items-start p-6 rounded-xl"
             style={{
-              background: "rgba(245, 158, 11, 0.08)",
+              background: "rgba(245, 158, 11, 0.10)",
               border: "1px solid rgba(245, 158, 11, 0.3)",
-              borderRadius: "12px",
             }}
           >
             <div
               className="h-10 w-10 rounded-xl flex items-center justify-center shrink-0"
-              style={{ background: "rgba(245, 158, 11, 0.12)" }}
+              style={{ background: "rgba(245, 158, 11, 0.15)" }}
             >
               <AlertTriangle className="h-5 w-5" style={{ color: "#f59e0b" }} />
             </div>
@@ -294,31 +305,18 @@ export default function MOTPredictor() {
               <h3 className="font-semibold mb-3" style={{ color: "#f0f6ff" }}>
                 Important Information
               </h3>
-              <ul className="space-y-2 text-sm" style={{ color: "#cbd5e1" }}>
-                <li className="flex gap-2">
-                  <span style={{ color: "#f59e0b" }} className="font-medium">
-                    •
-                  </span>
-                  MOT history is sourced from live DVSA records
-                </li>
-                <li className="flex gap-2">
-                  <span style={{ color: "#f59e0b" }} className="font-medium">
-                    •
-                  </span>
-                  Risk predictions are independent analytics and do not constitute DVSA advice
-                </li>
-                <li className="flex gap-2">
-                  <span style={{ color: "#f59e0b" }} className="font-medium">
-                    •
-                  </span>
-                  Predictions are not an official MOT result or guarantee of test outcome
-                </li>
-                <li className="flex gap-2">
-                  <span style={{ color: "#f59e0b" }} className="font-medium">
-                    •
-                  </span>
-                  Always rely on official DVSA MOT testing for vehicle roadworthiness certification
-                </li>
+              <ul className="space-y-2 text-sm" style={{ color: "#f0f6ff" }}>
+                {[
+                  "MOT history is sourced from live DVSA records",
+                  "Risk predictions are independent analytics and do not constitute DVSA advice",
+                  "Predictions are not an official MOT result or guarantee of test outcome",
+                  "Always rely on official DVSA MOT testing for vehicle roadworthiness certification",
+                ].map((item) => (
+                  <li key={item} className="flex gap-2">
+                    <span style={{ color: "#f59e0b" }} className="font-medium shrink-0">•</span>
+                    {item}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
