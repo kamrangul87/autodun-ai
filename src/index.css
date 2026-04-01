@@ -7,47 +7,46 @@
 @layer base {
   :root {
     /* Dark navy theme — matches ev.autodun.com */
-    --background: 216 61% 10%;        /* #0a1628 dark navy */
-    --foreground: 210 40% 94%;        /* near-white text */
+    --background: 216 61% 10%;        /* #0a1628 */
+    --foreground: 213 27% 84%;        /* #cbd5e1 body text */
 
-    --card: 216 55% 14%;              /* slightly lighter navy for cards */
-    --card-foreground: 210 40% 94%;
+    --card: 216 56% 13%;              /* #0f1e35 */
+    --card-foreground: 213 27% 84%;
 
-    --popover: 216 55% 14%;
-    --popover-foreground: 210 40% 94%;
+    --popover: 216 56% 13%;
+    --popover-foreground: 213 27% 84%;
 
     --primary: 162 100% 45%;          /* #00e5a0 green */
     --primary-foreground: 216 61% 8%; /* dark text on green */
 
     --secondary: 216 50% 17%;
-    --secondary-foreground: 210 30% 80%;
+    --secondary-foreground: 213 27% 84%;
 
-    --muted: 216 45% 20%;
-    --muted-foreground: 216 20% 58%;
+    --muted: 216 45% 18%;
+    --muted-foreground: 215 20% 65%;  /* #94a3b8 */
 
-    --accent: 216 100% 50%;           /* #0066ff blue */
+    --accent: 217 91% 60%;            /* #3b82f6 blue */
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 216 40% 22%;
-    --input: 216 40% 22%;
+    --border: 216 31% 17%;            /* ≈ rgba(255,255,255,0.08) on navy */
+    --input: 216 31% 17%;
     --ring: 162 100% 45%;
 
     --radius: 0.5rem;
 
     --navy: 216 61% 10%;
     --charcoal: 216 40% 18%;
-    --gradient-hero: linear-gradient(135deg, hsl(216 61% 10%) 0%, hsl(216 55% 8%) 100%);
 
-    --sidebar-background: 216 55% 14%;
-    --sidebar-foreground: 210 40% 94%;
+    --sidebar-background: 216 56% 13%;
+    --sidebar-foreground: 213 27% 84%;
     --sidebar-primary: 162 100% 45%;
     --sidebar-primary-foreground: 216 61% 8%;
     --sidebar-accent: 216 50% 17%;
-    --sidebar-accent-foreground: 210 30% 80%;
-    --sidebar-border: 216 40% 22%;
+    --sidebar-accent-foreground: 213 27% 84%;
+    --sidebar-border: 216 31% 17%;
     --sidebar-ring: 162 100% 45%;
   }
 
@@ -109,7 +108,8 @@
   }
   
   h1, h2, h3, h4, h5, h6 {
-    @apply font-semibold tracking-tight text-foreground;
+    @apply font-semibold tracking-tight;
+    color: #ffffff;
   }
   
   h1 {
@@ -206,7 +206,26 @@
   }
   
   .hero-gradient {
-    background: var(--gradient-hero);
+    background:
+      radial-gradient(ellipse 80% 50% at 50% -5%, rgba(0, 102, 255, 0.18) 0%, transparent 65%),
+      hsl(216 61% 10%);
+  }
+
+  .hero-pattern {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-pattern::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(0, 229, 160, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 229, 160, 0.035) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
   }
   
   .step-number {

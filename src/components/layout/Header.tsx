@@ -42,10 +42,10 @@ export const Header = () => {
               key={link.path}
               to={link.path}
               className={cn(
-                "text-sm font-medium transition-colors hover:text-foreground whitespace-nowrap",
+                "text-sm font-medium transition-colors whitespace-nowrap",
                 isActive(link.path)
-                  ? "text-foreground"
-                  : "text-muted-foreground"
+                  ? "text-[#00e5a0]"
+                  : "text-[#cbd5e1] hover:text-white"
               )}
             >
               {link.label}
@@ -56,10 +56,10 @@ export const Header = () => {
           <a
             href="/blog/index.html"
             className={cn(
-              "text-sm font-medium transition-colors hover:text-foreground whitespace-nowrap",
+              "text-sm font-medium transition-colors whitespace-nowrap",
               location.pathname.startsWith("/blog")
-                ? "text-foreground"
-                : "text-muted-foreground"
+                ? "text-[#00e5a0]"
+                : "text-[#cbd5e1] hover:text-white"
             )}
           >
             Blog
@@ -72,7 +72,7 @@ export const Header = () => {
             href={AI_ASSISTANT_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-xl bg-foreground px-4 py-2 text-sm font-semibold text-background hover:opacity-90 transition-opacity whitespace-nowrap"
+            className="inline-flex items-center justify-center rounded-xl bg-[#00e5a0] px-4 py-2 text-sm font-semibold text-[#0a1628] hover:opacity-90 transition-opacity whitespace-nowrap"
           >
             Ask Autodun AI
           </a>
@@ -104,8 +104,8 @@ export const Header = () => {
                   className={cn(
                     "rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted",
                     isActive(link.path)
-                      ? "bg-muted text-foreground"
-                      : "text-muted-foreground"
+                      ? "bg-muted text-[#00e5a0]"
+                      : "text-[#cbd5e1]"
                   )}
                 >
                   {link.label}
@@ -116,7 +116,7 @@ export const Header = () => {
               <a
                 href="/blog/index.html"
                 onClick={() => setMobileMenuOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                className="rounded-md px-3 py-2 text-sm font-medium text-[#cbd5e1] hover:bg-muted hover:text-white"
               >
                 Blog
               </a>

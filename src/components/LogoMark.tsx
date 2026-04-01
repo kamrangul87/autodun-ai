@@ -21,6 +21,7 @@ export function LogoMark({ className, size = "md" }: LogoMarkProps) {
       src={autodunLogo}
       alt="AUTODUN"
       className={cn("block w-auto object-contain", sizes[size], className)}
+      style={{ mixBlendMode: "screen", background: "transparent" }}
       draggable={false}
     />
   );

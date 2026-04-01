@@ -250,31 +250,76 @@ export default function EVChargerFinder() {
       {/* Disclaimer */}
       <section className="section-padding">
         <div className="container-narrow">
-          <div className="flex gap-4 items-start p-5 lg:p-6 card-elevated border-amber-200 bg-amber-50/50">
-            <div className="h-10 w-10 rounded-xl bg-amber-100 flex items-center justify-center shrink-0">
-              <AlertTriangle className="h-5 w-5 text-amber-700" />
+          <div
+            className="flex gap-4 items-start p-5 lg:p-6 rounded-xl"
+            style={{
+              background: "rgba(255, 193, 7, 0.08)",
+              border: "1px solid rgba(255, 193, 7, 0.35)",
+            }}
+          >
+            <div
+              className="h-10 w-10 rounded-xl flex items-center justify-center shrink-0"
+              style={{ background: "rgba(255, 193, 7, 0.12)" }}
+            >
+              <AlertTriangle className="h-5 w-5" style={{ color: "#fbbf24" }} />
             </div>
             <div>
-              <h3 className="font-semibold mb-3 text-foreground">Important Information</h3>
-              <ul className="space-y-2 text-sm prose-body">
+              <h3 className="font-semibold mb-3" style={{ color: "#ffffff" }}>
+                Important Information
+              </h3>
+              <ul className="space-y-2 text-sm" style={{ color: "#ffffff" }}>
                 <li className="flex gap-2">
-                  <span className="text-amber-700 font-medium">•</span>
+                  <span style={{ color: "#fbbf24" }} className="font-medium">•</span>
                   This is a research and decision-support tool, not an official government service
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-amber-700 font-medium">•</span>
+                  <span style={{ color: "#fbbf24" }} className="font-medium">•</span>
                   Data is sourced from public datasets and may not reflect real-time availability
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-amber-700 font-medium">•</span>
+                  <span style={{ color: "#fbbf24" }} className="font-medium">•</span>
                   Always verify charging point status before travel planning
                 </li>
                 <li className="flex gap-2">
-                  <span className="text-amber-700 font-medium">•</span>
+                  <span style={{ color: "#fbbf24" }} className="font-medium">•</span>
                   Autodun is not affiliated with any charging network operator
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Live Tool Embed */}
+      <section className="section-padding border-t border-border">
+        <div className="container-main">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-semibold mb-3">Launch the Live Tool</h2>
+            <p className="text-muted-foreground mb-5">
+              The full EV Charger Finder runs at ev.autodun.com — open it directly for the best experience.
+            </p>
+            <a
+              href="https://ev.autodun.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-xl px-6 py-3 text-sm font-semibold transition-opacity hover:opacity-90"
+              style={{ backgroundColor: "#00e5a0", color: "#0a1628" }}
+            >
+              <ExternalLink className="h-4 w-4" />
+              Open EV Charger Finder
+            </a>
+          </div>
+          <div
+            className="rounded-xl overflow-hidden w-full"
+            style={{ border: "1px solid rgba(255,255,255,0.08)", height: "600px" }}
+          >
+            <iframe
+              src="https://ev.autodun.com"
+              title="EV Charger Finder"
+              className="w-full h-full"
+              style={{ border: "none" }}
+              loading="lazy"
+            />
           </div>
         </div>
       </section>

@@ -1,12 +1,10 @@
 import { Link } from "react-router-dom";
-import { cn } from "@/lib/utils";
-import { LogoMark } from "@/components/LogoMark";
 
 export const Footer = () => {
   const toolLinks = [
-    { href: "https://ev.autodun.com", label: "EV Charger Finder", external: true },
-    { href: "https://mot.autodun.com", label: "MOT Predictor", external: true },
-    { href: "https://ai.autodun.com", label: "AI Assistant", external: true },
+    { href: "https://ev.autodun.com", label: "EV Charger Finder" },
+    { href: "https://mot.autodun.com", label: "MOT Predictor" },
+    { href: "https://ai.autodun.com", label: "AI Assistant" },
   ];
 
   const internalLinks = [
@@ -22,19 +20,29 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="w-full border-t bg-background">
+    <footer
+      style={{
+        backgroundColor: "#060d18",
+        borderTop: "1px solid rgba(255,255,255,0.08)",
+      }}
+    >
       <div className="container-main py-10">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
-          {/* Logo */}
-          <Link to="/" aria-label="Autodun Home" className="inline-flex items-center">
-            <LogoMark className="h-8 md:h-9 lg:h-10 w-auto" />
-          </Link>
+          {/* Brand */}
+          <div className="flex flex-col gap-2">
+            <span className="text-white font-bold text-lg tracking-tight">
+              ⚡ Autodun
+            </span>
+            <p style={{ color: "#94a3b8" }} className="text-xs max-w-[220px] leading-relaxed">
+              AI automotive intelligence for UK drivers.
+            </p>
+          </div>
 
           {/* Links */}
           <div className="flex flex-col gap-6 sm:flex-row sm:gap-16">
             {/* Tools */}
             <div className="flex flex-col gap-3">
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#64748b" }}>
                 Tools
               </p>
               {toolLinks.map((l) => (
@@ -43,9 +51,8 @@ export const Footer = () => {
                   href={l.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={cn(
-                    "text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  )}
+                  className="text-sm transition-colors hover:text-[#00e5a0]"
+                  style={{ color: "#94a3b8" }}
                 >
                   {l.label}
                 </a>
@@ -54,16 +61,15 @@ export const Footer = () => {
 
             {/* Company */}
             <div className="flex flex-col gap-3">
-              <p className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+              <p className="text-xs font-semibold uppercase tracking-wide" style={{ color: "#64748b" }}>
                 Company
               </p>
               {internalLinks.map((l) => (
                 <Link
                   key={l.path}
                   to={l.path}
-                  className={cn(
-                    "text-sm text-muted-foreground hover:text-foreground transition-colors"
-                  )}
+                  className="text-sm transition-colors hover:text-[#00e5a0]"
+                  style={{ color: "#94a3b8" }}
                 >
                   {l.label}
                 </Link>
@@ -73,9 +79,12 @@ export const Footer = () => {
         </div>
 
         {/* Bottom row */}
-        <div className="mt-10 flex flex-col gap-4 border-t pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div
+          className="mt-10 flex flex-col gap-4 pt-6 sm:flex-row sm:items-center sm:justify-between"
+          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+        >
           <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-4">
-            <p className="text-xs text-muted-foreground">
+            <p className="text-xs" style={{ color: "#64748b" }}>
               © {new Date().getFullYear()} Autodun. All rights reserved.
             </p>
             <div className="flex gap-4 flex-wrap">
@@ -83,7 +92,8 @@ export const Footer = () => {
                 <Link
                   key={l.path}
                   to={l.path}
-                  className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                  className="text-xs transition-colors hover:text-[#00e5a0]"
+                  style={{ color: "#64748b" }}
                 >
                   {l.label}
                 </Link>
@@ -92,15 +102,16 @@ export const Footer = () => {
                 href="https://ai.autodun.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-muted-foreground hover:text-foreground transition-colors"
+                className="text-xs transition-colors hover:text-[#00e5a0]"
+                style={{ color: "#64748b" }}
               >
                 About AI
               </a>
             </div>
           </div>
 
-          <p className="text-xs text-muted-foreground">
-            MOT history sourced from live DVSA records. Risk predictions are independent analytics.
+          <p className="text-xs" style={{ color: "#64748b" }}>
+            MOT data sourced from DVSA. Risk predictions are independent analytics.
           </p>
         </div>
       </div>

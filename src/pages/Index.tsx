@@ -36,8 +36,8 @@ export default function Index() {
   return (
     <Layout>
       {/* Hero Section */}
-      <section className="hero-gradient border-b border-border section-hero">
-        <div className="container-main">
+      <section className="hero-gradient hero-pattern border-b border-border section-hero">
+        <div className="container-main relative z-10">
           <div className="text-center max-w-3xl mx-auto">
             <div className="inline-flex items-center gap-2 text-xs font-semibold text-primary bg-primary/10 rounded-full px-3 py-1.5 mb-6 tracking-wide uppercase">
               <Zap className="h-3.5 w-3.5" />
@@ -73,7 +73,7 @@ export default function Index() {
       </section>
 
       {/* Stats Bar */}
-      <section className="border-b border-border section-compact">
+      <section className="border-b border-border py-4">
         <div className="container-main">
           <div className="grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-border">
             {stats.map((stat) => (
