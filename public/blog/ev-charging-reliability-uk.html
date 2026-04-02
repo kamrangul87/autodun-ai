@@ -32,135 +32,146 @@
   </script>
 
   <style>
-    :root {
-      --text:#111;
-      --muted:#444;
-      --border:#e6e6e6;
-      --bg:#fff;
-      --soft:#fafafa;
-      --link:#0b57d0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      color: var(--text);
-      background: var(--bg);
+      background: #070f1a;
+      color: #f0f6ff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       line-height: 1.7;
-      margin: 0;
     }
-    .wrap { max-width: 920px; margin: 0 auto; padding: 34px 16px 60px; }
-    a { color: var(--link); text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .topnav {
-      display:flex; gap:12px; flex-wrap:wrap; align-items:center; justify-content:space-between;
-      margin-bottom: 14px;
+    .article-container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 60px 24px 80px;
     }
-    .topnav .left a { color:#111; }
-    .tools {
-      display:flex; gap:10px; flex-wrap:wrap; align-items:center;
-      font-size: 14px;
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.2;
+      margin-bottom: 24px;
     }
-    .toolbtn {
-      display:inline-flex; align-items:center; gap:8px;
-      border:1px solid var(--border);
-      padding:8px 10px;
-      border-radius: 999px;
-      background: #fff;
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 48px 0 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
     }
-    h1 { font-size: 40px; line-height:1.2; margin: 10px 0 12px; letter-spacing:-0.02em; }
-    .lede { font-size: 16px; color: var(--muted); margin: 0 0 18px; }
-    .hero {
-      border:1px solid var(--border);
-      border-radius: 16px;
-      overflow:hidden;
-      background: var(--soft);
-      margin: 18px 0 18px;
+    h3 {
+      font-size: 18px;
+      font-weight: 600;
+      color: #e2eaf4;
+      margin: 32px 0 12px;
     }
-    .hero img {
-      width:100%;
-      height:auto;
-      display:block;
+    p {
+      color: #c8d8e8;
+      margin-bottom: 20px;
+      font-size: 16px;
     }
-    .meta {
-      display:flex; flex-wrap:wrap; gap:10px; align-items:center;
-      font-size: 13px; color: var(--muted);
-      margin: 8px 0 14px;
+    a { color: #00d48a; }
+    a:hover { color: #00e5a0; }
+    strong { color: #ffffff; }
+    ul, ol {
+      padding-left: 24px;
+      margin-bottom: 20px;
+      color: #c8d8e8;
     }
-    .pill {
-      display:inline-flex;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border:1px solid var(--border);
-      background: #fff;
-      font-size: 12px;
-      color:#222;
-    }
-    .author {
-      border:1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px 16px;
-      background: #fff;
-      margin: 14px 0 18px;
-    }
-    .author strong { display:block; margin-bottom:6px; }
-    .toc {
-      border:1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px 16px;
-      background: var(--soft);
-      margin: 18px 0 22px;
-    }
-    .toc strong { display:block; margin-bottom:8px; }
-    .toc ul { margin:0; padding-left: 18px; }
-    .toc li { margin: 6px 0; }
-    h2 { font-size: 26px; margin: 26px 0 10px; }
-    h3 { font-size: 19px; margin: 18px 0 8px; }
-    p { margin: 10px 0; }
-    .callout {
-      border-left: 4px solid #111;
-      background: #fff;
-      border:1px solid var(--border);
-      border-left-width:4px;
+    li { margin-bottom: 8px; }
+    img {
+      max-width: 100%;
       border-radius: 12px;
-      padding: 12px 14px;
+      margin: 24px 0;
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #8899aa;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+    .back-link:hover { color: #00d48a; }
+    .article-meta {
+      color: #8899aa;
+      font-size: 14px;
+      margin-bottom: 32px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .faq-item {
+      background: #111f33;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 12px;
+    }
+    .faq-item h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+    .tool-cta {
+      background: linear-gradient(135deg, rgba(0,212,138,0.1), rgba(0,102,255,0.1));
+      border: 1px solid rgba(0,212,138,0.2);
+      border-radius: 12px;
+      padding: 24px;
+      margin: 40px 0;
+      text-align: center;
+    }
+    .tool-cta a {
+      display: inline-block;
+      background: #00d48a;
+      color: #070f1a;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 8px;
+    }
+    hr, .hr { border: none; border-top: 1px solid rgba(255,255,255,0.07); margin: 32px 0; }
+    .meta, .small, .foot, .lede { color: #8899aa; font-size: 14px; }
+    .lede { font-size: 16px; color: #a0b4c8; }
+    .toc, .callout, .author, .bottom-tools, .faq {
+      background: #111f33;
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 10px;
+      padding: 16px 20px;
       margin: 16px 0;
     }
-    .imgbox {
-      border:1px solid var(--border);
-      border-radius: 14px;
-      overflow:hidden;
-      background: var(--soft);
-      margin: 16px 0;
-    }
-    .imgbox img { width:100%; height:auto; display:block; }
-    .caption { font-size: 13px; color: var(--muted); padding: 10px 12px; background:#fff; border-top:1px solid var(--border); }
-    .hr { border:none; border-top:1px solid var(--border); margin: 26px 0; }
-    .bottom-tools {
-      margin-top: 10px;
-      border:1px solid var(--border);
-      border-radius: 14px;
-      padding: 14px 16px;
-      background: var(--soft);
-    }
+    .toc strong, .callout strong, .bottom-tools h3 { color: #ffffff; display: block; margin-bottom: 8px; font-weight: 700; margin-top: 0; }
+    .toc ul { margin: 4px 0 0 0; padding-left: 18px; }
+    .toc li { margin: 6px 0; }
+    .pill { display:inline-block; padding:3px 10px; border-radius:999px; border:1px solid rgba(255,255,255,0.1); background:rgba(255,255,255,0.05); font-size:12px; color:#8899aa; margin:2px 4px 2px 0; }
+    .imgbox { border-radius:12px; overflow:hidden; margin:24px 0; border:1px solid rgba(255,255,255,0.07); }
+    .imgbox img { width:100%; height:auto; display:block; border-radius:0; margin:0; border:none; }
+    .caption { font-size:13px; color:#8899aa; padding:10px 12px; border-top:1px solid rgba(255,255,255,0.07); }
+    .hero { border-radius:12px; overflow:hidden; margin:24px 0; border:1px solid rgba(255,255,255,0.07); }
+    .hero img { width:100%; height:auto; display:block; border-radius:0; margin:0; border:none; }
+    .author strong { display:block; margin-bottom:6px; }
     .bottom-tools h3 { margin-top:0; }
-    .faq { border:1px solid var(--border); border-radius: 14px; padding: 14px 16px; background:#fff; margin: 12px 0; }
-    .foot { font-size: 14px; color: var(--muted); margin-top: 24px; }
-    .small { font-size: 13px; color: var(--muted); }
-    .backlink { font-size: 14px; }
   </style>
 </head>
 
 <body>
-  <div class="wrap">
-    <div class="topnav">
-      <div class="left">
-        <a class="backlink" href="/blog/">← Back to Autodun Blog</a>
-      </div>
-      <div class="tools" aria-label="Autodun tools">
-        <a class="toolbtn" href="https://ev.autodun.com" rel="noopener">EV Finder</a>
-        <a class="toolbtn" href="https://mot.autodun.com" rel="noopener">MOT Predictor</a>
-        <a class="toolbtn" href="https://ai.autodun.com" rel="noopener">AI Agent</a>
-      </div>
-    </div>
+
+<header style="background:#070f1a; padding:16px 24px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid rgba(255,255,255,0.07);">
+  <a href="https://autodun.com" style="display:flex; align-items:center; gap:8px; text-decoration:none;">
+    <span style="font-size:20px;">⚡</span>
+    <span style="color:#ffffff; font-weight:800; font-size:18px; letter-spacing:-0.5px;">AUTODUN</span>
+  </a>
+  <nav style="display:flex; gap:24px;">
+    <a href="https://autodun.com" style="color:#8899aa; text-decoration:none; font-size:14px;">Home</a>
+    <a href="https://ev.autodun.com" style="color:#8899aa; text-decoration:none; font-size:14px;">EV Finder</a>
+    <a href="https://mot.autodun.com" style="color:#8899aa; text-decoration:none; font-size:14px;">MOT Predictor</a>
+    <a href="https://www.autodun.com/blog/index.html" style="color:#00d48a; text-decoration:none; font-size:14px; font-weight:600;">Blog</a>
+  </nav>
+</header>
+
+<div class="article-container">
+  <a href="/blog/" class="back-link">← Back to Autodun Blog</a>
 
     <h1>EV Charging Reliability in UK Cities — What Maps Miss (and How to Plan Better)</h1>
     <p class="lede">Urban EV charging in the UK can look “covered” but still fail drivers. Here’s why — and a repeatable process to make charging predictable, with real-world checks and backups.</p>
@@ -369,13 +380,19 @@
         </div>
         
 
-    <p class="foot">
-      © <span id="y"></span> Autodun · <a href="https://www.autodun.com">autodun.com</a>
-    </p>
-  </div>
+</div>
 
-  <script>
-    document.getElementById("y").textContent = new Date().getFullYear();
-  </script>
+<footer style="background:#050c15; border-top:1px solid rgba(255,255,255,0.06); padding:40px 24px; text-align:center; margin-top:80px;">
+  <div style="max-width:780px; margin:0 auto;">
+    <div style="margin-bottom:16px;">
+      <a href="https://ev.autodun.com" style="color:#8899aa; margin:0 12px; text-decoration:none; font-size:14px;">EV Finder</a>
+      <a href="https://mot.autodun.com" style="color:#8899aa; margin:0 12px; text-decoration:none; font-size:14px;">MOT Predictor</a>
+      <a href="https://ai.autodun.com" style="color:#8899aa; margin:0 12px; text-decoration:none; font-size:14px;">AI Assistant</a>
+      <a href="https://www.autodun.com/blog/" style="color:#8899aa; margin:0 12px; text-decoration:none; font-size:14px;">Blog</a>
+    </div>
+    <p style="color:#556677; font-size:13px; margin:0;">© 2026 Autodun. AI vehicle intelligence for UK drivers.</p>
+  </div>
+</footer>
+
 </body>
 </html>
