@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.autodun.com/sitemap.xml
+Sitemap: https://autodun.com/sitemap.xml
