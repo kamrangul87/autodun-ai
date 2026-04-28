@@ -21,10 +21,13 @@ export const Header = () => {
   const isActive = (path: string) => location.pathname === path;
   const isFixActive = location.pathname.startsWith("/fix");
 
-  const navLinks = [
+  const navLinksBefore = [
     { path: "/", label: "Home" },
     { path: "/ev-charger-finder", label: "EV Charger Finder" },
     { path: "/mot-predictor", label: "MOT Predictor" },
+  ];
+
+  const navLinksAfter = [
     { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
@@ -53,7 +56,7 @@ export const Header = () => {
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
-          {navLinks.map((link) => (
+          {navLinksBefore.map((link) => (
             <Link
               key={link.path}
               to={link.path}
@@ -108,6 +111,20 @@ export const Header = () => {
             )}
           </div>
 
+          {navLinksAfter.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={cn(
+                "text-sm font-medium transition-colors whitespace-nowrap",
+                isActive(link.path) ? "text-[#00d48a]" : "hover:text-[#f0f6ff]"
+              )}
+              style={{ color: isActive(link.path) ? "#00d48a" : "#8899aa" }}
+            >
+              {link.label}
+            </Link>
+          ))}
+
           {/* BLOG (static HTML) */}
           <a
             href="/blog/index.html"
@@ -150,7 +167,7 @@ export const Header = () => {
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="md:hidden">
           <div className="container-main py-3">
             <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
+              {navLinksBefore.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -204,6 +221,21 @@ export const Header = () => {
                   ))}
                 </div>
               )}
+
+              {navLinksAfter.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-md px-3 py-2 text-sm font-medium transition-colors"
+                  style={{
+                    color: isActive(link.path) ? "#00d48a" : "#8899aa",
+                    backgroundColor: isActive(link.path) ? "rgba(0,212,138,0.08)" : "transparent",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
 
               <a
                 href="/blog/index.html"
