@@ -1,14 +1,17 @@
 # ⚡ Autodun — UK Automotive Intelligence Platform
 
-> Free, data-driven tools for UK drivers: EV charger discovery, MOT risk analysis, and AI-powered vehicle guidance.
+> Free AI-powered tools for UK drivers: EV charging discovery, MOT risk prediction, vehicle diagnostics, and more.
 
-[![React](https://img.shields.io/badge/React-18.3.1-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.8.3-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
-[![Vite](https://img.shields.io/badge/Vite-5.4.19-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4.17-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com)
+[![React](https://img.shields.io/badge/React-18.3-61DAFB?style=flat-square&logo=react&logoColor=white)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.8-3178C6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=flat-square&logo=vite&logoColor=white)](https://vitejs.dev)
+[![Next.js](https://img.shields.io/badge/Next.js-14-000000?style=flat-square&logo=nextdotjs&logoColor=white)](https://nextjs.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![Claude AI](https://img.shields.io/badge/Claude_AI-Anthropic-CC785C?style=flat-square&logo=anthropic&logoColor=white)](https://anthropic.com)
+[![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=flat-square&logo=supabase&logoColor=white)](https://supabase.com)
+[![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?style=flat-square&logo=vercel&logoColor=white)](https://vercel.com)
 [![Status](https://img.shields.io/badge/Status-Live-00d48a?style=flat-square)]()
-[![License](https://img.shields.io/badge/License-Proprietary-red?style=flat-square)]()
+[![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)](./LICENSE)
 
 **[Live Platform → autodun.com](https://autodun.com)**
 
@@ -16,9 +19,9 @@
 
 ## What is Autodun?
 
-Autodun is a UK-focused automotive intelligence platform that turns raw government and infrastructure data into actionable tools for everyday drivers and public-sector researchers. It combines live DVSA MOT records, 30,000+ EV charging station datasets, and AI-powered guidance into a fast, accessible, zero-login web experience.
+Autodun is a UK-focused automotive intelligence platform that converts raw government data, infrastructure datasets, and AI reasoning into practical, free tools for everyday UK drivers. It delivers EV charging discovery with AI suitability scoring, DVSA-powered MOT risk prediction, AI vehicle diagnostics, parking fine appeals, and repair price benchmarking — all under one brand.
 
-The platform is deployed as a suite of focused micro-tools under one brand — each tool lives at its own subdomain with an independent data pipeline, embedded into the main site via performant iframe integration. The main shell handles discovery, SEO, and brand presentation.
+The platform is built as a suite of independent micro-tools, each deployed at its own subdomain with its own data pipeline. The main `autodun.com` shell serves as the discovery, SEO, and marketing layer.
 
 ---
 
@@ -26,60 +29,51 @@ The platform is deployed as a suite of focused micro-tools under one brand — e
 
 | Subdomain | Description |
 |---|---|
-| [autodun.com](https://autodun.com) | Main platform hub — tool discovery, animated demos, research blog, and brand shell |
+| [autodun.com](https://autodun.com) | Main platform hub — tool discovery, animated demos, research blog |
 | [ev.autodun.com](https://ev.autodun.com) | EV Charger Finder — maps 30,000+ UK charging stations with AI suitability scoring |
 | [mot.autodun.com](https://mot.autodun.com) | MOT Predictor — estimates failure risk using live DVSA MOT History records |
-| [ai.autodun.com](https://ai.autodun.com) | AI Assistant — free automotive Q&A powered by real UK vehicle data |
+| [ai.autodun.com](https://ai.autodun.com) | AI Assistant — free automotive Q&A powered by Claude AI and real UK vehicle data |
+| [fix.autodun.com](https://fix.autodun.com) | Fix My Car — AI breakdown diagnosis, warning lights, parking fine appeals, price checker |
 
 ---
 
-## Features
+## Tools
 
-### EV Charger Finder
+### EV Charger Finder — `ev.autodun.com`
 - Indexes 30,000+ UK public charging stations from national infrastructure datasets
-- AI suitability scoring derived from aggregated user feedback signals
-- Filter by connector type (CCS, CHAdeMO, Type 2) and power rating (slow / fast / rapid / ultra-rapid)
-- Dual view modes: spatial heatmap and individual station markers
-- GPS-based "locate me" discovery with fallback postcode search
-- Dataset refreshed daily
+- AI suitability scoring derived from aggregated user feedback
+- Filter by connector type (CCS, CHAdeMO, Type 2) and power rating
+- Heatmap and individual marker view modes
+- GPS-based locate-me discovery with postcode fallback
+- Dataset refreshed daily via OpenChargeMap API
 
-### MOT Predictor *(Beta)*
+### MOT Predictor — `mot.autodun.com`
 - Predicts MOT failure risk before the test date
-- Inputs: vehicle age, annual mileage, fuel type, number of prior failures
+- Inputs: vehicle age, mileage, fuel type, prior failure count
 - Risk classification: **Low / Medium / High** with confidence indicators
-- Powered by live DVSA MOT History records — no scraping, no stale data
-- Operates at the vehicle level only; no personal data captured or stored
+- Powered by live DVSA MOT History API — no stale data
+- Operates at the vehicle level; no personal data captured
 
-### AI Assistant
+### AI Assistant — `ai.autodun.com`
 - Free natural-language guidance for UK drivers
-- Covers: MOT preparation, EV charging planning, used car buying, ULEZ compliance
-- Backed by real UK government and infrastructure datasets
+- Covers MOT prep, EV charging, used car buying, ULEZ compliance
+- Powered by Claude AI (Anthropic) with real UK datasets as context
 - No account required, no query limits
 
-### Animated Interactive Demos
-- `EVChargerDemo` — 5-stage animated demo: location search → map render → station selection → AI scoring → feedback loop
-- `MOTDemo` — Animated circular risk gauge with live counter, form input simulation, and risk badge reveal
-- Both demos run entirely client-side with no external calls; designed to convert before the user loads the full tool
+### Fix My Car — `fix.autodun.com`
 
-### Research Blog
-- 8 in-depth articles on EV infrastructure, MOT intelligence, and clean air policy
-- Served as static HTML from `/public/blog/` for maximum cache-hit performance
-- Full structured data on every post: `Article` + `FAQPage` JSON-LD schemas
-- Open Graph and Twitter Card meta on every article
-- Sticky branded header, dark-navy design system, consistent with main platform
-
-### Platform Shell
-- Per-page dynamic SEO: title, description, canonical URL, OG, and Twitter Card injected via `setSEO()` utility
-- SPA page-view tracking via GA4 (react-ga4), fires on every route change
-- Sticky navigation with mobile-responsive hamburger menu
-- Multi-column footer with links across all platform surfaces
-- Contact form with spam protection via Formspree
+| Tool | Route | Description |
+|---|---|---|
+| Breakdown Assistant | `/fix/breakdown` | Describe symptoms → AI diagnosis + action plan |
+| Warning Light Decoder | `/fix/warning-lights` | Identify any dashboard light, severity + next steps |
+| Parking Fine Appeal | `/fix/appeal` | Grounds checker + AI-generated appeal letter (PCN & private) |
+| Fair Price Checker | `/fix/price` | Market rate comparison + photo-based damage assessment |
 
 ---
 
 ## Tech Stack
 
-### Frontend
+### Platform Shell (`autodun.com` — this repo)
 
 | Layer | Library | Version |
 |---|---|---|
@@ -88,27 +82,44 @@ The platform is deployed as a suite of focused micro-tools under one brand — e
 | Build Tool | Vite + SWC | `5.4.19` |
 | Routing | React Router DOM | `6.30.1` |
 | Styling | Tailwind CSS | `3.4.17` |
-| Component System | shadcn/ui + Radix UI primitives | — |
+| Component System | shadcn/ui + Radix UI | — |
 | Data Fetching | TanStack React Query | `5.83.0` |
 | Charts | Recharts | `2.15.4` |
-| Forms | React Hook Form | `7.61.1` |
-| Validation | Zod | `3.25.76` |
+| Forms | React Hook Form + Zod | `7.61.1` / `3.25.76` |
 | Icons | Lucide React | `0.462.0` |
-| Carousel | Embla Carousel | `8.6.0` |
-| Notifications | Sonner | `1.7.4` |
-| Drawer / Dialogs | Vaul | `0.9.9` |
-| Date Utilities | date-fns | `3.6.0` |
-| Analytics | react-ga4 | `2.1.0` |
+| Analytics | Google Analytics 4 | — |
+| Contact | Formspree | — |
 
-### Infrastructure
+### Full Platform (across all services)
 
-| Layer | Service |
+| Layer | Technology |
 |---|---|
-| Hosting & CI/CD | Vercel (auto-deploy from `main`) |
-| Analytics | Google Analytics 4 |
-| Contact Forms | Formspree |
-| Data: MOT | DVSA MOT History (live government records) |
-| Data: EV | UK national EV charging infrastructure datasets |
+| Subdomain services | Next.js 14 (App Router) |
+| AI reasoning | Claude AI API (Anthropic) |
+| Database & auth | Supabase (PostgreSQL + Row Level Security) |
+| Hosting & CI/CD | Vercel (all services) |
+| EV charging data | OpenChargeMap API |
+| MOT data | DVSA MOT History API (UK Government) |
+| ULEZ data | TfL Open Data API |
+
+---
+
+## Design System
+
+| Token | Value | Usage |
+|---|---|---|
+| Background | `#070f1a` | Page background |
+| Surface | `#111f33` | Cards, panels |
+| Surface Alt | `#0d1b2a` | Section backgrounds |
+| Footer | `#050c15` | Footer background |
+| Accent Green | `#00d48a` | Primary CTA, badges, active states |
+| Accent Blue | `#2979ff` | Secondary highlights |
+| Foreground | `#f0f6ff` | Headings |
+| Body Text | `#c8d8e8` | Paragraph text |
+| Muted | `#8899aa` | Subtext, descriptions |
+| Subtle | `#556677` | Footer text, captions |
+| Font | Inter, system-ui | All text |
+| Mono Font | JetBrains Mono | Code |
 
 ---
 
@@ -118,63 +129,51 @@ The platform is deployed as a suite of focused micro-tools under one brand — e
 autodun-ai/                          ← This repo (platform shell)
 ├── src/
 │   ├── pages/                       ← Route-level components
-│   │   ├── Index.tsx                ← Landing page: hero, stats, demos, tool cards
+│   │   ├── Index.tsx                ← Landing page with hero, demos, tool sections
 │   │   ├── EVChargerFinder.tsx      ← Tool page → iframe: ev.autodun.com
 │   │   ├── MOTPredictor.tsx         ← Tool page → iframe: mot.autodun.com
 │   │   ├── AIAssistant.tsx          ← Tool page → iframe: ai.autodun.com
-│   │   ├── Blog.tsx                 ← Blog listing → links to /public/blog/
+│   │   ├── fix/
+│   │   │   ├── FixHub.tsx           ← /fix — Fix My Car landing page
+│   │   │   ├── Breakdown.tsx        ← /fix/breakdown → iframe: fix.autodun.com/breakdown
+│   │   │   ├── WarningLights.tsx    ← /fix/warning-lights → iframe: fix.autodun.com/warning-lights
+│   │   │   ├── Appeal.tsx           ← /fix/appeal → iframe: fix.autodun.com/appeal
+│   │   │   └── Price.tsx            ← /fix/price → iframe: fix.autodun.com/price
+│   │   ├── Blog.tsx
 │   │   ├── About.tsx
-│   │   ├── Contact.tsx              ← Formspree form with honeypot
+│   │   ├── Contact.tsx              ← Formspree with honeypot spam protection
 │   │   ├── DataUsage.tsx
-│   │   ├── Privacy.tsx
-│   │   ├── Terms.tsx
-│   │   ├── Cookies.tsx
+│   │   ├── Privacy.tsx / Terms.tsx / Cookies.tsx
 │   │   └── NotFound.tsx
 │   ├── components/
 │   │   ├── layout/
-│   │   │   ├── Layout.tsx           ← Page wrapper (Header + outlet + Footer)
-│   │   │   ├── Header.tsx           ← Sticky nav, mobile menu, brand logo
-│   │   │   └── Footer.tsx           ← Multi-column brand footer
+│   │   │   ├── Layout.tsx           ← Page wrapper
+│   │   │   ├── Header.tsx           ← Sticky nav with Fix dropdown, mobile accordion
+│   │   │   └── Footer.tsx           ← Multi-column footer: Tools, Fix, Company
 │   │   ├── demos/
-│   │   │   ├── EVChargerDemo.tsx    ← Animated 5-step charger discovery demo
-│   │   │   └── MOTDemo.tsx          ← Animated risk gauge with step simulation
+│   │   │   ├── EVChargerDemo.tsx    ← 5-step animated charger discovery demo
+│   │   │   └── MOTDemo.tsx          ← Animated risk gauge demo
 │   │   ├── LogoMark.tsx             ← Reusable logo (sm / header / md / lg / xl / hero)
-│   │   ├── NavLink.tsx              ← Router-aware nav link with active state
-│   │   └── ui/                      ← 47 shadcn/ui primitives (buttons, cards, etc.)
-│   ├── lib/
-│   │   ├── seo.ts                   ← Dynamic meta tag injection per page
-│   │   ├── analytics.ts             ← GA4 init + SPA page view tracker
-│   │   └── utils.ts                 ← Tailwind class merge utility
-│   ├── hooks/                       ← Custom React hooks
-│   ├── App.tsx                      ← Router setup + GA4 initialisation
-│   └── index.css                    ← Global styles, design tokens, utility classes
+│   │   └── ui/                      ← 47 shadcn/ui primitives
+│   └── lib/
+│       ├── seo.ts                   ← Per-page dynamic meta injection
+│       ├── ga.ts                    ← GA4 init + SPA page view tracker
+│       └── utils.ts                 ← Tailwind class merge utility
 ├── public/
-│   └── blog/                        ← Static HTML articles (zero JS overhead)
-│       ├── index.html               ← Blog hub with article listing
-│       ├── mot-history-check-uk.html
-│       ├── mot-advisories-explained-uk.html
-│       ├── electric-car-charger-map-uk.html
-│       ├── ev-charging-on-uk-motorways.html
-│       ├── ev-charging-reliability-uk.html
-│       ├── ulez-checker-uk.html
-│       ├── uk-vehicle-data-tools.html
-│       └── why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html
-├── index.html                       ← SPA entry point (GA4 script, root div)
-├── vite.config.ts                   ← Vite config: port 8080, path alias @/
-├── tailwind.config.ts               ← Custom palette, dark mode, extended fonts
-├── tsconfig.json
-└── vercel.json                      ← Redirect: autodun.com → www.autodun.com
+│   ├── blog/                        ← 8 static HTML articles (zero JS, full SEO)
+│   ├── sitemap.xml                  ← 20 URLs, canonical non-www
+│   └── robots.txt
+├── index.html                       ← SPA entry point
+├── vite.config.ts
+├── tailwind.config.ts
+└── vercel.json
 ```
 
-### Design Decisions
+**Micro-tool architecture.** Each major tool is a self-contained service at its own subdomain with an independent data pipeline. The `autodun.com` shell embeds them via iframe — decoupling deployments, scaling, and incidents across services.
 
-**Micro-tool architecture.** Each major tool (EV Finder, MOT Predictor, AI Assistant) is a self-contained service at its own subdomain with an independent data pipeline. `autodun.com` acts as the discovery and SEO layer. This decouples scaling, updates, and incidents: a data pipeline change at `ev.autodun.com` has zero impact on the main shell.
+**Static blog for performance.** Nine blog articles are plain HTML in `/public/blog/`. Served directly from Vercel's CDN edge with no React overhead, inline JSON-LD structured data, and full GA4 tracking.
 
-**Static blog for performance.** Blog articles are plain HTML in `/public/blog/`, not React routes. They are served directly by the CDN with no JavaScript parse cost, no hydration, and no framework overhead. Each file includes inline JSON-LD structured data, OG meta tags, and GA4 — everything needed for SEO and analytics in a single file.
-
-**Animated demos before the iframe.** Each tool page renders a fully client-side animated demo (`EVChargerDemo`, `MOTDemo`) that simulates the tool UX with zero network calls. This gives users immediate context while the iframe loads, and works on slow connections or if the subdomain is temporarily unavailable.
-
-**Design system.** A single dark-navy palette (`#070f1a` background, `#00d48a` accent green, `#f0f6ff` foreground) runs consistently across the React SPA, all 9 static blog files, and all subdomains. Defined as CSS custom properties in `index.css` and mapped into Tailwind's config.
+**ML training data pipeline.** The MOT Predictor's risk model is trained on anonymised UK DVSA MOT History records (millions of test outcomes across vehicle age, mileage, make, and fuel type categories). Training is performed offline; the model is deployed as a lightweight scoring endpoint consumed by `mot.autodun.com`. EV AI scoring is updated daily from aggregated user session feedback and OpenChargeMap reliability signals.
 
 ---
 
@@ -182,7 +181,7 @@ autodun-ai/                          ← This repo (platform shell)
 
 ### Prerequisites
 
-- **Node.js** `20.x` (required — see `package.json` `engines` field)
+- **Node.js** `20.x`
 - **npm** `9+`
 
 ### Local Setup
@@ -201,51 +200,42 @@ npm run dev
 
 Open `http://localhost:5173` in your browser.
 
-> **Note:** The iframe embeds (`ev.autodun.com`, `mot.autodun.com`, `ai.autodun.com`) will only load in development if the subdomain services are running. The animated demos on each tool page render fully without them.
+> The iframe embeds (subdomains) only load if those services are running. Animated demos on each tool page render fully without them.
 
 ### Build
 
 ```bash
-# Production build → outputs to dist/
-npm run build
-
-# Preview the production build locally
-npm run preview
-
-# Type-check + lint
-npm run lint
+npm run build       # Production build → dist/
+npm run preview     # Preview production build locally
+npm run lint        # ESLint
 ```
 
 ---
 
 ## Environment Variables
 
-This repo is a **frontend-only shell** — there is no backend, no database, and no secrets required to run the dev server or build.
-
-The following values are currently hardcoded in source and can be extracted to environment variables as needed:
+This repo is a **frontend-only shell** — no backend, no secrets required to run locally.
 
 | Variable | Description | Placeholder |
 |---|---|---|
 | `VITE_GA_MEASUREMENT_ID` | Google Analytics 4 Measurement ID | `G-XXXXXXXXXX` |
-| `VITE_FORMSPREE_ENDPOINT` | Formspree endpoint for the contact form | `https://formspree.io/f/xxxxxxxx` |
-
-To override locally, create a `.env.local` file at the project root:
+| `VITE_FORMSPREE_ENDPOINT` | Formspree endpoint for contact form | `https://formspree.io/f/xxxxxxxx` |
 
 ```env
-# .env.local — never commit this file
+# .env.local — never commit real values
 VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/xxxxxxxx
 ```
 
-Vite automatically loads `.env.local` and exposes variables prefixed with `VITE_` to client-side code.
+Subdomain services (Next.js) require additional variables for Supabase, Claude AI API, DVSA API, and OpenChargeMap API — managed separately per service.
 
 ---
 
 ## Screenshots
 
-| Homepage | EV Charger Finder | MOT Predictor |
+| Homepage | Fix My Car | EV Charger Finder |
 |---|---|---|
-| ![Dark navy landing page with hero section, animated demos, and tool cards](docs/screenshots/homepage.png) | ![EV Charger Finder with map view and AI suitability scores](docs/screenshots/ev-finder.png) | ![MOT Predictor with animated circular risk gauge](docs/screenshots/mot-predictor.png) |
+| ![Dark navy landing page with hero section and tool cards](docs/screenshots/homepage.png) | ![Fix My Car hub with 4 AI tool cards](docs/screenshots/fix-hub.png) | ![EV Charger Finder with AI-scored map](docs/screenshots/ev-finder.png) |
 
 > Visit [autodun.com](https://autodun.com) for the live experience.
 
@@ -253,23 +243,25 @@ Vite automatically loads `.env.local` and exposes variables prefixed with `VITE_
 
 ## Contributing
 
-Autodun is a private project. If you have been granted repository access:
+Autodun is a private project. If you have been granted access:
 
-1. **Branch** from `main` using the convention `feat/your-feature` or `fix/your-fix`
-2. **Keep commits atomic** — one logical change per commit with a descriptive message
-3. **Lint before pushing** — run `npm run lint` and fix all errors
-4. **Open a PR against `main`** with a clear description of what changed and why
-5. **No force-pushes** to `main` — all merges go through PR review
+1. Branch from `main` using the convention `feat/your-feature` or `fix/your-fix`
+2. Keep commits atomic with descriptive messages
+3. Run `npm run lint` before pushing — no lint errors
+4. Open a PR against `main` with a clear description of what changed and why
+5. No force-pushes to `main`
 
-For bug reports or feature requests, open an issue in this repository.
+---
+
+## Global Talent Visa
+
+This platform is part of the UK Global Talent Visa (GTV) portfolio submitted by **Kamran Gul**, demonstrating exceptional technical talent in the field of digital technology. Autodun was conceived, designed, built, and shipped solely by Kamran as a solo founder and developer — covering full-stack engineering, AI integration, data pipeline design, SEO architecture, and product strategy.
 
 ---
 
 ## License
 
-This project is **proprietary and all rights reserved.**
-
-No part of this codebase may be reproduced, distributed, modified, or used in derivative works without explicit written permission from the project owner.
+MIT License — see [LICENSE](./LICENSE) for details.
 
 ---
 
@@ -277,4 +269,4 @@ No part of this codebase may be reproduced, distributed, modified, or used in de
 
 **[Autodun](https://autodun.com)** — UK Automotive Intelligence
 
-Built to make UK vehicle data more accessible, more actionable, and more honest.
+Built in the UK. Powered by real data. Designed for UK drivers.

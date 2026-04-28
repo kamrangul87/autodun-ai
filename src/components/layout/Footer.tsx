@@ -2,9 +2,16 @@ import { Link } from "react-router-dom";
 
 export const Footer = () => {
   const toolLinks = [
-    { href: "https://ev.autodun.com", label: "EV Charger Finder" },
-    { href: "https://mot.autodun.com", label: "MOT Predictor" },
-    { href: "https://ai.autodun.com", label: "AI Assistant" },
+    { href: "https://ev.autodun.com", label: "EV Charger Finder", external: true },
+    { href: "https://mot.autodun.com", label: "MOT Predictor", external: true },
+    { href: "https://ai.autodun.com", label: "AI Assistant", external: true },
+  ];
+
+  const fixLinks = [
+    { path: "/fix/breakdown", label: "Breakdown Assistant" },
+    { path: "/fix/warning-lights", label: "Warning Lights" },
+    { path: "/fix/appeal", label: "Parking Fine Appeal" },
+    { path: "/fix/price", label: "Fair Price Checker" },
   ];
 
   const internalLinks = [
@@ -44,7 +51,7 @@ export const Footer = () => {
           </div>
 
           {/* Link columns */}
-          <div className="flex flex-col gap-6 sm:flex-row sm:gap-16">
+          <div className="flex flex-col gap-6 sm:flex-row sm:gap-12">
             {/* Tools */}
             <div className="flex flex-col gap-3">
               <p
@@ -64,6 +71,26 @@ export const Footer = () => {
                 >
                   {l.label}
                 </a>
+              ))}
+            </div>
+
+            {/* Fix Tools */}
+            <div className="flex flex-col gap-3">
+              <p
+                className="text-xs font-semibold uppercase tracking-widest"
+                style={{ color: "#8899aa", letterSpacing: "1px" }}
+              >
+                Fix My Car
+              </p>
+              {fixLinks.map((l) => (
+                <Link
+                  key={l.path}
+                  to={l.path}
+                  className="text-sm transition-colors hover:text-[#00d48a]"
+                  style={linkStyle}
+                >
+                  {l.label}
+                </Link>
               ))}
             </div>
 
