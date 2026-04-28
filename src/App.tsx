@@ -17,11 +17,6 @@ import Terms from "./pages/Terms";
 import Cookies from "./pages/Cookies";
 import AIAssistant from "./pages/AIAssistant";
 import NotFound from "./pages/NotFound";
-import FixHub from "./pages/fix/FixHub";
-import Breakdown from "./pages/fix/Breakdown";
-import WarningLights from "./pages/fix/WarningLights";
-import Appeal from "./pages/fix/Appeal";
-import Price from "./pages/fix/Price";
 
 import { initGA, trackPageView } from "@/lib/ga";
 
@@ -64,11 +59,6 @@ const App = () => {
             <Route path="/privacy" element={<Privacy />} />
             <Route path="/terms" element={<Terms />} />
             <Route path="/cookies" element={<Cookies />} />
-            <Route path="/fix" element={<FixHub />} />
-            <Route path="/fix/breakdown" element={<Breakdown />} />
-            <Route path="/fix/warning-lights" element={<WarningLights />} />
-            <Route path="/fix/appeal" element={<Appeal />} />
-            <Route path="/fix/price" element={<Price />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

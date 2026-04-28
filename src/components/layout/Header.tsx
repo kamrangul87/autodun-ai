@@ -5,11 +5,13 @@ import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { LogoMark } from "@/components/LogoMark";
 
+const FIX_BASE = "https://fix.autodun.com";
+
 const fixTools = [
-  { path: "/fix/breakdown", label: "Breakdown Assistant", icon: Wrench },
-  { path: "/fix/warning-lights", label: "Warning Light Decoder", icon: AlertTriangle },
-  { path: "/fix/appeal", label: "Parking Fine Appeal", icon: FileText },
-  { path: "/fix/price", label: "Fair Price Checker", icon: CircleDollarSign },
+  { href: `${FIX_BASE}#breakdown`, label: "Breakdown Assistant", icon: Wrench },
+  { href: `${FIX_BASE}#warning-lights`, label: "Warning Light Decoder", icon: AlertTriangle },
+  { href: `${FIX_BASE}#appeal`, label: "Parking Fine Appeal", icon: FileText },
+  { href: `${FIX_BASE}#price`, label: "Fair Price Checker", icon: CircleDollarSign },
 ];
 
 export const Header = () => {
@@ -19,7 +21,6 @@ export const Header = () => {
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
-  const isFixActive = location.pathname.startsWith("/fix");
 
   const navLinksBefore = [
     { path: "/", label: "Home" },
@@ -76,17 +77,19 @@ export const Header = () => {
             onMouseEnter={() => setFixDropdownOpen(true)}
             onMouseLeave={() => setFixDropdownOpen(false)}
           >
-            <Link
-              to="/fix"
+            <a
+              href={FIX_BASE}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-1 text-sm font-medium transition-colors whitespace-nowrap hover:text-[#f0f6ff]"
-              style={{ color: isFixActive ? "#00d48a" : "#8899aa" }}
+              style={{ color: "#8899aa" }}
             >
               Fix
               <ChevronDown
                 className="h-3.5 w-3.5 transition-transform"
                 style={{ transform: fixDropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
               />
-            </Link>
+            </a>
 
             {fixDropdownOpen && (
               <div
@@ -97,15 +100,17 @@ export const Header = () => {
                 }}
               >
                 {fixTools.map((tool) => (
-                  <Link
-                    key={tool.path}
-                    to={tool.path}
+                  <a
+                    key={tool.href}
+                    href={tool.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-3 px-4 py-3 text-sm transition-colors hover:bg-white/5"
-                    style={{ color: isActive(tool.path) ? "#00d48a" : "#8899aa" }}
+                    style={{ color: "#8899aa" }}
                   >
                     <tool.icon className="h-4 w-4 shrink-0" style={{ color: "#00d48a" }} />
                     {tool.label}
-                  </Link>
+                  </a>
                 ))}
               </div>
             )}
@@ -186,10 +191,7 @@ export const Header = () => {
               <button
                 onClick={() => setMobileFixOpen((v) => !v)}
                 className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors text-left w-full"
-                style={{
-                  color: isFixActive ? "#00d48a" : "#8899aa",
-                  backgroundColor: isFixActive ? "rgba(0,212,138,0.08)" : "transparent",
-                }}
+                style={{ color: "#8899aa", backgroundColor: "transparent" }}
               >
                 Fix
                 <ChevronDown
@@ -200,24 +202,28 @@ export const Header = () => {
 
               {mobileFixOpen && (
                 <div className="ml-3 flex flex-col gap-1">
-                  <Link
-                    to="/fix"
+                  <a
+                    href={FIX_BASE}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() => setMobileMenuOpen(false)}
                     className="rounded-md px-3 py-2 text-sm font-medium"
-                    style={{ color: isActive("/fix") ? "#00d48a" : "#8899aa" }}
+                    style={{ color: "#8899aa" }}
                   >
                     All Fix Tools
-                  </Link>
+                  </a>
                   {fixTools.map((tool) => (
-                    <Link
-                      key={tool.path}
-                      to={tool.path}
+                    <a
+                      key={tool.href}
+                      href={tool.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() => setMobileMenuOpen(false)}
                       className="rounded-md px-3 py-2 text-sm transition-colors"
-                      style={{ color: isActive(tool.path) ? "#00d48a" : "#8899aa" }}
+                      style={{ color: "#8899aa" }}
                     >
                       {tool.label}
-                    </Link>
+                    </a>
                   ))}
                 </div>
               )}

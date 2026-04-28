@@ -8,10 +8,10 @@ export const Footer = () => {
   ];
 
   const fixLinks = [
-    { path: "/fix/breakdown", label: "Breakdown Assistant" },
-    { path: "/fix/warning-lights", label: "Warning Lights" },
-    { path: "/fix/appeal", label: "Parking Fine Appeal" },
-    { path: "/fix/price", label: "Fair Price Checker" },
+    { href: "https://fix.autodun.com#breakdown", label: "Breakdown Assistant" },
+    { href: "https://fix.autodun.com#warning-lights", label: "Warning Lights" },
+    { href: "https://fix.autodun.com#appeal", label: "Parking Fine Appeal" },
+    { href: "https://fix.autodun.com#price", label: "Fair Price Checker" },
   ];
 
   const internalLinks = [
@@ -83,14 +83,16 @@ export const Footer = () => {
                 Fix My Car
               </p>
               {fixLinks.map((l) => (
-                <Link
-                  key={l.path}
-                  to={l.path}
+                <a
+                  key={l.href}
+                  href={l.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-sm transition-colors hover:text-[#00d48a]"
                   style={linkStyle}
                 >
                   {l.label}
-                </Link>
+                </a>
               ))}
             </div>
 
