@@ -1,54 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
   <url>
-    <loc>https://www.autodun.com/</loc>
+    <loc>https://autodun.com</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-
   <url>
-    <loc>https://www.autodun.com/blog/</loc>
-    <priority>0.9</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autodun.com/blog/uk-vehicle-data-tools.html</loc>
+    <loc>https://autodun.com/about</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.autodun.com/blog/electric-car-charger-map-uk.html</loc>
-    <priority>0.9</priority>
+    <loc>https://autodun.com/contact</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-
   <url>
-    <loc>https://www.autodun.com/blog/ev-charging-on-uk-motorways.html</loc>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autodun.com/blog/ev-charging-reliability-uk.html</loc>
-    <priority>0.85</priority>
-  </url>
-
-  <url>
-    <loc>https://www.autodun.com/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html</loc>
+    <loc>https://autodun.com/blog</loc>
+    <lastmod>2026-04-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.autodun.com/blog/mot-history-check-uk.html</loc>
-    <priority>0.9</priority>
+    <loc>https://autodun.com/blog/mot-changes-2026-dvsa-updates.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-
   <url>
-    <loc>https://www.autodun.com/blog/mot-advisories-explained-uk.html</loc>
-    <priority>0.9</priority>
+    <loc>https://www.autodun.com/blog/mot-cost-uk-2026.html</loc>
+    <lastmod>2026-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
-
-  <url>
-    <loc>https://www.autodun.com/blog/ulez-checker-uk.html</loc>
-    <priority>0.9</priority>
-  </url>
-
 </urlset>
