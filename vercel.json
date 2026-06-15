@@ -1,10 +1,1 @@
-{
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "has": [{ "type": "host", "value": "autodun.com" }],
-      "destination": "https://www.autodun.com/$1",
-      "permanent": true
-    }
-  ]
-}
+{}

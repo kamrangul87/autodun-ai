@@ -9,86 +9,25 @@
   <link rel="canonical" href="https://www.autodun.com/blog/ulez-checker-uk.html" />
 
   <style>
-    body{
-      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      max-width:900px;
-      margin:40px auto;
-      padding:0 16px;
-      line-height:1.7;
-      color:#111;
-    }
-    h1,h2,h3{ line-height:1.3; }
-    a{ color:#111; }
-    .meta{ color:#444;font-size:14px;margin-top:6px; }
-    .muted{ color:#444; }
-    .pill{
-      display:inline-block;
-      font-size:12px;
-      color:#333;
-      background:#f2f2f2;
-      border:1px solid #e5e5e5;
-      border-radius:999px;
-      padding:4px 10px;
-      margin-right:6px;
-      margin-bottom:6px;
-    }
-    .card{
-      border:1px solid #e5e5e5;
-      border-radius:12px;
-      padding:14px 16px;
-      background:#fafafa;
-      margin:16px 0;
-      font-size:14px;
-    }
-    .card a{ text-decoration:none; }
-    .toc{
-      border:1px solid #e5e5e5;
-      border-radius:12px;
-      padding:14px 16px;
-      background:#fafafa;
-      margin:20px 0;
-    }
-    .toc ul{ margin:0;padding-left:18px; }
-    .toc li{ margin:6px 0; }
-    .note{
-      border-left:3px solid #111;
-      padding:10px 12px;
-      background:#fafafa;
-      margin:14px 0;
-      font-size:14px;
-      color:#333;
-    }
-    .box{
-      border:1px solid #e5e5e5;
-      border-radius:12px;
-      padding:14px 16px;
-      background:#fafafa;
-      margin:16px 0;
-    }
-    figure{ margin:18px 0; }
-    img{
-      width:100%;
-      max-height:520px;
-      object-fit:cover;
-      border-radius:12px;
-      border:1px solid #e5e5e5;
-      display:block;
-    }
-    figcaption{
-      font-size:12px;
-      color:#666;
-      margin-top:6px;
-    }
-    hr{
-      border:none;
-      border-top:1px solid #e5e5e5;
-      margin:28px 0;
-    }
-    footer{ font-size:14px;color:#444;margin-top:24px; }
-    .small{ font-size:13px; color:#444; }
-    .list-tight{ margin:10px 0; padding-left:18px; }
-    .list-tight li{ margin:6px 0; }
-  </style>
+* { box-sizing:border-box; margin:0; padding:0; }
+body {
+  background:#070f1a; color:#f0f6ff;
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  line-height:1.7;
+}
+.wrap { max-width:780px; margin:0 auto; padding:60px 24px 80px; }
+h1 { font-size:36px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:24px; }
+h2 { font-size:22px; font-weight:700; color:#fff; margin:48px 0 16px; padding-bottom:8px;
+  border-bottom:1px solid rgba(255,255,255,0.07); }
+h3 { font-size:18px; font-weight:600; color:#e2eaf4; margin:32px 0 12px; }
+p { color:#c8d8e8; margin-bottom:20px; font-size:16px; }
+a { color:#00d48a; }
+a:hover { color:#00e5a0; }
+strong, b { color:#fff; }
+ul,ol { padding-left:24px; margin-bottom:20px; color:#c8d8e8; }
+li { margin-bottom:8px; }
+img { max-width:100%; border-radius:12px; margin:24px 0; border:1px solid rgba(255,255,255,0.07); }
+</style>
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZPK0SR60XR"></script>
@@ -98,12 +37,34 @@
     gtag("js", new Date());
     gtag("config", "G-ZPK0SR60XR");
   </script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Article",
+  "author":{"@type":"Person","name":"Kamran Gul"},
+  "publisher":{"@type":"Organization","name":"Autodun","url":"https://autodun.com"},
+  "dateModified":"2026-04-02"
+}
+</script>
 </head>
 
 <body>
 
-<header>
-  <p class="meta"><a href="/blog/">← Back to Autodun Blog</a></p>
+<header style="background:#070f1a;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.07);position:sticky;top:0;z-index:100;">
+<a href="https://autodun.com" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+<span style="font-size:20px;">⚡</span>
+<span style="color:#fff;font-weight:800;font-size:18px;letter-spacing:-0.5px;">AUTODUN</span>
+</a>
+<nav style="display:flex;gap:20px;">
+<a href="https://autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">Home</a>
+<a href="https://ev.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">EV Finder</a>
+<a href="https://mot.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">MOT Predictor</a>
+<a href="/blog/index.html" style="color:#00d48a;text-decoration:none;font-size:14px;font-weight:600;">Blog</a>
+</nav>
+</header>
+
+<div class="wrap">
+  <a href="/blog/" class="back-link">← Back to Autodun Blog</a>
 
   <h1>ULEZ Checker UK — What ULEZ Compliance Really Means for Drivers</h1>
 
@@ -118,7 +79,6 @@
     <a href="https://ev.autodun.com">→ EV Finder (real charger availability)</a><br>
     <a href="https://mot.autodun.com">→ MOT Predictor (failure risk insights)</a>
   </div>
-</header>
 
 <figure>
   <img src="../images/ulez-uk/london-street-traffic.jpg" alt="London street traffic where ULEZ rules may apply">
@@ -449,13 +409,19 @@ read <a href="./why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.h
   <a href="https://mot.autodun.com">→ MOT Predictor — understand failure risk before it happens</a>
 </div>
 
-<footer>
-  <p>© <span id="y"></span> Autodun</p>
-</footer>
+</div>
 
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+<footer style="background:#050c15;border-top:1px solid rgba(255,255,255,0.06);padding:40px 24px;text-align:center;margin-top:80px;">
+<div style="max-width:780px;margin:0 auto;">
+<div style="margin-bottom:16px;">
+<a href="https://ev.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">EV Finder</a>
+<a href="https://mot.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">MOT Predictor</a>
+<a href="https://ai.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">AI Assistant</a>
+<a href="/blog/index.html" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Blog</a>
+</div>
+<p style="color:#556677;font-size:13px;margin:0;">© 2026 Autodun. AI vehicle intelligence for UK drivers.</p>
+</div>
+</footer>
 
 <!-- Article schema -->
 <script type="application/ld+json">

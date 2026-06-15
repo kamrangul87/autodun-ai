@@ -322,6 +322,15 @@ export default function MOTPredictor() {
           </div>
         </div>
       </section>
+
+      {/* ── Live Tool Embed ─────────────────────────── */}
+      <section style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <iframe
+          src="https://mot.autodun.com"
+          title="Autodun MOT Predictor"
+          style={{ border: "none", display: "block", width: "100%", height: "85vh" }}
+        />
+      </section>
     </Layout>
   );
 }

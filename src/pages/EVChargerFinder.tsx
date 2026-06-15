@@ -338,6 +338,15 @@ export default function EVChargerFinder() {
           </div>
         </div>
       </section>
+
+      {/* ── Live Tool Embed ─────────────────────────── */}
+      <section style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+        <iframe
+          src="https://ev.autodun.com"
+          title="Autodun EV Charger Finder"
+          style={{ border: "none", display: "block", width: "100%", height: "85vh" }}
+        />
+      </section>
     </Layout>
   );
 }
