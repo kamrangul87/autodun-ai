@@ -1,0 +1,99 @@
+<!-- META: Autodun about: what Autodun does, how AutoRun and AutoPlay work, and Registry settings explained for UK users in 2026. -->
+
+<h1>Autodun About: AutoRun, AutoPlay & Registry Settings Explained</h1>
+
+<p>Most people assume Windows handles removable media automatically — and it does, but not always in the way you'd expect. Autodun is a specialist resource dedicated to explaining exactly how AutoRun activation, AutoPlay behaviour, and Registry settings interact on Windows systems. Whether you're troubleshooting a USB drive that won't respond, tightening security on a business network, or simply curious about what happens the moment you insert a disc, this guide covers the full picture — from initiation and notification to evaluation order and drive types.</p>
+
+<h2>What Is Autodun and What Does It Cover?</h2>
+
+<p>Autodun is an independent technical reference site founded by Kamran Gul. Its core focus is the AutoRun and AutoPlay subsystems built into Microsoft Windows — features that have existed in various forms since the mid-1990s but remain widely misunderstood today.</p>
+
+<p>The site breaks down complex Windows behaviour into plain, accurate explanations. Topics covered include AutoRun activation, how Windows sends initiation and notification signals to the shell, the evaluation order Windows follows when deciding what action to take, and how different drive types are handled differently by the operating system.</p>
+
+<p>What makes Autodun genuinely useful is its specificity. Rather than vague overviews, the site explains <em>why</em> Windows behaves the way it does — tracing decisions back to Registry settings and Group Policy configurations. That depth is rare in freely available documentation.</p>
+
+<p>Practically speaking, the audience includes IT administrators managing Windows deployments across organisations, security professionals assessing attack surfaces, and technically minded home users who want real control over their systems rather than relying on defaults they don't understand.</p>
+
+<h2>AutoPlay and AutoRun Activation: Understanding the Difference</h2>
+
+<p>AutoRun and AutoPlay are related but distinct. AutoRun is the older mechanism — it reads an <code>autorun.inf</code> file at the root of a drive and executes instructions automatically. AutoPlay, introduced more prominently in Windows XP and refined in Vista and later, presents the user with a dialogue offering content-handling choices rather than executing code silently.</p>
+
+<p>AutoRun activation depends on several conditions being met simultaneously: the drive must be of a type that Windows recognises as eligible, the Registry settings must permit AutoRun for that drive type, and the relevant policy settings must not have disabled the feature. If any condition fails, AutoRun will not fire — even if a valid <code>autorun.inf</code> file is present.</p>
+
+<p>AutoPlay, by contrast, relies on content sniffing. Windows examines the media, identifies what type of content it contains — audio files, video, pictures, mixed content, or software — and presents appropriate handling options based on user preferences stored in the Registry. The two systems overlap but serve different purposes, and conflating them leads to genuine configuration errors in practice.</p>
+
+<p>Worth knowing: Microsoft significantly curtailed AutoRun for non-optical drives beginning with security updates released around 2011, following well-documented malware exploitation of the feature. AutoPlay remains active by default on most drive types in current Windows versions.</p>
+
+<h2>Registry Settings and Drive Types: Where the Real Control Lives</h2>
+
+<p>If you want genuine control over AutoRun and AutoPlay behaviour, the Windows Registry is where the decisions are made. Autodun's documentation goes into considerable depth here, covering the specific Registry keys, their locations, and the values that govern behaviour.</p>
+
+<p>The primary key of interest sits within <code>HKEY_LOCAL_MACHINE</code> and <code>HKEY_CURRENT_USER</code> under the Policies branch, alongside entries under the Explorer key. The <code>NoDriveTypeAutoRun</code> value is particularly important — it uses a bitmask to control which drive types are subject to AutoRun. Each bit in the value corresponds to a drive type category, allowing granular per-type control.</p>
+
+<p>Drive types Windows distinguishes include: unknown drives, no-root directories, removable drives, fixed drives, network drives, CD-ROM and optical drives, and RAM disks. The evaluation order matters enormously here. Windows checks machine-level policy first, then user-level policy, then the Explorer Registry key. If a machine-level Group Policy disables AutoRun for a drive type, no user-level setting can override it — which is exactly the behaviour IT administrators rely upon.</p>
+
+<p>Changing Registry settings manually requires care. Always back up the Registry before editing. The correct tool on modern Windows is the Registry Editor (<code>regedit.exe</code>), accessed with administrator privileges. For enterprise environments, Group Policy is the appropriate mechanism — editing the Registry directly on individual machines doesn't scale and introduces consistency risks.</p>
+
+<h2>Initiation, Notification, and Evaluation Order: The Detail Competitors Miss</h2>
+
+<p>Here's the aspect most AutoRun documentation glosses over: the initiation and notification sequence that Windows follows before any visible AutoRun or AutoPlay behaviour occurs.</p>
+
+<p>When a drive is connected or media inserted, Windows first sends a device arrival notification through the hardware abstraction layer. The shell then queries the drive to determine its type. Based on the drive type, Windows consults the Registry evaluation order — machine policy, user policy, then shell settings — to decide whether to proceed with AutoRun processing at all.</p>
+
+<p>If AutoRun is permitted, Windows looks for <code>autorun.inf</code> at the drive root. It parses the file, reads the specified action and icon entries, and registers the shell verb. The notification then propagates to AutoPlay, which either executes the AutoRun action silently (in configurations where this is still permitted) or presents the AutoPlay dialogue incorporating the AutoRun-specified option alongside other content-handling choices.</p>
+
+<p>What often gets overlooked is that the evaluation order means the same physical drive can behave completely differently on two machines with different Group Policy configurations — even running identical versions of Windows. This trips up administrators who test on their own machines and assume behaviour will replicate across a fleet. It won't, unless policy is consistent. Resources such as those available through <a href="https://seoranko.com" rel="noopener">SEO and technical documentation specialists at Seoranko</a> highlight how clearly explaining evaluation sequences like this dramatically improves user understanding and search visibility for technical content.</p>
+
+<h2>Changing Behaviour Safely: Practical Steps and Common Mistakes</h2>
+
+<p>Most people attempting to change AutoRun or AutoPlay behaviour make one of three mistakes: editing the wrong Registry key, setting an incorrect bitmask value, or applying changes at the user level when machine-level policy is overriding them.</p>
+
+<p>The safest approach for home users wanting to disable AutoRun on USB drives is to use the Windows Settings interface. In Windows 10 and Windows 11, navigate to Settings, then Bluetooth and devices, then AutoPlay. Toggle AutoPlay off entirely, or set per-device defaults. This writes the appropriate Registry values without manual editing and avoids the risk of Registry corruption.</p>
+
+<p>For IT administrators, the recommended approach is Group Policy. The relevant policy setting is found under Computer Configuration, then Administrative Templates, then Windows Components, then AutoPlay Policies. The "Turn off AutoPlay" policy allows disabling AutoRun for all drives or specific drive types. Applying this at the machine level ensures it cannot be overridden by individual user settings.</p>
+
+<p>A common mistake is assuming that deleting or modifying <code>autorun.inf</code> on a drive prevents AutoRun. On modern Windows versions where AutoRun for removable drives is already disabled by default, this makes no practical difference. On older or unpatched systems, it may help but is not a reliable security control — policy-level disabling is always preferable.</p>
+
+<p>Registry terminology also trips people up. Values, keys, and hives are distinct concepts. A <em>hive</em> is a top-level container (<code>HKLM</code>, <code>HKCU</code>). A <em>key</em> is a named container within a hive. A <em>value</em> is a named data entry within a key. Getting this terminology right matters when following technical documentation or seeking support.</p>
+
+<h2>What the Official Guidance Says</h2>
+
+<p>Microsoft's official documentation on AutoRun and AutoPlay is published at <a href="https://learn.microsoft.com/en-us/windows/win32/shell/autoplay" rel="noopener noreferrer">learn.microsoft.com</a>. This covers the AutoPlay API, content type handlers, and the shell notification architecture. For security-focused guidance, the UK's National Cyber Security Centre publishes device security configuration advice at <a href="https://www.ncsc.gov.uk/collection/device-security-guidance" rel="noopener noreferrer">ncsc.gov.uk</a>, including recommendations relevant to removable media handling in organisational contexts. Both sources are worth consulting before making system-wide changes.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What exactly is Autodun and who runs it?</h3>
+<p>Autodun is an independent technical reference website focused on Windows AutoRun, AutoPlay, and related Registry behaviour. It was founded by Kamran Gul. The site aims to provide accurate, detailed explanations of how Windows handles removable media — covering everything from Registry settings and drive types to evaluation order and initiation sequences. It is not affiliated with Microsoft or any government body.</p>
+
+<h3>Is AutoRun still active on Windows 11 in 2026?</h3>
+<p>AutoRun for removable drives such as USB sticks is disabled by default on current Windows versions, including Windows 11, following security updates Microsoft issued to address malware exploitation of the feature. AutoPlay — which presents a dialogue rather than executing code automatically — remains active by default. AutoRun on optical media (CD and DVD drives) may still be enabled depending on system configuration and applied policies.</p>
+
+<h3>How do I disable AutoPlay on a specific drive type in Windows?</h3>
+<p>For home users, go to Settings, then Bluetooth and devices, then AutoPlay, and adjust per-device defaults or disable AutoPlay entirely. For enterprise environments, use Group Policy under Computer Configuration, Administrative Templates, Windows Components, AutoPlay Policies. Editing Registry values directly is possible but carries risk — always back up the Registry first and ensure you're modifying the correct hive and key for the outcome you need.</p>
+
+<h3>What is the NoDriveTypeAutoRun Registry value and how does it work?</h3>
+<p>The <code>NoDriveTypeAutoRun</code> Registry value controls which drive types are excluded from AutoRun processing. It uses a bitmask — a number where each bit corresponds to a drive type category such as removable, fixed, network, or optical drives. Setting a bit to 1 disables AutoRun for that drive type. The value can be set at machine level or user level, but machine-level policy always takes precedence in the evaluation order Windows follows.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>Autodun exists to make sense of a genuinely complex Windows subsystem that most documentation treats too superficially. AutoRun, AutoPlay, Registry settings, drive types, and evaluation order all interact in ways that matter — for security, for usability, and for correct system configuration. Two immediate steps: check your AutoPlay settings in Windows Settings today, and if you manage a fleet of machines, verify your Group Policy AutoPlay configuration is applied at machine level. For further technical SEO and content insight, visit <a href="https://seoranko.com" rel="noopener">Seoranko</a>.</p>
+
+<div class="expert-review" style="background:#F5F4F1;border-left:3px solid #FF6B2C;padding:16px 20px;border-radius:0 8px 8px 0;margin-top:32px;">
+<p style="margin:0;font-size:13px;color:#6B6B6B;"><strong style="color:#0F0F0F;">Editorial note:</strong> This article was researched using official sources. All regulatory claims reflect United Kingdom rules as of June 2026. Always verify with the relevant official United Kingdom body before acting. Autodun is not a government service.</p>
+</div>
+
+<p class="article-meta"><em>Last updated: June 2026. Always verify regulatory details with the official United Kingdom sources cited above.</em></p>
+<p class="article-author">Written by <strong>Kamran Gul</strong>, Founder of Autodun.</p>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"Autodun About: AutoRun, AutoPlay & Registry Settings Explained","author":{"@type":"Person","name":"Kamran Gul"},"publisher":{"@type":"Organization","name":"Autodun","url":"https://autodun.com"},"dateModified":"2026-06-22","inLanguage":"en-GB","description":"Autodun about: what Autodun does, how AutoRun and AutoPlay work, and Registry settings explained for UK users in 2026.","mainEntityOfPage":{"@type":"WebPage","@id":"https://autodun.com/about"}}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What exactly is Autodun and who runs it?","acceptedAnswer":{"@type":"Answer","text":"Autodun is an independent technical reference website focused on Windows AutoRun, AutoPlay, and related Registry behaviour. It was founded by Kamran Gul. The site provides accurate, detailed explanations of how Windows handles removable media — covering Registry settings, drive types, and evaluation order. It is not affiliated with Microsoft or any government body."}},
+{"@type":"Question","name":"Is AutoRun still active on Windows 11 in 2026?","acceptedAnswer":{"@type":"Answer","text":"AutoRun for removable drives such as USB sticks is disabled by default on current Windows versions including Windows 11, following security updates Microsoft issued to address malware exploitation. AutoPlay — which presents a dialogue rather than executing code automatically — remains active by default. AutoRun on optical media may still be enabled depending on system configuration and applied Group Policy settings."}},
+{"@type":"Question","name":"How do I disable AutoPlay on a specific drive type in Windows?","acceptedAnswer":{"@type":"Answer","text":"For home users, go to Settings, then Bluetooth and devices, then AutoPlay, and adjust per-device defaults or disable AutoPlay entirely. For enterprise environments, use Group Policy under Computer Configuration, Administrative Templates, Windows Components, AutoPlay Policies. Editing Registry values directly is possible but carries risk — always back up the Registry first and ensure you are modifying the correct hive and key."}},
+{"@type":"Question","name":"What is the NoDriveTypeAutoRun Registry value and how does it work?","acceptedAnswer":{"@type":"Answer","text":"The NoDriveTypeAutoRun Registry value controls which drive types are excluded from AutoRun processing using a bitmask — a number where each bit corresponds to a drive type such as removable, fixed, network, or optical. Setting a bit to 1 disables AutoRun for that drive type. The value can be set at machine or user level, but machine-level policy always takes precedence in the evaluation order Windows follows."}}
+]}
+</script>
