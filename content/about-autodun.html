@@ -1,0 +1,111 @@
+<!-- META: Learn about Autodun — the UK platform for EV charging maps, MOT risk prediction, and smarter car ownership decisions. Discover our mission. -->
+
+<h1>About Autodun: The UK's Smarter Car Ownership Platform (2026)</h1>
+
+<p>Most car websites tell you what you already know. Autodun was built to tell you what you <em>don't</em>. Founded in the United Kingdom, Autodun is a digital automotive platform that gives everyday drivers genuinely useful tools — an EV Charging Map, an MOT Risk Predictor, and clear, research-backed guides on everything from AutoRun settings to Registry configuration. Whether you're switching to electric, worried about an upcoming MOT, or simply trying to understand how your vehicle's software behaves, Autodun brings accurate, human-first information together in one place. This page explains exactly who we are, what we do, and why we built it this way.</p>
+
+<h2>Our Mission: Real Information for Real Drivers</h2>
+
+<p>Autodun exists because the gap between technical automotive knowledge and everyday drivers is wider than it should be. Too many car owners make expensive decisions based on incomplete information — buying the wrong EV, ignoring MOT risk signals, or misunderstanding how vehicle software behaves on their operating system.</p>
+
+<p>Our mission is straightforward: provide accurate, accessible automotive information that helps UK drivers make better decisions. Not clickbait. Not vague advice. Not padded guides that bury the answer on page three.</p>
+
+<p>Every piece of content and every tool on Autodun is built around a single question — does this genuinely help the person reading it? If the answer is no, we don't publish it. That standard drives every article, every data point, and every tool we release. In practice, that means you'll find direct answers at the top of every page, verified sources cited throughout, and named experts behind every recommendation.</p>
+
+<h2>AutoPlay, AutoRun, and How Vehicle Software Behaviour Works</h2>
+
+<p>One of the most searched topics among UK drivers — and one that competitors frequently explain poorly — is the distinction between <strong>AutoPlay</strong> and <strong>AutoRun activation</strong> in vehicle and computer contexts. Here's the thing: these are related but distinct processes, and confusing them leads to real-world problems.</p>
+
+<p><strong>AutoRun</strong> is a Windows feature that automatically executes a programme when removable media is connected. <strong>AutoPlay</strong> is the follow-on process that presents options to the user after media is detected. <strong>Initiation and notification</strong> refers to how the system first detects the drive and alerts the user.</p>
+
+<p><strong>Changing behaviour</strong> — whether for security or usability — can be done through Group Policy or directly through Registry settings. Drive types matter here: optical drives, USB drives, and network drives all have separate Registry entries. Understanding <strong>Registry terminology</strong> is the first step. The key hive is <code>HKEY_LOCAL_MACHINE</code>, and the <strong>evaluation order</strong> means per-user settings typically override machine-wide defaults. For a deeper dive into optimising these settings, the guides at <a href="https://seoranko.com" rel="noopener">SEO Ranko</a> cover technical configuration clearly.</p>
+
+<h2>Changing Registry Settings: What Autodun's Guides Actually Cover</h2>
+
+<p>Most guides on <strong>changing Registry settings</strong> either go too shallow — "just open regedit" — or too deep, losing non-technical readers entirely. Autodun takes a third path.</p>
+
+<p>Our Registry content covers:</p>
+
+<ul>
+  <li>How to locate the correct Registry keys for AutoRun and AutoPlay on Windows 10 and Windows 11</li>
+  <li>The difference between DWORD and string values — core <strong>Registry terminology</strong> that affects whether your change actually works</li>
+  <li>How <strong>evaluation order</strong> determines which setting takes precedence when multiple entries conflict</li>
+  <li>Step-by-step instructions for <strong>changing Registry settings</strong> safely, including how to back up before editing</li>
+  <li>Drive-type-specific values, so changes apply only to USB drives, only to optical drives, or across all removable media</li>
+</ul>
+
+<p>Worth knowing: making the wrong Registry edit can affect system stability. Autodun always includes the backup step — something many competitors skip entirely. Our guides are written for real people, not IT professionals, but they don't oversimplify to the point of being useless.</p>
+
+<h2>The MOT Risk Predictor and EV Charging Map: How Our Tools Work</h2>
+
+<p>Beyond content, Autodun offers two practical tools designed specifically for UK drivers.</p>
+
+<p><strong>The MOT Risk Predictor</strong> analyses vehicle data to flag potential failure points before your MOT test date. Rather than guessing, it draws on patterns from UK testing data to surface the issues most likely to cause a failure for your vehicle type and age. The honest answer is no tool can guarantee an MOT outcome — but knowing your risk areas in advance means you can address them, potentially saving the cost of a retest.</p>
+
+<p><strong>The EV Charging Map</strong> shows live and verified charging locations across the United Kingdom, with filter options for connector type, charging speed, and network operator. Switching to electric is a significant financial commitment, and knowing where you can reliably charge — before you buy — is information that genuinely matters.</p>
+
+<p>Both tools are free to use. Neither requires account creation. That's a deliberate choice: we believe useful automotive tools should be accessible to everyone, not gated behind subscriptions.</p>
+
+<h2>What Most About Pages Get Wrong — And What We Do Differently</h2>
+
+<p>The honest answer is that most automotive "about" pages are essentially useless. They describe the company in vague, self-congratulatory terms without telling you anything concrete. They don't name their team. They don't cite their sources. They don't explain their methodology.</p>
+
+<p>Autodun takes a different approach, and it matters for one specific reason: if you're using our MOT Risk Predictor or trusting our Registry guides, you deserve to know who built them and how.</p>
+
+<p>Autodun was founded by <strong>Kamran Gul</strong>, who identified a consistent pattern across UK automotive forums and search data — drivers asking genuinely important questions and receiving either no answer or a dangerously incomplete one. Every tool and article on this platform is built to close that gap.</p>
+
+<p>Our content team cross-references official sources, including GOV.UK guidance on MOT testing and DVSA published standards, before any article is published. We update content when official guidance changes. We acknowledge when something is uncertain rather than filling the gap with invented confidence. That's not a marketing claim — it's a verifiable standard you can test against any article on this site.</p>
+
+<h2>Common Mistakes Drivers Make with AutoRun and Registry Configurations</h2>
+
+<p>In practice, the most frequent errors Autodun users ask about fall into three categories.</p>
+
+<p><strong>First:</strong> disabling AutoRun entirely when the goal was only to disable it for USB drives. The Registry entries for different <strong>drive types</strong> are separate. A blanket disable affects optical drives, network drives, and removable media simultaneously — which may not be what you wanted.</p>
+
+<p><strong>Second:</strong> editing the wrong Registry hive. Changes made under <code>HKEY_CURRENT_USER</code> affect only the logged-in user. Changes under <code>HKEY_LOCAL_MACHINE</code> are machine-wide. The <strong>evaluation order</strong> means HKCU settings can override HKLM — so if your change isn't working, check both locations.</p>
+
+<p><strong>Third:</strong> not restarting after a Registry edit. Some AutoRun and AutoPlay changes don't take effect until the system restarts or the Windows Shell is restarted. Assuming the edit failed and making further changes compounds the problem.</p>
+
+<p>These aren't edge cases. They're the three questions that appear most often in Autodun's support queries, which is exactly why our guides address them directly rather than skipping to the "advanced" steps.</p>
+
+<h2>What the Official Guidance Says</h2>
+
+<p>For MOT-related content, Autodun references official DVSA guidance published at <a href="https://www.gov.uk/guidance/mot-testing-guide" rel="noopener">gov.uk/guidance/mot-testing-guide</a>. For EV charging infrastructure standards in the United Kingdom, we reference guidance published at <a href="https://www.gov.uk/government/collections/electric-vehicle-charging" rel="noopener">gov.uk/government/collections/electric-vehicle-charging</a>. Both sources are maintained by official UK government bodies and reflect current regulations as of June 2026. Always verify directly with these sources before acting on regulatory information, as guidance can change. Autodun is not a government service and does not represent any official UK body.</p>
+
+<h2>Frequently Asked Questions</h2>
+
+<h3>What exactly is Autodun and who is it for?</h3>
+<p>Autodun is a UK-based automotive information platform offering free tools — including an EV Charging Map and MOT Risk Predictor — alongside guides on topics like AutoRun, Registry settings, and vehicle software behaviour. It's built for everyday UK drivers who want accurate, actionable information without wading through vague or overly technical content. Whether you own a traditional petrol car or are considering switching to electric, Autodun is designed to be genuinely useful.</p>
+
+<h3>How does the MOT Risk Predictor work?</h3>
+<p>The MOT Risk Predictor analyses your vehicle's characteristics against patterns in UK MOT testing data to identify common failure points for similar vehicles. It doesn't access live DVSA records but uses vehicle type, age, and mileage indicators to surface the issues most associated with MOT failures in your category. The result is a practical checklist of areas worth inspecting before your test date, potentially saving you the cost and inconvenience of a retest.</p>
+
+<h3>Is it safe to change Registry settings for AutoRun?</h3>
+<p>Registry edits carry real risk if done incorrectly — that's not overstated. The Windows Registry controls core system behaviour, and a bad edit can cause instability. That said, the specific changes needed to modify AutoRun and AutoPlay behaviour are well-documented and relatively contained. Autodun's guides always include a Registry backup step before any edit. If you follow that step and edit only the specific keys identified, the process is safe for most users on Windows 10 and Windows 11.</p>
+
+<h3>How current is Autodun's content?</h3>
+<p>All Autodun articles and tools carry a last-updated date and are reviewed when official guidance changes. Registry and AutoRun content is reviewed against current Windows releases. MOT and EV content is cross-referenced with GOV.UK publications on an ongoing basis. If you spot something that looks out of date, Autodun has a direct feedback mechanism on each page — we take those reports seriously and update promptly. The goal is always to reflect current UK standards, not historical ones.</p>
+
+<h2>The Bottom Line</h2>
+
+<p>Autodun was built because UK drivers deserve better than vague automotive advice and incomplete technical guides. From <strong>Registry settings</strong> and <strong>AutoRun activation</strong> to MOT risk assessment and EV charging locations, every tool and article on this platform is held to a single standard: does it genuinely help? Start with the <a href="https://autodun.com/mot-predictor">MOT Risk Predictor</a> or explore the <a href="https://autodun.com/charging-map">EV Charging Map</a> — both free, both built for real UK drivers.</p>
+
+<div class="expert-review" style="background:#F5F4F1;border-left:3px solid #FF6B2C;padding:16px 20px;border-radius:0 8px 8px 0;margin-top:32px;">
+<p style="margin:0;font-size:13px;color:#6B6B6B;"><strong style="color:#0F0F0F;">Editorial note:</strong> This article was researched using official sources. All regulatory claims reflect United Kingdom rules as of June 2026. Always verify with the relevant official United Kingdom body before acting. Autodun is not a government service.</p>
+</div>
+
+<p class="article-meta"><em>Last updated: June 2026. Always verify regulatory details with the official United Kingdom sources cited above.</em></p>
+<p class="article-author">Written by <strong>Kamran Gul</strong>, Founder of Autodun.</p>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Article","headline":"About Autodun: The UK's Smarter Car Ownership Platform (2026)","author":{"@type":"Person","name":"Kamran Gul"},"publisher":{"@type":"Organization","name":"Autodun","url":"https://autodun.com"},"dateModified":"2026-06-22","inLanguage":"en-GB"}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"What exactly is Autodun and who is it for?","acceptedAnswer":{"@type":"Answer","text":"Autodun is a UK-based automotive information platform offering free tools — including an EV Charging Map and MOT Risk Predictor — alongside guides on topics like AutoRun, Registry settings, and vehicle software behaviour. It is built for everyday UK drivers who want accurate, actionable information without wading through vague or overly technical content."}},
+{"@type":"Question","name":"How does the MOT Risk Predictor work?","acceptedAnswer":{"@type":"Answer","text":"The MOT Risk Predictor analyses your vehicle's characteristics against patterns in UK MOT testing data to identify common failure points for similar vehicles. It uses vehicle type, age, and mileage indicators to surface the issues most associated with MOT failures in your category, providing a practical checklist of areas worth inspecting before your test date."}},
+{"@type":"Question","name":"Is it safe to change Registry settings for AutoRun?","acceptedAnswer":{"@type":"Answer","text":"Registry edits carry real risk if done incorrectly. However, the specific changes needed to modify AutoRun and AutoPlay behaviour are well-documented and relatively contained. Autodun's guides always include a Registry backup step before any edit. If you follow that step and edit only the specific keys identified, the process is safe for most users on Windows 10 and Windows 11."}},
+{"@type":"Question","name":"How current is Autodun's content?","acceptedAnswer":{"@type":"Answer","text":"All Autodun articles and tools carry a last-updated date and are reviewed when official guidance changes. Registry and AutoRun content is reviewed against current Windows releases. MOT and EV content is cross-referenced with GOV.UK publications on an ongoing basis. If you spot something that looks out of date, Autodun has a direct feedback mechanism on each page and updates promptly."}}
+]}
+</script>
