@@ -1,20 +1,34 @@
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown, Wrench, AlertTriangle, FileText, CircleDollarSign } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
 import { LogoMark } from "@/components/LogoMark";
 
+const FIX_BASE = "https://fix.autodun.com";
+
+const fixTools = [
+  { href: `${FIX_BASE}#breakdown`, label: "Breakdown Assistant", icon: Wrench },
+  { href: `${FIX_BASE}#warning-lights`, label: "Warning Light Decoder", icon: AlertTriangle },
+  { href: `${FIX_BASE}#appeal`, label: "Parking Fine Appeal", icon: FileText },
+  { href: `${FIX_BASE}#price`, label: "Fair Price Checker", icon: CircleDollarSign },
+];
+
 export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [fixDropdownOpen, setFixDropdownOpen] = useState(false);
+  const [mobileFixOpen, setMobileFixOpen] = useState(false);
   const location = useLocation();
 
   const isActive = (path: string) => location.pathname === path;
 
-  const navLinks = [
+  const navLinksBefore = [
     { path: "/", label: "Home" },
     { path: "/ev-charger-finder", label: "EV Charger Finder" },
     { path: "/mot-predictor", label: "MOT Predictor" },
+  ];
+
+  const navLinksAfter = [
     { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
@@ -43,19 +57,74 @@ export const Header = () => {
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
-          {navLinks.map((link) => (
+          {navLinksBefore.map((link) => (
             <Link
               key={link.path}
               to={link.path}
               className={cn(
                 "text-sm font-medium transition-colors whitespace-nowrap",
-                isActive(link.path)
-                  ? "text-[#00d48a]"
-                  : "hover:text-[#f0f6ff]"
+                isActive(link.path) ? "text-[#00d48a]" : "hover:text-[#f0f6ff]"
               )}
-              style={{
-                color: isActive(link.path) ? "#00d48a" : "#8899aa",
-              }}
+              style={{ color: isActive(link.path) ? "#00d48a" : "#8899aa" }}
+            >
+              {link.label}
+            </Link>
+          ))}
+
+          {/* FIX DROPDOWN */}
+          <div
+            className="relative"
+            onMouseEnter={() => setFixDropdownOpen(true)}
+            onMouseLeave={() => setFixDropdownOpen(false)}
+          >
+            <a
+              href={FIX_BASE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1 text-sm font-medium transition-colors whitespace-nowrap hover:text-[#f0f6ff]"
+              style={{ color: "#8899aa" }}
+            >
+              Fix
+              <ChevronDown
+                className="h-3.5 w-3.5 transition-transform"
+                style={{ transform: fixDropdownOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+              />
+            </a>
+
+            {fixDropdownOpen && (
+              <div
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-52 rounded-xl overflow-hidden shadow-xl"
+                style={{
+                  backgroundColor: "#111f33",
+                  border: "1px solid rgba(255,255,255,0.08)",
+                }}
+              >
+                {fixTools.map((tool) => (
+                  <a
+                    key={tool.href}
+                    href={tool.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 px-4 py-3 text-sm transition-colors hover:bg-white/5"
+                    style={{ color: "#8899aa" }}
+                  >
+                    <tool.icon className="h-4 w-4 shrink-0" style={{ color: "#00d48a" }} />
+                    {tool.label}
+                  </a>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {navLinksAfter.map((link) => (
+            <Link
+              key={link.path}
+              to={link.path}
+              className={cn(
+                "text-sm font-medium transition-colors whitespace-nowrap",
+                isActive(link.path) ? "text-[#00d48a]" : "hover:text-[#f0f6ff]"
+              )}
+              style={{ color: isActive(link.path) ? "#00d48a" : "#8899aa" }}
             >
               {link.label}
             </Link>
@@ -65,9 +134,7 @@ export const Header = () => {
           <a
             href="/blog/index.html"
             className="text-sm font-medium transition-colors whitespace-nowrap hover:text-[#f0f6ff]"
-            style={{
-              color: location.pathname.startsWith("/blog") ? "#00d48a" : "#8899aa",
-            }}
+            style={{ color: location.pathname.startsWith("/blog") ? "#00d48a" : "#8899aa" }}
           >
             Blog
           </a>
@@ -80,11 +147,7 @@ export const Header = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center rounded-lg text-sm font-bold transition-opacity hover:opacity-90 whitespace-nowrap"
-            style={{
-              backgroundColor: "#00d48a",
-              color: "#070f1a",
-              padding: "10px 20px",
-            }}
+            style={{ backgroundColor: "#00d48a", color: "#070f1a", padding: "10px 20px" }}
           >
             Ask Autodun AI
           </a>
@@ -109,7 +172,63 @@ export const Header = () => {
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="md:hidden">
           <div className="container-main py-3">
             <div className="flex flex-col gap-1">
-              {navLinks.map((link) => (
+              {navLinksBefore.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-md px-3 py-2 text-sm font-medium transition-colors"
+                  style={{
+                    color: isActive(link.path) ? "#00d48a" : "#8899aa",
+                    backgroundColor: isActive(link.path) ? "rgba(0,212,138,0.08)" : "transparent",
+                  }}
+                >
+                  {link.label}
+                </Link>
+              ))}
+
+              {/* FIX — mobile accordion */}
+              <button
+                onClick={() => setMobileFixOpen((v) => !v)}
+                className="flex items-center justify-between rounded-md px-3 py-2 text-sm font-medium transition-colors text-left w-full"
+                style={{ color: "#8899aa", backgroundColor: "transparent" }}
+              >
+                Fix
+                <ChevronDown
+                  className="h-4 w-4 transition-transform"
+                  style={{ transform: mobileFixOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+                />
+              </button>
+
+              {mobileFixOpen && (
+                <div className="ml-3 flex flex-col gap-1">
+                  <a
+                    href={FIX_BASE}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="rounded-md px-3 py-2 text-sm font-medium"
+                    style={{ color: "#8899aa" }}
+                  >
+                    All Fix Tools
+                  </a>
+                  {fixTools.map((tool) => (
+                    <a
+                      key={tool.href}
+                      href={tool.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="rounded-md px-3 py-2 text-sm transition-colors"
+                      style={{ color: "#8899aa" }}
+                    >
+                      {tool.label}
+                    </a>
+                  ))}
+                </div>
+              )}
+
+              {navLinksAfter.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
@@ -139,11 +258,7 @@ export const Header = () => {
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
                 className="mt-2 inline-flex items-center justify-center rounded-lg text-sm font-bold transition-opacity hover:opacity-90"
-                style={{
-                  backgroundColor: "#00d48a",
-                  color: "#070f1a",
-                  padding: "10px 20px",
-                }}
+                style={{ backgroundColor: "#00d48a", color: "#070f1a", padding: "10px 20px" }}
               >
                 Ask Autodun AI
               </a>
