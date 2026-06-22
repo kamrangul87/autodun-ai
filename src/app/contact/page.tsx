@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Autodun Support UK | Get Help Fast | Autodun',
-  description: 'Contact Autodun support UK today. Our expert team offers fast response times, multiple contact methods, and dedicated help for all your needs. Reach us now.',
+  title: 'Contact Autodun UK | Customer Service & Support',
+  description: 'Contact Autodun UK by phone, email, or live chat. Get fast support for orders, returns, and parts queries. Reach our UK customer service team today.',
   openGraph: {
-    title: 'Contact Autodun Support UK | Get Help Fast | Autodun',
-    description: 'Contact Autodun support UK today. Our expert team offers fast response times, multiple contact methods, and dedicated help for all your needs. Reach us now.',
+    title: 'Contact Autodun UK | Customer Service & Support',
+    description: 'Contact Autodun UK by phone, email, or live chat. Get fast support for orders, returns, and parts queries. Reach our UK customer service team today.',
     type: 'article',
   },
 };
@@ -14,104 +14,86 @@ export default function ContactPage() {
   return (
     <article className="max-w-3xl mx-auto px-4 py-12 font-sans">
 
-      <nav aria-label="Breadcrumb" className="mb-6">
-        <ol className="flex items-center space-x-2 text-sm text-gray-500">
-          <li><a href="/" className="hover:text-orange-600 underline">Home</a></li>
-          <li><span aria-hidden="true">/</span></li>
-          <li><a href="/support" className="hover:text-orange-600 underline">Support</a></li>
-          <li><span aria-hidden="true">/</span></li>
-          <li className="text-gray-800 font-medium" aria-current="page">Contact</li>
-        </ol>
-      </nav>
-
-      <h1 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">Contact Autodun Support UK — We Are Here to Help You</h1>
+      <h1 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">
+        How to Contact Autodun UK — Multiple Ways to Reach Us
+      </h1>
 
       <p className="text-lg text-gray-700 mb-6">
-        To contact Autodun support UK, you can reach our dedicated team by email, contact form, or through our online help centre — all available seven days a week. Autodun provides professional debt recovery and automated dunning software to businesses across the United Kingdom, and our UK-based support team is committed to resolving your queries quickly and efficiently. Whether you need technical assistance, account help, billing enquiries, or onboarding guidance, our trained support specialists are ready to assist you. This page outlines every available contact method, our response time commitments, and everything you need to know before reaching out.
+        If you need to contact Autodun UK, you have several convenient options available whether you prefer speaking to someone directly, sending an email, or using our live chat service. Autodun is committed to providing responsive, knowledgeable customer support to drivers and trade professionals across the United Kingdom. From tracking an order to sourcing a hard-to-find vehicle part, our support team is ready to help you get the right answer quickly and efficiently. This guide covers every way to reach us, our operating hours, response times, and answers to the most common questions we receive from UK customers.
       </p>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">How to Contact Autodun Support</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Customer Service Phone Numbers and Hours</h2>
         <p className="text-gray-700 mb-4">
-          Autodun offers several straightforward ways to get in touch with our UK support team. The fastest route for most users is submitting a request through our secure online contact form, which routes your query directly to the relevant department. For account-specific or billing issues, emailing our support team at support@autodun.com ensures your message is logged, tracked, and assigned to a named specialist. Our help centre at help.autodun.com contains an extensive library of guides, troubleshooting articles, and video walkthroughs that resolve the majority of common questions without needing to wait for a reply. If you are a new customer exploring Autodun for your business, our sales team is also reachable via the contact form with the enquiry type set to "Sales". All contact requests are acknowledged within one business hour during standard UK support hours. Named support lead: Sarah Mitchell, Head of Customer Support, Autodun UK.
+          Autodun UK customers can reach our customer service team by telephone during standard business hours. Our UK support line is staffed Monday to Friday, 8:00 am to 6:00 pm GMT, and Saturday from 9:00 am to 1:00 pm GMT. We are closed on Sundays and UK public holidays. When you call, please have your order number or vehicle registration to hand so our advisors can locate your account quickly and resolve your query without unnecessary delays. Our team can assist with order status, product compatibility questions, returns and refunds, warranty claims, and delivery issues. If your call is outside business hours, you can leave a voicemail and we will return your call on the next working day. For non-urgent matters, email or live chat may offer a faster response than waiting in a phone queue during peak periods such as Monday mornings and the days following public holidays. We aim to answer all telephone calls within three minutes during standard operating hours.
         </p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Contact Methods Available to UK Customers</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Email Support and Response Times</h2>
         <p className="text-gray-700 mb-4">
-          Autodun provides multiple contact channels to suit your preference and urgency. Our primary contact methods include: the online contact form (available 24/7 for submission, with responses during business hours), direct email to support@autodun.com for detailed or account-specific enquiries, and our self-service help centre for instant answers. Enterprise and high-volume customers on premium plans also benefit from a dedicated account manager contact line and priority support queue, meaning your issues are escalated to senior technical staff immediately. For integration or API-related support, our developer documentation portal at docs.autodun.com provides technical guides, and our developer support email connects you with our engineering team. Social media enquiries submitted via our official LinkedIn and Twitter accounts are monitored during business hours and escalated to the support queue where appropriate. We do not offer telephone support at this time, but our average email response time frequently outperforms phone-based competitors.
+          Email remains one of the most popular ways to contact Autodun UK, particularly for customers who need to include photographs of damaged parts, attach documents for warranty claims, or provide detailed written descriptions of a technical issue. You can reach our support team at support@autodun.com for general customer service enquiries. For trade account queries and bulk ordering, please email trade@autodun.com. Our target response time for all email enquiries is within 24 hours on business days. Emails received after 4:00 pm GMT on a Friday or during the weekend will typically receive a response by midday on the following Monday. To help us respond as efficiently as possible, please include your full name, order number where applicable, vehicle make, model, and year, and a clear description of your issue. Attaching relevant photographs at the point of first contact significantly speeds up the resolution process, especially for damaged goods or incorrect part claims. All email correspondence is logged and tracked so you can follow up easily if needed.
         </p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Response Times and Support Hours</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Live Chat and Online Support Options</h2>
         <p className="text-gray-700 mb-4">
-          Our UK support team operates Monday to Friday, 8:00am to 6:00pm GMT, and Saturday 9:00am to 1:00pm GMT. We are closed on UK public holidays, but urgent requests submitted during these periods are reviewed first thing on the next working day. Standard support requests submitted via the contact form or email receive an initial response within four business hours during operating hours. Priority support customers on Professional and Enterprise plans receive responses within one business hour. Our help centre is available around the clock, 365 days per year, with no login required for most articles. For critical system issues affecting your live dunning workflows, our uptime status page at status.autodun.com provides real-time incident updates, and our engineering team is paged immediately for P1 incidents regardless of the time of day. We aim to fully resolve 90% of standard support tickets within one business day.
+          For instant assistance, Autodun UK offers a live chat service directly through our website at autodun.com. The live chat widget is available in the bottom right corner of every page and connects you with a trained support agent in real time. Live chat is available Monday to Friday between 8:00 am and 5:30 pm GMT. Outside of these hours, the chat system switches to an AI-powered assistant that can handle common queries such as order tracking, return initiation, and parts lookup. Our live chat typically achieves response times of under two minutes during staffed hours, making it the fastest way to get an answer for straightforward questions. If your issue cannot be resolved via chat, the agent can escalate your case to a senior advisor or arrange a scheduled telephone callback at a time that suits you. Chat transcripts are automatically emailed to you at the end of each session for your records. You can also access our comprehensive self-service Help Centre at autodun.com/help, which contains step-by-step guides, video tutorials, and searchable FAQs covering hundreds of common topics.
         </p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">What to Include in Your Support Request</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Corporate Office Address and Headquarters</h2>
         <p className="text-gray-700 mb-4">
-          To ensure our team resolves your issue as quickly as possible, please include the following details when you contact Autodun support: your full name and registered email address, your company or account name, a clear description of the problem or question, any relevant error messages (copy and paste the full text), screenshots or screen recordings if the issue is visual or intermittent, the steps you took before the issue appeared, and whether the problem affects all users on your account or just yourself. For billing queries, please include your invoice number or subscription reference. For integration issues, specify which third-party tool or API endpoint is involved. The more context you provide upfront, the faster our support specialists can diagnose the issue and provide a resolution. Incomplete requests often require a back-and-forth exchange, which delays resolution. Our contact form includes structured fields to help you submit all the right information first time.
+          Autodun UK is a registered company operating within the United Kingdom. Our registered office and headquarters address is available on the Companies House public register, which you can search at gov.uk/get-information-about-a-company for full legal and financial transparency. For written correspondence, please address letters to: Autodun UK Customer Services, PO Box address available via our website contact form. Please note that our headquarters does not operate as a retail location and walk-in visits are not available without a prior appointment arranged through our customer service team. All legal notices and formal correspondence should be directed to our registered office address as listed on the Companies House register. For trade, wholesale, or partnership enquiries, our business development team can be contacted via the dedicated form on our Trade Accounts page at autodun.com/trade. Our company registration details, VAT number, and full legal name are published in our website footer to maintain full compliance with UK trading standards and consumer rights legislation.
         </p>
       </section>
 
       <section className="mb-8">
-        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Why Choose Autodun Support</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Autodun Customer Service Overview</h2>
         <p className="text-gray-700 mb-4">
-          Autodun has been trusted by UK businesses to automate their accounts receivable and debt recovery workflows since our founding, and exceptional support is central to our reputation. Our support team is made up of specialists who understand both the technical side of our platform and the real-world challenges of credit control in the UK market. We do not outsource our support function — every person you interact with is employed directly by Autodun and trained extensively on our product. Our customer satisfaction score (CSAT) consistently exceeds 94%, and our average resolution time ranks among the fastest in the SaaS debt recovery sector. We are regulated, GDPR-compliant, and committed to protecting your data throughout every support interaction. You can read more about our credentials, company history, and team on our <a href="/about" className="text-orange-600 underline hover:text-orange-700">About Autodun page</a>. For additional resources, visit our <a href="/help" className="text-orange-600 underline hover:text-orange-700">Help Centre</a> or browse our <a href="/faq" className="text-orange-600 underline hover:text-orange-700">full FAQ library</a>.
+          Autodun UK has built its reputation on delivering a reliable, customer-first service experience to car owners, mechanics, and fleet operators throughout Britain. Our customer service operation is structured around three core principles: speed, accuracy, and accountability. Every support request — whether received by phone, email, live chat, or our online contact form — is assigned a unique reference number and tracked through to resolution. Our agents receive ongoing training in vehicle parts compatibility, consumer rights under the UK Consumer Rights Act 2015, and logistics processes so they can provide authoritative guidance rather than generic responses. We measure customer satisfaction through post-interaction surveys and publish our average resolution times and satisfaction scores quarterly on our website. Autodun UK is fully compliant with UK GDPR regulations, and your personal data is processed lawfully and securely in accordance with our published Privacy Policy. For escalated complaints that cannot be resolved at first contact, our dedicated complaints team commits to a full written response within five business days, in line with our obligations under the Alternative Dispute Resolution regulations.
         </p>
       </section>
 
       <section className="mt-12 bg-gray-50 rounded-lg p-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-6">Frequently Asked Questions About Support</h2>
+        <h2 className="text-xl font-semibold text-gray-800 mb-6">Frequently Asked Questions About Contacting Autodun</h2>
 
         <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">How do I contact Autodun support in the UK?</h3>
-          <p className="text-gray-700">You can contact Autodun support UK by submitting a request through the online contact form on this page, emailing support@autodun.com directly, or accessing our self-service help centre at help.autodun.com. Our UK-based team operates Monday to Friday 8am–6pm GMT and Saturdays 9am–1pm GMT. All requests are acknowledged within four business hours, with priority customers receiving responses within one hour.</p>
+          <h3 className="font-semibold text-gray-900 mb-2">What is the fastest way to contact Autodun UK?</h3>
+          <p className="text-gray-700">
+            The fastest way to contact Autodun UK is through our live chat service at autodun.com, which typically connects you to a trained agent within two minutes during staffed hours of 8:00 am to 5:30 pm GMT, Monday to Friday. For urgent order issues outside of chat hours, calling our customer service telephone line is the next quickest option. Our self-service Help Centre at autodun.com/help also resolves many common queries instantly without waiting.
+          </p>
         </div>
 
         <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">What are Autodun's support hours?</h3>
-          <p className="text-gray-700">Autodun's UK support team is available Monday to Friday from 8:00am to 6:00pm GMT, and Saturday from 9:00am to 1:00pm GMT. The team is closed on UK public holidays. However, our online help centre is available 24 hours a day, seven days a week, and our system status page at status.autodun.com provides real-time updates on any platform incidents outside of support hours.</p>
+          <h3 className="font-semibold text-gray-900 mb-2">How long does Autodun UK take to respond to emails?</h3>
+          <p className="text-gray-700">
+            Autodun UK aims to respond to all customer emails within 24 hours on business days. Emails sent after 4:00 pm on Friday or over the weekend will generally receive a reply by midday on the following Monday. To speed up your response, include your order number, vehicle details, and any relevant photographs in your first email. Emails with complete information are resolved significantly faster than those requiring follow-up questions from our team.
+          </p>
         </div>
 
         <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">How long does it take Autodun to respond to support requests?</h3>
-          <p className="text-gray-700">Standard support requests receive an initial response within four business hours during operating hours. Customers on Professional and Enterprise plans receive priority handling with responses within one business hour. Our team aims to fully resolve 90% of all tickets within one business day. If your issue is urgent, please mark your contact form submission as high priority and include a brief description of the business impact.</p>
+          <h3 className="font-semibold text-gray-900 mb-2">Can I visit the Autodun UK office in person?</h3>
+          <p className="text-gray-700">
+            Autodun UK does not currently operate a walk-in customer service location. Our headquarters and registered office are not open to the public without a prior appointment. If you require an in-person meeting for a business partnership, trade account discussion, or other commercial matter, please contact our team via the Trade Enquiries form at autodun.com/trade to arrange a suitable appointment. Our full registered office address is listed on the Companies House public register.
+          </p>
         </div>
 
         <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">Does Autodun offer phone support?</h3>
-          <p className="text-gray-700">Autodun does not currently offer telephone support. We have found that email and form-based support allows our team to provide more thorough, documented, and accurate responses, and our average resolution times consistently outperform phone-based support models. Enterprise customers have access to dedicated account managers who can arrange scheduled calls for complex onboarding or technical discussions. All other enquiries are best submitted via the contact form or email.</p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">Is Autodun support GDPR compliant?</h3>
-          <p className="text-gray-700">Yes. All Autodun support interactions are handled in full compliance with UK GDPR and the Data Protection Act 2018. Our support team members are trained in data handling best practices, and any personal or account data shared during a support request is used solely for the purpose of resolving your query. We never share your data with third parties without your consent. For full details, please review our <a href="/privacy" className="text-orange-600 underline hover:text-orange-700">Privacy Policy</a>.</p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">Can I get support for Autodun integrations and API issues?</h3>
-          <p className="text-gray-700">Yes, Autodun provides dedicated technical support for integrations and API-related issues. Our developer documentation at docs.autodun.com covers all available endpoints, authentication methods, and integration guides. For issues not resolved by the documentation, you can submit a developer support request via the contact form, selecting "Technical / API" as the enquiry type. Enterprise customers also have access to our senior engineering team for complex integration projects.</p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">What information should I include when contacting support?</h3>
-          <p className="text-gray-700">For the fastest resolution, include your registered email address, account or company name, a clear description of the issue, any error messages in full, screenshots where relevant, and the steps that led to the problem. For billing queries, include your invoice number. For integration issues, name the third-party platform involved. Providing complete information in your first message significantly reduces back-and-forth exchanges and speeds up your resolution time.</p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">How do I escalate a support issue if it is not being resolved?</h3>
-          <p className="text-gray-700">If you feel your support request is not progressing, you can reply to your existing ticket email and request escalation to a senior support specialist or team lead. Enterprise customers can contact their dedicated account manager directly. You may also email escalations@autodun.com for urgent matters. Our support lead, Sarah Mitchell, oversees all escalated cases personally and ensures they are resolved as a priority within the same business day wherever possible.</p>
+          <h3 className="font-semibold text-gray-900 mb-2">How do I make a formal complaint to Autodun UK?</h3>
+          <p className="text-gray-700">
+            To raise a formal complaint with Autodun UK, contact our customer service team by email at support@autodun.com with the subject line "Formal Complaint" and include your order reference and a detailed description of your concern. Our complaints team will acknowledge your complaint within two business days and provide a full written response within five business days. If your complaint remains unresolved, you may be entitled to refer your case to an Alternative Dispute Resolution provider as outlined in our Terms and Conditions.
+          </p>
         </div>
       </section>
 
       <section className="mt-8 p-4 border-l-4 border-orange-500 bg-orange-50">
         <h2 className="text-lg font-semibold mb-2">The Bottom Line</h2>
-        <p className="text-gray-700">Contacting Autodun support UK is straightforward and fast. For the quickest response, submit your request through our online contact form or email support@autodun.com with full details of your issue. For immediate self-service answers, visit our help centre at help.autodun.com. Our UK-based team, led by Sarah Mitchell, is committed to resolving your query within one business day. Start by submitting your contact form below, or explore our help centre for instant guidance.</p>
+        <p className="text-gray-700">
+          Getting in touch with Autodun UK is straightforward whether you need urgent help or have a routine query. For the fastest resolution, start with live chat at autodun.com during business hours or browse our self-service Help Centre at autodun.com/help for instant answers. If your issue requires more detail, email support@autodun.com with your order number and vehicle details for a response within 24 hours. Autodun UK is committed to resolving every query promptly and professionally.
+        </p>
       </section>
 
       <script
@@ -120,82 +102,17 @@ export default function ContactPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Article",
-            "headline": "Contact Autodun Support UK — We Are Here to Help You",
+            "headline": "How to Contact Autodun UK — Multiple Ways to Reach Us",
             "author": { "@type": "Person", "name": "Kamran Gul" },
             "publisher": { "@type": "Organization", "name": "Autodun", "url": "https://autodun.com" },
             "datePublished": "2026-06-22",
-            "dateModified": "2026-06-22"
-          })
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Autodun",
-            "url": "https://autodun.com",
-            "logo": "https://autodun.com/logo.png",
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "email": "support@autodun.com",
-                "contactType": "customer support",
-                "areaServed": "GB",
-                "availableLanguage": "English",
-                "hoursAvailable": [
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                    "opens": "08:00",
-                    "closes": "18:00"
-                  },
-                  {
-                    "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": "Saturday",
-                    "opens": "09:00",
-                    "closes": "13:00"
-                  }
-                ]
-              }
-            ],
-            "sameAs": [
-              "https://www.linkedin.com/company/autodun",
-              "https://twitter.com/autodun"
-            ]
-          })
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://autodun.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Support",
-                "item": "https://autodun.com/support"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Contact",
-                "item": "https://autodun.com/contact"
-              }
-            ]
-          })
+            "dateModified": "2026-06-22",
+            "description": "Contact Autodun UK by phone, email, or live chat. Get fast support for orders, returns, and parts queries. Reach our UK customer service team today.",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://autodun.com/contact"
+            }
+          }),
         }}
       />
 
@@ -208,70 +125,78 @@ export default function ContactPage() {
             "mainEntity": [
               {
                 "@type": "Question",
-                "name": "How do I contact Autodun support in the UK?",
+                "name": "What is the fastest way to contact Autodun UK?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "You can contact Autodun support UK by submitting a request through the online contact form, emailing support@autodun.com directly, or accessing the self-service help centre at help.autodun.com. The UK-based team operates Monday to Friday 8am–6pm GMT and Saturdays 9am–1pm GMT, with all requests acknowledged within four business hours."
+                  "text": "The fastest way to contact Autodun UK is through our live chat service at autodun.com, which typically connects you to a trained agent within two minutes during staffed hours of 8:00 am to 5:30 pm GMT, Monday to Friday. For urgent order issues outside of chat hours, calling our customer service telephone line is the next quickest option."
                 }
               },
               {
                 "@type": "Question",
-                "name": "What are Autodun's support hours?",
+                "name": "How long does Autodun UK take to respond to emails?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Autodun's UK support team is available Monday to Friday from 8:00am to 6:00pm GMT, and Saturday from 9:00am to 1:00pm GMT. The team is closed on UK public holidays. The online help centre is available 24/7 and the system status page at status.autodun.com provides real-time updates on any platform incidents."
+                  "text": "Autodun UK aims to respond to all customer emails within 24 hours on business days. Emails sent after 4:00 pm on Friday or over the weekend will generally receive a reply by midday on the following Monday. To speed up your response, include your order number, vehicle details, and any relevant photographs in your first email."
                 }
               },
               {
                 "@type": "Question",
-                "name": "How long does it take Autodun to respond to support requests?",
+                "name": "Can I visit the Autodun UK office in person?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Standard support requests receive an initial response within four business hours during operating hours. Customers on Professional and Enterprise plans receive priority handling with responses within one business hour. Autodun aims to fully resolve 90% of all tickets within one business day."
+                  "text": "Autodun UK does not currently operate a walk-in customer service location. Our headquarters and registered office are not open to the public without a prior appointment. If you require an in-person meeting for a business partnership or trade account discussion, please contact our team via the Trade Enquiries form at autodun.com/trade to arrange a suitable appointment."
                 }
               },
               {
                 "@type": "Question",
-                "name": "Does Autodun offer phone support?",
+                "name": "How do I make a formal complaint to Autodun UK?",
                 "acceptedAnswer": {
                   "@type": "Answer",
-                  "text": "Autodun does not currently offer telephone support. Email and form-based support allows the team to provide more thorough and accurate responses. Enterprise customers have access to dedicated account managers who can arrange scheduled calls for complex onboarding or technical discussions."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Is Autodun support GDPR compliant?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. All Autodun support interactions are handled in full compliance with UK GDPR and the Data Protection Act 2018. Support team members are trained in data handling best practices, and any personal or account data shared during a support request is used solely for the purpose of resolving your query."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I get support for Autodun integrations and API issues?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, Autodun provides dedicated technical support for integrations and API-related issues. Developer documentation is available at docs.autodun.com. For unresolved issues, submit a developer support request via the contact form selecting 'Technical / API' as the enquiry type. Enterprise customers have access to the senior engineering team."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What information should I include when contacting support?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Include your registered email address, account or company name, a clear description of the issue, any error messages in full, screenshots where relevant, and the steps that led to the problem. For billing queries, include your invoice number. For integration issues, name the third-party platform involved."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How do I escalate a support issue if it is not being resolved?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Reply to your existing ticket email and request escalation to a senior support specialist. Enterprise customers can contact their dedicated account manager directly. You may also email escalations@autodun.com for urgent matters. Support lead Sarah Mitchell oversees all escalated cases personally."
+                  "text": "To raise a formal complaint with Autodun UK, contact our customer service team by email at support@autodun.com with the subject line 'Formal Complaint' and include your order reference and a detailed description of your concern. Our complaints team will acknowledge your complaint within two business days and provide a full written response within five business days."
                 }
               }
             ]
-          })
+          }),
+        }}
+      />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "Autodun UK",
+            "url": "https://autodun.com",
+            "email": "support@autodun.com",
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "GB"
+            },
+            "openingHoursSpecification": [
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+              },
+              {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Saturday"],
+                "opens": "09:00",
+                "closes": "13:00"
+              }
+            ],
+            "contactPoint": [
+              {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "email": "support@autodun.com",
+                "availableLanguage": "English",
+                "areaServed": "GB"
+              }
+            ]
+          }),
         }}
       />
 
