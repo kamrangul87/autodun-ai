@@ -1,16 +1,52 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Contact Autodun – Customer & Technical Support UK',
-  description: 'Get in touch with Autodun today. Reach our UK support team by phone, email or live chat. Fast response times guaranteed. Contact Autodun now.',
+  title: 'Contact Autodun – Vehicle Support UK Contact & Help',
+  description: 'Reach Autodun UK support by phone, email or live chat. Fast response times for vehicle history, MOT & data queries. Contact us now.',
   openGraph: {
-    title: 'Contact Autodun – Customer & Technical Support UK',
-    description: 'Get in touch with Autodun today. Reach our UK support team by phone, email or live chat. Fast response times guaranteed. Contact Autodun now.',
-    type: 'article',
+    title: 'Contact Autodun – Vehicle Support UK Contact & Help',
+    description: 'Reach Autodun UK support by phone, email or live chat. Fast response times for vehicle history, MOT & data queries. Contact us now.',
+    type: 'website',
+    url: 'https://autodun.com/contact',
+    siteName: 'Autodun',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contact Autodun – Vehicle Support UK Contact & Help',
+    description: 'Reach Autodun UK support by phone, email or live chat. Fast response times for vehicle history, MOT & data queries. Contact us now.',
   },
 };
 
 export default function ContactPage() {
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: 'Home',
+        item: 'https://autodun.com',
+      },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: 'Contact',
+        item: 'https://autodun.com/contact',
+      },
+    ],
+  };
+
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'Autodun',
+    url: 'https://autodun.com',
+    description: 'Free UK vehicle tools — MOT history, EV charging checker, mileage verification',
+    founder: { '@type': 'Person', name: 'Kamran Gul' },
+    dateModified: '2026-06-23',
+  };
+
   return (
     <article className="max-w-3xl mx-auto px-4 py-12 font-sans">
 
@@ -23,6 +59,21 @@ export default function ContactPage() {
       </nav>
 
       <h1 className="text-3xl font-bold text-gray-900 mb-6 leading-tight">Contact Autodun – Customer &amp; Technical Support</h1>
+
+      <p className="text-lg text-gray-700 mb-6">
+        Autodun provides free UK vehicle tools including MOT history checks, EV charging compatibility, and mileage verification — all designed to help drivers and dealerships make informed decisions. Our dedicated vehicle support UK contact team is available by phone, email, live chat, and contact form to assist with any query. Whether you need help with a vehicle history report, API integration, or account management, our UK-based specialists are ready to respond quickly. Explore our <a href="/about" className="text-orange-600 underline hover:text-orange-700">About page</a> to learn more about who we are, visit our <a href="/blog" className="text-orange-600 underline hover:text-orange-700">Blog</a> for automotive data guides, or continue reading below to find the right contact channel for your needs.
+      </p>
+
+      <div className="mb-8 rounded-lg overflow-hidden border border-gray-200">
+        <img
+          src="/images/autodun-uk-support-team.jpg"
+          alt="Autodun UK vehicle support team ready to help with MOT history and automotive data queries"
+          width={768}
+          height={320}
+          className="w-full object-cover"
+          loading="eager"
+        />
+      </div>
 
       <p className="text-lg text-gray-700 mb-6">
         Autodun contact options are designed to get you the help you need as quickly as possible. Whether you are a new customer exploring our vehicle history and automotive data services, an existing subscriber troubleshooting an issue, or a business looking to integrate our API, our dedicated UK-based support team is here to assist. We provide multiple contact channels including telephone, email, live chat, and a structured enquiry form, ensuring every query reaches the right department and receives a timely, informed response from a knowledgeable team member.
@@ -174,230 +225,35 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="mt-12 bg-gray-50 rounded-lg p-6">
-        <h2 className="text-xl font-semibold text-gray-800 mb-6">Frequently Asked Questions About Contacting Autodun</h2>
-
-        <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">What is the fastest way to contact Autodun for urgent support?</h3>
-          <p className="text-gray-700">The fastest way to contact Autodun for urgent issues is by telephone on +44 (0)1234 567 890 during business hours, Monday to Friday between 09:00 and 17:30 GMT. For immediate digital assistance during business hours, our live chat widget connects you with a support agent within three minutes. Outside of business hours, submitting a contact form marked as urgent receives priority handling the following morning.</p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">How do I contact Autodun about a billing or subscription issue?</h3>
-          <p className="text-gray-700">For billing and subscription queries, email <a href="mailto:billing@autodun.com" className="text-orange-600 underline hover:text-orange-700">billing@autodun.com</a> or call our main support line and select the billing option. Billing queries receive a one-business-hour response target due to their time-sensitive nature. Please have your account email address and order reference ready to help our team locate your records quickly. You can also manage your subscription directly through your account dashboard at <a href="/account" className="text-orange-600 underline hover:text-orange-700">autodun.com/account</a>.</p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">Can I contact Autodun about a data inaccuracy on a vehicle history report?</h3>
-          <p className="text-gray-700">Yes. If you believe a vehicle history report contains inaccurate or outdated data, please contact our data accuracy team at <a href="mailto:dataquality@autodun.com" className="text-orange-600 underline hover:text-orange-700">dataquality@autodun.com</a> with the vehicle registration number, the specific data point in question, and any supporting documentation. Our team will investigate and respond within five business days. We take data accuracy seriously as it directly affects the trust of buyers and sellers relying on our platform.</p>
-        </div>
-
-        <div className="mb-4">
-          <h3 className="font-semibold text-gray-900 mb-2">Does Autodun offer business and API integration support?</h3>
-          <p className="text-gray-700">Autodun provides dedicated support for businesses and developers integrating our API into their platforms. Contact our partnerships team at <a href="mailto:business@autodun.com" className="text-orange-600 underline hover:text-orange-700">business@autodun.com</a> to discuss your technical requirements, volume needs, and integration timelines. Enterprise clients receive a named technical account manager, comprehensive API documentation, sandbox environment access, and an onboarding call to ensure a smooth and efficient integration. Visit our <a href="/api" className="text-orange-600 underline hover:text-orange-700">API documentation page</a> for further details.</p>
-        </div>
-      </section>
-
-      <section className="mt-8 p-4 border-l-4 border-orange-500 bg-orange-50">
-        <h2 className="text-lg font-semibold mb-2">The Bottom Line</h2>
-        <p className="text-gray-700">
-          Contacting Autodun is straightforward whether your need is urgent or routine. For the fastest response, call us or use live chat during business hours Monday to Friday, 09:00–17:30 GMT. For detailed queries, billing issues, or data concerns, email the appropriate department directly and expect a response within four business hours. Explore our <a href="/help" className="text-orange-600 underline hover:text-orange-700">Help Centre</a> for self-service answers, or <a href="/vehicle-check" className="text-orange-600 underline hover:text-orange-700">run a vehicle check</a> right now without needing to contact us at all.
+      <section className="mb-8">
+        <h2 className="text-xl font-semibold text-gray-800 mt-8 mb-4">Explore More from Autodun</h2>
+        <p className="text-gray-700 mb-4">
+          While you are here, discover everything Autodun has to offer. Our free UK vehicle tools, guides, and resources are available to all users.
         </p>
-      </section>
-
-      <section className="mt-8 p-4 bg-gray-50 rounded-lg border border-gray-200">
-        <h2 className="text-base font-semibold text-gray-800 mb-3">Explore Autodun Services</h2>
-        <ul className="grid grid-cols-2 gap-2 text-sm">
-          <li><a href="/vehicle-check" className="text-orange-600 underline hover:text-orange-700">Vehicle History Check</a></li>
-          <li><a href="/mot-check" className="text-orange-600 underline hover:text-orange-700">MOT Check</a></li>
-          <li><a href="/api" className="text-orange-600 underline hover:text-orange-700">API for Developers</a></li>
-          <li><a href="/business" className="text-orange-600 underline hover:text-orange-700">Business Solutions</a></li>
-          <li><a href="/help" className="text-orange-600 underline hover:text-orange-700">Help Centre</a></li>
-          <li><a href="/privacy-policy" className="text-orange-600 underline hover:text-orange-700">Privacy Policy</a></li>
+        <ul className="list-none space-y-3">
+          <li>
+            <a href="/about" className="text-orange-600 underline hover:text-orange-700 font-medium">About Autodun</a>
+            <span className="text-gray-600 text-sm"> — Learn about our mission to make vehicle data free and accessible across the UK.</span>
+          </li>
+          <li>
+            <a href="/blog" className="text-orange-600 underline hover:text-orange-700 font-medium">Autodun Blog</a>
+            <span className="text-gray-600 text-sm"> — Read expert guides on MOT history, EV charging, mileage checks, and more.</span>
+          </li>
+          <li>
+            <a href="/contact" className="text-orange-600 underline hover:text-orange-700 font-medium">Contact Us</a>
+            <span className="text-gray-600 text-sm"> — You are here — reach our vehicle support UK contact team directly.</span>
+          </li>
         </ul>
       </section>
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Contact Autodun – Customer & Technical Support",
-            "author": {
-              "@type": "Person",
-              "name": "Kamran Gul",
-              "jobTitle": "Head of Customer Operations",
-              "worksFor": {
-                "@type": "Organization",
-                "name": "Autodun",
-                "url": "https://autodun.com"
-              }
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Autodun",
-              "url": "https://autodun.com"
-            },
-            "datePublished": "2026-06-23",
-            "dateModified": "2026-06-23",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://autodun.com/contact"
-            }
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "name": "Contact Autodun",
-            "url": "https://autodun.com/contact",
-            "telephone": "+441234567890",
-            "email": "support@autodun.com",
-            "description": "Contact Autodun's UK-based support team by phone, email, live chat, or contact form. Fast response times for all enquiries.",
-            "dateModified": "2026-06-23"
-          })
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
       />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Autodun",
-            "url": "https://autodun.com",
-            "telephone": "+441234567890",
-            "email": "support@autodun.com",
-            "address": {
-              "@type": "PostalAddress",
-              "addressCountry": "GB"
-            },
-            "contactPoint": [
-              {
-                "@type": "ContactPoint",
-                "telephone": "+441234567890",
-                "contactType": "customer support",
-                "areaServed": "GB",
-                "availableLanguage": "English",
-                "hoursAvailable": {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-                  "opens": "09:00",
-                  "closes": "17:30"
-                }
-              },
-              {
-                "@type": "ContactPoint",
-                "email": "business@autodun.com",
-                "contactType": "sales",
-                "areaServed": "GB",
-                "availableLanguage": "English"
-              },
-              {
-                "@type": "ContactPoint",
-                "email": "press@autodun.com",
-                "contactType": "press",
-                "areaServed": "GB",
-                "availableLanguage": "English"
-              }
-            ],
-            "department": [
-              {
-                "@type": "Organization",
-                "name": "Autodun Customer Support",
-                "email": "support@autodun.com",
-                "telephone": "+441234567890"
-              },
-              {
-                "@type": "Organization",
-                "name": "Autodun Business Partnerships",
-                "email": "business@autodun.com"
-              },
-              {
-                "@type": "Organization",
-                "name": "Autodun Data Protection Office",
-                "email": "dpo@autodun.com"
-              }
-            ]
-          })
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://autodun.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Contact",
-                "item": "https://autodun.com/contact"
-              }
-            ]
-          })
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is the fastest way to contact Autodun for urgent support?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "The fastest way to contact Autodun for urgent issues is by telephone on +44 (0)1234 567 890 during business hours, Monday to Friday between 09:00 and 17:30 GMT. For immediate digital assistance during business hours, our live chat widget connects you with a support agent within three minutes. Outside of business hours, submitting a contact form marked as urgent receives priority handling the following morning."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How do I contact Autodun about a billing or subscription issue?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "For billing and subscription queries, email billing@autodun.com or call our main support line and select the billing option. Billing queries receive a one-business-hour response target due to their time-sensitive nature. Please have your account email address and order reference ready to help our team locate your records quickly. You can also manage your subscription directly through your account dashboard."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I contact Autodun about a data inaccuracy on a vehicle history report?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. If you believe a vehicle history report contains inaccurate or outdated data, please contact our data accuracy team at dataquality@autodun.com with the vehicle registration number, the specific data point in question, and any supporting documentation. Our team will investigate and respond within five business days. We take data accuracy seriously as it directly affects the trust of buyers and sellers relying on our platform."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Does Autodun offer business and API integration support?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Autodun provides dedicated support for businesses and developers integrating our API into their platforms. Contact our partnerships team at business@autodun.com to discuss your technical requirements, volume needs, and integration timelines. Enterprise clients receive a named technical account manager, comprehensive API documentation, sandbox environment access, and an onboarding call to ensure a smooth and efficient integration."
-                }
-              }
-            ]
-          })
-        }}
-      />
-
     </article>
   );
 }
