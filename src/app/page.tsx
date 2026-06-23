@@ -1,11 +1,11 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Autodun – AI Vehicle Tools UK | Free MOT & EV Checks',
-  description: 'Free AI vehicle tools UK: MOT history, EV charging checker & mileage verification. Check any UK car instantly. Try Autodun free today.',
+  title: 'Autodun | AI Vehicle Tools UK – Free MOT & EV Checks',
+  description: 'Free AI vehicle tools UK: MOT history, EV charging & mileage checks. Instant results from DVLA data. Try Autodun free today.',
   openGraph: {
-    title: 'Autodun – AI Vehicle Tools UK | Free MOT & EV Checks',
-    description: 'Free AI vehicle tools UK: MOT history, EV charging checker & mileage verification. Check any UK car instantly. Try Autodun free today.',
+    title: 'Autodun | AI Vehicle Tools UK – Free MOT & EV Checks',
+    description: 'Free AI vehicle tools UK: MOT history, EV charging & mileage checks. Instant results from DVLA data. Try Autodun free today.',
   },
 };
 
