@@ -2,16 +2,106 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'UK EV Charging MOT Guides & Vehicle Tools | Autodun',
-  description: 'Free UK EV charging MOT guides, MOT history checks & mileage tools. Make smarter car decisions — try Autodun free today.',
+  description: 'Free UK EV charging MOT guides, MOT history checks & mileage tools. Make smarter car decisions — try Autodun free.',
   openGraph: {
     title: 'UK EV Charging MOT Guides & Vehicle Tools | Autodun',
-    description: 'Free UK EV charging MOT guides, MOT history checks & mileage tools. Make smarter car decisions — try Autodun free today.',
+    description: 'Free UK EV charging MOT guides, MOT history checks & mileage tools. Make smarter car decisions — try Autodun free.',
   },
 };
 
 export default function BlogPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Autodun',
+            url: 'https://autodun.com',
+            description:
+              'Free UK vehicle tools — MOT history, EV charging checker, mileage verification',
+            founder: { '@type': 'Person', name: 'Kamran Gul' },
+            dateModified: '2026-06-23',
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              {
+                '@type': 'ListItem',
+                position: 1,
+                name: 'Home',
+                item: 'https://autodun.com',
+              },
+              {
+                '@type': 'ListItem',
+                position: 2,
+                name: 'Blog',
+                item: 'https://autodun.com/blog',
+              },
+            ],
+          }),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'FAQPage',
+            mainEntity: [
+              {
+                '@type': 'Question',
+                name: 'What does an EV MOT check include in the UK?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'An EV MOT in the UK skips the exhaust emissions test but still covers brakes, tyres, lights, steering, bodywork, windscreen, horn, and high-voltage warning labels. Regenerative braking systems are assessed alongside physical brake pads and discs.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'How can I check a used car\'s MOT history for free?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'You can check a used car\'s full MOT history for free using Autodun\'s MOT history tool, which pulls directly from DVSA records. This shows every test result, advisory notice, and failure reason without registration or payment.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'How do I detect mileage clocking on a used car?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Cross-referencing recorded mileage figures across the vehicle\'s full MOT history is one of the most reliable methods. Autodun\'s mileage checker plots every recorded reading on a timeline, making inconsistencies immediately visible.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'What is the cheapest way to charge an electric car in the UK?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Home charging with a 7 kW wallbox is typically the most cost-effective option, costing roughly £9–£12 per full charge at average domestic electricity rates. Combining overnight home charging with opportunistic workplace top-ups can reduce annual fuel costs by several hundred pounds.',
+                },
+              },
+              {
+                '@type': 'Question',
+                name: 'Why are my EV brake discs corroded even though the car is nearly new?',
+                acceptedAnswer: {
+                  '@type': 'Answer',
+                  text: 'Because regenerative braking handles most deceleration in everyday EV driving, the physical brake pads and discs see far less use than on petrol or diesel vehicles. This reduced use can cause surface corrosion. Performing a short session of firm braking in the days before your MOT can help clear surface rust.',
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       <h1>Autodun Blog – UK EV Charging MOT Guides &amp; Free Vehicle Tools</h1>
 
       <p>
@@ -19,7 +109,9 @@ export default function BlogPage() {
         history checks, mileage verification, and the latest electric vehicle news. Whether you are a private buyer
         researching a used car, a fleet manager tracking MOT compliance, or an EV driver hunting for public charge
         points across Britain, our expert guides are built to help you make safer, smarter decisions on every
-        vehicle purchase. We draw on official data from the{' '}
+        vehicle purchase. Autodun provides completely free tools including MOT history checks, mileage verification,
+        and EV charging network comparisons — all designed for UK drivers navigating an increasingly complex vehicle
+        landscape in 2026. We draw on official data from the{' '}
         <a href="https://www.gov.uk/check-mot-history" target="_blank" rel="noopener noreferrer">
           DVSA MOT history service
         </a>{' '}
@@ -30,8 +122,35 @@ export default function BlogPage() {
         to keep every article accurate and up to date. Explore our free tools, understand your vehicle&apos;s full
         MOT record, verify mileage before you buy, and stay ahead of the rapid changes shaping EV adoption across
         the UK. Every guide is written with real drivers in mind — no jargon, just clear and actionable advice
-        you can rely on every time.
+        you can rely on every time. Browse our{' '}
+        <a href="/blog">latest guides</a>,{' '}
+        <a href="/about">learn about Autodun</a>, or{' '}
+        <a href="/contact">get in touch</a> if you have a question our tools cannot yet answer.
       </p>
+
+      <figure>
+        <img
+          src="/images/uk-ev-charging-mot-guides-hero.jpg"
+          alt="UK public EV charging point with a car plugged in alongside a DVSA MOT certificate — illustrating Autodun's UK EV charging MOT guides"
+          width={1200}
+          height={630}
+          loading="eager"
+        />
+        <figcaption>
+          Autodun&apos;s UK EV charging MOT guides help drivers understand public charging networks, MOT history records, and mileage verification in one place.
+        </figcaption>
+      </figure>
+
+      <nav aria-label="Blog sections">
+        <ul>
+          <li><a href="#ev-charging-heading">UK EV Charging Infrastructure Explained</a></li>
+          <li><a href="#mot-history-heading">MOT History Checks &amp; What They Reveal</a></li>
+          <li><a href="#mileage-heading">Mileage Verification &amp; Avoiding Clocked Cars</a></li>
+          <li><a href="#ev-mot-prep-heading">Preparing Your Electric Vehicle for Its MOT in 2026</a></li>
+          <li><a href="#fleet-heading">Fleet Management, MOT Compliance &amp; EV Transition Planning</a></li>
+          <li><a href="#faq-heading">Frequently Asked Questions</a></li>
+        </ul>
+      </nav>
 
       <section aria-labelledby="ev-charging-heading">
         <h2 id="ev-charging-heading">UK EV Charging Infrastructure Explained</h2>
@@ -46,6 +165,18 @@ export default function BlogPage() {
           MOT guides walk you through charger types, payment methods, roaming tariffs, and the most reliable
           networks to use in 2026.
         </p>
+        <figure>
+          <img
+            src="/images/ev-charger-types-uk-2026.jpg"
+            alt="Diagram comparing slow, fast, rapid and ultra-rapid EV charger types available across the UK public charging network in 2026"
+            width={800}
+            height={450}
+            loading="lazy"
+          />
+          <figcaption>
+            UK EV charger types in 2026: slow (3 kW), fast (7–22 kW), rapid (50 kW), and ultra-rapid (150 kW+) connectors explained for everyday drivers.
+          </figcaption>
+        </figure>
         <p>
           Home charging remains the most cost-effective option for most drivers. A 7 kW wallbox typically charges
           a 60 kWh battery from near-empty overnight, costing roughly £9–£12 at average domestic electricity
@@ -54,6 +185,12 @@ export default function BlogPage() {
             EV infrastructure grant programme
           </a>{' '}
           offers financial support to install charge points — a topic we cover in detail in our dedicated guides.
+          According to{' '}
+          <a href="https://www.ofgem.gov.uk/information-for-household-consumers/energy-and-the-environment/electric-vehicles" target="_blank" rel="noopener noreferrer">
+            Ofgem&apos;s electric vehicle consumer guidance
+          </a>
+          , smart charging tariffs can reduce home charging costs even further by automatically scheduling
+          sessions during cheaper overnight periods.
         </p>
         <p>
           Workplace charging is also growing rapidly, driven by both employer incentives and the practical reality
@@ -76,6 +213,17 @@ export default function BlogPage() {
           well above industry averages. Our UK EV charging MOT guides include a network reliability comparison
           updated quarterly, helping you choose the most dependable charge points for your regular routes.
         </p>
+        <p>
+          The{' '}
+          <a href="https://www.theaa.com/electric-cars/charging-and-range/" target="_blank" rel="noopener noreferrer">
+            AA&apos;s electric car charging and range guidance
+          </a>{' '}
+          also provides practical advice on managing range across different seasons — an important consideration
+          given that cold weather can reduce an EV&apos;s effective range by up to 20–30% compared with
+          manufacturer figures measured under standard laboratory conditions. Our seasonal EV charging guide
+          covers battery pre-conditioning, optimal charging levels for long-term battery health, and how to
+          plan motorway journeys using real-world rather than WLTP range figures.
+        </p>
       </section>
 
       <section aria-labelledby="mot-history-heading">
@@ -88,11 +236,28 @@ export default function BlogPage() {
           tests. Autodun&apos;s free MOT history tool pulls directly from DVSA records, giving you instant access
           to this data without registration or payment.
         </p>
+        <figure>
+          <img
+            src="/images/mot-history-check-screenshot.jpg"
+            alt="Screenshot of Autodun's free MOT history checker displaying test results, advisory notices and mileage records for a used car"
+            width={800}
+            height={500}
+            loading="lazy"
+          />
+          <figcaption>
+            Autodun&apos;s free MOT history checker displays every DVSA-recorded test result, advisory, and mileage figure — no registration required.
+          </figcaption>
+        </figure>
         <p>
           For electric vehicles, MOT requirements differ slightly. EVs do not require exhaust emission tests, but
           they are still subject to checks on brakes, steering, tyres, lights, and bodywork. Our UK EV charging
           MOT guides include a dedicated section on what EV owners should prepare before their annual test,
-          including battery warning light checks and regenerative braking assessments.
+          including battery warning light checks and regenerative braking assessments. The{' '}
+          <a href="https://www.gov.uk/government/publications/mot-inspection-manual-for-private-passenger-and-light-commercial-vehicles" target="_blank" rel="noopener noreferrer">
+            DVSA MOT inspection manual for private and light commercial vehicles
+          </a>{' '}
+          sets out the precise standards testers apply — our guides translate this technical documentation into
+          plain English every driver can follow.
         </p>
         <p>
           Understanding advisory notices is just as important as identifying outright failures. An advisory is a
@@ -113,6 +278,16 @@ export default function BlogPage() {
           pass rates across England, Scotland, and Wales. We analyse this data each year and publish a
           comprehensive breakdown in our MOT statistics guide, giving buyers a clear picture of what to
           watch for when evaluating any used vehicle purchase.
+        </p>
+        <p>
+          Beyond individual vehicle checks, MOT data can reveal systemic issues with specific model years or
+          manufacturing batches. Cross-referencing your vehicle&apos;s test history with{' '}
+          <a href="https://www.driverpowersurvey.co.uk/" target="_blank" rel="noopener noreferrer">
+            Driver Power reliability survey results
+          </a>{' '}
+          can help identify whether faults you are seeing are isolated or indicative of a wider known issue
+          with that model — valuable intelligence before committing to a purchase or deciding whether to
+          negotiate a price reduction.
         </p>
       </section>
 
@@ -138,7 +313,20 @@ export default function BlogPage() {
           <a href="https://www.legislation.gov.uk/ukpga/2015/15/contents" target="_blank" rel="noopener noreferrer">
             Consumer Rights Act 2015
           </a>{' '}
-          if you discover post-purchase that a seller misrepresented a vehicle&apos;s true mileage.
+          if you discover post-purchase that a seller misrepresented a vehicle&apos;s true mileage. The Act
+          provides important protections including the right to a full refund within 30 days of purchase if the
+          goods are not as described — a right that explicitly applies to misrepresented mileage.
+        </p>
+        <p>
+          Trading Standards guidance published by{' '}
+          <a href="https://www.citizensadvice.org.uk/consumer/cars/buying-a-car/buying-a-used-car/" target="_blank" rel="noopener noreferrer">
+            Citizens Advice on buying a used car
+          </a>{' '}
+          reinforces that private sellers have a legal duty not to misrepresent a vehicle&apos;s condition or
+          history. While &ldquo;sold as seen&rdquo; is commonly misunderstood to remove all buyer protections,
+          it does not override statutory rights where material facts — including mileage — have been
+          deliberately misrepresented. Our guides explain the practical steps for pursuing a claim and
+          the evidence you will need to gather.
         </p>
         <p>
           Electric vehicles present a specific consideration for mileage verification: battery degradation is
@@ -162,6 +350,18 @@ export default function BlogPage() {
           tester simply skips the exhaust emissions analysis and replaces it with checks specific to electric
           drivetrain components.
         </p>
+        <figure>
+          <img
+            src="/images/ev-mot-checklist-2026.jpg"
+            alt="Printable EV MOT checklist for 2026 showing tyre tread, brake disc condition, lights, and high-voltage warning label requirements"
+            width={800}
+            height={600}
+            loading="lazy"
+          />
+          <figcaption>
+            Autodun&apos;s printable EV MOT checklist for 2026 — covering every item your tester will assess so you can identify issues before booking.
+          </figcaption>
+        </figure>
         <p>
           Key areas your MOT tester will assess for an electric vehicle include: tyre condition and tread depth
           (minimum 1.6 mm across the central three-quarters of the tyre); brake performance on both front and
@@ -180,6 +380,16 @@ export default function BlogPage() {
           has progressed to the point of affecting braking performance. A short session of deliberate firm
           braking in the days before your MOT can help clear surface rust and ensure the physical brakes
           perform correctly during the roller brake test.
+        </p>
+        <p>
+          The{' '}
+          <a href="https://www.mot-testing.service.gov.uk/" target="_blank" rel="noopener noreferrer">
+            DVSA MOT testing service
+          </a>{' '}
+          allows you to check your current MOT status, find approved test centres near you, and review your
+          vehicle&apos;s full test history — all tools that complement Autodun&apos;s own free vehicle
+          checks. We recommend cross-referencing both sources before any significant used EV purchase or
+          ahead of your own vehicle&apos;s test date.
         </p>
       </section>
 
@@ -204,179 +414,112 @@ export default function BlogPage() {
           guides, fleet managers have a single reference point for both compliance monitoring and EV
           infrastructure planning.
         </p>
+        <p>
+          The{' '}
+          <a href="https://www.gov.uk/government/publications/fleet-decarbonisation-pathway" target="_blank" rel="noopener noreferrer">
+            Government&apos;s fleet decarbonisation pathway
+          </a>{' '}
+          sets out expected timelines for public sector fleet electrification and provides a useful benchmark
+          for private fleet operators planning their own transition. Our fleet guides map these targets against
+          practical charging infrastructure requirements, helping managers model how many charge points they
+          will need, where to install them, and which grant funding streams are available to reduce upfront
+          capital costs.
+        </p>
+        <p>
+          Total cost of ownership (TCO) modelling is central to any credible fleet EV transition plan.
+          Electricity costs, charge point installation, vehicle acquisition, and reduced maintenance expenses
+          (EVs have fewer moving parts and typically lower servicing costs) all feed into the calculation.
+          Our fleet TCO guide walks through each variable with worked examples for a 50-vehicle mixed fleet,
+          drawing on published data from{' '}
+          <a href="https://www.fleetpoint.org/" target="_blank" rel="noopener noreferrer">
+            Fleet Point fleet management resources
+          </a>{' '}
+          and the BVRLA&apos;s annual fleet industry report. Visit our{' '}
+          <a href="/blog">blog</a> for the latest fleet guides, explore the{' '}
+          <a href="/about">Autodun about page</a> to understand how our tools are built, or{' '}
+          <a href="/contact">contact our team</a> for bespoke fleet compliance support.
+        </p>
       </section>
 
       <section aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Frequently Asked Questions</h2>
+        <h2 id="faq-heading">Frequently Asked Questions — UK EV Charging MOT Guides</h2>
 
-        <h3>What is included in Autodun&apos;s free vehicle check?</h3>
+        <h3>What does an EV MOT check include in the UK?</h3>
         <p>
-          Autodun&apos;s free check covers full MOT history, recorded mileage across all test dates, advisory
-          notices, failure reasons, and test station details — all sourced directly from DVSA records. No
-          registration or payment is required to run a check.
+          An EV MOT in the UK skips the exhaust emissions test but still covers brakes, tyres, lights,
+          steering, bodywork, windscreen, horn, and high-voltage warning labels. Regenerative braking systems
+          are assessed alongside physical brake pads and discs. Our UK EV charging MOT guides include a
+          printable checklist of every item covered so you can prepare thoroughly before booking your test.
         </p>
 
-        <h3>Are UK EV charging MOT guides suitable for fleet managers?</h3>
+        <h3>How can I check a used car&apos;s MOT history for free?</h3>
         <p>
-          Yes. Our guides cover compliance requirements for fleet operators, including bulk MOT tracking,
-          understanding advisory thresholds across a vehicle pool, and planning EV charging infrastructure
-          for workplace or depot settings.
+          You can check a used car&apos;s full MOT history for free using Autodun&apos;s MOT history tool,
+          which pulls directly from DVSA records. This shows every test result, advisory notice, and failure
+          reason without registration or payment. You can also use the official{' '}
+          <a href="https://www.gov.uk/check-mot-history" target="_blank" rel="noopener noreferrer">
+            DVSA MOT history service on GOV.UK
+          </a>{' '}
+          to cross-reference results independently.
         </p>
 
-        <h3>How often is the MOT history data updated?</h3>
+        <h3>How do I detect mileage clocking on a used car?</h3>
         <p>
-          The DVSA database that Autodun queries is updated in near real-time following each test. Results
-          typically appear within minutes of a test being completed at an authorised MOT testing station.
+          Cross-referencing recorded mileage figures across the vehicle&apos;s full MOT history is one of
+          the most reliable methods. Autodun&apos;s mileage checker plots every recorded reading on a
+          timeline, making inconsistencies immediately visible. Supplementary evidence from service history
+          stamps and insurance renewal documents can further corroborate or contradict the odometer reading.
         </p>
 
-        <h3>Do electric vehicles need an MOT in the UK?</h3>
+        <h3>What is the cheapest way to charge an electric car in the UK?</h3>
         <p>
-          Yes. Electric vehicles registered in the UK require an MOT from their third anniversary, the same
-          as petrol and diesel cars. The test is adapted for EVs — no exhaust emissions test is performed —
-          but all other standard safety checks apply. Our UK EV charging MOT guides explain the full process
-          in plain English.
+          Home charging with a 7 kW wallbox is typically the most cost-effective option, costing roughly
+          £9–£12 per full charge at average domestic electricity rates. Combining overnight home charging
+          with opportunistic workplace top-ups can reduce annual fuel costs by several hundred pounds
+          compared with relying on public rapid chargers. Smart tariffs from energy suppliers such as
+          Octopus Energy&apos;s Intelligent Octopus Go can reduce home charging costs further by scheduling
+          sessions automatically during the cheapest overnight periods.
         </p>
 
-        <h3>Can I use Autodun tools on a mobile device?</h3>
+        <h3>Why are my EV brake discs corroded even though the car is nearly new?</h3>
         <p>
-          All Autodun tools are fully responsive and optimised for smartphones and tablets. You can run a
-          free MOT history check, verify mileage, or read our UK EV charging MOT guides from any device
-          without needing to install an app.
+          Because regenerative braking handles most deceleration in everyday EV driving, the physical brake
+          pads and discs see far less use than on equivalent petrol or diesel vehicles. This reduced use can
+          cause surface corrosion — particularly after wet weather or a period of low mileage. Performing a
+          short session of firm braking in the days before your MOT can help clear surface rust and ensure
+          the physical brakes perform correctly during the roller brake test.
         </p>
 
-        <h3>What is the best public EV charging network in the UK in 2026?</h3>
+        <h3>Do I need a special charger for a long-range EV?</h3>
         <p>
-          Reliability, coverage, and pricing vary considerably between networks. Based on publicly available
-          uptime data and user reporting, networks with the most consistent performance include those
-          operating under the PAS 1899 standard for public EV charging infrastructure. Our quarterly
-          network reliability guide, updated most recently in June 2026, ranks the major operators
-          across key metrics to help you choose the most dependable option for your driving patterns.
-        </p>
-
-        <h3>How can I check if a used EV has been clocked?</h3>
-        <p>
-          The most reliable method is to cross-reference the odometer reading shown at each annual MOT
-          test using Autodun&apos;s free mileage checker. Any significant drop in recorded mileage between
-          consecutive tests is a clear indicator of potential tampering. Supplementary evidence from
-          service records, finance documents, and previous insurance paperwork can further corroborate
-          or contradict the stated history.
+          Not necessarily for daily use — most long-range EVs (with batteries of 70 kWh or more) charge
+          fully overnight on a standard 7 kW home wallbox. For longer journeys, access to rapid (50 kW+)
+          or ultra-rapid (150 kW+) public chargers significantly reduces stopping time. Our UK EV charging
+          MOT guides include a journey planning section that maps charger availability against real-world
+          range figures for the UK&apos;s most popular long-range models in 2026.
         </p>
       </section>
 
-      <nav aria-label="Site sections">
-        <ul>
-          <li><a href="/blog">Blog</a></li>
-          <li><a href="/about">About Autodun</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-        </ul>
-      </nav>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Autodun",
-            "url": "https://autodun.com",
-            "description": "Free UK vehicle tools — MOT history, EV charging checker, mileage verification",
-            "founder": { "@type": "Person", "name": "Kamran Gul" },
-            "dateModified": "2026-06-23"
-          })
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://autodun.com"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Blog",
-                "item": "https://autodun.com/blog"
-              }
-            ]
-          })
-        }}
-      />
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What is included in Autodun's free vehicle check?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Autodun's free check covers full MOT history, recorded mileage across all test dates, advisory notices, failure reasons, and test station details — all sourced directly from DVSA records. No registration or payment is required to run a check."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Are UK EV charging MOT guides suitable for fleet managers?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. Our guides cover compliance requirements for fleet operators, including bulk MOT tracking, understanding advisory thresholds across a vehicle pool, and planning EV charging infrastructure for workplace or depot settings."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How often is the MOT history data updated?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "The DVSA database that Autodun queries is updated in near real-time following each test. Results typically appear within minutes of a test being completed at an authorised MOT testing station."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do electric vehicles need an MOT in the UK?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes. Electric vehicles registered in the UK require an MOT from their third anniversary, the same as petrol and diesel cars. The test is adapted for EVs — no exhaust emissions test is performed — but all other standard safety checks apply."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can I use Autodun tools on a mobile device?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "All Autodun tools are fully responsive and optimised for smartphones and tablets. You can run a free MOT history check, verify mileage, or read our UK EV charging MOT guides from any device without needing to install an app."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "What is the best public EV charging network in the UK in 2026?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Reliability, coverage, and pricing vary considerably between networks. Based on publicly available uptime data and user reporting, networks operating under the PAS 1899 standard for public EV charging infrastructure show the most consistent performance. Our quarterly network reliability guide ranks the major operators across key metrics."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How can I check if a used EV has been clocked?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "The most reliable method is to cross-reference the odometer reading shown at each annual MOT test using Autodun's free mileage checker. Any significant drop in recorded mileage between consecutive tests is a clear indicator of potential tampering. Supplementary evidence from service records, finance documents, and previous insurance paperwork can further corroborate or contradict the stated history."
-                }
-              }
-            ]
-          })
-        }}
-      />
+      <section aria-labelledby="tools-cta-heading">
+        <h2 id="tools-cta-heading">Try Autodun&apos;s Free UK Vehicle Tools Today</h2>
+        <p>
+          All of the tools referenced throughout our UK EV charging MOT guides are completely free to use —
+          no account required, no payment details needed. Autodun&apos;s platform combines DVSA MOT history
+          data, mileage verification, and EV charging network information in a single, straightforward
+          interface built for everyday UK drivers. Whether you are checking a used car before purchase,
+          preparing your own vehicle for its next test, or managing a fleet of dozens of vehicles, our
+          tools give you the information you need in seconds.
+        </p>
+        <p>
+          Our guides are updated regularly to reflect changes in MOT testing standards, EV charging
+          infrastructure, and UK consumer law. Bookmark the{' '}
+          <a href="/blog">Autodun blog</a> to stay informed, visit our{' '}
+          <a href="/about">about page</a> to learn more about how our data sources work, or{' '}
+          <a href="/contact">contact us</a> with any questions about our tools or the topics covered
+          in our guides. We read every message and update our content based on the questions real drivers
+          send us — your feedback directly shapes what we write next.
+        </p>
+      </section>
     </>
   );
 }
