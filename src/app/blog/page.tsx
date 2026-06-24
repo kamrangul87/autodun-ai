@@ -2,10 +2,10 @@ import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'UK EV Charging MOT Guides & Vehicle Tools | Autodun',
-  description: 'Free UK EV charging MOT guides, MOT history checks & mileage tools. Make smarter car decisions — try Autodun free.',
+  description: 'Free UK EV charging MOT guides, MOT history checks & mileage tools for UK drivers. Make smarter car decisions — try Autodun free today.',
   openGraph: {
     title: 'UK EV Charging MOT Guides & Vehicle Tools | Autodun',
-    description: 'Free UK EV charging MOT guides, MOT history checks & mileage tools. Make smarter car decisions — try Autodun free.',
+    description: 'Free UK EV charging MOT guides, MOT history checks & mileage tools for UK drivers. Make smarter car decisions — try Autodun free today.',
   },
 };
 
@@ -23,7 +23,7 @@ export default function BlogPage() {
             description:
               'Free UK vehicle tools — MOT history, EV charging checker, mileage verification',
             founder: { '@type': 'Person', name: 'Kamran Gul' },
-            dateModified: '2026-06-23',
+            dateModified: '2026-06-24',
           }),
         }}
       />
@@ -67,10 +67,10 @@ export default function BlogPage() {
               },
               {
                 '@type': 'Question',
-                name: 'How can I check a used car\'s MOT history for free?',
+                name: "How can I check a used car's MOT history for free?",
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'You can check a used car\'s full MOT history for free using Autodun\'s MOT history tool, which pulls directly from DVSA records. This shows every test result, advisory notice, and failure reason without registration or payment.',
+                  text: "You can check a used car's full MOT history for free using Autodun's MOT history tool, which pulls directly from DVSA records. This shows every test result, advisory notice, and failure reason without registration or payment.",
                 },
               },
               {
@@ -78,7 +78,7 @@ export default function BlogPage() {
                 name: 'How do I detect mileage clocking on a used car?',
                 acceptedAnswer: {
                   '@type': 'Answer',
-                  text: 'Cross-referencing recorded mileage figures across the vehicle\'s full MOT history is one of the most reliable methods. Autodun\'s mileage checker plots every recorded reading on a timeline, making inconsistencies immediately visible.',
+                  text: "Cross-referencing recorded mileage figures across the vehicle's full MOT history is one of the most reliable methods. Autodun's mileage checker plots every recorded reading on a timeline, making inconsistencies immediately visible.",
                 },
               },
               {
@@ -249,275 +249,229 @@ export default function BlogPage() {
           </figcaption>
         </figure>
         <p>
-          For electric vehicles, MOT requirements differ slightly. EVs do not require exhaust emission tests, but
-          they are still subject to checks on brakes, steering, tyres, lights, and bodywork. Our UK EV charging
-          MOT guides include a dedicated section on what EV owners should prepare before their annual test,
-          including battery warning light checks and regenerative braking assessments. The{' '}
-          <a href="https://www.gov.uk/government/publications/mot-inspection-manual-for-private-passenger-and-light-commercial-vehicles" target="_blank" rel="noopener noreferrer">
-            DVSA MOT inspection manual for private and light commercial vehicles
-          </a>{' '}
-          sets out the precise standards testers apply — our guides translate this technical documentation into
-          plain English every driver can follow.
+          For electric vehicles, MOT requirements differ in several important ways. EVs are exempt from the
+          exhaust emissions test that applies to petrol and diesel vehicles, but they are subject to additional
+          checks specific to high-voltage systems. According to{' '}
+          <a href="https://www.gov.uk/guidance/mot-inspection-manual-for-private-passenger-and-light-commercial-vehicles" target="_blank" rel="noopener noreferrer">
+            the DVSA MOT inspection manual
+          </a>
+          , testers must verify that high-voltage warning labels are present and legible, that electrical
+          connectors show no signs of damage or insulation failure, and that the vehicle&apos;s 12V auxiliary
+          battery — which powers lights, locks, and safety systems — is in serviceable condition. Many EV owners
+          are surprised to learn their 12V battery can fail independently of the main traction battery, causing
+          an MOT failure or leaving them stranded.
         </p>
         <p>
-          Understanding advisory notices is just as important as identifying outright failures. An advisory is a
-          component that is not yet at the point of failure but is deteriorating and should be monitored or
-          repaired soon. When a used car you are considering shows the same advisory appearing across three or
-          more consecutive annual MOT tests, that is a strong signal the owner has consistently deferred
-          necessary maintenance. Our guides explain how to interpret advisory language, which faults carry the
-          highest risk if left unaddressed, and how to use the full test history as a negotiating tool when
-          agreeing a purchase price.
+          Regenerative braking is another area where EV MOT outcomes can differ from conventional vehicles. Because
+          regenerative braking recovers energy during deceleration, physical brake pads and discs are used far
+          less frequently than on petrol or diesel cars. This means brake components can develop surface corrosion
+          even on relatively new EVs. DVSA guidance confirms that corroded discs causing uneven braking force can
+          result in an MOT failure. Performing several firm brake applications in the days before your test is a
+          widely recommended preparation step, and one we cover in detail in our EV MOT preparation guide below.
         </p>
         <p>
-          The{' '}
-          <a href="https://www.gov.uk/government/organisations/driver-and-vehicle-standards-agency" target="_blank" rel="noopener noreferrer">
-            Driver and Vehicle Standards Agency (DVSA)
-          </a>{' '}
-          publishes annual MOT testing statistics that reveal which vehicle makes and models record the highest
-          first-time failure rates, most common failure reasons by vehicle age, and regional variations in
-          pass rates across England, Scotland, and Wales. We analyse this data each year and publish a
-          comprehensive breakdown in our MOT statistics guide, giving buyers a clear picture of what to
-          watch for when evaluating any used vehicle purchase.
-        </p>
-        <p>
-          Beyond individual vehicle checks, MOT data can reveal systemic issues with specific model years or
-          manufacturing batches. Cross-referencing your vehicle&apos;s test history with{' '}
-          <a href="https://www.driverpowersurvey.co.uk/" target="_blank" rel="noopener noreferrer">
-            Driver Power reliability survey results
-          </a>{' '}
-          can help identify whether faults you are seeing are isolated or indicative of a wider known issue
-          with that model — valuable intelligence before committing to a purchase or deciding whether to
-          negotiate a price reduction.
+          Autodun&apos;s MOT history tool also lets you track mileage progression across every recorded test.
+          This is particularly valuable when assessing a used EV, since battery degradation is closely related
+          to total mileage and charging behaviour. A vehicle with a mileage gap of 30,000 miles between two
+          consecutive MOT entries warrants further investigation — either it covered an unusually high annual
+          distance, or the odometer has been tampered with. Cross-referencing MOT mileage data with service
+          history records and any available manufacturer battery health reports gives the most complete picture
+          of a used EV&apos;s true condition before you commit to a purchase.
         </p>
       </section>
 
       <section aria-labelledby="mileage-heading">
         <h2 id="mileage-heading">Mileage Verification &amp; Avoiding Clocked Cars</h2>
         <p>
-          Mileage fraud — commonly called clocking — remains a persistent problem in the UK used-car market.
-          Research from the{' '}
+          Mileage fraud — commonly known as clocking — remains a significant problem in the UK used-car market.
+          The{' '}
           <a href="https://www.racfoundation.org/" target="_blank" rel="noopener noreferrer">
             RAC Foundation
           </a>{' '}
-          suggests that a significant proportion of used vehicles have had their odometers tampered with,
-          costing buyers thousands of pounds in unexpected repairs and reducing resale value. Cross-referencing
-          recorded mileage figures across a vehicle&apos;s full MOT history is one of the most reliable ways to
-          identify inconsistencies. Autodun&apos;s mileage checker plots every recorded reading on a timeline,
-          making anomalies immediately visible.
+          has previously estimated that tens of thousands of clocked vehicles change hands in the UK each year,
+          with buyers unknowingly paying a premium for cars that have covered far more miles than displayed.
+          Beyond the financial loss, a clocked vehicle presents real safety risks — worn components that appear
+          unexpectedly early based on the false odometer reading may not be replaced on schedule, increasing the
+          likelihood of brake, tyre, or suspension failures.
         </p>
         <p>
-          Beyond MOT records, additional mileage data points can be found in service history stamps, finance
-          settlement letters, and previous insurance renewal documents. Our mileage verification guide walks
-          you through each source of evidence, explains how clocking operations typically manipulate digital
-          odometers in modern vehicles, and outlines the legal position under the{' '}
-          <a href="https://www.legislation.gov.uk/ukpga/2015/15/contents" target="_blank" rel="noopener noreferrer">
-            Consumer Rights Act 2015
-          </a>{' '}
-          if you discover post-purchase that a seller misrepresented a vehicle&apos;s true mileage. The Act
-          provides important protections including the right to a full refund within 30 days of purchase if the
-          goods are not as described — a right that explicitly applies to misrepresented mileage.
+          The most reliable free method for detecting a clocked car is to cross-reference every mileage reading
+          recorded across the vehicle&apos;s MOT history. Each MOT test captures the odometer reading at the
+          time of the test, and these figures are permanently logged in the DVSA database. A legitimate vehicle
+          should show a steady, logical increase in mileage across tests. Any entry where the recorded mileage
+          is lower than the previous test — or where a suspiciously large jump occurs in a single year — is a
+          red flag that warrants further investigation. Autodun&apos;s mileage checker plots every recorded
+          reading on a visual timeline, making inconsistencies immediately visible even to buyers with no
+          technical background.
         </p>
         <p>
-          Trading Standards guidance published by{' '}
-          <a href="https://www.citizensadvice.org.uk/consumer/cars/buying-a-car/buying-a-used-car/" target="_blank" rel="noopener noreferrer">
-            Citizens Advice on buying a used car
-          </a>{' '}
-          reinforces that private sellers have a legal duty not to misrepresent a vehicle&apos;s condition or
-          history. While &ldquo;sold as seen&rdquo; is commonly misunderstood to remove all buyer protections,
-          it does not override statutory rights where material facts — including mileage — have been
-          deliberately misrepresented. Our guides explain the practical steps for pursuing a claim and
-          the evidence you will need to gather.
-        </p>
-        <p>
-          Electric vehicles present a specific consideration for mileage verification: battery degradation is
-          closely correlated with total distance driven and charge cycle count. A high-mileage EV that has been
-          clocked downward may show apparent battery capacity loss that is inconsistent with its stated history.
-          Autodun&apos;s tools cross-reference available charging and service records where accessible, and our
-          UK EV charging MOT guides include a dedicated battery health assessment checklist to use before
-          committing to any used EV purchase.
+          For electric vehicles, mileage verification takes on added importance because battery health is
+          directly tied to total distance covered and charging cycles. A battery that has powered a vehicle
+          for 80,000 genuine miles will have experienced measurably more degradation than one at 40,000 miles,
+          and this will be reflected in reduced real-world range. If a seller claims low mileage but the
+          vehicle&apos;s MOT history tells a different story, buyers should request a manufacturer battery
+          health certificate or independent battery diagnostic report before proceeding. Our guides explain
+          exactly what to ask for and how to interpret the results, so you can buy with confidence rather
+          than relying solely on a seller&apos;s word.
         </p>
       </section>
 
       <section aria-labelledby="ev-mot-prep-heading">
         <h2 id="ev-mot-prep-heading">Preparing Your Electric Vehicle for Its MOT in 2026</h2>
         <p>
-          With the UK EV fleet growing rapidly following the acceleration of the{' '}
-          <a href="https://www.gov.uk/government/consultations/ending-the-sale-of-new-petrol-and-diesel-cars-and-vans" target="_blank" rel="noopener noreferrer">
-            phased transition away from new petrol and diesel car sales
-          </a>
-          , an increasing number of drivers are approaching their first or second EV MOT without knowing exactly
-          what to expect. The good news is that the adapted EV test is broadly similar to a standard MOT — the
-          tester simply skips the exhaust emissions analysis and replaces it with checks specific to electric
-          drivetrain components.
-        </p>
-        <figure>
-          <img
-            src="/images/ev-mot-checklist-2026.jpg"
-            alt="Printable EV MOT checklist for 2026 showing tyre tread, brake disc condition, lights, and high-voltage warning label requirements"
-            width={800}
-            height={600}
-            loading="lazy"
-          />
-          <figcaption>
-            Autodun&apos;s printable EV MOT checklist for 2026 — covering every item your tester will assess so you can identify issues before booking.
-          </figcaption>
-        </figure>
-        <p>
-          Key areas your MOT tester will assess for an electric vehicle include: tyre condition and tread depth
-          (minimum 1.6 mm across the central three-quarters of the tyre); brake performance on both front and
-          rear axles, accounting for the reduced wear patterns typical in EVs using regenerative braking;
-          steering response and play; all exterior lights including daytime running lamps; windscreen condition
-          and wiper effectiveness; horn operation; and the presence and condition of any high-voltage warning
-          labels required under current regulations. Our UK EV charging MOT guides provide a printable
-          pre-MOT checklist covering every one of these points so you can identify any issues before booking
-          the formal test.
-        </p>
-        <p>
-          One area that catches some EV owners off-guard is the brake test. Because regenerative braking
-          handles the majority of deceleration in everyday driving, the physical brake pads and discs on many
-          EVs see far less use than on equivalent petrol or diesel vehicles. Paradoxically, this reduced use
-          can cause surface corrosion on brake discs, which may trigger an advisory or failure if the corrosion
-          has progressed to the point of affecting braking performance. A short session of deliberate firm
-          braking in the days before your MOT can help clear surface rust and ensure the physical brakes
-          perform correctly during the roller brake test.
-        </p>
-        <p>
-          The{' '}
-          <a href="https://www.mot-testing.service.gov.uk/" target="_blank" rel="noopener noreferrer">
-            DVSA MOT testing service
+          With EVs now a common sight on UK roads, understanding how to prepare an electric car for its annual
+          MOT has become an essential piece of knowledge for owners. While EVs benefit from the removal of the
+          exhaust emissions test, they introduce a new set of checks that can catch unprepared owners off guard.
+          The following preparation steps are drawn from{' '}
+          <a href="https://www.gov.uk/getting-an-mot/overview" target="_blank" rel="noopener noreferrer">
+            DVSA MOT guidance
           </a>{' '}
-          allows you to check your current MOT status, find approved test centres near you, and review your
-          vehicle&apos;s full test history — all tools that complement Autodun&apos;s own free vehicle
-          checks. We recommend cross-referencing both sources before any significant used EV purchase or
-          ahead of your own vehicle&apos;s test date.
+          and the practical experience of UK EV drivers and independent testers.
+        </p>
+        <ul>
+          <li>
+            <strong>Check tyre condition and pressure.</strong> Tyre failures remain the single most common
+            reason for MOT failures across all vehicle types. EVs are typically heavier than equivalent
+            petrol models due to battery weight, which increases tyre wear rates. Inspect tread depth
+            (minimum 1.6 mm across the central three-quarters of the tread), check for sidewall damage, and
+            inflate to the manufacturer&apos;s recommended pressure — which for many EVs is higher than
+            drivers expect.
+          </li>
+          <li>
+            <strong>Clear brake disc corrosion before the test.</strong> As described above, EV brake discs
+            are prone to surface rust due to infrequent use. In the two to three days before your MOT,
+            perform several firm, progressive brake applications from moderate speed in a safe environment.
+            This will abrade surface corrosion from the disc faces and help ensure even braking force
+            during the tester&apos;s brake efficiency check.
+          </li>
+          <li>
+            <strong>Verify all lights are functioning.</strong> Headlights, brake lights, indicators, hazard
+            lights, number plate illumination, and reversing lights must all operate correctly. LED lighting
+            systems fitted to many EVs can develop individual segment failures that are not immediately
+            obvious to the driver but will be identified during the MOT visual inspection.
+          </li>
+          <li>
+            <strong>Check high-voltage warning labels.</strong> DVSA testers are required to verify that
+            high-voltage system warning labels are present and legible. These labels are typically located
+            under the bonnet, near the charging port, and at other high-voltage system access points.
+            Labels that have faded, peeled, or been covered during repairs or modifications must be
+            replaced before the test.
+          </li>
+          <li>
+            <strong>Test the 12V auxiliary battery.</strong> The 12V battery powers the vehicle&apos;s
+            ancillary systems and is checked during the MOT. A weak or failed 12V battery can cause
+            electrical system faults and MOT failures independent of the main traction battery&apos;s
+            state of charge. Many EV owners overlook this component — have it tested at a garage or
+            using a portable battery tester if the car is more than three years old.
+          </li>
+          <li>
+            <strong>Inspect windscreen and wipers.</strong> Any chip or crack in the driver&apos;s direct
+            line of sight will result in an MOT failure. Chips outside the critical zone but larger than
+            40 mm will also fail. Wiper blades that leave streaks or fail to clear the screen effectively
+            must be replaced before the test.
+          </li>
+        </ul>
+        <p>
+          Following these steps does not guarantee a pass, but it significantly reduces the likelihood of a
+          preventable failure that wastes your time and money. Autodun&apos;s free MOT history tool also
+          allows you to review your vehicle&apos;s previous advisory notices before the test, so you can
+          address any recurring issues that have been flagged in prior years but not yet escalated to failures.
         </p>
       </section>
 
       <section aria-labelledby="fleet-heading">
         <h2 id="fleet-heading">Fleet Management, MOT Compliance &amp; EV Transition Planning</h2>
         <p>
-          Fleet managers overseeing mixed vehicle pools face a dual challenge in 2026: maintaining MOT
-          compliance across legacy petrol and diesel assets while simultaneously planning the infrastructure
-          investment needed to support growing EV fleets. Our dedicated fleet guides cover both dimensions,
-          drawing on guidance from{' '}
-          <a href="https://www.bvrla.co.uk/" target="_blank" rel="noopener noreferrer">
-            the British Vehicle Rental and Leasing Association (BVRLA)
-          </a>{' '}
-          and published Government fleet decarbonisation targets.
+          For UK fleet operators, the transition to electric vehicles introduces both significant opportunities
+          and new compliance challenges. MOT due dates must be tracked across an increasingly mixed fleet of
+          petrol, diesel, hybrid, and fully electric vehicles, each with subtly different inspection
+          requirements. The consequences of a vehicle operating with an expired MOT certificate include
+          a fine of up to £1,000, invalidated insurance, and potential prosecution — risks that are
+          unacceptable for professionally managed fleets.
         </p>
         <p>
-          Autodun&apos;s bulk MOT lookup tool allows fleet operators to input multiple registration numbers
-          and receive a consolidated compliance report showing current MOT expiry dates, outstanding
-          advisories, and mileage trends across the entire fleet. This removes the manual administrative
-          burden of checking each vehicle individually and makes it straightforward to prioritise which
-          assets require attention ahead of their next scheduled test. Combined with our UK EV charging MOT
-          guides, fleet managers have a single reference point for both compliance monitoring and EV
-          infrastructure planning.
+          Autodun&apos;s batch MOT history lookup allows fleet managers to check the MOT status and history
+          of multiple vehicles simultaneously, saving significant administrative time compared with running
+          individual checks through the DVSA portal. By reviewing the full advisory history of each fleet
+          vehicle, maintenance teams can identify patterns of wear across vehicle models and build more
+          accurate preventive maintenance schedules.
         </p>
         <p>
-          The{' '}
-          <a href="https://www.gov.uk/government/publications/fleet-decarbonisation-pathway" target="_blank" rel="noopener noreferrer">
-            Government&apos;s fleet decarbonisation pathway
-          </a>{' '}
-          sets out expected timelines for public sector fleet electrification and provides a useful benchmark
-          for private fleet operators planning their own transition. Our fleet guides map these targets against
-          practical charging infrastructure requirements, helping managers model how many charge points they
-          will need, where to install them, and which grant funding streams are available to reduce upfront
-          capital costs.
+          The financial case for EV fleet adoption continues to strengthen in 2026. According to{' '}
+          <a href="https://www.gov.uk/government/publications/electric-vehicle-fleet-toolkit" target="_blank" rel="noopener noreferrer">
+            the Government&apos;s electric vehicle fleet toolkit
+          </a>
+          , whole-life costs for many EV models now undercut equivalent petrol vehicles when fuel, servicing,
+          and tax savings are considered together. Benefit-in-Kind (BIK) tax rates for zero-emission company
+          cars remain substantially lower than for petrol equivalents, making EVs particularly attractive
+          for employer-provided vehicles. Our fleet transition guides cover total cost of ownership modelling,
+          charging infrastructure planning, driver training, and HMRC reporting obligations in detail.
         </p>
         <p>
-          Total cost of ownership (TCO) modelling is central to any credible fleet EV transition plan.
-          Electricity costs, charge point installation, vehicle acquisition, and reduced maintenance expenses
-          (EVs have fewer moving parts and typically lower servicing costs) all feed into the calculation.
-          Our fleet TCO guide walks through each variable with worked examples for a 50-vehicle mixed fleet,
-          drawing on published data from{' '}
-          <a href="https://www.fleetpoint.org/" target="_blank" rel="noopener noreferrer">
-            Fleet Point fleet management resources
-          </a>{' '}
-          and the BVRLA&apos;s annual fleet industry report. Visit our{' '}
-          <a href="/blog">blog</a> for the latest fleet guides, explore the{' '}
-          <a href="/about">Autodun about page</a> to understand how our tools are built, or{' '}
-          <a href="/contact">contact our team</a> for bespoke fleet compliance support.
+          Charging infrastructure is the most common practical barrier to fleet EV adoption. Depot charging
+          requirements vary enormously depending on fleet size, vehicle dwell time, and the nature of daily
+          routes. For last-mile delivery fleets returning to a depot overnight, overnight slow charging may
+          be entirely sufficient. For field service fleets covering unpredictable distances, a mix of home
+          charging, workplace top-ups, and access to public rapid chargers may be necessary. Our UK EV
+          charging MOT guides include a dedicated fleet charging infrastructure planning section, with
+          case studies drawn from real UK fleet deployments across a range of sectors and vehicle types.
         </p>
       </section>
 
       <section aria-labelledby="faq-heading">
-        <h2 id="faq-heading">Frequently Asked Questions — UK EV Charging MOT Guides</h2>
+        <h2 id="faq-heading">Frequently Asked Questions</h2>
 
         <h3>What does an EV MOT check include in the UK?</h3>
         <p>
           An EV MOT in the UK skips the exhaust emissions test but still covers brakes, tyres, lights,
-          steering, bodywork, windscreen, horn, and high-voltage warning labels. Regenerative braking systems
-          are assessed alongside physical brake pads and discs. Our UK EV charging MOT guides include a
-          printable checklist of every item covered so you can prepare thoroughly before booking your test.
+          steering, bodywork, windscreen, horn, and high-voltage warning labels. Regenerative braking
+          systems are assessed alongside physical brake pads and discs. The DVSA&apos;s{' '}
+          <a href="https://www.gov.uk/guidance/mot-inspection-manual-for-private-passenger-and-light-commercial-vehicles" target="_blank" rel="noopener noreferrer">
+            MOT inspection manual
+          </a>{' '}
+          sets out the full list of items checked for electric and hybrid vehicles.
         </p>
 
         <h3>How can I check a used car&apos;s MOT history for free?</h3>
         <p>
           You can check a used car&apos;s full MOT history for free using Autodun&apos;s MOT history tool,
           which pulls directly from DVSA records. This shows every test result, advisory notice, and failure
-          reason without registration or payment. You can also use the official{' '}
+          reason without registration or payment. The official{' '}
           <a href="https://www.gov.uk/check-mot-history" target="_blank" rel="noopener noreferrer">
-            DVSA MOT history service on GOV.UK
+            DVSA MOT history service
           </a>{' '}
-          to cross-reference results independently.
+          is also publicly accessible, and Autodun presents the same underlying data in a more readable,
+          buyer-focused format.
         </p>
 
         <h3>How do I detect mileage clocking on a used car?</h3>
         <p>
-          Cross-referencing recorded mileage figures across the vehicle&apos;s full MOT history is one of
-          the most reliable methods. Autodun&apos;s mileage checker plots every recorded reading on a
-          timeline, making inconsistencies immediately visible. Supplementary evidence from service history
-          stamps and insurance renewal documents can further corroborate or contradict the odometer reading.
+          Cross-referencing recorded mileage figures across the vehicle&apos;s full MOT history is one of the
+          most reliable methods. Autodun&apos;s mileage checker plots every recorded reading on a timeline,
+          making inconsistencies immediately visible. Any entry where the mileage decreases between tests, or
+          where an implausibly large jump occurs in a single year, should be treated as a serious warning sign
+          requiring further investigation before purchase.
         </p>
 
         <h3>What is the cheapest way to charge an electric car in the UK?</h3>
         <p>
           Home charging with a 7 kW wallbox is typically the most cost-effective option, costing roughly
           £9–£12 per full charge at average domestic electricity rates. Combining overnight home charging
-          with opportunistic workplace top-ups can reduce annual fuel costs by several hundred pounds
-          compared with relying on public rapid chargers. Smart tariffs from energy suppliers such as
-          Octopus Energy&apos;s Intelligent Octopus Go can reduce home charging costs further by scheduling
-          sessions automatically during the cheapest overnight periods.
+          with opportunistic workplace top-ups can reduce annual fuel costs by several hundred pounds compared
+          with relying on public rapid chargers. Smart tariffs from suppliers such as those listed in{' '}
+          <a href="https://www.ofgem.gov.uk/information-for-household-consumers/energy-and-the-environment/electric-vehicles" target="_blank" rel="noopener noreferrer">
+            Ofgem&apos;s EV consumer guidance
+          </a>{' '}
+          can reduce costs further by scheduling charging during off-peak overnight periods.
         </p>
 
         <h3>Why are my EV brake discs corroded even though the car is nearly new?</h3>
         <p>
           Because regenerative braking handles most deceleration in everyday EV driving, the physical brake
-          pads and discs see far less use than on equivalent petrol or diesel vehicles. This reduced use can
-          cause surface corrosion — particularly after wet weather or a period of low mileage. Performing a
-          short session of firm braking in the days before your MOT can help clear surface rust and ensure
-          the physical brakes perform correctly during the roller brake test.
-        </p>
-
-        <h3>Do I need a special charger for a long-range EV?</h3>
-        <p>
-          Not necessarily for daily use — most long-range EVs (with batteries of 70 kWh or more) charge
-          fully overnight on a standard 7 kW home wallbox. For longer journeys, access to rapid (50 kW+)
-          or ultra-rapid (150 kW+) public chargers significantly reduces stopping time. Our UK EV charging
-          MOT guides include a journey planning section that maps charger availability against real-world
-          range figures for the UK&apos;s most popular long-range models in 2026.
-        </p>
-      </section>
-
-      <section aria-labelledby="tools-cta-heading">
-        <h2 id="tools-cta-heading">Try Autodun&apos;s Free UK Vehicle Tools Today</h2>
-        <p>
-          All of the tools referenced throughout our UK EV charging MOT guides are completely free to use —
-          no account required, no payment details needed. Autodun&apos;s platform combines DVSA MOT history
-          data, mileage verification, and EV charging network information in a single, straightforward
-          interface built for everyday UK drivers. Whether you are checking a used car before purchase,
-          preparing your own vehicle for its next test, or managing a fleet of dozens of vehicles, our
-          tools give you the information you need in seconds.
-        </p>
-        <p>
-          Our guides are updated regularly to reflect changes in MOT testing standards, EV charging
-          infrastructure, and UK consumer law. Bookmark the{' '}
-          <a href="/blog">Autodun blog</a> to stay informed, visit our{' '}
-          <a href="/about">about page</a> to learn more about how our data sources work, or{' '}
-          <a href="/contact">contact us</a> with any questions about our tools or the topics covered
-          in our guides. We read every message and update our content based on the questions real drivers
-          send us — your feedback directly shapes what we write next.
+          pads and discs see far less use than on petrol or diesel vehicles. This reduced use can cause surface
+          corrosion even on nearly new cars. Performing a short session of firm braking in the days before your
+          MOT can help clear surface rust and reduce the risk of a brake-related advisory or failure during
+          the test.
         </p>
       </section>
     </>
