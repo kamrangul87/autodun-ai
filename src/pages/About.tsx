@@ -51,8 +51,8 @@ export default function About() {
         "Learn about Autodun, the UK platform for EV charging maps, MOT risk prediction and AI car advice. Founded by Kamran Gul.",
       keywords:
         "about Autodun, UK vehicle tools, MOT predictor, EV charging map UK, Kamran Gul, free car tools UK",
-      canonical: "https://autodun.com/about",
-      ogUrl: "https://autodun.com/about",
+      canonical: "https://www.autodun.com/about",
+      ogUrl: "https://www.autodun.com/about",
     });
 
     // Inject FAQ JSON-LD

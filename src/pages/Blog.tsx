@@ -104,8 +104,8 @@ export default function Blog() {
       title: "Autodun Blog — EV Infrastructure & MOT Intelligence (UK)",
       description:
         "Research-grade writing from Autodun on UK EV charging infrastructure, real-world data gaps, clean-air rules, and MOT intelligence — built from hands-on product and user feedback.",
-      canonical: "https://autodun.com/blog/",
-      ogUrl: "https://autodun.com/blog/",
+      canonical: "https://www.autodun.com/blog/",
+      ogUrl: "https://www.autodun.com/blog/",
     });
   }, []);
 
