@@ -5,6 +5,41 @@
       "has": [{ "type": "host", "value": "www.autodun.com" }],
       "destination": "https://autodun.com/:path*",
       "permanent": true
+    },
+    {
+      "source": "/contact-us",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/privacy-policy",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/used-car-insight",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/auto-parts-advisor",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ev-help-centre",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/data-usage",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/mot-predictor",
+      "destination": "https://mot.autodun.com",
+      "permanent": true
     }
   ]
 }
