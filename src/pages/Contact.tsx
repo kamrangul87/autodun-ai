@@ -18,8 +18,8 @@ export default function Contact() {
       title: "Contact Autodun — Get in Touch",
       description:
         "Contact the Autodun team for questions about our free UK vehicle tools.",
-      canonical: "https://www.autodun.com/contact",
-      ogUrl: "https://www.autodun.com/contact",
+      canonical: "https://autodun.com/contact",
+      ogUrl: "https://autodun.com/contact",
     });
   }, []);
 

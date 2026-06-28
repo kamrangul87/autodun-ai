@@ -64,8 +64,8 @@ export default function EVChargerFinder() {
         "Find EV charging stations across the UK. Browse 30,000+ charge points by location with AI suitability scoring. Free EV charging map with live data.",
       keywords:
         "EV charging stations UK, EV charger finder, electric vehicle charging map, charge points near me, UK EV map, public charging UK, fast chargers UK, CCS charging UK",
-      canonical: "https://www.autodun.com/ev-charger-finder",
-      ogUrl: "https://www.autodun.com/ev-charger-finder",
+      canonical: "https://autodun.com/ev-charger-finder",
+      ogUrl: "https://autodun.com/ev-charger-finder",
     });
   }, []);
 

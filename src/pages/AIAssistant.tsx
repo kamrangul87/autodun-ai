@@ -8,8 +8,8 @@ export default function AIAssistant() {
       title: "Autodun AI Assistant | Free Automotive AI for UK Drivers — MOT, EV & Car Advice",
       description:
         "Get instant AI-powered vehicle guidance. Ask about MOT risk, EV charging near you, or used car buying. Free automotive intelligence powered by real UK data.",
-      canonical: "https://www.autodun.com/ai-assistant",
-      ogUrl: "https://www.autodun.com/ai-assistant",
+      canonical: "https://autodun.com/ai-assistant",
+      ogUrl: "https://autodun.com/ai-assistant",
     });
   }, []);
 

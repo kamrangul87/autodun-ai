@@ -54,8 +54,8 @@ export default function MOTPredictor() {
         "Estimate your MOT failure risk for free. Enter your vehicle age, mileage and history to get an instant AI risk score. Powered by DVSA data. No account needed.",
       keywords:
         "MOT risk predictor, MOT failure risk, free MOT check, MOT history checker, DVSA MOT data, MOT prediction UK, car MOT checker",
-      canonical: "https://www.autodun.com/mot-predictor",
-      ogUrl: "https://www.autodun.com/mot-predictor",
+      canonical: "https://autodun.com/mot-predictor",
+      ogUrl: "https://autodun.com/mot-predictor",
     });
   }, []);
 

@@ -2,8 +2,8 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "autodun.com" }],
-      "destination": "https://www.autodun.com/:path*",
+      "has": [{ "type": "host", "value": "www.autodun.com" }],
+      "destination": "https://autodun.com/:path*",
       "permanent": true
     }
   ]

@@ -44,8 +44,8 @@ export default function Index() {
         "Autodun provides free AI-powered vehicle tools for UK drivers. Find EV charging stations near you, predict MOT failure risk, and get instant vehicle guidance. No account needed.",
       keywords:
         "EV charging UK, EV charging stations, MOT predictor, MOT risk checker, UK EV map, electric vehicle charging, MOT history, AI car assistant, free MOT check, UK charging points",
-      canonical: "https://www.autodun.com",
-      ogUrl: "https://www.autodun.com",
+      canonical: "https://autodun.com",
+      ogUrl: "https://autodun.com",
     });
   }, []);
 
