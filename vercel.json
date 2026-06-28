@@ -17,6 +17,16 @@
       "permanent": true
     },
     {
+      "source": "/cookie-policy",
+      "destination": "/cookies",
+      "permanent": true
+    },
+    {
+      "source": "/about-ai",
+      "destination": "https://ai.autodun.com",
+      "permanent": true
+    },
+    {
       "source": "/used-car-insight",
       "destination": "/",
       "permanent": true
@@ -29,11 +39,6 @@
     {
       "source": "/ev-help-centre",
       "destination": "/",
-      "permanent": true
-    },
-    {
-      "source": "/data-usage",
-      "destination": "/privacy",
       "permanent": true
     },
     {
