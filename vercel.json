@@ -2,7 +2,12 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "www.autodun.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "www.autodun.com"
+        }
+      ],
       "destination": "https://autodun.com/:path*",
       "permanent": true
     },
@@ -45,6 +50,21 @@
       "source": "/mot-predictor",
       "destination": "https://mot.autodun.com",
       "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
     }
   ]
 }
