@@ -4,27 +4,22 @@ export const Footer = () => {
   const toolLinks = [
     { href: "https://ev.autodun.com", label: "EV Charger Finder", external: true },
     { href: "https://mot.autodun.com", label: "MOT Predictor", external: true },
-    { href: "https://ai.autodun.com", label: "AI Assistant", external: true },
-  ];
+    { href: "https://ai.autodun.com", label: "AI Assistant", external: true }];
 
   const fixLinks = [
     { href: "https://fix.autodun.com#breakdown", label: "Breakdown Assistant" },
     { href: "https://fix.autodun.com#warning-lights", label: "Warning Lights" },
     { href: "https://fix.autodun.com#appeal", label: "Parking Fine Appeal" },
-    { href: "https://fix.autodun.com#price", label: "Fair Price Checker" },
-  ];
+    { href: "https://fix.autodun.com#price", label: "Fair Price Checker" }];
 
   const internalLinks = [
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
-    { path: "/data-usage", label: "Data Usage" },
-  ];
+    { path: "/data-usage", label: "Data Usage" }];
 
   const policyLinks = [
-    { path: "/privacy", label: "Privacy Policy" },
     { path: "/terms", label: "Terms of Use" },
-    { path: "/cookies", label: "Cookie Policy" },
-  ];
+    { path: "/cookies", label: "Cookie Policy" }];
 
   const linkStyle = {
     color: "#8899aa",
