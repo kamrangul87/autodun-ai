@@ -132,7 +132,7 @@ export const Header = () => {
 
           {/* BLOG (static HTML) */}
           <a
-            href="/blog/index.html"
+            href="/blog"
             className="text-sm font-medium transition-colors whitespace-nowrap hover:text-[#f0f6ff]"
             style={{ color: location.pathname.startsWith("/blog") ? "#00d48a" : "#8899aa" }}
           >
@@ -244,7 +244,7 @@ export const Header = () => {
               ))}
 
               <a
-                href="/blog/index.html"
+                href="/blog"
                 onClick={() => setMobileMenuOpen(false)}
                 className="rounded-md px-3 py-2 text-sm font-medium transition-colors"
                 style={{ color: "#8899aa" }}
