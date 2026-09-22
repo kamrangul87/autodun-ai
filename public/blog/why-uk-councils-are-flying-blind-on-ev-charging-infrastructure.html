@@ -64,7 +64,7 @@ a:hover { color:#00e5a0; }
 strong, b { color:#fff; }
 ul,ol { padding-left:24px; margin-bottom:20px; color:#c8d8e8; }
 li { margin-bottom:8px; }
-img { max-width:100%; border-radius:12px; margin:24px 0; border:1px solid rgba(255,255,255,0.07); }
+article img { max-width:100%; height:auto; border-radius:12px; margin:24px 0; border:1px solid rgba(255,255,255,0.07); }
 </style>
 <script type="application/ld+json">
 {
@@ -94,7 +94,8 @@ img { max-width:100%; border-radius:12px; margin:24px 0; border:1px solid rgba(2
 
 <div class="wrap">
 
-  <a href="/blog" class="back-link">← Back to Autodun Blog</a>
+  <article>
+<a href="/blog" class="back-link">← Back to Autodun Blog</a>
 
   <h1>Why UK Councils Are Flying Blind on EV Charging Infrastructure</h1>
 
@@ -116,10 +117,8 @@ img { max-width:100%; border-radius:12px; margin:24px 0; border:1px solid rgba(2
     But once I started using this data to power real journeys, real maps, and real driver feedback loops, a different picture began to emerge.
   </p>
 
-  <img
-    src="/images/autodun-map-overview-1200x630.png"
-    alt="UK EV charging coverage map showing real-world distribution gaps"
-  />
+  <img width="1200" height="630" src="/images/autodun-map-overview-1200x630.png"
+    alt="UK EV charging coverage map showing real-world distribution gaps" />
 
   <p>
     At a national level, charger counts look impressive. Maps are full of markers. Heatmaps glow across cities and motorways. But zoom in, and the gaps become impossible to ignore. Rural areas appear "covered" but hide single slow chargers. Town centres show numbers that don't reflect reliability, access, or real availability.
@@ -133,10 +132,8 @@ img { max-width:100%; border-radius:12px; margin:24px 0; border:1px solid rgba(2
     As I connected Open Charge Map data with live journeys and user feedback, inconsistencies became clearer. Some chargers listed as operational were unreachable. Others were technically present but practically unusable. In several regions, councils appeared to be planning infrastructure based on incomplete or misleading signals.
   </p>
 
-  <img
-    src="/images/autodun-station-drawer-1200x675.png"
-    alt="EV charger detail view showing connectors, AI suitability score, and driver feedback"
-  />
+  <img width="1200" height="675" src="/images/autodun-station-drawer-1200x675.png"
+    alt="EV charger detail view showing connectors, AI suitability score, and driver feedback" />
 
   <p>
     This is where Autodun began to shift direction. Instead of treating EV infrastructure as a static dataset, I started treating it as a living system. Chargers were no longer just points on a map; they became nodes with quality, context, and experience attached to them.
@@ -184,6 +181,7 @@ img { max-width:100%; border-radius:12px; margin:24px 0; border:1px solid rgba(2
     <a href="/blog/electric-car-charger-map-uk.html">Electric Car Charger Map UK</a>
   </p>
 
+</article>
 </div>
 
 <footer style="background:#050c15;border-top:1px solid rgba(255,255,255,0.06);padding:40px 24px;text-align:center;margin-top:80px;">
