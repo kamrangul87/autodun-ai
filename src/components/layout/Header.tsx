@@ -29,7 +29,6 @@ export const Header = () => {
   ];
 
   const navLinksAfter = [
-    { path: "/data-usage", label: "Data Usage" },
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
   ];

@@ -15,9 +15,10 @@ export const Footer = () => {
   const internalLinks = [
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
-    { path: "/data-usage", label: "Data Usage" }];
+    { path: "/privacy", label: "Privacy" }];
 
   const policyLinks = [
+    { path: "/privacy", label: "Privacy Policy" },
     { path: "/terms", label: "Terms of Use" },
     { path: "/cookies", label: "Cookie Policy" }];
 
