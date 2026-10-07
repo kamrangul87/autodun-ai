@@ -52,8 +52,8 @@ export default function Privacy() {
               collect, why we collect it, which third parties receive it, and how to contact us about your data.
             </p>
             <p style={{ fontSize: "15px", color: "#8899aa", lineHeight: 1.7, marginTop: "12px" }}>
-              <strong style={{ color: "#f0f6ff" }}>[OWNER TO CONFIRM: Legal entity name, registered address, and ICO
-              registration number to be inserted here.]</strong>
+              The data controller is <strong style={{ color: "#f0f6ff" }}>Kamran Gul</strong>, operator of autodun.com.{" "}
+              <strong style={{ color: "#f0f6ff" }}>[OWNER TO CONFIRM: Registered address and ICO registration number to be confirmed.]</strong>
             </p>
           </div>
 
