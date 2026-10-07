@@ -50,6 +50,11 @@
       "source": "/mot-predictor",
       "destination": "https://mot.autodun.com",
       "permanent": true
+    },
+    {
+      "source": "/data-usage",
+      "destination": "/privacy",
+      "permanent": true
     }
   ],
   "headers": [
