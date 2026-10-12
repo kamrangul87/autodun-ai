@@ -249,7 +249,6 @@ export default function Privacy() {
                 <strong style={strong}>Contact form data:</strong> Up to 12 months, then deleted.
               </li>
               <li>
-                {/* TODO: keep in sync with the GA4 Admin → Data retention setting for G-ZPK0SR60XR. */}
                 <strong style={strong}>Analytics data:</strong> 2 months.
               </li>
               <li>
