@@ -70,7 +70,7 @@ const processors = [
 const cookies = [
   {
     name: "cookie_consent",
-    detail: "Stores your analytics cookie choice (accepted or rejected). 6 months. Strictly necessary.",
+    detail: "Stores your analytics cookie choice (accepted or rejected) for autodun.com and its subdomains. 6 months. Strictly necessary.",
   },
   {
     name: "sidebar:state",

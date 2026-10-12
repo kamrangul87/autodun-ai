@@ -3,7 +3,7 @@
  *
  * Google Analytics (G-ZPK0SR60XR) is never loaded until the visitor clicks
  * "Accept". The choice is stored in the first-party cookie "cookie_consent"
- * ("accepted" | "rejected", max-age 6 months).
+ * ("accepted" | "rejected", max-age 6 months, Domain=.autodun.com on autodun.com hosts).
  *
  * Static pages: <script src="/consent.js" defer></script> — this script loads
  * gtag.js itself after consent.
@@ -26,9 +26,18 @@
     return m ? m[1] : null;
   }
 
+  // Share one choice across autodun.com and its subdomains (ev, mot, ai).
+  // Elsewhere (localhost, preview URLs) the cookie stays host-only.
+  var host = location.hostname;
+  var cookieDomain =
+    host === "autodun.com" || /\.autodun\.com$/.test(host) ? "; Domain=.autodun.com" : "";
+
   function setConsent(value) {
     var secure = location.protocol === "https:" ? "; Secure" : "";
-    document.cookie = COOKIE + "=" + value + "; Max-Age=" + MAX_AGE + "; Path=/; SameSite=Lax" + secure;
+    // Drop any older host-only copy so it can't shadow the shared cookie.
+    if (cookieDomain) document.cookie = COOKIE + "=; Max-Age=0; Path=/";
+    document.cookie =
+      COOKIE + "=" + value + "; Max-Age=" + MAX_AGE + "; Path=/" + cookieDomain + "; SameSite=Lax" + secure;
   }
 
   function clearGACookies() {
