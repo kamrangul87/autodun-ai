@@ -77,7 +77,7 @@
         },
         {
           "key": "Content-Security-Policy-Report-Only",
-          "value": "default-src 'self'; script-src 'self' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self'; connect-src 'self' https://www.googletagmanager.com; frame-src 'self'; form-action 'self'"
+          "value": "default-src 'self'; script-src 'self' https://www.googletagmanager.com https://unpkg.com https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com https://cdnjs.cloudflare.com; img-src 'self' data: blob: https://www.googletagmanager.com https://*.google-analytics.com https://*.tile.openstreetmap.org https://unpkg.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://www.googletagmanager.com https://*.google-analytics.com https://*.analytics.google.com https://formspree.io https://*.supabase.co wss://*.supabase.co https://*.tile.openstreetmap.org https://nominatim.openstreetmap.org https://api.postcodes.io https://history.mot.api.gov.uk; frame-src 'self' https://ev.autodun.com https://mot.autodun.com https://ai.autodun.com; form-action 'self' https://formspree.io"
         }
       ]
     }
