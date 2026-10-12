@@ -39,6 +39,8 @@ function AnalyticsTracker() {
 const App = () => {
   useEffect(() => {
     initGA();
+    window.addEventListener("autodun:consent", initGA);
+    return () => window.removeEventListener("autodun:consent", initGA);
   }, []);
 
   return (

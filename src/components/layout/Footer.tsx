@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { openCookieSettings } from "@/lib/ga";
 
 export const Footer = () => {
   const toolLinks = [
@@ -134,6 +135,14 @@ export const Footer = () => {
                   {l.label}
                 </Link>
               ))}
+              <button
+                type="button"
+                onClick={openCookieSettings}
+                className="text-xs transition-colors hover:text-[#00d48a]"
+                style={{ color: "#556677", background: "none", border: "none", padding: 0, cursor: "pointer" }}
+              >
+                Cookie settings
+              </button>
               <a
                 href="https://ai.autodun.com"
                 target="_blank"
