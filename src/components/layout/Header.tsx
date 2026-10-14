@@ -24,7 +24,7 @@ export const Header = () => {
 
   const navLinksBefore = [
     { path: "/", label: "Home" },
-    { path: "/ev-charger-finder", label: "EV Charger Finder" },
+    { path: "https://ev.autodun.com/", label: "EV Charger Finder" },
     { path: "/mot-predictor", label: "MOT Predictor" },
   ];
 
