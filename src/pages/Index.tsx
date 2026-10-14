@@ -5,6 +5,15 @@ import { Button } from "@/components/ui/button";
 import { Zap, BarChart3, Bot, ArrowRight, Wrench, AlertTriangle, FileText, CircleDollarSign } from "lucide-react";
 import { setSEO } from "@/lib/seo";
 
+// Keep in sync with the static <nav> in index.html.
+const popularGuides = [
+  { href: "/blog/mot-history-check-uk.html", label: "MOT History Check UK" },
+  { href: "/blog/mot-cost-uk-2026.html", label: "MOT Cost in the UK 2026" },
+  { href: "/blog/mot-advisories-explained-uk.html", label: "MOT Advisories Explained" },
+  { href: "/blog/electric-car-charger-map-uk.html", label: "Electric Car Charger Map UK" },
+  { href: "/blog/ev-charging-on-uk-motorways.html", label: "EV Charging on UK Motorways" },
+];
+
 const tools = [
   {
     icon: Zap,
@@ -289,6 +298,27 @@ export default function Index() {
             </p>
           </div>
         </div>
+      </section>
+
+      {/* Popular guides — mirrors the static links in index.html so raw and rendered HTML match.
+          Plain <a> (not <Link>): /blog and the guides are static pages outside the SPA router. */}
+      <section className="border-t border-border" style={{ padding: "48px 24px" }}>
+        <nav aria-label="Popular guides" style={{ maxWidth: "760px", margin: "0 auto" }}>
+          <h2 className="text-xl font-semibold mb-4">Popular guides</h2>
+          <ul className="grid gap-2 sm:grid-cols-2 mb-6">
+            {popularGuides.map((g) => (
+              <li key={g.href}>
+                <a href={g.href} className="text-muted-foreground transition-colors hover:text-[#00d48a]">
+                  {g.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <div className="flex gap-6 text-sm">
+            <a href="/blog" style={{ color: "#00d48a" }}>Blog</a>
+            <a href="/about" style={{ color: "#00d48a" }}>About Autodun</a>
+          </div>
+        </nav>
       </section>
     </Layout>
   );
