@@ -19,9 +19,7 @@ export const Footer = () => {
     { path: "/privacy", label: "Privacy" }];
 
   const policyLinks = [
-    { path: "/privacy", label: "Privacy Policy" },
-    { path: "/terms", label: "Terms of Use" },
-    { path: "/cookies", label: "Cookie Policy" }];
+    { path: "/privacy", label: "Privacy Policy" }];
 
   const linkStyle = {
     color: "#8899aa",

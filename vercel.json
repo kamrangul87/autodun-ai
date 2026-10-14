@@ -29,8 +29,8 @@
     },
     {
       "source": "/cookie-policy",
-      "destination": "/cookies",
-      "permanent": true
+      "destination": "/privacy",
+      "statusCode": 301
     },
     {
       "source": "/about-ai",
@@ -61,6 +61,16 @@
       "source": "/data-usage",
       "destination": "/privacy",
       "permanent": true
+    },
+    {
+      "source": "/cookies",
+      "destination": "/privacy",
+      "statusCode": 301
+    },
+    {
+      "source": "/ev-charger-finder",
+      "destination": "https://ev.autodun.com/",
+      "statusCode": 301
     }
   ],
   "headers": [
