@@ -79,7 +79,7 @@ export default function Index() {
               className="text-balance mb-5 font-bold"
               style={{ fontSize: "clamp(36px, 5vw, 56px)", lineHeight: "1.15" }}
             >
-              AI-Powered Vehicle Intelligence for UK Drivers
+              UK MOT, EV charging and car tools
             </h1>
 
             <p className="text-lg text-muted-foreground mb-8 leading-relaxed max-w-2xl mx-auto">
@@ -276,7 +276,11 @@ export default function Index() {
               Autodun is an AI automotive intelligence platform built for UK drivers. We combine
               real UK vehicle data with artificial intelligence to help you make smarter decisions
               about your car — whether you're planning a long EV journey, preparing for your next
-              MOT, or simply looking for reliable vehicle guidance.
+              MOT, or simply looking for reliable vehicle guidance. For fees, see our guide to{" "}
+              <a href="/blog/mot-cost-uk-2026.html" style={{ color: "#00d48a" }}>
+                MOT cost in the UK (2026)
+              </a>
+              .
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Our{" "}
