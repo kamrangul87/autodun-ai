@@ -34,7 +34,7 @@ const tools = [
     icon: Bot,
     title: "AI Assistant",
     description: "Structured automotive guidance powered by AI",
-    href: "https://ai.autodun.com",
+    href: "https://ai.autodun.com/ai-assistant",
     cta: "Ask AI Assistant",
   },
 ];
@@ -54,8 +54,8 @@ export default function Index() {
         "Autodun provides free AI-powered vehicle tools for UK drivers. Find EV charging stations near you, predict MOT failure risk, and get instant vehicle guidance. No account needed.",
       keywords:
         "EV charging UK, EV charging stations, MOT predictor, MOT risk checker, UK EV map, electric vehicle charging, MOT history, AI car assistant, free MOT check, UK charging points",
-      canonical: "https://autodun.com",
-      ogUrl: "https://autodun.com",
+      canonical: "https://autodun.com/",
+      ogUrl: "https://autodun.com/",
     });
   }, []);
 
@@ -322,6 +322,8 @@ export default function Index() {
           <div className="flex gap-6 text-sm">
             <a href="/blog" style={{ color: "#00d48a" }}>Blog</a>
             <a href="/about" style={{ color: "#00d48a" }}>About Autodun</a>
+            <a href="/contact" style={{ color: "#00d48a" }}>Contact</a>
+            <a href="/privacy" style={{ color: "#00d48a" }}>Privacy Policy</a>
           </div>
         </nav>
       </section>

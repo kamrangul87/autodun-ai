@@ -5,7 +5,7 @@ export const Footer = () => {
   const toolLinks = [
     { href: "https://ev.autodun.com", label: "EV Charger Finder", external: true },
     { href: "https://mot.autodun.com", label: "MOT Predictor", external: true },
-    { href: "https://ai.autodun.com", label: "AI Assistant", external: true }];
+    { href: "https://ai.autodun.com/ai-assistant", label: "AI Assistant", external: true }];
 
   const fixLinks = [
     { href: "https://fix.autodun.com#breakdown", label: "Breakdown Assistant" },
@@ -142,7 +142,7 @@ export const Footer = () => {
                 Cookie settings
               </button>
               <a
-                href="https://ai.autodun.com"
+                href="https://ai.autodun.com/ai-assistant"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-xs transition-colors hover:text-[#00d48a]"
