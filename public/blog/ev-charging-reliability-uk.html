@@ -1,311 +1,422 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-
-  <title>EV Charging Reliability in UK Cities — What Maps Miss (and How to Plan Better)</title>
-  <meta name="description" content="Urban EV charging in the UK can look “covered” but still fail drivers. Here’s why — and a repeatable process to make charging predictable, with real-world checks and backups." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EV Charging Reliability UK: What the 99% Rule Covers — and What It Doesn’t</title>
+  <meta name="description" content="UK rapid charge points must average 99% reliability across an operator’s network. That is not a per-site guarantee. How to check, pay, report a fault and plan a backup." />
   <link rel="canonical" href="https://autodun.com/blog/ev-charging-reliability-uk.html" />
+  <meta name="robots" content="index, follow" />
 
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="EV Charging Reliability in UK Cities — What Maps Miss (and How to Plan Better)" />
-  <meta property="og:description" content="Urban EV charging in the UK can look “covered” but still fail drivers. Here’s why — and a repeatable process to make charging predictable, with real-world checks and backups." />
+  <meta property="og:title" content="EV Charging Reliability UK: What the 99% Rule Covers — and What It Doesn’t" />
+  <meta property="og:description" content="UK rapid charge points must average 99% reliability across an operator’s network. That is not a per-site guarantee. How to check, pay, report a fault and plan a backup." />
   <meta property="og:url" content="https://autodun.com/blog/ev-charging-reliability-uk.html" />
   <meta property="og:image" content="https://autodun.com/images/ev-charging-reliability-uk/hero-1200x675.jpg" />
 
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="EV Charging Reliability in UK Cities — What Maps Miss (and How to Plan Better)" />
-  <meta name="twitter:description" content="Urban EV charging in the UK can look “covered” but still fail drivers. Here’s why — and a repeatable process to make charging predictable, with real-world checks and backups." />
+  <meta name="twitter:title" content="EV Charging Reliability UK: What the 99% Rule Covers — and What It Doesn’t" />
+  <meta name="twitter:description" content="The 99% reliability duty is a network average for rapid chargers. Practical checks, payment rules and how to report a broken unit." />
   <meta name="twitter:image" content="https://autodun.com/images/ev-charging-reliability-uk/hero-1200x675.jpg" />
 
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Article", "headline": "EV Charging Reliability in UK Cities — What Maps Miss (and How to Plan Better)", "description": "Urban EV charging in the UK can look “covered” but still fail drivers. Here’s why — and a repeatable process to make charging predictable, with real-world checks and backups.", "image": ["https://autodun.com/images/ev-charging-reliability-uk/hero-1200x675.jpg"], "author": {"@type": "Person", "name": "Kamran Gul"}, "publisher": {"@type": "Organization", "name": "Autodun", "url": "https://autodun.com"}, "datePublished": "2026-02-10", "dateModified": "2026-02-10", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://autodun.com/blog/ev-charging-reliability-uk.html"}}</script>
-  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Why does a city look full of chargers but still feel hard?", "acceptedAnswer": {"@type": "Answer", "text": "Because “pins” don’t equal usable charging. Access rules, blocked bays, uptime, and queue pressure are what drivers actually experience."}}, {"@type": "Question", "name": "Should I prioritise rapid chargers in cities?", "acceptedAnswer": {"@type": "Answer", "text": "If you need a quick top‑up, yes. If you’re parking for hours, slower AC can be fine. Match charger type to your time constraints."}}, {"@type": "Question", "name": "How do I reduce queue risk?", "acceptedAnswer": {"@type": "Answer", "text": "Choose multi‑bay sites and have backups in the same area. Avoid relying on single‑charger locations at peak times."}}, {"@type": "Question", "name": "What should I do when a charger pin is wrong?", "acceptedAnswer": {"@type": "Answer", "text": "Treat it as unreliable and switch to your backup. If the tool allows it, submit feedback — that’s how map quality improves over time."}}]}</script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "EV Charging Reliability UK: What the 99% Rule Covers — and What It Doesn’t",
+    "description": "UK rapid charge points must average 99% reliability across an operator’s network. That is not a per-site guarantee. How to check, pay, report a fault and plan a backup.",
+    "image": ["https://autodun.com/images/ev-charging-reliability-uk/hero-1200x675.jpg"],
+    "author": {
+      "@type": "Organization",
+      "name": "Autodun Research Team",
+      "url": "https://autodun.com"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Autodun",
+      "url": "https://autodun.com"
+    },
+    "datePublished": "2026-02-10",
+    "dateModified": "2026-11-09",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://autodun.com/blog/ev-charging-reliability-uk.html"
+    },
+    "inLanguage": "en-GB"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://autodun.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://autodun.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "EV Charging Reliability UK", "item": "https://autodun.com/blog/ev-charging-reliability-uk.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Does every UK public charger have to be 99% reliable?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. The Public Charge Point Regulations 2023 require 99% reliability as an average across each operator’s network of rapid charge points (50kW and above) over the calendar year. Slower on-street and destination chargers are not covered by that 99% duty."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why can a city look full of chargers but still be hard to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Official counts measure EV chargers (EVSE), not completed sessions. A pin can be slow AC, behind opening hours, needing an app, or blocked by another vehicle. Under the reliability rules, a physically blocked rapid unit is treated as exempt from the uptime calculation, not as downtime."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do I need an app to pay at a public charger?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Not always. GOV.UK says new public charge points of 8kW and above, and existing charge points of 50kW and above, must offer contactless payment without a pre-existing contract. Free charge points are out of scope. Slower or older units may still need an app or RFID card."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How do I report a broken public charge point?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Call the free 24/7 staffed helpline displayed at the site. Operators must offer real-time assistance, not voicemail. If you suspect a breach of the Public Charge Point Regulations, contact the Office for Product Safety and Standards (OPSS), which enforces the rules for OZEV."
+        }
+      }
+    ]
+  }
+  </script>
 
   <style>
-* { box-sizing:border-box; margin:0; padding:0; }
-body {
-  background:#070f1a; color:#f0f6ff;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  line-height:1.7;
-}
-.wrap { max-width:780px; margin:0 auto; padding:60px 24px 80px; }
-h1 { font-size:36px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:24px; }
-h2 { font-size:22px; font-weight:700; color:#fff; margin:48px 0 16px; padding-bottom:8px;
-  border-bottom:1px solid rgba(255,255,255,0.07); }
-h3 { font-size:18px; font-weight:600; color:#e2eaf4; margin:32px 0 12px; }
-p { color:#c8d8e8; margin-bottom:20px; font-size:16px; }
-a { color:#00d48a; }
-a:hover { color:#00e5a0; }
-strong, b { color:#fff; }
-ul,ol { padding-left:24px; margin-bottom:20px; color:#c8d8e8; }
-li { margin-bottom:8px; }
-article img { max-width:100%; height:auto; border-radius:12px; margin:24px 0; border:1px solid rgba(255,255,255,0.07); }
-</style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "author":{"@type":"Person","name":"Kamran Gul"},
-  "publisher":{"@type":"Organization","name":"Autodun","url":"https://autodun.com"},
-  "dateModified":"2026-04-02"
-}
-</script>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      background:#070f1a; color:#f0f6ff;
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      line-height:1.7;
+    }
+    .wrap { max-width:780px; margin:0 auto; padding:60px 24px 80px; }
+    h1 { font-size:36px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:24px; }
+    h2 { font-size:22px; font-weight:700; color:#fff; margin:48px 0 16px; padding-bottom:8px;
+      border-bottom:1px solid rgba(255,255,255,0.07); }
+    h3 { font-size:18px; font-weight:600; color:#e2eaf4; margin:32px 0 12px; }
+    p { color:#c8d8e8; margin-bottom:20px; font-size:16px; }
+    a { color:#00d48a; }
+    a:hover { color:#00e5a0; }
+    strong, b { color:#fff; }
+    ul,ol { padding-left:24px; margin-bottom:20px; color:#c8d8e8; }
+    li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin:24px 0; font-size:15px; }
+    th { background:#0d1b2a; color:#00d48a; padding:12px 16px; text-align:left; font-weight:700; border:1px solid rgba(255,255,255,0.07); }
+    td { padding:12px 16px; border:1px solid rgba(255,255,255,0.07); color:#c8d8e8; vertical-align:top; }
+    tr:nth-child(even) td { background:rgba(255,255,255,0.02); }
+    .meta { color:#8899aa; font-size:14px; margin-bottom:32px; }
+    .back-link { display:inline-block; color:#8899aa; text-decoration:none; font-size:14px; margin-bottom:32px; }
+    .back-link:hover { color:#00d48a; }
+    .toc { background:#0d1b2a; border:1px solid rgba(0,212,138,0.2); border-radius:12px; padding:24px 28px; margin:32px 0; }
+    .toc .title { font-weight:700; color:#00d48a; margin-bottom:12px; font-size:15px; }
+    .toc ul { margin-bottom:0; }
+    .toc a { color:#c8d8e8; text-decoration:none; }
+    .toc a:hover { color:#00d48a; }
+    .callout { background:#0d1b2a; border-left:3px solid #00d48a; border-radius:0 8px 8px 0; padding:18px 22px; margin:24px 0; color:#c8d8e8; font-size:15px; }
+    .callout strong { color:#00d48a; }
+    .cta-map { background:#0d1b2a; border:1px solid rgba(0,212,138,0.35); border-radius:12px; padding:22px 26px; margin:28px 0; }
+    .cta-map a.cta-button { display:inline-block; margin-top:12px; background:#00d48a; color:#070f1a; font-weight:700; text-decoration:none; padding:10px 16px; border-radius:8px; }
+    .faq h3 { margin-top:28px; }
+    .authorbox { background:#0d1b2a; border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:24px 28px; margin-top:48px; }
+    .authorbox h3 { margin-top:0; }
+    .small { font-size:13px; color:#8899aa; }
+    .small a { color:#00d48a; }
+    hr { border:none; border-top:1px solid rgba(255,255,255,0.07); margin:48px 0; }
+    img { max-width:100%; width:100%; height:auto; border-radius:12px; margin:24px 0; border:1px solid rgba(255,255,255,0.07); display:block; }
+    figcaption { font-size:13px; color:#8899aa; text-align:center; margin-top:8px; }
+  </style>
   <script src="/consent.js" defer></script>
 </head>
 
 <body>
 
 <header style="background:#070f1a;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.07);position:sticky;top:0;z-index:100;">
-<a href="https://autodun.com" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
-<span style="font-size:20px;">⚡</span>
-<span style="color:#fff;font-weight:800;font-size:18px;letter-spacing:-0.5px;">AUTODUN</span>
-</a>
-<nav style="display:flex;gap:20px;">
-<a href="https://autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">Home</a>
-<a href="https://ev.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">EV Finder</a>
-<a href="https://mot.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">MOT Predictor</a>
-<a href="/blog" style="color:#00d48a;text-decoration:none;font-size:14px;font-weight:600;">Blog</a>
-</nav>
+  <a href="https://autodun.com" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+    <span style="font-size:20px;">⚡</span>
+    <span style="color:#fff;font-weight:800;font-size:18px;letter-spacing:-0.5px;">AUTODUN</span>
+  </a>
+  <nav style="display:flex;gap:20px;">
+    <a href="https://autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">Home</a>
+    <a href="https://ev.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">EV Finder</a>
+    <a href="https://mot.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">MOT Predictor</a>
+    <a href="/blog" style="color:#00d48a;text-decoration:none;font-size:14px;font-weight:600;">Blog</a>
+  </nav>
 </header>
 
 <div class="wrap">
   <article>
-<a href="/blog" class="back-link">← Back to Autodun Blog</a>
+    <a href="/blog" class="back-link">← Back to Autodun Blog</a>
 
-    <h1>EV Charging Reliability in UK Cities — What Maps Miss (and How to Plan Better)</h1>
-    <p class="lede">Urban EV charging in the UK can look “covered” but still fail drivers. Here’s why — and a repeatable process to make charging predictable, with real-world checks and backups.</p>
+    <h1>EV charging reliability in the UK: what the 99% rule covers — and what it doesn’t</h1>
+    <p class="meta"><strong style="color:#fff;">By Autodun Research Team</strong> · Updated 9 November 2026 · Rules checked against the Public Charge Point Regulations 2023</p>
 
-    <div class="meta">
-      <span class="pill">UK</span>
-      <span class="pill">Updated: 10 Feb 2026</span>
-      <span class="pill">EV charging</span><span class="pill">Reliability</span><span class="pill">UK cities</span>
+    <p>
+      Finding a charger on a map is not the same as completing a charge.
+      In UK law, “99% reliable” applies to an operator’s <strong>rapid network as a whole</strong> (50kW and above), averaged over a calendar year — not to the post in front of you, and not to slower on-street units.
+      That is set out in the
+      <a href="https://www.gov.uk/guidance/regulations-public-charge-points" rel="noopener" target="_blank">Public Charge Point Regulations 2023</a>
+      and OZEV’s
+      <a href="https://www.gov.uk/government/publications/the-public-charge-point-regulations-2023-guidance/public-charge-point-regulations-2023-guidance" rel="noopener" target="_blank">operator guidance</a>.
+    </p>
+
+    <div class="callout">
+      <strong>Short answer</strong><br />
+      Treat live status as a clue. Prefer sites with several bays, confirm contactless or another payment method you already have, and keep enough range to reach a backup.
+      If the unit fails, use the free 24/7 helpline on the cabinet. Motorway-specific planning is in our
+      <a href="/blog/ev-charging-on-uk-motorways.html">motorway charging guide</a>;
+      how maps work is in
+      <a href="/blog/electric-car-charger-map-uk.html">how to find UK charge points</a>.
     </div>
 
-    <div class="author">
-      <strong>Author: Autodun Insights — Lead Analyst: Kamran Gul</strong>
-      <div class="small">Kamran builds practical UK driver tools (EV charging maps, MOT insights, and an AI assistant) and writes research-grade guides based on real datasets, live product behaviour, and user feedback — not just theory.</div>
+    <figure>
+      <img width="1200" height="675"
+        src="/images/ev-charging-reliability-uk/hero-1200x675.jpg"
+        alt="Public electric vehicle charging bays in a UK city"
+        loading="eager" />
+      <figcaption>A pin on a map records that hardware exists. Reliability is whether you can plug in, pay and leave with energy.</figcaption>
+    </figure>
+
+    <div class="cta-map">
+      <strong>Check nearby chargers before you set off</strong>
+      <p style="margin:8px 0 0;">Autodun’s live map at ev.autodun.com is a planning tool, not a guarantee of uptime. Compare connectors and keep a second site in the same area.</p>
+      <a class="cta-button" href="https://ev.autodun.com">Open EV Finder →</a>
     </div>
 
-    <div class="hero">
-      <img width="1200" height="675" src="/images/ev-charging-reliability-uk/hero-1200x675.jpg" alt="EV Charging Reliability in UK Cities — What Maps Miss (and How to Plan Better)" loading="eager" />
-    </div>
-
-    <div class="toc">
-      <strong>Table of contents</strong>
+    <nav class="toc" aria-label="On this page">
+      <div class="title">On this page</div>
       <ul>
-        <li><a href="#why-maps-mislead">Why maps mislead</a></li>
-<li><a href="#what-reliability-means">What reliability means</a></li>
-<li><a href="#the-urban-failure-modes">Urban failure modes</a></li>
-<li><a href="#a-repeatable-process">A repeatable process</a></li>
-<li><a href="#why-this-matters">Why this matters (planning)</a></li>
-<li><a href="#used-car-connection">Used car + MOT signals</a></li>
-<li><a href="#final-checklist">City checklist</a></li>
-<li><a href="#faq">FAQ</a></li>
+        <li><a href="#counts">Why “covered on the map” is not reliability</a></li>
+        <li><a href="#99">What the 99% duty actually measures</a></li>
+        <li><a href="#payment">Payment, price and the helpline</a></li>
+        <li><a href="#how-to">How to plan a charge that usually works</a></li>
+        <li><a href="#report">How to report a broken charger</a></li>
+        <li><a href="#checklist">Reliability checklist</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
       </ul>
-    </div>
+    </nav>
 
-    
-<section id="why-maps-mislead">
-  <h2>Why EV charging “coverage” can still fail you</h2>
-  <p>
-    Most EV charging conversations start with a map. The map looks full. Then you drive into a busy area, and you
-    discover the gap between “a pin exists” and “a charger you can actually use right now”.
-  </p>
-  <p>
-    This post explains the real-world reasons urban charging feels unreliable — and the checks that make it predictable.
-    It’s written for UK drivers who want fewer surprises, not more hype.
-  </p>
+    <h2 id="counts">Why “covered on the map” is not reliability</h2>
+    <p>
+      The Department for Transport’s
+      <a href="https://www.gov.uk/government/statistics/electric-vehicle-charging-infrastructure-statistics-1-july-2026/public-electric-vehicle-charging-infrastructure-statistics-1-july-2026" rel="noopener" target="_blank">public EV charging statistics (1 July 2026)</a>
+      counted <strong>121,171 public EV chargers</strong> in the UK (174.9 per 100,000 people), of which <strong>28,887</strong> were rated rapid or above (50kW+).
+      49% of all public chargers were in the slowest band (3kW to less than 8kW). Only 11% were classed as en-route.
+    </p>
+    <p>
+      Those figures are official statistics in development, collated by Zapmap from operator open data under the 2023 regulations.
+      They count devices, not completed sessions. DfT also notes that in June 2026 one operator removed about <strong>1,270</strong> chargers that had been reported as public when they were private-access — a reminder that even the national dashboard can move when data quality is corrected.
+    </p>
+    <p>
+      London illustrates the gap between “lots of pins” and “a rapid charge when you need one”: 345.1 public chargers per 100,000 people, but only 27.9 rapid-or-above per 100,000 — the second-lowest rapid density in the UK table, because much of the stock is standard on-street charging
+      (same DfT release, Annex A).
+    </p>
 
-  <div class="callout">
-    <strong>Fast takeaway:</strong>
-    <div>In cities, the biggest risk is not “no chargers” — it’s <em>access</em>: broken units, blocked bays, queues, and pricing friction.</div>
-  </div>
-</section>
+    <figure>
+      <img width="518" height="800"
+        src="/images/ev-charging-reliability-uk/london-traffic-1200w.jpg"
+        alt="Busy urban traffic in London, where on-street chargers are common but rapid bays are relatively scarce"
+        loading="lazy" />
+      <figcaption>In cities the usual failure is access, payment or a queue — not a blank map.</figcaption>
+    </figure>
 
-<section id="what-reliability-means">
-  <h2>What “reliability” actually means for drivers</h2>
-  <p>
-    A charger can be “on the map” and still be effectively unusable. For drivers, reliability is a mix of:
-  </p>
-  <ul>
-    <li><strong>Uptime:</strong> does the unit work consistently?</li>
-    <li><strong>Access:</strong> can you physically get into the bay (not blocked / not gated / not private)?</li>
-    <li><strong>Payment friction:</strong> can you pay quickly without app chaos?</li>
-    <li><strong>Queue risk:</strong> is the site a predictable bottleneck at certain times?</li>
-    <li><strong>Power reality:</strong> is it a rapid DC unit or a slow AC post?</li>
-  </ul>
-</section>
+    <h2 id="99">What the 99% duty actually measures</h2>
+    <p>
+      From 24 November 2024, charge point operators must keep their <strong>rapid</strong> public network (50kW and above) reliable for <strong>99% of the time on average</strong> across that network in each calendar year.
+      A weak month can be offset later in the year. Operators must publish compliance on their website and send an annual report to the Secretary of State and the enforcement authority.
+      Source:
+      <a href="https://www.gov.uk/government/publications/the-public-charge-point-regulations-2023-guidance/public-charge-point-regulations-2023-guidance" rel="noopener" target="_blank">PCPR 2023 guidance — Reliability</a>
+      and
+      <a href="https://www.legislation.gov.uk/uksi/2023/1168/made" rel="noopener" target="_blank">The Public Charge Point Regulations 2023</a>.
+    </p>
+    <p>Status is measured per EVSE (one vehicle at a time) using OCPI:</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Counts as</th>
+          <th>OCPI status</th>
+          <th>What it means for you</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Working (uptime)</td>
+          <td>Available, Charging, Reserved</td>
+          <td>The unit can start or continue a session, including contactless where that is required.</td>
+        </tr>
+        <tr>
+          <td>Downtime</td>
+          <td>Inoperative, Out of order</td>
+          <td>Software or hardware fault, including a broken contactless terminal (unless the site defaults to free charging).</td>
+        </tr>
+        <tr>
+          <td>Exempt from the calculation</td>
+          <td>Blocked, Planned, Removed, Unknown</td>
+          <td>A physical barrier — including another vehicle — is <strong>not</strong> counted as downtime. Unknown is for evidenced events outside the operator’s control, such as a grid or comms failure.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      That “blocked is exempt” rule is why a unit can be on a map, inside a 99% network, and still be useless when you arrive.
+      Guidance also says operators should not allow lower-used points, including in rural areas, to sit regularly out of order — but the legal 99% figure remains a network average, not a promise about the bay you chose.
+    </p>
+    <p>
+      Status changes must appear in the open data within <strong>30 seconds</strong>. Maps can still lag if an app refreshes slowly, so a second nearby site remains the practical backup.
+    </p>
 
-<div class="imgbox" id="city-photo">
-  <img width="518" height="800" src="/images/ev-charging-reliability-uk/london-traffic-1200w.jpg" alt="London traffic and city driving" loading="lazy" />
-  <div class="caption">City EV charging problems usually come from access + queue pressure, not from “zero chargers”.</div>
-</div>
+    <h2 id="payment">Payment, price and the helpline</h2>
+    <p>The same regulations set consumer rules that affect whether a session actually starts:</p>
+    <ul>
+      <li><strong>Contactless:</strong> new public charge points of 8kW and above deployed after 24 November 2024, and all public charge points of 50kW and above, must offer contactless without a pre-existing contract. Bank cards must be accepted, not only Apple Pay or Google Pay. Free charge points are out of scope.</li>
+      <li><strong>Price:</strong> the maximum session price must be shown clearly in pence (or pounds) per kWh, including fixed connection or transaction fees in that p/kWh figure. The price must not rise above the advertised maximum after you start.</li>
+      <li><strong>Helpline:</strong> a free, staffed telephone line, 24 hours a day, 365 days a year, advertised at the site. Voicemail and numbers that charge local call rates do not meet the rule. Operators are not required to recover a stranded vehicle.</li>
+      <li><strong>Roaming:</strong> operators must let you pay through at least one third-party roaming provider (from 24 November 2025). Apple Pay or Google Pay alone does not count as roaming.</li>
+    </ul>
+    <p>
+      Micro-business operators are generally out of scope except for the pricing rule. Workplace-only and residential-only units are not “public” for these regulations.
+    </p>
 
-<section id="the-urban-failure-modes">
-  <h2>The urban failure modes (and how to spot them)</h2>
+    <h2 id="how-to">How to plan a charge that usually works</h2>
+    <ol>
+      <li><strong>Decide the job.</strong> A 20-minute top-up needs rapid DC (50kW+). A supermarket stay can use slower AC. Matching speed to dwell time avoids the wrong queue.</li>
+      <li><strong>Pick a cluster, not a pin.</strong> If the first bay is blocked or inoperative, you need another unit within a short drive. This is the same habit we recommend on <a href="/blog/ev-charging-on-uk-motorways.html">motorways</a>, applied to town centres and retail parks.</li>
+      <li><strong>Confirm payment before you rely on the site.</strong> Look for contactless on 8kW+ (new) and 50kW+ (all). Carry a second method (roaming app or RFID) for older slow posts.</li>
+      <li><strong>Read access rules.</strong> Hotel, workplace and gated car parks may appear on maps while remaining closed to the public. PCPR only covers charge points intended for public access.</li>
+      <li><strong>Arrive with margin.</strong> Keep enough range to reach the backup. The helpline will not recover you if you are stranded.</li>
+      <li><strong>Check the operator’s published reliability page</strong> for frequent rapid networks you use. The 99% report is a network figure; still useful for spotting operators that miss the duty.</li>
+    </ol>
+    <p>
+      Autodun
+      <a href="https://ev.autodun.com">EV Finder</a>
+      is built from publicly available location data plus driver feedback. Status can lag. If a pin is wrong, report it in the tool so later journeys are better — and still keep a backup.
+    </p>
 
-  <h3>1) “Charger present” but not accessible</h3>
-  <p>
-    Common examples: gated car parks, hotel/private sites, or chargers behind opening hours. The fix is simple:
-    always confirm access rules and time windows before you rely on a pin.
-  </p>
+    <h2 id="report">How to report a broken charger</h2>
+    <ol>
+      <li>Note the operator name, the unit ID on the cabinet, time, and what failed (no power, connector jammed, payment declined, bay blocked).</li>
+      <li>Call the <strong>free 24/7 helpline</strong> printed on or at the charge point. That is the first-line duty under the regulations.</li>
+      <li>If contactless is required at that unit and it is dead, that counts as downtime for the operator’s reliability calculation (unless the site is giving energy away for free).</li>
+      <li>For suspected repeated breaches (no helpline, no contactless where required, price not in p/kWh, open data missing), contact the
+        <a href="https://www.gov.uk/guidance/regulations-public-charge-points" rel="noopener" target="_blank">Office for Product Safety and Standards (OPSS)</a>,
+        which enforces the regulations for OZEV:
+        <a href="mailto:opss.enquiries@businessandtrade.gov.uk">opss.enquiries@businessandtrade.gov.uk</a>,
+        helpdesk 0121 345 1201.
+        Maximum civil penalties are set in the regulations (generally up to £10,000 per charge point for most duties, and up to £10,000 per rapid network for the 99% reliability duty).
+        See
+        <a href="https://www.gov.uk/government/publications/opss-enforcement-enforcement-actions/alternative-fuels-infrastructure-regulations-and-public-charge-point-regulations" rel="noopener" target="_blank">OPSS enforcement actions</a>.</li>
+    </ol>
+    <p>
+      Councils planning networks from charger counts, rather than session success, is a different problem — that is
+      <a href="/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">why UK councils struggle to plan from charger counts</a>.
+    </p>
 
-  <h3>2) Bays blocked (ICE’d) or used as parking</h3>
-  <p>
-    Even when policy is clear, behaviour isn’t. If a site is in a busy street parking zone, expect a higher chance
-    of blocked bays. Prefer locations with multiple bays and clear enforcement.
-  </p>
+    <h2 id="checklist">Reliability checklist</h2>
+    <ul>
+      <li>Filter to the speed you actually need (rapid DC vs slow AC).</li>
+      <li>Choose a site with more than one compatible connector.</li>
+      <li>Confirm opening hours and whether the site is truly public.</li>
+      <li>Have contactless plus one roaming or app backup.</li>
+      <li>Keep range to reach a second site.</li>
+      <li>If it fails: helpline first, then OPSS for a suspected regulatory breach.</li>
+    </ul>
 
-  <h3>3) Single‑point bottlenecks</h3>
-  <p>
-    A site with one or two chargers can look fine — until it becomes “the only convenient option” for a whole neighbourhood.
-    Those are the places where queue risk spikes at predictable times.
-  </p>
+    <hr />
 
-  <h3>4) Pricing and payment surprises</h3>
-  <p>
-    City charging is where drivers get hit by the most inconsistent payment experiences. If you’re doing a short top‑up,
-    contactless matters. If you’re doing a longer charge, check whether pricing changes by time or membership.
-  </p>
-</section>
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>Does every UK public charger have to be 99% reliable?</h3>
+      <p>
+        No. The Public Charge Point Regulations 2023 require 99% reliability as an average across each operator’s network of rapid charge points (50kW and above) over the calendar year.
+        Slower on-street and destination chargers are not covered by that 99% duty.
+      </p>
 
-<section id="a-repeatable-process">
-  <h2>A repeatable process that makes city charging boring</h2>
-  <h3>Step 1 — Always choose a “cluster”, not a single point</h3>
-  <p>
-    Don’t aim for one charger. Aim for an area with multiple alternatives within a short distance.
-    If your first option is blocked/offline, you move immediately.
-  </p>
+      <h3>Why can a city look full of chargers but still be hard to use?</h3>
+      <p>
+        Official counts measure EV chargers (EVSE), not completed sessions. A pin can be slow AC, behind opening hours, needing an app, or blocked by another vehicle.
+        Under the reliability rules, a physically blocked rapid unit is treated as exempt from the uptime calculation, not as downtime.
+      </p>
 
-  <h3>Step 2 — Filter by your real needs</h3>
-  <ul>
-    <li><strong>Need speed?</strong> Filter to rapid DC.</li>
-    <li><strong>Need cheap?</strong> Accept slower charging and plan time.</li>
-    <li><strong>Need certainty?</strong> Prioritise multi‑bay sites and places that are easy to access.</li>
-  </ul>
+      <h3>Do I need an app to pay at a public charger?</h3>
+      <p>
+        Not always. GOV.UK says new public charge points of 8kW and above, and existing charge points of 50kW and above, must offer contactless payment without a pre-existing contract.
+        Free charge points are out of scope. Slower or older units may still need an app or RFID card.
+      </p>
 
-  <h3>Step 3 — Build a habit: arrive with margin</h3>
-  <p>
-    Urban traffic is unpredictable. The “I will arrive at 2%” mindset is how drivers end up stuck at a bad charger.
-    Keep margin and you keep options.
-  </p>
-
-  <div class="callout">
-    <strong>How Autodun helps:</strong>
-    <div>
-      In <a href="https://ev.autodun.com" rel="noopener">EV Finder</a>, use the station list + connectors view to quickly check whether an area has realistic
-      backups — and send feedback when a pin doesn’t match reality. That feedback loop is how reliability improves.
-    </div>
-  </div>
-</section>
-
-<section id="why-this-matters">
-  <h2>Why this matters beyond drivers (councils and planning)</h2>
-  <p>
-    Cities can look “well served” in dashboards while drivers still struggle. The difference is that dashboards often count
-    installations, not experience. If bays are blocked, units are unreliable, or access is restricted, the driver outcome
-    is still poor.
-  </p>
-  <p>
-    This is one reason we built Autodun content around “what happens when datasets meet real journeys” — and why we keep
-    publishing practical guides that drivers can test immediately.
-  </p>
-</section>
-
-<section id="used-car-connection">
-  <h2>The used-car connection: don’t ignore MOT signals</h2>
-  <p>
-    If you’re switching to an EV via the used market, charging is only half the story. Your total cost can be dominated by
-    tyres, suspension, corrosion, and repeated advisories — especially if a car has been driven hard.
-  </p>
-  <p>
-    Use <a href="https://mot.autodun.com" rel="noopener">Autodun MOT Predictor</a> and our
-    <a href="/blog/mot-advisories-explained-uk.html">MOT advisories guide</a> to interpret patterns before you buy.
-  </p>
-</section>
-
-<section id="final-checklist">
-  <h2>City charging checklist</h2>
-  <ul>
-    <li>Pick an area with <strong>multiple</strong> chargers (cluster), not one pin.</li>
-    <li>Confirm access rules (gates, opening hours, private sites).</li>
-    <li>Prefer multi‑bay sites to reduce queue risk.</li>
-    <li>Keep margin so you can switch plans instantly.</li>
-    <li>Use a tool that supports feedback — and report pins that don’t match reality.</li>
-  </ul>
-</section>
-
-
-    <hr class="hr" />
-
-    <div class="bottom-tools">
-      <h3>Use these Autodun tools alongside this guide</h3>
-      <ul>
-        <li><a href="https://ev.autodun.com" rel="noopener">Autodun EV Finder</a> — search nearby chargers, compare connectors, and sanity-check coverage before you travel.</li>
-        <li><a href="https://mot.autodun.com" rel="noopener">Autodun MOT Predictor</a> — when buying used, check MOT history patterns and risk signals.</li>
-        <li><a href="https://ai.autodun.com/ai-assistant" rel="noopener">Autodun AI Agent</a> — ask UK car questions and get guided next steps across tools.</li>
-      </ul>
-      <p class="small">Tip: If you spot missing or wrong charger info, use the feedback inside EV Finder — those reports are how we improve data quality over time.</p>
-
-      <p class="small">
-        Related reading:
-        <a href="/blog/electric-car-charger-map-uk.html">EV charger map guide</a> ·
-        <a href="/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">Councils & infrastructure gaps</a> ·
-        <a href="/blog/electric-car-mot-whats-checked-uk-2026.html">What’s checked on an EV MOT</a> ·
-        <a href="/blog/mot-history-check-uk.html">MOT history check</a> ·
-        <a href="/blog/mot-advisories-explained-uk.html">MOT advisories explained</a>
+      <h3>How do I report a broken public charge point?</h3>
+      <p>
+        Call the free 24/7 staffed helpline displayed at the site. Operators must offer real-time assistance, not voicemail.
+        If you suspect a breach of the Public Charge Point Regulations, contact the Office for Product Safety and Standards (OPSS), which enforces the rules for OZEV.
       </p>
     </div>
 
-    <h2 id="faq">FAQ</h2>
-    
-        <div class="faq">
-          <h3>Why does a city look full of chargers but still feel hard?</h3>
-          <p>Because “pins” don’t equal usable charging. Access rules, blocked bays, uptime, and queue pressure are what drivers actually experience.</p>
-        </div>
-        
-        <div class="faq">
-          <h3>Should I prioritise rapid chargers in cities?</h3>
-          <p>If you need a quick top‑up, yes. If you’re parking for hours, slower AC can be fine. Match charger type to your time constraints.</p>
-        </div>
-        
-        <div class="faq">
-          <h3>How do I reduce queue risk?</h3>
-          <p>Choose multi‑bay sites and have backups in the same area. Avoid relying on single‑charger locations at peak times.</p>
-        </div>
-        
-        <div class="faq">
-          <h3>What should I do when a charger pin is wrong?</h3>
-          <p>Treat it as unreliable and switch to your backup. If the tool allows it, submit feedback — that’s how map quality improves over time.</p>
-        </div>
-        
+    <div class="authorbox">
+      <h3>About this guide</h3>
+      <p><strong>Autodun Research Team</strong></p>
+      <p class="small">
+        Autodun builds a live UK charger map at
+        <a href="https://ev.autodun.com">ev.autodun.com</a>
+        and writes independent guides. Autodun is not a government service. Status on any map can lag behind the roadside.
+      </p>
+      <p class="small" style="margin-top:12px;"><strong>Sources used</strong></p>
+      <ul class="small">
+        <li><a href="https://www.gov.uk/guidance/regulations-public-charge-points" rel="noopener" target="_blank">Regulations: public charge points</a> (OZEV / OPSS)</li>
+        <li><a href="https://www.gov.uk/government/publications/the-public-charge-point-regulations-2023-guidance/public-charge-point-regulations-2023-guidance" rel="noopener" target="_blank">Public Charge Point Regulations 2023 guidance</a></li>
+        <li><a href="https://www.legislation.gov.uk/uksi/2023/1168/made" rel="noopener" target="_blank">The Public Charge Point Regulations 2023</a></li>
+        <li><a href="https://www.gov.uk/government/statistics/electric-vehicle-charging-infrastructure-statistics-1-july-2026/public-electric-vehicle-charging-infrastructure-statistics-1-july-2026" rel="noopener" target="_blank">DfT public EV charging infrastructure statistics: 1 July 2026</a></li>
+        <li><a href="https://www.gov.uk/government/publications/opss-enforcement-enforcement-actions/alternative-fuels-infrastructure-regulations-and-public-charge-point-regulations" rel="noopener" target="_blank">OPSS enforcement actions</a></li>
+      </ul>
+    </div>
 
-</article>
+    <p class="small" style="margin-top:24px;">
+      Related:
+      <a href="/blog/electric-car-charger-map-uk.html">UK charger map guide</a> ·
+      <a href="/blog/ev-charging-on-uk-motorways.html">EV charging on UK motorways</a> ·
+      <a href="/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">Council charging data gaps</a> ·
+      <a href="/blog/electric-car-mot-whats-checked-uk-2026.html">What’s checked on an EV MOT</a> ·
+      <a href="https://ev.autodun.com">EV Finder</a>
+    </p>
+  </article>
 </div>
 
 <nav class="related-articles" aria-label="Related articles" style="max-width:780px;margin:48px auto 0;padding:0 24px;">
   <h2 style="font-size:20px;margin-bottom:12px;">Related articles</h2>
   <ul style="padding-left:20px;line-height:1.9;">
     <li><a href="/blog/ev-charging-on-uk-motorways.html">How to Find Reliable EV Chargers on UK Motorways</a></li>
+    <li><a href="/blog/electric-car-charger-map-uk.html">How to Find UK Electric Car Charging Points (Map Guide)</a></li>
     <li><a href="/blog/electric-car-mot-whats-checked-uk-2026.html">EV MOT UK 2026: What’s Checked on an Electric Car MOT</a></li>
-    <li><a href="/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">Why UK Councils Are Flying Blind on EV Charging Infrastructure</a></li>
+    <li><a href="/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html">Why UK councils still plan EV charging from charger counts</a></li>
     <li><a href="/blog/uk-vehicle-data-tools.html">UK Vehicle Data Tools</a></li>
   </ul>
 </nav>
 
 <footer style="background:#050c15;border-top:1px solid rgba(255,255,255,0.06);padding:40px 24px;text-align:center;margin-top:80px;">
-<div style="max-width:780px;margin:0 auto;">
-<div style="margin-bottom:16px;">
-<a href="https://ev.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">EV Finder</a>
-<a href="https://mot.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">MOT Predictor</a>
-<a href="https://ai.autodun.com/ai-assistant" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">AI Assistant</a>
-<a href="/blog" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Blog</a>
-<a href="/privacy" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Privacy</a>
-<a href="#" data-cookie-settings style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Cookie settings</a>
-</div>
-<p style="color:#556677;font-size:13px;margin:0;">© 2026 Autodun. AI vehicle intelligence for UK drivers.</p>
-</div>
+  <div style="max-width:780px;margin:0 auto;">
+    <div style="margin-bottom:16px;">
+      <a href="https://ev.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">EV Finder</a>
+      <a href="https://mot.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">MOT Predictor</a>
+      <a href="https://ai.autodun.com/ai-assistant" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">AI Assistant</a>
+      <a href="/blog" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Blog</a>
+      <a href="/privacy" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Privacy</a>
+      <a href="#" data-cookie-settings style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Cookie settings</a>
+    </div>
+    <p style="color:#556677;font-size:13px;margin:0;">© 2026 Autodun. AI vehicle intelligence for UK drivers.</p>
+  </div>
 </footer>
 
 </body>

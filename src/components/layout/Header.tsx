@@ -22,10 +22,10 @@ export const Header = () => {
 
   const isActive = (path: string) => location.pathname === path;
 
-  const navLinksBefore = [
+  const navLinksBefore: { path: string; label: string; external?: boolean }[] = [
     { path: "/", label: "Home" },
-    { path: "https://ev.autodun.com/", label: "EV Charger Finder" },
-    { path: "/mot-predictor", label: "MOT Predictor" },
+    { path: "https://ev.autodun.com", label: "EV Charger Finder", external: true },
+    { path: "https://mot.autodun.com", label: "MOT Predictor", external: true },
   ];
 
   const navLinksAfter = [
@@ -56,19 +56,32 @@ export const Header = () => {
 
         {/* DESKTOP NAV */}
         <nav className="hidden md:flex flex-1 items-center justify-center gap-6">
-          {navLinksBefore.map((link) => (
-            <Link
-              key={link.path}
-              to={link.path}
-              className={cn(
-                "text-sm font-medium transition-colors whitespace-nowrap",
-                isActive(link.path) ? "text-[#00d48a]" : "hover:text-[#f0f6ff]"
-              )}
-              style={{ color: isActive(link.path) ? "#00d48a" : "#8899aa" }}
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinksBefore.map((link) =>
+            link.external ? (
+              <a
+                key={link.path}
+                href={link.path}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium transition-colors whitespace-nowrap hover:text-[#f0f6ff]"
+                style={{ color: "#8899aa" }}
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={cn(
+                  "text-sm font-medium transition-colors whitespace-nowrap",
+                  isActive(link.path) ? "text-[#00d48a]" : "hover:text-[#f0f6ff]"
+                )}
+                style={{ color: isActive(link.path) ? "#00d48a" : "#8899aa" }}
+              >
+                {link.label}
+              </Link>
+            )
+          )}
 
           {/* FIX DROPDOWN */}
           <div
@@ -171,20 +184,34 @@ export const Header = () => {
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="md:hidden">
           <div className="container-main py-3">
             <div className="flex flex-col gap-1">
-              {navLinksBefore.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-md px-3 py-2 text-sm font-medium transition-colors"
-                  style={{
-                    color: isActive(link.path) ? "#00d48a" : "#8899aa",
-                    backgroundColor: isActive(link.path) ? "rgba(0,212,138,0.08)" : "transparent",
-                  }}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinksBefore.map((link) =>
+                link.external ? (
+                  <a
+                    key={link.path}
+                    href={link.path}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="rounded-md px-3 py-2 text-sm font-medium transition-colors"
+                    style={{ color: "#8899aa", backgroundColor: "transparent" }}
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="rounded-md px-3 py-2 text-sm font-medium transition-colors"
+                    style={{
+                      color: isActive(link.path) ? "#00d48a" : "#8899aa",
+                      backgroundColor: isActive(link.path) ? "rgba(0,212,138,0.08)" : "transparent",
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
 
               {/* FIX — mobile accordion */}
               <button

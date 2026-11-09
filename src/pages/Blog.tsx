@@ -12,9 +12,9 @@ const motArticles = [
     tag: "MOT Guide",
   },
   {
-    title: "MOT Advisories Explained",
+    title: "MOT Advisories Explained: Dangerous, Major, Minor and What to Fix",
     description:
-      "Understand what MOT advisories mean, which ones to take seriously, whether you can drive with them, and how they affect future tests and resale value.",
+      "DVSA defect categories, when you can drive after a fail, and how to read advisories on GOV.UK — separate from the MOT history how-to.",
     href: "/blog/mot-advisories-explained-uk.html",
     tag: "MOT Guide",
   },
@@ -43,16 +43,16 @@ const evArticles = [
     tag: "EV Infrastructure",
   },
   {
-    title: "EV Charging Reliability in UK Cities",
+    title: "EV Charging Reliability UK: What the 99% Rule Covers",
     description:
-      "Why charger maps mislead about coverage, what reliability actually means, urban failure modes, and a repeatable process for finding reliable public charging.",
+      "The rapid-network 99% duty is a yearly average, not a per-site promise. Payment rules, how to report a fault, and a backup-site checklist.",
     href: "/blog/ev-charging-reliability-uk.html",
     tag: "EV Infrastructure",
   },
   {
-    title: "Why UK Councils Are Flying Blind on EV Charging Infrastructure",
+    title: "Why UK Councils Still Plan EV Charging from Charger Counts",
     description:
-      "An analysis of the data gaps in UK EV infrastructure planning — the disconnect between datasets and real-world experience, and what better data would look like.",
+      "Official charger counts do not measure working units or completed sessions. LEVI, open data after the National Chargepoint Registry, and a local planning checklist.",
     href: "/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html",
     tag: "EV Infrastructure",
   },
@@ -104,8 +104,8 @@ export default function Blog() {
       title: "Autodun Blog — EV Infrastructure & MOT Intelligence (UK)",
       description:
         "Research-grade writing from Autodun on UK EV charging infrastructure, real-world data gaps, clean-air rules, and MOT intelligence — built from hands-on product and user feedback.",
-      canonical: "https://autodun.com/blog/",
-      ogUrl: "https://autodun.com/blog/",
+      canonical: "https://autodun.com/blog",
+      ogUrl: "https://autodun.com/blog",
     });
   }, []);
 

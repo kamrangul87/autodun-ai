@@ -217,7 +217,7 @@ export default function ContactPage() {
           Your privacy matters to us. Information submitted through any Autodun contact channel is handled in strict compliance with the UK GDPR and the Data Protection Act 2018. We collect only the information necessary to resolve your enquiry. We do not sell or share your personal data with third parties for marketing purposes. Contact data is retained for a maximum of 24 months from the date of last interaction, after which it is securely deleted from our systems. You may request deletion at any time by emailing our Data Protection Officer.
         </p>
         <p className="text-gray-700 mb-4">
-          We use TLS 1.3 encryption for all form submissions and email communications. Our servers are hosted within the United Kingdom, ensuring your data does not leave UK jurisdiction. For full details of how we process contact data, please read our <a href="/privacy-policy" className="text-orange-600 underline hover:text-orange-700">Privacy Policy</a>.
+          We use TLS 1.3 encryption for all form submissions and email communications. Our servers are hosted within the United Kingdom, ensuring your data does not leave UK jurisdiction. For full details of how we process contact data, please read our <a href="/privacy" className="text-orange-600 underline hover:text-orange-700">Privacy Policy</a>.
         </p>
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
           <p className="text-sm text-blue-800 font-medium">🔒 Secure Contact Assurance</p>
