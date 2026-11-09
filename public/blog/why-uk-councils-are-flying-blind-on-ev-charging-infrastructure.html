@@ -1,202 +1,446 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="en-GB">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Why UK Councils Are Flying Blind on EV Charging Infrastructure</title>
-  <meta name="description" content="Analysis of UK EV charging infrastructure data gaps and why councils struggle to plan effectively." />
+  <title>Why UK Councils Still Plan EV Charging from Charger Counts, Not Usability</title>
+  <meta name="description" content="Official UK charger counts do not show whether units work, take payment or are accessible. What local authorities should check instead — DfT, OZEV, LEVI and the 2023 charge point rules." />
   <link rel="canonical" href="https://autodun.com/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html" />
+  <meta name="robots" content="index, follow" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="article" />
-  <meta property="og:title" content="Why UK Councils Are Flying Blind on EV Charging Infrastructure" />
-  <meta property="og:description" content="Analysis of UK EV charging infrastructure data gaps and why councils struggle to plan effectively." />
+  <meta property="og:title" content="Why UK Councils Still Plan EV Charging from Charger Counts, Not Usability" />
+  <meta property="og:description" content="Official UK charger counts do not show whether units work, take payment or are accessible. What local authorities should check instead — DfT, OZEV, LEVI and the 2023 charge point rules." />
   <meta property="og:url" content="https://autodun.com/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html" />
+  <meta property="og:image" content="https://autodun.com/images/autodun-map-overview-1200x630.png" />
 
-  <!-- Article Schema -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Why UK Councils Still Plan EV Charging from Charger Counts, Not Usability" />
+  <meta name="twitter:description" content="DfT counts EV chargers, not completed sessions. LEVI, open data and the 99% rapid rule — and a practical checklist for local planning." />
+  <meta name="twitter:image" content="https://autodun.com/images/autodun-map-overview-1200x630.png" />
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "Why UK Councils Are Flying Blind on EV Charging Infrastructure",
+    "headline": "Why UK Councils Still Plan EV Charging from Charger Counts, Not Usability",
+    "description": "Official UK charger counts do not show whether units work, take payment or are accessible. What local authorities should check instead — DfT, OZEV, LEVI and the 2023 charge point rules.",
+    "image": "https://autodun.com/images/autodun-map-overview-1200x630.png",
     "author": {
-      "@type": "Person",
-      "name": "Kamran Gul"
+      "@type": "Organization",
+      "name": "Autodun Research Team",
+      "url": "https://autodun.com"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Autodun",
       "url": "https://autodun.com"
     },
-    "dateModified": "2026-04-02",
+    "datePublished": "2026-04-02",
+    "dateModified": "2026-11-09",
     "mainEntityOfPage": {
       "@type": "WebPage",
       "@id": "https://autodun.com/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html"
-    }
+    },
+    "inLanguage": "en-GB"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://autodun.com/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://autodun.com/blog" },
+      { "@type": "ListItem", "position": 3, "name": "Council EV charging data gaps", "item": "https://autodun.com/blog/why-uk-councils-are-flying-blind-on-ev-charging-infrastructure.html" }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Is there still a National Chargepoint Registry for UK councils to use?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. GOV.UK withdrew the National Chargepoint Registry guidance on 2 December 2024. The registry was decommissioned on 28 November 2024. Public operators must instead share open data (location, availability, connectors, payment methods) under the Public Charge Point Regulations 2023."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do official charger counts show whether units actually work?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Department for Transport statistics count public EV chargers (EVSE) and devices. They do not measure completed charging sessions. The 99% reliability duty applies only as a network average for rapid chargers of 50kW and above."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the LEVI Fund for?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The Local Electric Vehicle Infrastructure (LEVI) Fund supports local authorities in England to plan and deliver charging for residents without off-street parking. It has capital funding for chargepoints and capability funding for staff. It does not apply to Scotland, Wales or Northern Ireland under the same scheme."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Who is responsible for local EV charging strategies in England?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "DfT’s July 2026 statistics present England using Local Transport Authorities, which it describes as having responsibility for local transport planning and EV charging strategies — combined authorities where they exist, the Greater London Authority for London, and upper-tier authorities elsewhere."
+        }
+      }
+    ]
   }
   </script>
 
   <style>
-* { box-sizing:border-box; margin:0; padding:0; }
-body {
-  background:#070f1a; color:#f0f6ff;
-  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
-  line-height:1.7;
-}
-.wrap { max-width:780px; margin:0 auto; padding:60px 24px 80px; }
-h1 { font-size:36px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:24px; }
-h2 { font-size:22px; font-weight:700; color:#fff; margin:48px 0 16px; padding-bottom:8px;
-  border-bottom:1px solid rgba(255,255,255,0.07); }
-h3 { font-size:18px; font-weight:600; color:#e2eaf4; margin:32px 0 12px; }
-p { color:#c8d8e8; margin-bottom:20px; font-size:16px; }
-a { color:#00d48a; }
-a:hover { color:#00e5a0; }
-strong, b { color:#fff; }
-ul,ol { padding-left:24px; margin-bottom:20px; color:#c8d8e8; }
-li { margin-bottom:8px; }
-article img { max-width:100%; height:auto; border-radius:12px; margin:24px 0; border:1px solid rgba(255,255,255,0.07); }
-</style>
-<script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@type":"Article",
-  "author":{"@type":"Person","name":"Kamran Gul"},
-  "publisher":{"@type":"Organization","name":"Autodun","url":"https://autodun.com"},
-  "dateModified":"2026-04-02"
-}
-</script>
+    * { box-sizing:border-box; margin:0; padding:0; }
+    body {
+      background:#070f1a; color:#f0f6ff;
+      font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      line-height:1.7;
+    }
+    .wrap { max-width:780px; margin:0 auto; padding:60px 24px 80px; }
+    h1 { font-size:36px; font-weight:800; color:#fff; line-height:1.2; margin-bottom:24px; }
+    h2 { font-size:22px; font-weight:700; color:#fff; margin:48px 0 16px; padding-bottom:8px;
+      border-bottom:1px solid rgba(255,255,255,0.07); }
+    h3 { font-size:18px; font-weight:600; color:#e2eaf4; margin:32px 0 12px; }
+    p { color:#c8d8e8; margin-bottom:20px; font-size:16px; }
+    a { color:#00d48a; }
+    a:hover { color:#00e5a0; }
+    strong, b { color:#fff; }
+    ul,ol { padding-left:24px; margin-bottom:20px; color:#c8d8e8; }
+    li { margin-bottom:8px; }
+    table { width:100%; border-collapse:collapse; margin:24px 0; font-size:15px; }
+    th { background:#0d1b2a; color:#00d48a; padding:12px 16px; text-align:left; font-weight:700; border:1px solid rgba(255,255,255,0.07); }
+    td { padding:12px 16px; border:1px solid rgba(255,255,255,0.07); color:#c8d8e8; vertical-align:top; }
+    tr:nth-child(even) td { background:rgba(255,255,255,0.02); }
+    .meta { color:#8899aa; font-size:14px; margin-bottom:32px; }
+    .back-link { display:inline-block; color:#8899aa; text-decoration:none; font-size:14px; margin-bottom:32px; }
+    .back-link:hover { color:#00d48a; }
+    .toc { background:#0d1b2a; border:1px solid rgba(0,212,138,0.2); border-radius:12px; padding:24px 28px; margin:32px 0; }
+    .toc .title { font-weight:700; color:#00d48a; margin-bottom:12px; font-size:15px; }
+    .toc ul { margin-bottom:0; }
+    .toc a { color:#c8d8e8; text-decoration:none; }
+    .toc a:hover { color:#00d48a; }
+    .callout { background:#0d1b2a; border-left:3px solid #00d48a; border-radius:0 8px 8px 0; padding:18px 22px; margin:24px 0; color:#c8d8e8; font-size:15px; }
+    .callout strong { color:#00d48a; }
+    .cta-map { background:#0d1b2a; border:1px solid rgba(0,212,138,0.35); border-radius:12px; padding:22px 26px; margin:28px 0; }
+    .cta-map a.cta-button { display:inline-block; margin-top:12px; background:#00d48a; color:#070f1a; font-weight:700; text-decoration:none; padding:10px 16px; border-radius:8px; }
+    .faq h3 { margin-top:28px; }
+    .authorbox { background:#0d1b2a; border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:24px 28px; margin-top:48px; }
+    .authorbox h3 { margin-top:0; }
+    .small { font-size:13px; color:#8899aa; }
+    .small a { color:#00d48a; }
+    hr { border:none; border-top:1px solid rgba(255,255,255,0.07); margin:48px 0; }
+    img { max-width:100%; width:100%; height:auto; border-radius:12px; margin:24px 0; border:1px solid rgba(255,255,255,0.07); display:block; }
+    figcaption { font-size:13px; color:#8899aa; text-align:center; margin-top:8px; }
+  </style>
   <script src="/consent.js" defer></script>
 </head>
 
 <body>
 
 <header style="background:#070f1a;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.07);position:sticky;top:0;z-index:100;">
-<a href="https://autodun.com" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
-<span style="font-size:20px;">⚡</span>
-<span style="color:#fff;font-weight:800;font-size:18px;letter-spacing:-0.5px;">AUTODUN</span>
-</a>
-<nav style="display:flex;gap:20px;">
-<a href="https://autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">Home</a>
-<a href="https://ev.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">EV Finder</a>
-<a href="https://mot.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">MOT Predictor</a>
-<a href="/blog" style="color:#00d48a;text-decoration:none;font-size:14px;font-weight:600;">Blog</a>
-</nav>
+  <a href="https://autodun.com" style="display:flex;align-items:center;gap:8px;text-decoration:none;">
+    <span style="font-size:20px;">⚡</span>
+    <span style="color:#fff;font-weight:800;font-size:18px;letter-spacing:-0.5px;">AUTODUN</span>
+  </a>
+  <nav style="display:flex;gap:20px;">
+    <a href="https://autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">Home</a>
+    <a href="https://ev.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">EV Finder</a>
+    <a href="https://mot.autodun.com" style="color:#8899aa;text-decoration:none;font-size:14px;">MOT Predictor</a>
+    <a href="/blog" style="color:#00d48a;text-decoration:none;font-size:14px;font-weight:600;">Blog</a>
+  </nav>
 </header>
 
 <div class="wrap">
-
   <article>
-<a href="/blog" class="back-link">← Back to Autodun Blog</a>
+    <a href="/blog" class="back-link">← Back to Autodun Blog</a>
 
-  <h1>Why UK Councils Are Flying Blind on EV Charging Infrastructure</h1>
+    <h1>Why UK councils still plan EV charging from charger counts, not usability</h1>
+    <p class="meta"><strong style="color:#fff;">By Autodun Research Team</strong> · Updated 9 November 2026</p>
 
-  <p class="article-meta"><strong style="color:#ffffff;">Written by Kamran Gul</strong> — Founder of Autodun · Updated April 2026</p>
+    <p>
+      Local authorities are not short of dashboards. They are short of the questions those dashboards do not answer:
+      is the unit working, can a visitor pay without an app, is the bay blocked, and can a disabled driver use it?
+      Official statistics count public EV chargers. They do not count completed sessions.
+      The government’s own National Chargepoint Registry — the nearest thing to a single planning database — was
+      <a href="https://www.gov.uk/guidance/find-and-use-data-on-public-electric-vehicle-chargepoints" rel="noopener" target="_blank">decommissioned on 28 November 2024</a>.
+    </p>
 
-  <p>
-    "I was confused why EV charger data looked correct online but failed in real use."
-  </p>
+    <div class="callout">
+      <strong>Short answer</strong><br />
+      Plan from power band, location type, open-data status and operator reliability reports — not from a raw pin count.
+      In England, LEVI funds on-street charging for residents without off-street parking, but installations still lag the allocated capital.
+      Driver-facing checks are in our
+      <a href="/blog/ev-charging-reliability-uk.html">reliability guide</a>;
+      this page is for people who have to commission or oversee a local network.
+    </div>
 
-  <p>
-    That question stayed with me longer than I expected.
-  </p>
+    <figure>
+      <img width="1200" height="630"
+        src="/images/autodun-map-overview-1200x630.png"
+        alt="UK public EV charging map showing clustered urban coverage and thinner rural provision"
+        loading="eager" />
+      <figcaption>Maps fill with markers long before a council knows which of those markers a resident can actually use tonight.</figcaption>
+    </figure>
 
-  <p>
-    When I began building Autodun, I assumed that public datasets and council reports would match real roads. Official dashboards, industry articles, and government timelines all paint a picture of expansion and progress. On paper, the UK appears well on its way to supporting mass electric vehicle adoption.
-  </p>
+    <nav class="toc" aria-label="On this page">
+      <div class="title">On this page</div>
+      <ul>
+        <li><a href="#counts">What the official numbers do — and do not — measure</a></li>
+        <li><a href="#data">The planning data gap after the National Chargepoint Registry</a></li>
+        <li><a href="#levi">LEVI, local strategies and who is responsible</a></li>
+        <li><a href="#99">Why a 99% rapid network can still fail a high street</a></li>
+        <li><a href="#access">Accessibility is still a specification, not a legal floor</a></li>
+        <li><a href="#checklist">Checklist for a local charging plan</a></li>
+        <li><a href="#faq">Frequently asked questions</a></li>
+      </ul>
+    </nav>
 
-  <p>
-    But once I started using this data to power real journeys, real maps, and real driver feedback loops, a different picture began to emerge.
-  </p>
+    <h2 id="counts">What the official numbers do — and do not — measure</h2>
+    <p>
+      As of 1 July 2026 the Department for Transport counted
+      <strong>121,171 public EV chargers</strong> in the UK and <strong>97,266 public charging devices</strong>
+      (one cabinet can contain more than one EVSE).
+      There were <strong>174.9</strong> public chargers per 100,000 people, and <strong>28,887</strong> rated 50kW or above.
+      As of 1 April 2026 there was one public charger for every 17 battery electric vehicles.
+      Source:
+      <a href="https://www.gov.uk/government/statistics/electric-vehicle-charging-infrastructure-statistics-1-july-2026/public-electric-vehicle-charging-infrastructure-statistics-1-july-2026" rel="noopener" target="_blank">Public electric vehicle charging infrastructure statistics: 1 July 2026</a>
+      (official statistics in development; next quarterly release scheduled for November 2026).
+    </p>
+    <p>The mix matters more than the headline:</p>
+    <ul>
+      <li>49% of chargers were standard (3kW to less than 8kW); 12% rapid; 12% ultra-rapid.</li>
+      <li>52% destination, 33% on-street, 11% en-route, 4% other / semi-public.</li>
+      <li>In England and Wales, 16.7% of public chargers were in rural areas, against 17.5% of the population living there (ONS 2021 rural-urban classification, cited by DfT). Rural under-provision is therefore not mainly a headcount problem — it is more often speed, hours and repair times.</li>
+    </ul>
 
-  <img width="1200" height="630" src="/images/autodun-map-overview-1200x630.png"
-    alt="UK EV charging coverage map showing real-world distribution gaps" />
+    <table>
+      <thead>
+        <tr>
+          <th>Area</th>
+          <th>Public chargers per 100,000 people</th>
+          <th>50kW+ per 100,000 people</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>United Kingdom</td><td>174.9</td><td>41.7</td></tr>
+        <tr><td>London</td><td>345.1</td><td>27.9</td></tr>
+        <tr><td>Scotland</td><td>231.6</td><td>59.1</td></tr>
+        <tr><td>Wales</td><td>185.5</td><td>42.8</td></tr>
+        <tr><td>Northern Ireland</td><td>60.0</td><td>19.3</td></tr>
+        <tr><td>Yorkshire and the Humber</td><td>110.7</td><td>36.6</td></tr>
+        <tr><td>North West</td><td>112.1</td><td>40.0</td></tr>
+      </tbody>
+    </table>
+    <p class="small">
+      Source: DfT, 1 July 2026, Annex A. London has the highest total density and the second-lowest rapid density, because so much of its stock is standard on-street charging.
+    </p>
+    <p>
+      DfT also records a data-quality shock: in June 2026 one charge point operator removed about <strong>1,270</strong> EV chargers from its public open-data feed after they had been reported as public when they were private-access.
+      A council that treated last quarter’s total as “installed infrastructure” would have been planning on hardware that was never available to residents.
+    </p>
 
-  <p>
-    At a national level, charger counts look impressive. Maps are full of markers. Heatmaps glow across cities and motorways. But zoom in, and the gaps become impossible to ignore. Rural areas appear "covered" but hide single slow chargers. Town centres show numbers that don't reflect reliability, access, or real availability.
-  </p>
+    <h2 id="data">The planning data gap after the National Chargepoint Registry</h2>
+    <p>
+      Until late 2024, councils and developers could pull a single National Chargepoint Registry dataset.
+      GOV.UK’s
+      <a href="https://www.gov.uk/guidance/find-and-use-data-on-public-electric-vehicle-chargepoints" rel="noopener" target="_blank">Find and use data on public electric vehicle chargepoints</a>
+      page is now withdrawn. The registry was decommissioned on 28 November 2024.
+      Archived data is available on request from OZEV (<a href="mailto:consumerofferconsult@ozev.gov.uk">consumerofferconsult@ozev.gov.uk</a>).
+    </p>
+    <p>
+      What replaced it is not another government map. Under the
+      <a href="https://www.gov.uk/guidance/regulations-public-charge-points" rel="noopener" target="_blank">Public Charge Point Regulations 2023</a>,
+      each public operator must hold data in OCPI and publish reference data (location, connector, price, payment method, time restrictions) and availability data, free of charge, in a machine-readable form, without forcing users to accept terms on the data itself.
+      Status changes must be reflected within 30 seconds.
+      Government bodies and network operators can request the data.
+      There is no official, free, national aggregator sitting on top of those feeds.
+    </p>
+    <p>
+      That is the “flying blind” problem in practical terms: planning teams now assemble a local picture from operator APIs, concession reports and DfT tables that still measure stock, not outcomes.
+      Autodun’s map at
+      <a href="https://ev.autodun.com">ev.autodun.com</a>
+      is one independent view of public location data plus driver feedback — useful for spotting gaps, not a substitute for operator OCPI or DfT statistics.
+    </p>
 
-  <p>
-    This is not a data accuracy problem in the traditional sense. The chargers often exist. The issue is that most datasets stop at surface-level counts. They don't answer the questions drivers and planners actually care about: Can I rely on this charger? Is it usable today? Does it support fast charging? Is it accessible at night or during peak hours?
-  </p>
+    <figure>
+      <img width="1200" height="675"
+        src="/images/autodun-station-drawer-1200x675.png"
+        alt="EV charger detail showing connectors, access and driver feedback rather than a simple pin"
+        loading="lazy" />
+      <figcaption>Connector type, access rules and recent feedback are the fields a pin count leaves out.</figcaption>
+    </figure>
 
-  <p>
-    As I connected Open Charge Map data with live journeys and user feedback, inconsistencies became clearer. Some chargers listed as operational were unreachable. Others were technically present but practically unusable. In several regions, councils appeared to be planning infrastructure based on incomplete or misleading signals.
-  </p>
+    <h2 id="levi">LEVI, local strategies and who is responsible</h2>
+    <p>
+      The 2022 strategy
+      <a href="https://www.gov.uk/government/publications/uk-electric-vehicle-infrastructure-strategy" rel="noopener" target="_blank">Taking charge: the electric vehicle infrastructure strategy</a>
+      set out that local on-street charging should be planned so residents, businesses and visitors without off-street parking can charge without blocking pavements.
+      DfT’s July 2026 statistical geography treats
+      <strong>Local Transport Authorities</strong> in England as the bodies with responsibility for local transport planning and EV charging strategies
+      (combined authorities where they exist, the Greater London Authority for London, upper-tier authorities elsewhere).
+      OZEV’s
+      <a href="https://www.gov.uk/guidance/electric-vehicle-charging-infrastructure-help-for-local-authorities" rel="noopener" target="_blank">help for local authorities</a>
+      page likewise says local authorities should write or take part in an EV infrastructure strategy, and that district and borough councils must work with the relevant highways authority even in two-tier areas. Some funding figures on that page pre-date LEVI delivery statistics — use the 2026 grant tables for current installation counts.
+    </p>
+    <p>
+      The
+      <a href="https://www.gov.uk/guidance/apply-for-local-ev-infrastructure-levi-funding" rel="noopener" target="_blank">Local Electric Vehicle Infrastructure (LEVI) Fund</a>
+      is the main English delivery programme for that on-street gap. It is capital plus capability funding. It applies to <strong>England</strong>. Applicants must show that the majority of chargepoints will benefit residents who do not have off-street parking.
+    </p>
+    <p>
+      Delivery is slower than the capital tables imply. OZEV’s
+      <a href="https://www.gov.uk/government/statistics/electric-vehicle-charging-infrastructure-statistics-1-july-2026/grant-schemes-for-electric-vehicle-charging-infrastructure-statistics-1-july-2026" rel="noopener" target="_blank">grant scheme statistics (1 July 2026)</a>
+      record <strong>643</strong> LEVI-funded charger installations in England as of 1 April 2026, and a <strong>provisional</strong> <strong>1,268</strong> as of 1 July 2026 (the LEVI series runs about three months behind other charging statistics and the latest figure is subject to revision).
+      Compare that with 121,171 public chargers nationwide: LEVI is still a small slice of the live network, even though regional capital allocations run to tens of millions of pounds
+      (<a href="https://www.gov.uk/government/publications/local-electric-vehicle-infrastructure-levi-funding-amounts/local-electric-vehicle-infrastructure-levi-funding-amounts-capital" rel="noopener" target="_blank">LEVI capital funding amounts</a>, updated 30 July 2026).
+    </p>
+    <p>
+      Home and workplace grants sit with
+      <a href="https://www.gov.uk/government/organisations/office-for-zero-emission-vehicles" rel="noopener" target="_blank">OZEV</a>
+      and are summarised on
+      <a href="https://www.gov.uk/guidance/electric-vehicle-chargepoint-grants" rel="noopener" target="_blank">Electric vehicle chargepoint grants</a>.
+      They do not fill a high-street rapid gap, and they do not replace a local on-street plan.
+    </p>
 
-  <img width="1200" height="675" src="/images/autodun-station-drawer-1200x675.png"
-    alt="EV charger detail view showing connectors, AI suitability score, and driver feedback" />
+    <h2 id="99">Why a 99% rapid network can still fail a high street</h2>
+    <p>
+      The Public Charge Point Regulations 2023 require rapid networks (50kW+) to be reliable <strong>99% of the time on average</strong> across the operator’s network in a calendar year.
+      A blocked bay is <strong>exempt</strong> from that calculation, not scored as downtime.
+      Slower on-street posts — the stock LEVI is meant to grow — are outside the 99% duty.
+      Detail and the driver recovery steps are in
+      <a href="/blog/ev-charging-reliability-uk.html">EV charging reliability UK</a>.
+    </p>
+    <p>
+      For a council concession, that means a contract that only restates “99% network reliability” can still leave a market town with one broken 7kW post for weeks.
+      Procurement needs site-level uptime, repair-time targets, published helpline performance and open OCPI access — the duties operators already have toward OPSS — written into the local contract, not assumed from the national average.
+    </p>
+    <p>
+      OPSS enforces the regulations for OZEV. Maximum civil penalties are generally up to £10,000 per charge point for most duties, and up to £10,000 per rapid network for the reliability duty
+      (<a href="https://www.gov.uk/government/publications/opss-enforcement-enforcement-actions/alternative-fuels-infrastructure-regulations-and-public-charge-point-regulations" rel="noopener" target="_blank">OPSS enforcement guidance</a>).
+      That is a backstop, not a local performance regime.
+    </p>
 
-  <p>
-    This is where Autodun began to shift direction. Instead of treating EV infrastructure as a static dataset, I started treating it as a living system. Chargers were no longer just points on a map; they became nodes with quality, context, and experience attached to them.
-  </p>
+    <h2 id="access">Accessibility is still a specification, not a legal floor</h2>
+    <p>
+      PAS 1899:2022 (accessible public chargepoints) was sponsored by government and Motability and published by BSI.
+      A
+      <a href="https://www.gov.uk/government/news/uk-government-partners-with-disability-charity-to-set-standards-for-electric-vehicle-chargepoints" rel="noopener" target="_blank">GOV.UK announcement</a>
+      describes it as the definition of accessible design.
+      It is not, by itself, a duty in the Public Charge Point Regulations.
+      Local procurement is where the specification becomes real: bay width, cable weight, screen height, dropped kerbs, and whether accessibility data is in the open feed so maps can filter it.
+    </p>
 
-  <p>
-    By combining live charger data with AI-based suitability scoring and direct driver feedback, patterns emerged that static dashboards completely missed. Some areas with "adequate coverage" were failing drivers daily. Others with fewer chargers were performing better due to reliability and placement.
-  </p>
+    <div class="cta-map">
+      <strong>See the public network as drivers see it</strong>
+      <p style="margin:8px 0 0;">Cross-check a ward on Autodun EV Finder, then compare with the operator’s OCPI and DfT local-authority tables. Disagreement between those three is usually the planning gap.</p>
+      <a class="cta-button" href="https://ev.autodun.com">Open EV Finder →</a>
+    </div>
 
-  <p>
-    The problem is not that councils are ignoring EV infrastructure. The problem is that they are often planning with tools that were never designed for real-world behaviour. Spreadsheets and annual reports cannot capture daily friction, failed charging attempts, or user trust.
-  </p>
+    <h2 id="checklist">Checklist for a local charging plan</h2>
+    <ol>
+      <li><strong>Split the stock by power band and location type</strong> using DfT EVCI tables (EVCI0102 for local authorities, EVCI0201 for power, EVCI0301 for destination / on-street / en-route) — not a single “number of chargers” KPI.</li>
+      <li><strong>Map residents without off-street parking</strong> against on-street provision. That is the LEVI test, not visitor rapid bays at the supermarket.</li>
+      <li><strong>Require live OCPI</strong> (reference + availability, 30-second status, p/kWh, payment methods) in every concession, including who may republish it.</li>
+      <li><strong>Write site-level repair times</strong> for slow AC as well as rapid DC. Do not rely on the 99% rapid network average.</li>
+      <li><strong>Score blocked bays separately.</strong> They are exempt from the legal reliability formula and are often the real failure mode on high streets.</li>
+      <li><strong>Put PAS 1899 into the specification</strong> where you control the land, and require accessibility fields in the data feed.</li>
+      <li><strong>Publish the operator helpline</strong> on council pages for each concession, and a route for residents to escalate to OPSS.</li>
+      <li><strong>Reconcile quarterly DfT figures</strong> with your concession inventory. If they diverge, find out whether units are private-access, decommissioned or missing from open data — DfT has already had to correct thousands of mis-tagged chargers in 2026.</li>
+      <li><strong>Do not treat a consumer map as a statutory dataset.</strong> Use it as a field check. For how drivers should read maps, see <a href="/blog/electric-car-charger-map-uk.html">how to find UK charge points</a>.</li>
+    </ol>
 
-  <p>
-    This disconnect explains why progress feels uneven. Why national targets feel optimistic while local experiences feel frustrating. And why drivers increasingly rely on community knowledge rather than official guidance.
-  </p>
+    <hr />
 
-  <p>
-    Autodun was built to close that gap.
-  </p>
+    <h2 id="faq">Frequently asked questions</h2>
+    <div class="faq">
+      <h3>Is there still a National Chargepoint Registry for UK councils to use?</h3>
+      <p>
+        No. GOV.UK withdrew the National Chargepoint Registry guidance on 2 December 2024. The registry was decommissioned on 28 November 2024.
+        Public operators must instead share open data (location, availability, connectors, payment methods) under the Public Charge Point Regulations 2023.
+      </p>
 
-  <p>
-    Instead of asking, "How many chargers exist?", we ask, "How usable is this location for real drivers today?" That difference sounds small, but it changes everything — from planning decisions to funding priorities.
-  </p>
+      <h3>Do official charger counts show whether units actually work?</h3>
+      <p>
+        No. Department for Transport statistics count public EV chargers (EVSE) and devices. They do not measure completed charging sessions.
+        The 99% reliability duty applies only as a network average for rapid chargers of 50kW and above.
+      </p>
 
-  <div class="tool-cta">
-    <p style="color:#ffffff; font-weight:700; margin-bottom:12px;">Explore the live EV infrastructure map</p>
-    <a href="https://ev.autodun.com" target="_blank" rel="noopener">Open EV Finder →</a>
-  </div>
+      <h3>What is the LEVI Fund for?</h3>
+      <p>
+        The Local Electric Vehicle Infrastructure (LEVI) Fund supports local authorities in England to plan and deliver charging for residents without off-street parking.
+        It has capital funding for chargepoints and capability funding for staff. It does not apply to Scotland, Wales or Northern Ireland under the same scheme.
+      </p>
 
-  <p>
-    As EV adoption accelerates, the quality of our infrastructure data will matter more than the quantity. Without ground-truth feedback and real usability signals, councils risk flying blind — even while surrounded by dashboards that suggest everything is fine.
-  </p>
+      <h3>Who is responsible for local EV charging strategies in England?</h3>
+      <p>
+        DfT’s July 2026 statistics present England using Local Transport Authorities, which it describes as having responsibility for local transport planning and EV charging strategies —
+        combined authorities where they exist, the Greater London Authority for London, and upper-tier authorities elsewhere.
+      </p>
+    </div>
 
-  <p>
-    The road to electrification is not just about installing chargers. It's about understanding how they are actually used.
-  </p>
+    <div class="authorbox">
+      <h3>About this guide</h3>
+      <p><strong>Autodun Research Team</strong></p>
+      <p class="small">
+        Autodun publishes independent UK EV and MOT tools. We are not a government service and we do not replace OZEV, DfT or local-authority advice.
+        Autodun’s charger map is a planning aid; operator open data and GOV.UK statistics are the official sources.
+      </p>
+      <p class="small" style="margin-top:12px;"><strong>Sources used</strong></p>
+      <ul class="small">
+        <li><a href="https://www.gov.uk/government/statistics/electric-vehicle-charging-infrastructure-statistics-1-july-2026/public-electric-vehicle-charging-infrastructure-statistics-1-july-2026" rel="noopener" target="_blank">DfT public EV charging statistics: 1 July 2026</a></li>
+        <li><a href="https://www.gov.uk/government/statistics/electric-vehicle-charging-infrastructure-statistics-1-july-2026/grant-schemes-for-electric-vehicle-charging-infrastructure-statistics-1-july-2026" rel="noopener" target="_blank">OZEV/DfT grant scheme statistics: 1 July 2026</a></li>
+        <li><a href="https://www.gov.uk/guidance/apply-for-local-ev-infrastructure-levi-funding" rel="noopener" target="_blank">Apply for LEVI funding</a></li>
+        <li><a href="https://www.gov.uk/guidance/find-and-use-data-on-public-electric-vehicle-chargepoints" rel="noopener" target="_blank">National Chargepoint Registry (withdrawn)</a></li>
+        <li><a href="https://www.gov.uk/guidance/regulations-public-charge-points" rel="noopener" target="_blank">Regulations: public charge points</a></li>
+        <li><a href="https://www.gov.uk/government/publications/uk-electric-vehicle-infrastructure-strategy" rel="noopener" target="_blank">UK electric vehicle infrastructure strategy (Taking charge)</a></li>
+        <li><a href="https://www.gov.uk/guidance/electric-vehicle-charging-infrastructure-help-for-local-authorities" rel="noopener" target="_blank">EV charging infrastructure: help for local authorities</a></li>
+        <li><a href="https://www.gov.uk/government/organisations/office-for-zero-emission-vehicles" rel="noopener" target="_blank">Office for Zero Emission Vehicles</a></li>
+      </ul>
+    </div>
 
-  <hr />
-
-  <p style="color:#8899aa; font-size:14px;">
-    Related reading:
-    <a href="/blog/ev-charging-reliability-uk.html">EV Charging Reliability UK</a> ·
-    <a href="/blog/ev-charging-on-uk-motorways.html">EV Charging on UK Motorways</a> ·
-    <a href="/blog/electric-car-charger-map-uk.html">Electric Car Charger Map UK</a>
-  </p>
-
-</article>
+    <p class="small" style="margin-top:24px;">
+      Related:
+      <a href="/blog/ev-charging-reliability-uk.html">EV charging reliability UK</a> ·
+      <a href="/blog/electric-car-charger-map-uk.html">How to find UK charge points</a> ·
+      <a href="/blog/ev-charging-on-uk-motorways.html">EV charging on UK motorways</a> ·
+      <a href="/blog/electric-car-mot-whats-checked-uk-2026.html">EV MOT what’s checked</a> ·
+      <a href="https://ev.autodun.com">EV Finder</a>
+    </p>
+  </article>
 </div>
 
 <nav class="related-articles" aria-label="Related articles" style="max-width:780px;margin:48px auto 0;padding:0 24px;">
   <h2 style="font-size:20px;margin-bottom:12px;">Related articles</h2>
   <ul style="padding-left:20px;line-height:1.9;">
-    <li><a href="/blog/ev-charging-reliability-uk.html">EV Charging Reliability in UK Cities — What Maps Miss (and How to Plan Better)</a></li>
-    <li><a href="/blog/electric-car-charger-map-uk.html">Electric Car Charger Map UK: Find Charging Points Near You</a></li>
-    <li><a href="/blog/ulez-checker-uk.html">ULEZ Checker UK — What ULEZ Compliance Really Means for Drivers</a></li>
+    <li><a href="/blog/ev-charging-reliability-uk.html">EV charging reliability UK: what the 99% rule covers</a></li>
+    <li><a href="/blog/electric-car-charger-map-uk.html">How to Find UK Electric Car Charging Points (Map Guide)</a></li>
+    <li><a href="/blog/ev-charging-on-uk-motorways.html">How to Find Reliable EV Chargers on UK Motorways</a></li>
+    <li><a href="/blog/uk-vehicle-data-tools.html">UK Vehicle Data Tools</a></li>
   </ul>
 </nav>
 
 <footer style="background:#050c15;border-top:1px solid rgba(255,255,255,0.06);padding:40px 24px;text-align:center;margin-top:80px;">
-<div style="max-width:780px;margin:0 auto;">
-<div style="margin-bottom:16px;">
-<a href="https://ev.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">EV Finder</a>
-<a href="https://mot.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">MOT Predictor</a>
-<a href="https://ai.autodun.com/ai-assistant" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">AI Assistant</a>
-<a href="/blog" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Blog</a>
-<a href="/privacy" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Privacy</a>
-<a href="#" data-cookie-settings style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Cookie settings</a>
-</div>
-<p style="color:#556677;font-size:13px;margin:0;">© 2026 Autodun. AI vehicle intelligence for UK drivers.</p>
-</div>
+  <div style="max-width:780px;margin:0 auto;">
+    <div style="margin-bottom:16px;">
+      <a href="https://ev.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">EV Finder</a>
+      <a href="https://mot.autodun.com" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">MOT Predictor</a>
+      <a href="https://ai.autodun.com/ai-assistant" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">AI Assistant</a>
+      <a href="/blog" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Blog</a>
+      <a href="/privacy" style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Privacy</a>
+      <a href="#" data-cookie-settings style="color:#8899aa;margin:0 12px;text-decoration:none;font-size:14px;">Cookie settings</a>
+    </div>
+    <p style="color:#556677;font-size:13px;margin:0;">© 2026 Autodun. AI vehicle intelligence for UK drivers.</p>
+  </div>
 </footer>
 
 </body>

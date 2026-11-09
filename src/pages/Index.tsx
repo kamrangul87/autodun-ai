@@ -12,6 +12,7 @@ const popularGuides = [
   { href: "/blog/mot-advisories-explained-uk.html", label: "MOT Advisories Explained" },
   { href: "/blog/electric-car-charger-map-uk.html", label: "Electric Car Charger Map UK" },
   { href: "/blog/ev-charging-on-uk-motorways.html", label: "EV Charging on UK Motorways" },
+  { href: "/blog/ev-charging-reliability-uk.html", label: "EV Charging Reliability UK" },
 ];
 
 const tools = [
