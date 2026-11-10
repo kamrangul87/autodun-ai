@@ -253,12 +253,6 @@ Autodun is a private project. If you have been granted access:
 
 ---
 
-## Global Talent Visa
-
-This platform is part of the UK Global Talent Visa (GTV) portfolio submitted by **Kamran Gul**, demonstrating exceptional technical talent in the field of digital technology. Autodun was conceived, designed, built, and shipped solely by Kamran as a solo founder and developer — covering full-stack engineering, AI integration, data pipeline design, SEO architecture, and product strategy.
-
----
-
 ## License
 
 MIT License — see [LICENSE](./LICENSE) for details.
