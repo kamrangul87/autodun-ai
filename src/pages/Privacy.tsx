@@ -16,7 +16,7 @@ const processors = [
   {
     name: "Vercel",
     purpose:
-      "Hosting for autodun.com and its subdomains — receives IP addresses and request logs for every page and API request.",
+      "Hosting for autodun.com and its subdomains — receives IP addresses and request logs for every page and API request. Vercel Web Analytics (cookieless) also collects anonymous aggregated visit data.",
     url: "https://vercel.com/legal/privacy-policy",
   },
   {
@@ -116,7 +116,7 @@ export default function Privacy() {
             Privacy Policy
           </h1>
           <p style={{ fontSize: "15px", color: "#8899aa" }}>
-            Last updated: October 2026
+            Last updated: November 2026
           </p>
         </div>
       </section>
@@ -163,6 +163,13 @@ export default function Privacy() {
             <p style={pGap}>
               <strong style={strong}>Lawful basis:</strong> consent. If you reject or never accept analytics cookies,
               Google Analytics is never loaded.
+            </p>
+
+            <h3 style={h3}>Analytics (Vercel Web Analytics)</h3>
+            <p style={p}>
+              We also use <strong style={strong}>Vercel Web Analytics</strong>, which is cookieless. It collects
+              anonymous, aggregated visit data (such as page views) and does not use cookies to identify you. It runs
+              alongside Google Analytics, which still loads only after you accept analytics cookies.
             </p>
 
             <h3 style={h3}>Vehicle Registration Numbers (VRNs)</h3>

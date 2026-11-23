@@ -36,10 +36,14 @@
     @media (max-width: 600px) { h1 { font-size: 1.5rem; } h2 { font-size: 1.2rem; } }
   </style>
   <script src="/consent.js" defer></script>
+  <script>
+    window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+  </script>
+  <script defer src="/_vercel/insights/script.js"></script>
 </head>
 <body>
 <h1>Privacy Policy</h1>
-<p><em>Last updated: October 2026</em></p>
+<p><em>Last updated: November 2026</em></p>
 
 <h2>Overview</h2>
 <p>
@@ -79,6 +83,13 @@
   Google Analytics is never loaded.
 </p>
 
+<h3>Analytics (Vercel Web Analytics)</h3>
+<p>
+  We also use <strong>Vercel Web Analytics</strong>, which is cookieless. It collects anonymous,
+  aggregated visit data (such as page views) and does not use cookies to identify you. It runs
+  alongside Google Analytics, which still loads only after you accept analytics cookies.
+</p>
+
 <h3>Vehicle Registration Numbers (VRNs)</h3>
 <p>
   The MOT Predictor tool (hosted at <strong>mot.autodun.com</strong>) processes VRNs you
@@ -114,7 +125,7 @@
 
 <div class="processor">
   <p><strong>Vercel</strong></p>
-  <p>Hosting for autodun.com and its subdomains — receives IP addresses and request logs for every page and API request.</p>
+  <p>Hosting for autodun.com and its subdomains — receives IP addresses and request logs for every page and API request. Vercel Web Analytics (cookieless) also collects anonymous aggregated visit data.</p>
   <p><a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">Their privacy policy ↗</a></p>
 </div>
 <div class="processor">
