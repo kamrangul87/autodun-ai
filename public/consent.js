@@ -1,14 +1,18 @@
 /*
- * Autodun cookie consent.
+ * Autodun cookie consent — Google Consent Mode v2 (advanced).
  *
- * Google Analytics (G-ZPK0SR60XR) is never loaded until the visitor clicks
- * "Accept". The choice is stored in the first-party cookie "cookie_consent"
+ * Google Analytics (G-ZPK0SR60XR) loads for every visitor with storage
+ * denied by default, so Google receives cookieless pings. Cookies (_ga)
+ * are set only after "Accept". Advertising storage stays denied.
+ *
+ * The choice is stored in the first-party cookie "cookie_consent"
  * ("accepted" | "rejected", max-age 6 months, Domain=.autodun.com on autodun.com hosts).
  *
  * Static pages: <script src="/consent.js" defer></script> — this script loads
- * gtag.js itself after consent.
- * SPA: <script src="/consent.js" data-ga="external"></script> — the app loads
- * GA (react-ga4) itself and listens for the "autodun:consent" event.
+ * gtag.js and sends the page_view.
+ * SPA: <script src="/consent.js" data-ga="external"></script> — this script
+ * still loads gtag.js and applies consent; the app (react-ga4) sends page_view
+ * and listens for the "autodun:consent" event.
  *
  * Any element with [data-cookie-settings] reopens the banner.
  */
@@ -55,19 +59,60 @@
     });
   }
 
-  function loadGA() {
-    if (gaLoaded || externalGA) return;
-    gaLoaded = true;
+  function ensureGtag() {
     window.dataLayer = window.dataLayer || [];
-    window.gtag = function () {
-      window.dataLayer.push(arguments);
-    };
-    window.gtag("js", new Date());
-    window.gtag("config", GA_ID);
+    if (typeof window.gtag !== "function") {
+      window.gtag = function () {
+        window.dataLayer.push(arguments);
+      };
+    }
+  }
+
+  function setConsentDefaults() {
+    ensureGtag();
+    window.gtag("consent", "default", {
+      analytics_storage: "denied",
+      ad_storage: "denied",
+      ad_user_data: "denied",
+      ad_personalization: "denied",
+      wait_for_update: 500,
+    });
+  }
+
+  function grantAnalyticsStorage() {
+    ensureGtag();
+    window.gtag("consent", "update", { analytics_storage: "granted" });
+  }
+
+  function denyAnalyticsStorage() {
+    ensureGtag();
+    window.gtag("consent", "update", { analytics_storage: "denied" });
+  }
+
+  function loadGtagScript() {
+    if (document.querySelector('script[src*="googletagmanager.com/gtag/js"]')) return;
     var s = document.createElement("script");
     s.async = true;
+    s.id = "ga-gtag";
     s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
     document.head.appendChild(s);
+  }
+
+  function configGA() {
+    if (gaLoaded) return;
+    gaLoaded = true;
+    window.gtag("js", new Date());
+    window.gtag("config", GA_ID);
+  }
+
+  function loadGA() {
+    loadGtagScript();
+    if (externalGA) {
+      // SPA: script + consent only. react-ga4 configs once and sends page_view.
+      gaLoaded = true;
+      return;
+    }
+    configGA();
   }
 
   function choose(value) {
@@ -75,10 +120,9 @@
     setConsent(value);
     hideBanner();
     if (value === "accepted") {
-      window["ga-disable-" + GA_ID] = false;
-      loadGA();
+      grantAnalyticsStorage();
     } else {
-      window["ga-disable-" + GA_ID] = true;
+      denyAnalyticsStorage();
       clearGACookies();
     }
     try {
@@ -86,8 +130,8 @@
     } catch (e) {
       /* ignore */
     }
-    // Withdrawing consent after GA has run: reload so no GA code stays in memory.
-    if (value === "rejected" && previous === "accepted" && (gaLoaded || externalGA)) {
+    // Withdrawing consent after GA has run: reload so no cookied GA state stays in memory.
+    if (value === "rejected" && previous === "accepted" && gaLoaded) {
       location.reload();
     }
   }
@@ -152,11 +196,13 @@
     }
   });
 
+  // Consent defaults must be set before gtag.js runs.
+  setConsentDefaults();
   var consent = getConsent();
   if (consent === "accepted") {
-    loadGA();
+    grantAnalyticsStorage();
   } else {
-    if (consent === "rejected") window["ga-disable-" + GA_ID] = true;
+    if (consent === "rejected") clearGACookies();
     if (!consent) {
       if (document.readyState === "loading") {
         document.addEventListener("DOMContentLoaded", showBanner);
@@ -165,4 +211,5 @@
       }
     }
   }
+  loadGA();
 })();
