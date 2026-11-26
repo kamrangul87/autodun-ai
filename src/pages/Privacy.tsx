@@ -27,7 +27,7 @@ const processors = [
   {
     name: "Google Analytics",
     purpose:
-      "Usage analytics, only if you accept analytics cookies — receives cookie identifiers, page views, device and browser details, and IP-derived approximate location.",
+      "Usage analytics. Cookieless pings are sent before consent and contain no cookies or identifiers. Cookie identifiers are received only if you accept analytics cookies. Also receives page views, device and browser details, and IP-derived approximate location.",
     url: "https://policies.google.com/privacy",
   },
   {
@@ -154,22 +154,23 @@ export default function Privacy() {
             <h3 style={h3}>Analytics (Google Analytics 4)</h3>
             <p style={p}>
               We use <strong style={strong}>Google Analytics 4</strong> (measurement ID:{" "}
-              <code style={code}>G-ZPK0SR60XR</code>) to understand how the site is used. Google Analytics loads only if
-              you accept analytics cookies; you can change your choice at any time via Cookie settings in the footer.
-              It collects page views, approximate geographic location, device and browser type, and session duration.
-              Google Analytics uses cookie identifiers, which are pseudonymous personal data. Google acts as our data
-              processor under its standard terms.
+              <code style={code}>G-ZPK0SR60XR</code>) to understand how the site is used. The Google tag loads for every
+              visitor. Cookieless pings are sent before you give consent; they contain no cookies or identifiers.
+              Analytics cookies are set only if you accept. You can change your choice at any time via Cookie settings
+              in the footer. It collects page views, approximate geographic location, device and browser type, and
+              session duration. When you have accepted, Google Analytics uses cookie identifiers, which are
+              pseudonymous personal data. Google acts as our data processor under its standard terms.
             </p>
             <p style={pGap}>
-              <strong style={strong}>Lawful basis:</strong> consent. If you reject or never accept analytics cookies,
-              Google Analytics is never loaded.
+              <strong style={strong}>Lawful basis:</strong> consent, for analytics cookies. If you reject or ignore the
+              banner, no analytics cookies are set; only cookieless pings are sent.
             </p>
 
             <h3 style={h3}>Analytics (Vercel Web Analytics)</h3>
             <p style={p}>
               We also use <strong style={strong}>Vercel Web Analytics</strong>, which is cookieless. It collects
               anonymous, aggregated visit data (such as page views) and does not use cookies to identify you. It runs
-              alongside Google Analytics, which still loads only after you accept analytics cookies.
+              alongside Google Analytics. Google Analytics cookies are still set only if you accept.
             </p>
 
             <h3 style={h3}>Vehicle Registration Numbers (VRNs)</h3>

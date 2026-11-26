@@ -7,6 +7,8 @@ type Consent = "accepted" | "rejected" | null;
 declare global {
   interface Window {
     AutodunConsent?: { get: () => Consent; open: () => void };
+    gtag?: (...args: unknown[]) => void;
+    dataLayer?: unknown[];
   }
 }
 
@@ -20,9 +22,20 @@ export const openCookieSettings = () => {
   window.AutodunConsent?.open();
 };
 
-/** Initialises GA4 only if the visitor has accepted analytics cookies. */
+/**
+ * Initialises GA4 for Consent Mode v2 (advanced).
+ *
+ * consent.js has already: set denied defaults, applied a granted update when
+ * the visitor previously accepted, and loaded gtag.js. This call must not
+ * inject a second copy of gtag.js or send a second page_view.
+ */
 export const initGA = () => {
-  if (ReactGA.isInitialized || getConsent() !== "accepted") return;
+  if (ReactGA.isInitialized) return;
+  // consent.js already injected gtag.js (id="ga-gtag"). Skip react-ga4's loader
+  // so we do not double-load the tag or overwrite the consent queue.
+  if (document.getElementById("ga-gtag")) {
+    (ReactGA as unknown as { _hasLoadedGA: boolean })._hasLoadedGA = true;
+  }
   ReactGA.initialize(GA_ID, { gtagOptions: { send_page_view: false } });
   trackPageView(window.location.pathname + window.location.search);
 };
